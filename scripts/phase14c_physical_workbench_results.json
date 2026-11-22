@@ -1,0 +1,54 @@
+{
+  "benchmark_name": "ObjectMemory Physical Workbench Benchmark (7 Sequences, 35 Visits)",
+  "dataset_name": "Physical Workbench Benchmark v1",
+  "dataset_version": "1.0.0",
+  "evaluation_version": "14c",
+  "timestamp": "2026-10-29T17:05:13Z",
+  "provenance": "Controlled physical workbench benchmark protocol. Photographic data capture specification.",
+  "capture_status": "AWAITING_PHYSICAL_DATA",
+  "summary_counts": {
+    "total_sequences": 7,
+    "total_visits": 35,
+    "images_present_on_disk": 0,
+    "images_awaiting_capture": 35,
+    "total_annotations": 175
+  },
+  "evaluation_configuration": {
+    "confidence_threshold": 0.25,
+    "iou_threshold": 0.5,
+    "canonical_classes": [
+      "book",
+      "bottle",
+      "cell phone",
+      "cup",
+      "scissors"
+    ],
+    "movement_threshold_px": 35.0,
+    "return_to_baseline_threshold_px": 35.0,
+    "min_registration_inlier_ratio": 0.15
+  },
+  "tracks": {
+    "track_a_natural_image_detection": {
+      "status": "PENDING_PHYSICAL_DATA",
+      "message": "Awaiting user capture of 35 photographic visit frames in data/physical_workbench_v1/images/.",
+      "metrics": null
+    },
+    "track_b_oracle_temporal_evaluation": {
+      "status": "PENDING_PHYSICAL_DATA",
+      "message": "Awaiting user capture of photographic visit frames for image feature extraction.",
+      "metrics": null
+    },
+    "track_c_end_to_end_physical_evaluation": {
+      "status": "PENDING_PHYSICAL_DATA",
+      "message": "Awaiting user capture of photographic visit frames for full pipeline execution.",
+      "metrics": null
+    }
+  },
+  "known_limitations_and_provenance_notes": [
+    "Track A requires genuine photographic imagery to compute valid precision, recall, and mAP.",
+    "Track B evaluates multi-visit state transitions with oracle bounding boxes to establish algorithmic upper bounds.",
+    "Track C evaluates actual detector predictions through the complete pipeline without substituting ground-truth boxes.",
+    "Planar homography registration assumes approximately coplanar workbench surface; significant 3D camera parallax will cause perspective distortion.",
+    "The 35-pixel movement threshold is defined in nominal 1920x1080 pixel coordinates."
+  ]
+}

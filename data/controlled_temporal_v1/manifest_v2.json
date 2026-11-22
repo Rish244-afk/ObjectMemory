@@ -1,0 +1,2701 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "controlled_temporal_v1",
+  "provenance": "SYNTHETIC_GENERATED",
+  "metadata": {
+    "description": "ObjectMemory Controlled Temporal Benchmark v1.0. 6 sequences x 5 visits = 30 generated synthetic illustrations.",
+    "provenance_note": "Generated synthetic illustrations, NOT physical photographs."
+  },
+  "sequences": [
+    {
+      "sequence_id": "S01_lighting_only",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S01_lighting_only_visit_01",
+          "timestamp": "2026-10-21T10:01:10Z",
+          "image_path": "images/S01_lighting_only_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S01_lighting_only_visit_02",
+          "timestamp": "2026-10-21T10:01:20Z",
+          "image_path": "images/S01_lighting_only_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": [
+              "lighting_shift"
+            ]
+          }
+        },
+        {
+          "observation_id": "S01_lighting_only_visit_03",
+          "timestamp": "2026-10-21T10:01:30Z",
+          "image_path": "images/S01_lighting_only_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S01_lighting_only_visit_04",
+          "timestamp": "2026-10-21T10:01:40Z",
+          "image_path": "images/S01_lighting_only_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": [
+              "bright_lighting"
+            ]
+          }
+        },
+        {
+          "observation_id": "S01_lighting_only_visit_05",
+          "timestamp": "2026-10-21T10:01:50Z",
+          "image_path": "images/S01_lighting_only_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:01:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    },
+    {
+      "sequence_id": "S02_cup_move_return",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S02_cup_move_return_visit_01",
+          "timestamp": "2026-10-21T10:02:10Z",
+          "image_path": "images/S02_cup_move_return_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S02_cup_move_return_visit_02",
+          "timestamp": "2026-10-21T10:02:20Z",
+          "image_path": "images/S02_cup_move_return_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S02_cup_move_return_visit_03",
+          "timestamp": "2026-10-21T10:02:30Z",
+          "image_path": "images/S02_cup_move_return_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                350.0,
+                180.0,
+                404.0,
+                246.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S02_cup_move_return_visit_04",
+          "timestamp": "2026-10-21T10:02:40Z",
+          "image_path": "images/S02_cup_move_return_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S02_cup_move_return_visit_05",
+          "timestamp": "2026-10-21T10:02:50Z",
+          "image_path": "images/S02_cup_move_return_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:02:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    },
+    {
+      "sequence_id": "S03_book_occlusion",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S03_book_occlusion_visit_01",
+          "timestamp": "2026-10-21T10:03:10Z",
+          "image_path": "images/S03_book_occlusion_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S03_book_occlusion_visit_02",
+          "timestamp": "2026-10-21T10:03:20Z",
+          "image_path": "images/S03_book_occlusion_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S03_book_occlusion_visit_03",
+          "timestamp": "2026-10-21T10:03:30Z",
+          "image_path": "images/S03_book_occlusion_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-21T10:03:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S03_book_occlusion_visit_04",
+          "timestamp": "2026-10-21T10:03:40Z",
+          "image_path": "images/S03_book_occlusion_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-21T10:03:40Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S03_book_occlusion_visit_05",
+          "timestamp": "2026-10-21T10:03:50Z",
+          "image_path": "images/S03_book_occlusion_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:03:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    },
+    {
+      "sequence_id": "S04_bottle_removal",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S04_bottle_removal_visit_01",
+          "timestamp": "2026-10-21T10:04:10Z",
+          "image_path": "images/S04_bottle_removal_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S04_bottle_removal_visit_02",
+          "timestamp": "2026-10-21T10:04:20Z",
+          "image_path": "images/S04_bottle_removal_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S04_bottle_removal_visit_03",
+          "timestamp": "2026-10-21T10:04:30Z",
+          "image_path": "images/S04_bottle_removal_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S04_bottle_removal_visit_04",
+          "timestamp": "2026-10-21T10:04:40Z",
+          "image_path": "images/S04_bottle_removal_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S04_bottle_removal_visit_05",
+          "timestamp": "2026-10-21T10:04:50Z",
+          "image_path": "images/S04_bottle_removal_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:04:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    },
+    {
+      "sequence_id": "S05_phone_move_persistent",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S05_phone_move_persistent_visit_01",
+          "timestamp": "2026-10-21T10:05:10Z",
+          "image_path": "images/S05_phone_move_persistent_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S05_phone_move_persistent_visit_02",
+          "timestamp": "2026-10-21T10:05:20Z",
+          "image_path": "images/S05_phone_move_persistent_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S05_phone_move_persistent_visit_03",
+          "timestamp": "2026-10-21T10:05:30Z",
+          "image_path": "images/S05_phone_move_persistent_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                390.0,
+                260.0,
+                438.0,
+                342.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S05_phone_move_persistent_visit_04",
+          "timestamp": "2026-10-21T10:05:40Z",
+          "image_path": "images/S05_phone_move_persistent_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                390.0,
+                260.0,
+                438.0,
+                342.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S05_phone_move_persistent_visit_05",
+          "timestamp": "2026-10-21T10:05:50Z",
+          "image_path": "images/S05_phone_move_persistent_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                390.0,
+                260.0,
+                438.0,
+                342.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:05:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    },
+    {
+      "sequence_id": "S06_camera_view_nuisance",
+      "environment_id": "synthetic_workbench_env",
+      "dataset_name": "controlled_temporal_v1",
+      "observations": [
+        {
+          "observation_id": "S06_camera_view_nuisance_visit_01",
+          "timestamp": "2026-10-21T10:06:10Z",
+          "image_path": "images/S06_camera_view_nuisance_visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                92.0,
+                120.0,
+                146.0,
+                186.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                245.0,
+                145.0,
+                335.0,
+                207.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                440.0,
+                110.0,
+                482.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                310.0,
+                198.0,
+                392.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                350.0,
+                310.0,
+                424.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                500.0,
+                340.0,
+                564.0,
+                370.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:10Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S06_camera_view_nuisance_visit_02",
+          "timestamp": "2026-10-21T10:06:20Z",
+          "image_path": "images/S06_camera_view_nuisance_visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                116.0,
+                154.0,
+                182.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                253.0,
+                141.0,
+                343.0,
+                203.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                448.0,
+                106.0,
+                490.0,
+                196.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                158.0,
+                306.0,
+                206.0,
+                388.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                358.0,
+                306.0,
+                432.0,
+                366.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                508.0,
+                336.0,
+                572.0,
+                366.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:20Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S06_camera_view_nuisance_visit_03",
+          "timestamp": "2026-10-21T10:06:30Z",
+          "image_path": "images/S06_camera_view_nuisance_visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                102.0,
+                115.0,
+                156.0,
+                181.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                255.0,
+                140.0,
+                345.0,
+                202.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                450.0,
+                105.0,
+                492.0,
+                195.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                160.0,
+                305.0,
+                208.0,
+                387.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                360.0,
+                305.0,
+                434.0,
+                365.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                510.0,
+                335.0,
+                574.0,
+                365.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:30Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S06_camera_view_nuisance_visit_04",
+          "timestamp": "2026-10-21T10:06:40Z",
+          "image_path": "images/S06_camera_view_nuisance_visit_04.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                99.0,
+                117.0,
+                153.0,
+                183.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                252.0,
+                142.0,
+                342.0,
+                204.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                447.0,
+                107.0,
+                489.0,
+                197.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                157.0,
+                307.0,
+                205.0,
+                389.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                357.0,
+                307.0,
+                431.0,
+                367.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                507.0,
+                337.0,
+                571.0,
+                367.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:40Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        },
+        {
+          "observation_id": "S06_camera_view_nuisance_visit_05",
+          "timestamp": "2026-10-21T10:06:50Z",
+          "image_path": "images/S06_camera_view_nuisance_visit_05.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                101.0,
+                116.0,
+                155.0,
+                182.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                254.0,
+                141.0,
+                344.0,
+                203.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                449.0,
+                106.0,
+                491.0,
+                196.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                159.0,
+                306.0,
+                207.0,
+                388.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            },
+            {
+              "object_id": "box_01",
+              "class_name": "box",
+              "bounding_box": [
+                359.0,
+                306.0,
+                433.0,
+                366.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            },
+            {
+              "object_id": "keys_01",
+              "class_name": "keys",
+              "bounding_box": [
+                509.0,
+                336.0,
+                573.0,
+                366.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-21T10:06:50Z"
+            }
+          ],
+          "metadata": {
+            "nuisance_tags": []
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "description": null
+      }
+    }
+  ]
+}

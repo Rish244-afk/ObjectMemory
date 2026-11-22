@@ -1,0 +1,52 @@
+{
+  "scenario_name": "lighting_change",
+  "description": "Workbench with identical objects under significantly altered illumination.",
+  "is_synthetic": true,
+  "random_seed": 110,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Lighting dimmed 45%"
+    },
+    {
+      "object_id": "obj_pcb",
+      "label": "pcb",
+      "ref_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "query_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Lighting dimmed 45%"
+    }
+  ],
+  "metadata": {
+    "lighting_scaled": true
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "scenario_name": "ambiguous_objects",
+  "description": "Workbench containing identical, visually ambiguous components.",
+  "is_synthetic": true,
+  "random_seed": 144,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_resistor_1",
+      "label": "resistor",
+      "ref_bbox": [
+        120,
+        120,
+        190,
+        160
+      ],
+      "query_bbox": [
+        120,
+        120,
+        190,
+        160
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": true,
+      "notes": "Identical twin resistor"
+    },
+    {
+      "object_id": "obj_resistor_2",
+      "label": "resistor",
+      "ref_bbox": [
+        230,
+        120,
+        300,
+        160
+      ],
+      "query_bbox": [
+        230,
+        120,
+        300,
+        160
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": true,
+      "notes": "Identical twin resistor"
+    },
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        380,
+        80,
+        490,
+        260
+      ],
+      "query_bbox": [
+        380,
+        80,
+        490,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    }
+  ],
+  "metadata": {}
+}

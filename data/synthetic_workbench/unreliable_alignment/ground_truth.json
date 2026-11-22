@@ -1,0 +1,25 @@
+{
+  "scenario_name": "unreliable_alignment",
+  "description": "Registration failure test case: query surface lacks trackable features.",
+  "is_synthetic": true,
+  "random_seed": 161,
+  "expected_alignment_success": false,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": null,
+      "ground_truth_change": "UNKNOWN",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Alignment fails; ground truth status in query is unverifiable"
+    }
+  ],
+  "metadata": {}
+}

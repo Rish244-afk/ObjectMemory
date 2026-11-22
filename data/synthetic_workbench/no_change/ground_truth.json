@@ -1,0 +1,70 @@
+{
+  "scenario_name": "no_change",
+  "description": "Workbench observed twice with identical objects and positions.",
+  "is_synthetic": true,
+  "random_seed": 42,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    },
+    {
+      "object_id": "obj_pcb",
+      "label": "pcb",
+      "ref_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "query_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    },
+    {
+      "object_id": "obj_compbox",
+      "label": "component_box",
+      "ref_bbox": [
+        140,
+        280,
+        270,
+        390
+      ],
+      "query_bbox": [
+        140,
+        280,
+        270,
+        390
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    }
+  ],
+  "metadata": {}
+}

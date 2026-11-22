@@ -1,0 +1,653 @@
+{
+  "dataset_name": "desk_pilot_01",
+  "description": "Seven-visit physical desk scene for ObjectMemory pilot evaluation. Scene: potted plant, mug (cup_01), second white cup (cup_02), water bottle (bottle_01), red scissors (scissors_01), navy hardcover book (book_01), spiral kraft notebook (notebook_01). Evaluated branches: CONFIRMED_PRESENT, CONFIRMED_MOVED (mug relocation x2), CONFIRMED_REMOVED (second cup, bottle), PENDING_REMOVAL, reappearance after CONFIRMED_REMOVED (bottle V7), NEWLY_APPEARED (notebook V4), ambiguous occlusion (scissors V4 - see notes).",
+  "is_template": false,
+  "metadata": {
+    "sensor": "Smartphone camera, overhead desk capture, ambient indoor lighting",
+    "image_provenance": "Physical smartphone photographs cropped and saved as RGBA PNG without EXIF metadata. Evaluated as a real-world pilot validation sequence, not a formal laboratory metrology benchmark.",
+    "dataset_classification": "PILOT_VALIDATION_SEQUENCE",
+    "lighting_conditions": "Consistent ambient indoor lighting across all visits",
+    "resolution_groups": {
+      "group_A_visits": [
+        "visit_01",
+        "visit_02",
+        "visit_03"
+      ],
+      "group_A_resolution": [
+        780,
+        636
+      ],
+      "group_B_visits": [
+        "visit_04",
+        "visit_05",
+        "visit_06",
+        "visit_07"
+      ],
+      "group_B_resolution_approx": [
+        584,
+        576
+      ],
+      "note": "V1-V3 (~780x636) and V4-V7 (~584x576) have different fields of view. The 35px movement threshold is resolution-dependent. Registration homography must accommodate the FOV shift between V3 and V4. This is a documented limitation of the pilot; no threshold change is made."
+    },
+    "coordinate_convention": "[x_min, y_min, x_max, y_max] raw pixel coordinates, (0,0) = top-left corner",
+    "bbox_provenance": "Bounding boxes derived by visual inspection of 10%-grid overlays. Accuracy is estimated at +/-15 px. These are hand-estimated, not detector-predicted or ground-truth verified by measurement tool.",
+    "second_cup_decision": "cup_02 (small cylindrical white cup, V1 only) is annotated as a separate entity. It is clearly distinct in the V1 close-up crop: different height, no visible handle, positioned behind cup_01. It disappears entirely in V2 and is absent for all subsequent visits.",
+    "scissors_v4_decision": "The scissors are not visible in V4. The spiral notebook occupies the lower-center area. The physical relationship between the notebook and scissors CANNOT be determined from the image alone (whether scissors are under the notebook or were removed before it was placed). Per user instruction: 'Do not label FULLY_OCCLUDED unless the image supports actual occlusion. Flag ambiguous observations rather than inventing facts.' Annotation: physical_observation=ABSENT, annotated_event=ABSENT, expected_state=PENDING_REMOVAL. This is conservative: if scissors were actually occluded, the engine's removal streak will be 1 too high. A note flags the ambiguity.",
+    "bottle_v7_reappearance": "After CONFIRMED_REMOVED (V6), the bottle reappears in V7. Per engine docstring line 19-21: 'If entity in PENDING_REMOVAL or CONFIRMED_REMOVED is re-observed, transitions to CONFIRMED_PRESENT (or CONFIRMED_MOVED if relocated).' The expected_state is set explicitly to CONFIRMED_PRESENT to override derivation. annotated_event=NEWLY_APPEARED preserves the same entity_id (bottle_01) as required by the evaluator identity model.",
+    "entities_excluded": [
+      "laptop - partially visible at right edge in all visits, excluded from tracked set per user instruction"
+    ]
+  },
+  "visits": [
+    {
+      "visit_id": "visit_01",
+      "session_name": "Baseline \u2014 all objects present",
+      "timestamp": "2026-10-15T09:00:00Z",
+      "image_path": "visits/visit_01.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            165,
+            290
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Control. Potted plant top-left, partially cropped at left and top edges. Stationary control across all 7 visits."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            318,
+            220,
+            540
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Primary white mug with handle, left-center. Bbox estimated from grid: x=10-220, y=318-540. Handle extends left to ~x=10."
+        },
+        {
+          "entity_id": "cup_02",
+          "entity_label": "cup",
+          "bbox": [
+            75,
+            280,
+            200,
+            360
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "INSUFFICIENT_EVIDENCE",
+          "notes": "Second white cylindrical cup (no visible handle), positioned behind/right of cup_01 in V1 only. Visible in V1 close-up crop. Expected INSUFFICIENT_EVIDENCE at first visit (not yet confirmed present). Will be ABSENT from V2 onward."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": [
+            277,
+            148,
+            384,
+            408
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Clear plastic bottle with blue cap, centre of desk. Bbox estimated: cap top ~y=148, base ~y=408, sides x=277-384. Transparent body may yield variable detector confidence."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            183,
+            484,
+            470,
+            600
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Red-handled scissors, centre-bottom. Handles left ~x=183, blade tip right ~x=470, top ~y=484, bottom ~y=600."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            425,
+            340,
+            740,
+            560
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Dark navy hardcover book, closed, centre-right. Control object; stationary across all visits."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_02",
+      "session_name": "Second cup removed; scissors slightly repositioned",
+      "timestamp": "2026-10-15T10:00:00Z",
+      "image_path": "visits/visit_02.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            165,
+            290
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Stationary. Same position as V1."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            318,
+            210,
+            530
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Primary mug unchanged from V1. cup_02 has been removed, making cup_01 the only white cup."
+        },
+        {
+          "entity_id": "cup_02",
+          "entity_label": "cup",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "PENDING_REMOVAL",
+          "notes": "Second cup no longer visible. First reliable absence: streak=1. Transitions from INSUFFICIENT_EVIDENCE to PENDING_REMOVAL."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": [
+            277,
+            148,
+            384,
+            408
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Unchanged position."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            163,
+            492,
+            460,
+            604
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Scissors appear slightly lower-left vs V1. Small positional shift; not clearly >= 35px. Annotated as UNCHANGED. If the engine measures the centroid and finds displacement >= 35px, actual system state will differ \u2014 this is an open observation."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            425,
+            345,
+            740,
+            560
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Unchanged."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_03",
+      "session_name": "Mug relocated to right; scissors repositioned to bottom-left",
+      "timestamp": "2026-10-15T11:00:00Z",
+      "image_path": "visits/visit_03.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            80,
+            290
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Stationary. V3 is 784px wide; plant is cropped more at left edge."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            548,
+            250,
+            730,
+            420
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "RELOCATED",
+          "expected_state": "CONFIRMED_MOVED",
+          "notes": "Cup_01 has moved from left-center (~x=10-220) to right-center (~x=548-730), in front of the laptop. Large centroid shift. RELOCATED -> CONFIRMED_MOVED."
+        },
+        {
+          "entity_id": "cup_02",
+          "entity_label": "cup",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "CONFIRMED_REMOVED",
+          "notes": "Second consecutive absence (streak=2). PENDING_REMOVAL -> CONFIRMED_REMOVED."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": [
+            197,
+            150,
+            310,
+            400
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Bottle appears stationary though frame shifted slightly (V3=784px wide). Bbox adjusted for frame width."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            90,
+            465,
+            290,
+            590
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "RELOCATED",
+          "expected_state": "CONFIRMED_MOVED",
+          "notes": "Scissors clearly moved to lower-left. Prior V2 centroid was ~(312,548); V3 centroid ~(190,528). Displacement visible and large. RELOCATED -> CONFIRMED_MOVED."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            310,
+            340,
+            655,
+            570
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Book stationary. Slightly wider bbox in V3 due to frame width (784px)."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_04",
+      "session_name": "Mug returned to left; spiral notebook appeared; scissors absent/ambiguous",
+      "timestamp": "2026-10-15T12:00:00Z",
+      "image_path": "visits/visit_04.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            118,
+            240
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "V4 is 592px wide. Plant scaled proportionally."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            258,
+            175,
+            440
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "RELOCATED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Cup_01 returned to initial baseline position on the left from its V3 right-side position. This is a return-to-baseline relocation (physical displacement ~575.9px relative to V3, baseline displacement ~1.8px <= 54.3px). Transition: CONFIRMED_MOVED -> CONFIRMED_PRESENT (return to baseline event detected)."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": [
+            193,
+            125,
+            288,
+            345
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Bottle still present, roughly same desk position. Bbox scaled to V4 frame (592px wide)."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "PENDING_REMOVAL",
+          "notes": "AMBIGUOUS: scissors are not visible in V4. The spiral notebook occupies the lower-center area where scissors were in V3. Whether the scissors are physically under the notebook (FULLY_OCCLUDED) or were removed before it was placed (ABSENT) CANNOT be determined from the image. Per instruction, we do NOT label FULLY_OCCLUDED without image evidence of actual occlusion. Recording as ABSENT (streak=1). If scissors were actually occluded, the engine will incorrectly increment removal streak. This ambiguity is a known limitation of this pilot visit.",
+          "attributes": {
+            "ambiguity_flag": "scissors_may_be_occluded_by_notebook_or_absent"
+          }
+        },
+        {
+          "entity_id": "notebook_01",
+          "entity_label": "book",
+          "bbox": [
+            60,
+            390,
+            400,
+            540
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "NEWLY_APPEARED",
+          "expected_state": "INSUFFICIENT_EVIDENCE",
+          "notes": "Spiral kraft-paper notebook, newly placed on desk. Annotated as entity_label='book' because that is the COCO-80 class the YOLOv8n detector will fire for this object. expected_state=INSUFFICIENT_EVIDENCE at first visit (not yet confirmed). WARNING: In V4, two 'book'-label objects exist (notebook_01 + book_01). The evaluator must disambiguate them by spatial IoU; book_01 and notebook_01 have non-overlapping bboxes so IoU=0 between them."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            295,
+            245,
+            542,
+            500
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Navy hardcover book, stationary. Bbox scaled to V4 frame."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_05",
+      "session_name": "Bottle removed (streak=1); notebook gone; scissors reappeared",
+      "timestamp": "2026-10-15T13:00:00Z",
+      "image_path": "visits/visit_05.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            116,
+            240
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Stationary. V5 is 584px wide."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            268,
+            175,
+            445
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Mug remains stationary at its returned baseline position. expected_state is CONFIRMED_PRESENT."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "PENDING_REMOVAL",
+          "notes": "Bottle is absent for the first time. streak=1. CONFIRMED_PRESENT -> PENDING_REMOVAL."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            130,
+            425,
+            380,
+            543
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "NEWLY_APPEARED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Scissors are visible again. Prior expected_state was PENDING_REMOVAL (V4 absence). They reappear here. annotated_event=NEWLY_APPEARED preserves entity_id=scissors_01 (same persistent identity). expected_state=CONFIRMED_PRESENT set explicitly to override policy derivation from prior PENDING_REMOVAL + VISIBLE observation. NOTE: If scissors were actually occluded in V4 (ambiguity), this reappearance is just an uncovering \u2014 CONFIRMED_MOVED (from V3) would be more appropriate. The ambiguity from V4 propagates here.",
+          "attributes": {
+            "ambiguity_carryover": "V4_scissors_occlusion_vs_absence_unresolved"
+          }
+        },
+        {
+          "entity_id": "notebook_01",
+          "entity_label": "book",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "PENDING_REMOVAL",
+          "notes": "Spiral notebook removed. First absence after appearing in V4. streak=1 for notebook_01."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            285,
+            255,
+            520,
+            490
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Navy hardcover book, stationary."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_06",
+      "session_name": "Bottle still absent (streak=2, CONFIRMED_REMOVED); notebook still absent",
+      "timestamp": "2026-10-15T14:00:00Z",
+      "image_path": "visits/visit_06.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            116,
+            240
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Stationary."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            268,
+            175,
+            445
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Mug at same returned baseline position as V5. expected_state is CONFIRMED_PRESENT."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "CONFIRMED_REMOVED",
+          "notes": "Second consecutive absence (streak=2). PENDING_REMOVAL -> CONFIRMED_REMOVED."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            125,
+            425,
+            360,
+            543
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Scissors visible at similar position to V5."
+        },
+        {
+          "entity_id": "notebook_01",
+          "entity_label": "book",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "CONFIRMED_REMOVED",
+          "notes": "Second consecutive absence (streak=2 for notebook_01). PENDING_REMOVAL -> CONFIRMED_REMOVED."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            285,
+            268,
+            520,
+            490
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Navy hardcover book, stationary."
+        }
+      ]
+    },
+    {
+      "visit_id": "visit_07",
+      "session_name": "Bottle reappears after CONFIRMED_REMOVED",
+      "timestamp": "2026-10-15T15:00:00Z",
+      "image_path": "visits/visit_07.png",
+      "annotations": [
+        {
+          "entity_id": "plant_01",
+          "entity_label": "potted plant",
+          "bbox": [
+            0,
+            0,
+            117,
+            240
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Stationary."
+        },
+        {
+          "entity_id": "cup_01",
+          "entity_label": "cup",
+          "bbox": [
+            10,
+            258,
+            160,
+            435
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Mug at returned baseline position, unchanged from V5-V6. expected_state is CONFIRMED_PRESENT."
+        },
+        {
+          "entity_id": "bottle_01",
+          "entity_label": "bottle",
+          "bbox": [
+            176,
+            120,
+            286,
+            340
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "NEWLY_APPEARED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Bottle has returned to the desk after CONFIRMED_REMOVED in V6. Same entity_id 'bottle_01' \u2014 persistent identity is preserved. annotated_event=NEWLY_APPEARED signals physical reintroduction. expected_state=CONFIRMED_PRESENT set EXPLICITLY because derivation from CONFIRMED_REMOVED + VISIBLE is not guaranteed. Engine docstring confirms: 'If entity in CONFIRMED_REMOVED is re-observed, transitions to CONFIRMED_PRESENT.' This annotation tests that branch."
+        },
+        {
+          "entity_id": "scissors_01",
+          "entity_label": "scissors",
+          "bbox": [
+            118,
+            418,
+            350,
+            530
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Scissors visible. Slightly lower position vs V6."
+        },
+        {
+          "entity_id": "notebook_01",
+          "entity_label": "book",
+          "bbox": null,
+          "physical_observation": "ABSENT",
+          "annotated_event": "ABSENT",
+          "expected_state": "CONFIRMED_REMOVED",
+          "notes": "Notebook remains absent. Stays CONFIRMED_REMOVED."
+        },
+        {
+          "entity_id": "book_01",
+          "entity_label": "book",
+          "bbox": [
+            295,
+            248,
+            525,
+            490
+          ],
+          "physical_observation": "VISIBLE",
+          "annotated_event": "UNCHANGED",
+          "expected_state": "CONFIRMED_PRESENT",
+          "notes": "Navy hardcover book, stationary."
+        }
+      ]
+    }
+  ]
+}

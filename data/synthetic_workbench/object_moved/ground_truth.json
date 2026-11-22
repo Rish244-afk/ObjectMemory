@@ -1,0 +1,50 @@
+{
+  "scenario_name": "object_moved",
+  "description": "Workbench where one multimeter has been moved to a new position.",
+  "is_synthetic": true,
+  "random_seed": 59,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        440,
+        220,
+        550,
+        400
+      ],
+      "ground_truth_change": "MOVED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Relocated by ~210px"
+    },
+    {
+      "object_id": "obj_pcb",
+      "label": "pcb",
+      "ref_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "query_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    }
+  ],
+  "metadata": {}
+}

@@ -1,0 +1,288 @@
+{
+  "timestamp": "2026-10-20T16:34:34Z",
+  "phase": 6,
+  "title": "Phase 6 Comparative Evaluation: Adaptive Keyframe Registration & Uncertainty Memory",
+  "total_runtime_seconds": 3.74,
+  "synthetic_benchmark": {
+    "baseline_single_ref": {
+      "success_rate": 0.5,
+      "successes_count": 2,
+      "total_frames": 4,
+      "mean_inlier_ratio": 0.4654811715481172,
+      "mean_reproj_error_px": 2.0001453548017327,
+      "mean_latency_ms": 115.14,
+      "per_frame_success": [
+        true,
+        true,
+        false,
+        false
+      ]
+    },
+    "phase6_adaptive_keyframe": {
+      "success_rate": 1.0,
+      "successes_count": 4,
+      "total_frames": 4,
+      "mean_inlier_ratio": 0.9068194536824192,
+      "mean_reproj_error_px": 1.0046100300744973,
+      "mean_latency_ms": 220.38,
+      "keyframes_promoted": 4,
+      "secondary_keyframe_fallbacks": 2,
+      "per_frame_success": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  },
+  "real_workbench_benchmark": {
+    "total_visits_evaluated": 7,
+    "baseline_single_ref": {
+      "success_rate": 0.8571428571428571,
+      "mean_inlier_ratio": 0.4005299465013948,
+      "mean_latency_ms": 166.47,
+      "visits": [
+        {
+          "visit_id": "visit_01",
+          "success": true,
+          "inlier_ratio": 1.0,
+          "num_inliers": 100,
+          "mean_reproj_error": 0.0,
+          "method": "INITIAL_REFERENCE"
+        },
+        {
+          "visit_id": "visit_02",
+          "success": true,
+          "inlier_ratio": 0.5531914893617021,
+          "num_inliers": 78,
+          "mean_reproj_error": 1.4988674193517089,
+          "status": "SUCCESS",
+          "method": "SIFT"
+        },
+        {
+          "visit_id": "visit_03",
+          "success": true,
+          "inlier_ratio": 0.3411764705882353,
+          "num_inliers": 29,
+          "mean_reproj_error": 1.0947071248615365,
+          "status": "SUCCESS",
+          "method": "SIFT"
+        },
+        {
+          "visit_id": "visit_04",
+          "success": true,
+          "inlier_ratio": 0.2222222222222222,
+          "num_inliers": 18,
+          "mean_reproj_error": 1.351169112879264,
+          "status": "SUCCESS",
+          "method": "SIFT"
+        },
+        {
+          "visit_id": "visit_05",
+          "success": false,
+          "inlier_ratio": 0.18085106382978725,
+          "num_inliers": 17,
+          "mean_reproj_error": null,
+          "status": "INSUFFICIENT_INLIERS",
+          "method": "SIFT"
+        },
+        {
+          "visit_id": "visit_06",
+          "success": true,
+          "inlier_ratio": 0.2535211267605634,
+          "num_inliers": 18,
+          "mean_reproj_error": 1.5921389643891326,
+          "status": "SUCCESS",
+          "method": "SIFT"
+        },
+        {
+          "visit_id": "visit_07",
+          "success": true,
+          "inlier_ratio": 0.25274725274725274,
+          "num_inliers": 23,
+          "mean_reproj_error": 1.3201125701473324,
+          "status": "SUCCESS",
+          "method": "SIFT"
+        }
+      ]
+    },
+    "phase6_adaptive_keyframe": {
+      "success_rate": 0.8571428571428571,
+      "mean_inlier_ratio": 0.3746940802399966,
+      "mean_latency_ms": 158.83,
+      "keyframes_created": 1,
+      "visits": [
+        {
+          "visit_id": "visit_01",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": true,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Established initial canonical reference.",
+          "inlier_ratio": 1.0,
+          "num_inliers": 100,
+          "spatial_coverage": 1.0,
+          "mean_reproj_error": null,
+          "status": "SUCCESS"
+        },
+        {
+          "visit_id": "visit_02",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Aligned against keyframe 'visit_01' with inlier ratio 55.3%.",
+          "inlier_ratio": 0.5531914893617021,
+          "num_inliers": 78,
+          "spatial_coverage": 0.7188,
+          "mean_reproj_error": 1.499,
+          "status": "SUCCESS"
+        },
+        {
+          "visit_id": "visit_03",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Aligned against keyframe 'visit_01' with inlier ratio 34.1%.",
+          "inlier_ratio": 0.3411764705882353,
+          "num_inliers": 29,
+          "spatial_coverage": 0.2375,
+          "mean_reproj_error": 1.095,
+          "status": "SUCCESS"
+        },
+        {
+          "visit_id": "visit_04",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Aligned against keyframe 'visit_01' with inlier ratio 22.2%.",
+          "inlier_ratio": 0.2222222222222222,
+          "num_inliers": 18,
+          "spatial_coverage": 0.1989,
+          "mean_reproj_error": 1.351,
+          "status": "SUCCESS"
+        },
+        {
+          "visit_id": "visit_05",
+          "success": false,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "REJECTED",
+          "decision_reason": "Registration failed across all 1 keyframes; spatial updates gated.",
+          "inlier_ratio": 0.0,
+          "num_inliers": 0,
+          "spatial_coverage": 0.0,
+          "mean_reproj_error": null,
+          "status": "INSUFFICIENT_INLIERS"
+        },
+        {
+          "visit_id": "visit_06",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Aligned against keyframe 'visit_01' with inlier ratio 25.4%.",
+          "inlier_ratio": 0.2535211267605634,
+          "num_inliers": 18,
+          "spatial_coverage": 0.1361,
+          "mean_reproj_error": 1.592,
+          "status": "SUCCESS"
+        },
+        {
+          "visit_id": "visit_07",
+          "success": true,
+          "selected_keyframe_id": "visit_01",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "decision_reason": "Aligned against keyframe 'visit_01' with inlier ratio 25.3%.",
+          "inlier_ratio": 0.25274725274725274,
+          "num_inliers": 23,
+          "spatial_coverage": 0.2382,
+          "mean_reproj_error": 1.32,
+          "status": "SUCCESS"
+        }
+      ]
+    }
+  },
+  "uncertainty_movement_benchmark": {
+    "cases_evaluated": 3,
+    "false_movements_prevented": 2,
+    "evaluations": [
+      {
+        "test_case": "high_precision_aligned",
+        "reproj_error": 0.8,
+        "inlier_ratio": 0.75,
+        "spatial_coverage": 0.65,
+        "base_threshold_px": 35.0,
+        "delta_u_px": 0.0,
+        "effective_threshold_px": 35.0,
+        "displacement_tested_px": 42.0,
+        "fixed_asserts_movement": true,
+        "adaptive_asserts_movement": true,
+        "false_movement_prevented": false,
+        "uncertainty_breakdown": {
+          "base_threshold_px": 35.0,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "u_reproj_px": 0.0,
+          "u_inlier_px": 0.0,
+          "u_coverage_px": 0.0,
+          "u_scale_px": 0.0
+        }
+      },
+      {
+        "test_case": "moderate_error_jitter",
+        "reproj_error": 2.8,
+        "inlier_ratio": 0.4,
+        "spatial_coverage": 0.35,
+        "base_threshold_px": 35.0,
+        "delta_u_px": 15.05,
+        "effective_threshold_px": 50.05,
+        "displacement_tested_px": 42.0,
+        "fixed_asserts_movement": true,
+        "adaptive_asserts_movement": false,
+        "false_movement_prevented": true,
+        "uncertainty_breakdown": {
+          "base_threshold_px": 35.0,
+          "delta_u_px": 15.05,
+          "effective_threshold_px": 50.05,
+          "u_reproj_px": 6.3,
+          "u_inlier_px": 5.0,
+          "u_coverage_px": 3.75,
+          "u_scale_px": 0.0
+        }
+      },
+      {
+        "test_case": "high_distortion_clustered",
+        "reproj_error": 3.6,
+        "inlier_ratio": 0.25,
+        "spatial_coverage": 0.15,
+        "base_threshold_px": 35.0,
+        "delta_u_px": 30.76,
+        "effective_threshold_px": 65.76,
+        "displacement_tested_px": 42.0,
+        "fixed_asserts_movement": true,
+        "adaptive_asserts_movement": false,
+        "false_movement_prevented": true,
+        "uncertainty_breakdown": {
+          "base_threshold_px": 35.0,
+          "delta_u_px": 30.76,
+          "effective_threshold_px": 65.76,
+          "u_reproj_px": 9.1,
+          "u_inlier_px": 8.75,
+          "u_coverage_px": 8.75,
+          "u_scale_px": 4.16
+        }
+      }
+    ]
+  }
+}

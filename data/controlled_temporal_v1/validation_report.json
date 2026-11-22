@@ -1,0 +1,13 @@
+{
+  "dataset_name": "ObjectMemory Controlled Temporal Benchmark",
+  "status": "PASSED",
+  "validation_timestamp": "2026-10-21",
+  "images_validated": 30,
+  "annotations_validated": 178,
+  "expected_events_validated": 14,
+  "sequences_count": 6,
+  "errors": [],
+  "warnings": [],
+  "scientific_classification": "SYNTHETIC_PROCEDURAL_BENCHMARK",
+  "provenance": "CC0-1.0 procedural rendering, non-photographic"
+}

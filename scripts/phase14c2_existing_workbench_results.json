@@ -1,0 +1,1612 @@
+{
+  "benchmark_name": "ObjectMemory Physical Workbench Benchmark (7 Sequences, 35 Visits)",
+  "dataset_name": "desk_pilot_01",
+  "dataset_version": "1.0.0-pilot",
+  "evaluation_version": "14c.2",
+  "timestamp": "2026-10-30T03:50:50Z",
+  "provenance": "Physical smartphone photographs cropped and saved as RGBA PNG without EXIF metadata. Evaluated as a real-world pilot validation sequence, not a formal laboratory metrology benchmark.",
+  "capture_status": "COMPLETE",
+  "summary_counts": {
+    "total_sequences": 1,
+    "total_visits": 7,
+    "images_present_on_disk": 7,
+    "images_awaiting_capture": 0,
+    "total_annotations": 42
+  },
+  "evaluation_configuration": {
+    "confidence_threshold": 0.2,
+    "iou_threshold": 0.5,
+    "canonical_classes": [
+      "book",
+      "bottle",
+      "cell phone",
+      "cup",
+      "scissors"
+    ],
+    "movement_threshold_px": 35.0,
+    "return_to_baseline_threshold_px": 35.0,
+    "min_registration_inlier_ratio": 0.15
+  },
+  "tracks": {
+    "track_a_natural_image_detection": {
+      "track_name": "TRACK_A_NATURAL_IMAGE_DETECTION",
+      "evaluation_mode": "REAL_DETECTOR_INFERENCE",
+      "description": "Evaluates object detection on real workbench photographs using letterbox preprocessing.",
+      "models": {
+        "yolov8n": {
+          "model_identifier": "yolov8n",
+          "preprocessing": "aspect-ratio-preserving letterbox with neutral-grey (114) padding",
+          "confidence_threshold": 0.2,
+          "iou_threshold": 0.5,
+          "total_ground_truth_objects": 34,
+          "total_predictions": 31,
+          "true_positives": 30,
+          "false_positives": 1,
+          "false_negatives": 4,
+          "precision": 0.9677,
+          "recall": 0.8824,
+          "f1_score": 0.9231,
+          "mean_inference_latency_ms": 284.9,
+          "total_frames_timed": 7,
+          "per_class_metrics": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 6,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "precision": 0.8571,
+              "recall": 0.8571,
+              "f1_score": 0.8571
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            }
+          }
+        },
+        "yolo-world": {
+          "model_identifier": "yolo-world",
+          "preprocessing": "aspect-ratio-preserving letterbox with neutral-grey (114) padding",
+          "confidence_threshold": 0.2,
+          "iou_threshold": 0.5,
+          "total_ground_truth_objects": 34,
+          "total_predictions": 24,
+          "true_positives": 23,
+          "false_positives": 1,
+          "false_negatives": 11,
+          "precision": 0.9583,
+          "recall": 0.6765,
+          "f1_score": 0.7931,
+          "mean_inference_latency_ms": 772.31,
+          "total_frames_timed": 7,
+          "per_class_metrics": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 5,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "precision": 0.8333,
+              "recall": 0.7143,
+              "f1_score": 0.7692
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 0,
+              "false_positives": 0,
+              "false_negatives": 6,
+              "precision": "N/A",
+              "recall": 0.0,
+              "f1_score": "N/A"
+            }
+          }
+        }
+      }
+    },
+    "track_b_oracle_temporal_evaluation": {
+      "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION",
+      "evaluation_mode": "ORACLE_GROUND_TRUTH_INPUTS",
+      "description": "Evaluates multi-visit temporal reasoning and entity association with idealized ground-truth bounding boxes.",
+      "primary_metric": {
+        "metric_name": "ENTITY_LEVEL_STATE_ACCURACY",
+        "total_entity_visits": 42,
+        "correct_entity_visits": 20,
+        "accuracy": 0.4762
+      },
+      "secondary_diagnostic_metric": {
+        "metric_name": "TARGET_ENTITY_EVENT_ACCURACY",
+        "primary_visit_events_evaluated": 6,
+        "primary_visit_events_passed": 1,
+        "primary_visit_event_accuracy": 0.1667,
+        "multi_events_evaluated": 13,
+        "multi_events_passed": 2
+      },
+      "total_events_evaluated": 6,
+      "successful_events": 1,
+      "failed_events": 5,
+      "event_accuracy": 0.1667,
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 0,
+      "sequences": {
+        "desk_pilot_01": {
+          "identity_switches": 0,
+          "duplicate_tracks": 0,
+          "entity_level_evaluation": {
+            "metric_name": "ENTITY_LEVEL_STATE_EVALUATION",
+            "evaluation_tier": "PRIMARY_METRIC",
+            "description": "Evaluates per-entity epistemic state correctness across all visits using Kuhn-Munkres matching.",
+            "total_entity_visits_evaluated": 42,
+            "correct_entity_visits": 20,
+            "incorrect_entity_visits": 22,
+            "entity_state_accuracy": 0.4762,
+            "confusion_matrix": {
+              "CONFIRMED_PRESENT": {
+                "CONFIRMED_PRESENT": 17,
+                "CONFIRMED_MOVED": 3,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 5,
+                "AMBIGUOUS_IDENTITY": 5,
+                "UNKNOWN": 0
+              },
+              "CONFIRMED_MOVED": {
+                "CONFIRMED_PRESENT": 0,
+                "CONFIRMED_MOVED": 1,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 1,
+                "UNKNOWN": 0
+              },
+              "PENDING_REMOVAL": {
+                "CONFIRMED_PRESENT": 3,
+                "CONFIRMED_MOVED": 1,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "CONFIRMED_REMOVED": {
+                "CONFIRMED_PRESENT": 3,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 1,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "INSUFFICIENT_EVIDENCE": {
+                "CONFIRMED_PRESENT": 0,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 2,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "AMBIGUOUS_IDENTITY": {
+                "CONFIRMED_PRESENT": 0,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              }
+            },
+            "per_entity_results": {
+              "book_01": {
+                "entity_id": "book_01",
+                "class_label": "book",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_6",
+                "total_visits": 7,
+                "correct_visits": 6,
+                "accuracy": 0.8571,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 3.8px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Displacement (44.8px) within registration uncertainty margin (effective threshold: 48.4px = 35.0px + 13.4px uncertainty); preserved as CONFIRMED_PRESENT."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Displacement (38.2px) within registration uncertainty margin (effective threshold: 54.3px = 35.0px + 19.3px uncertainty); preserved as CONFIRMED_PRESENT."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Initial canonical position is outside registered overlap (65.3% < 70.0%)"
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 31.8px <= 35.0px)."
+                  }
+                ]
+              },
+              "bottle_01": {
+                "entity_id": "bottle_01",
+                "class_label": "bottle",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_4",
+                "total_visits": 7,
+                "correct_visits": 4,
+                "accuracy": 0.5714,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 2.0px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 13.4px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 14.1px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Registration unverified or inlier ratio below threshold; absence cannot be confirmed."
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Non-detection without verified vacancy cannot confirm removal; patch appearance still resembles object."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 22.6px <= 35.0px)."
+                  }
+                ]
+              },
+              "cup_01": {
+                "entity_id": "cup_01",
+                "class_label": "cup",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_2",
+                "total_visits": 7,
+                "correct_visits": 0,
+                "accuracy": 0.0,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity between competing candidates (margin < 0.12); association unresolved."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_MOVED",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity persists."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity persists."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity persists."
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity persists."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "AMBIGUOUS_IDENTITY",
+                    "is_match": false,
+                    "explanation": "Ambiguous identity persists."
+                  }
+                ]
+              },
+              "cup_02": {
+                "entity_id": "cup_02",
+                "class_label": "cup",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_3",
+                "total_visits": 3,
+                "correct_visits": 1,
+                "accuracy": 0.3333,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "INSUFFICIENT_EVIDENCE",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": true,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Non-detection without verified vacancy cannot confirm removal; patch appearance still resembles object."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "PENDING_REMOVAL",
+                    "is_match": false,
+                    "explanation": "Object not detected for 2 consecutive reliably registered visits (patch unverified); transitioning to PENDING_REMOVAL."
+                  }
+                ]
+              },
+              "notebook_01": {
+                "entity_id": "notebook_01",
+                "class_label": "book",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_04_1",
+                "total_visits": 4,
+                "correct_visits": 1,
+                "accuracy": 0.25,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "INSUFFICIENT_EVIDENCE",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": true,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Registration unverified or inlier ratio below threshold; absence cannot be confirmed."
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Canonical location occluded by detection 'scissors' (IoU: 0.46)."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Canonical location occluded by detection 'scissors' (IoU: 0.51)."
+                  }
+                ]
+              },
+              "plant_01": {
+                "entity_id": "plant_01",
+                "class_label": "potted plant",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_1",
+                "total_visits": 7,
+                "correct_visits": 6,
+                "accuracy": 0.8571,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 0, 165, 290] within 12px of 780x636); displacement (6.0px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Initial canonical position is outside registered overlap (62.2% < 70.0%)"
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 0, 118, 240] within 12px of 592x576); displacement (5.8px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 0, 116, 240] within 12px of 584x576); displacement (8.5px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 0, 117, 240] within 12px of 588x576); displacement (19.6px < 100.0px) treated as boundary truncation artifact."
+                  }
+                ]
+              },
+              "scissors_01": {
+                "entity_id": "scissors_01",
+                "class_label": "scissors",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_desk_pilot_01_visit_01_5",
+                "total_visits": 7,
+                "correct_visits": 2,
+                "accuracy": 0.2857,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 13.5px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_MOVED",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": true,
+                    "explanation": "Object relocated by 72.5px to new canonical position (exceeds effective threshold 48.4px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": false,
+                    "explanation": "Canonical location occluded by detection 'book' (IoU: 0.35)."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": false,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": false,
+                    "explanation": "Object remains at relocated position (baseline displacement: 52.1px, step: 35.7px)."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": false,
+                    "explanation": "Object remains at relocated position (baseline displacement: 33.6px, step: 37.8px)."
+                  }
+                ]
+              }
+            },
+            "per_class_results": {
+              "potted plant": {
+                "total_evaluations": 7,
+                "correct_evaluations": 6,
+                "accuracy": 0.8571
+              },
+              "cup": {
+                "total_evaluations": 10,
+                "correct_evaluations": 1,
+                "accuracy": 0.1
+              },
+              "bottle": {
+                "total_evaluations": 7,
+                "correct_evaluations": 4,
+                "accuracy": 0.5714
+              },
+              "scissors": {
+                "total_evaluations": 7,
+                "correct_evaluations": 2,
+                "accuracy": 0.2857
+              },
+              "book": {
+                "total_evaluations": 11,
+                "correct_evaluations": 7,
+                "accuracy": 0.6364
+              }
+            },
+            "uninstantiated_gt_entities": []
+          },
+          "secondary_event_evaluation": {
+            "metric_name": "TARGET_ENTITY_EVENT_EVALUATION",
+            "evaluation_tier": "SECONDARY_DIAGNOSTIC_METRIC",
+            "description": "Evaluates visit events bound to specific target entities, preventing unrelated entity transitions from satisfying events.",
+            "total_events_evaluated": 13,
+            "successful_events": 2,
+            "failed_events": 11,
+            "event_accuracy": 0.1538,
+            "primary_visit_events_evaluated": 6,
+            "primary_visit_events_passed": 1,
+            "primary_visit_event_accuracy": 0.1667,
+            "primary_visit_records": [
+              {
+                "visit_id": "visit_02",
+                "visit_index": 2,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "cup_02",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "cup_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "return_to_baseline",
+                "target_entity_id": "cup_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "reappeared",
+                "target_entity_id": "scissors_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "bottle_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_07",
+                "visit_index": 7,
+                "expected_event": "reappeared",
+                "target_entity_id": "bottle_01",
+                "passed": true
+              }
+            ],
+            "event_records": [
+              {
+                "visit_id": "visit_02",
+                "visit_index": 2,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "cup_02",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_3",
+                "passed": false,
+                "reason": "Target cup_02 (ent_desk_pilot_01_visit_01_3): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "cup_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_2",
+                "passed": false,
+                "reason": "Target cup_01 (ent_desk_pilot_01_visit_01_2): AMBIGUOUS_IDENTITY"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_5",
+                "passed": true,
+                "reason": "Target scissors_01 (ent_desk_pilot_01_visit_01_5): CONFIRMED_MOVED"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_removed",
+                "target_entity_id": "cup_02",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_3",
+                "passed": false,
+                "reason": "Target cup_02 (ent_desk_pilot_01_visit_01_3): PENDING_REMOVAL"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "return_to_baseline",
+                "target_entity_id": "cup_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_2",
+                "passed": false,
+                "reason": "Target cup_01 (ent_desk_pilot_01_visit_01_2): AMBIGUOUS_IDENTITY"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_5",
+                "passed": false,
+                "reason": "Target scissors_01 (ent_desk_pilot_01_visit_01_5): CONFIRMED_MOVED"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "newly_appeared",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_04_1",
+                "passed": false,
+                "reason": "Target notebook_01 (ent_desk_pilot_01_visit_04_1): no update"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_4",
+                "passed": false,
+                "reason": "Target bottle_01 (ent_desk_pilot_01_visit_01_4): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_04_1",
+                "passed": false,
+                "reason": "Target notebook_01 (ent_desk_pilot_01_visit_04_1): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "reappeared",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_5",
+                "passed": false,
+                "reason": "Target scissors_01 (ent_desk_pilot_01_visit_01_5): CONFIRMED_MOVED"
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_4",
+                "passed": false,
+                "reason": "Target bottle_01 (ent_desk_pilot_01_visit_01_4): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_04_1",
+                "passed": false,
+                "reason": "Target notebook_01 (ent_desk_pilot_01_visit_04_1): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_07",
+                "visit_index": 7,
+                "expected_event": "reappeared",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_desk_pilot_01_visit_01_4",
+                "passed": true,
+                "reason": "Target bottle_01 (ent_desk_pilot_01_visit_01_4): CONFIRMED_PRESENT"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "track_c_end_to_end_physical_evaluation": {
+      "track_name": "TRACK_C_END_TO_END_PHYSICAL_EVALUATION",
+      "evaluation_mode": "REAL_DETECTOR_INPUT",
+      "detector_used": "yolov8n (letterbox=True)",
+      "confidence_threshold": 0.2,
+      "description": "Full end-to-end processing of photographic workbench imagery using actual detector outputs.",
+      "primary_metric": {
+        "metric_name": "ENTITY_LEVEL_STATE_ACCURACY",
+        "total_entity_visits": 42,
+        "correct_entity_visits": 28,
+        "accuracy": 0.6667
+      },
+      "secondary_diagnostic_metric": {
+        "metric_name": "TARGET_ENTITY_EVENT_ACCURACY",
+        "primary_visit_events_evaluated": 6,
+        "primary_visit_events_passed": 3,
+        "primary_visit_event_accuracy": 0.5,
+        "multi_events_evaluated": 13,
+        "multi_events_passed": 4
+      },
+      "total_visits_processed": 7,
+      "total_detections_produced": 52,
+      "total_registration_failures": 1,
+      "total_events_evaluated": 6,
+      "successful_events": 3,
+      "failed_events": 3,
+      "end_to_end_event_accuracy": 0.5,
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 1,
+      "sequences": {
+        "desk_pilot_01": {
+          "visits_processed": 7,
+          "detections_produced": 52,
+          "registration_failures": 1,
+          "entities_persisted": 8,
+          "duplicate_tracks": 1,
+          "identity_switches": 0,
+          "entity_level_evaluation": {
+            "metric_name": "ENTITY_LEVEL_STATE_EVALUATION",
+            "evaluation_tier": "PRIMARY_METRIC",
+            "description": "Evaluates per-entity epistemic state correctness across all visits using Kuhn-Munkres matching.",
+            "total_entity_visits_evaluated": 42,
+            "correct_entity_visits": 28,
+            "incorrect_entity_visits": 14,
+            "entity_state_accuracy": 0.6667,
+            "confusion_matrix": {
+              "CONFIRMED_PRESENT": {
+                "CONFIRMED_PRESENT": 24,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 1,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 5,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "CONFIRMED_MOVED": {
+                "CONFIRMED_PRESENT": 1,
+                "CONFIRMED_MOVED": 1,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "PENDING_REMOVAL": {
+                "CONFIRMED_PRESENT": 1,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 1,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 2,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "CONFIRMED_REMOVED": {
+                "CONFIRMED_PRESENT": 1,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 3,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "INSUFFICIENT_EVIDENCE": {
+                "CONFIRMED_PRESENT": 0,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 2,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              },
+              "AMBIGUOUS_IDENTITY": {
+                "CONFIRMED_PRESENT": 0,
+                "CONFIRMED_MOVED": 0,
+                "PENDING_REMOVAL": 0,
+                "CONFIRMED_REMOVED": 0,
+                "INSUFFICIENT_EVIDENCE": 0,
+                "AMBIGUOUS_IDENTITY": 0,
+                "UNKNOWN": 0
+              }
+            },
+            "per_entity_results": {
+              "book_01": {
+                "entity_id": "book_01",
+                "class_label": "book",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_visit_01_8",
+                "total_visits": 7,
+                "correct_visits": 6,
+                "accuracy": 0.8571,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 3.8px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 30.6px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([291, 264, 590, 462] within 12px of 592x576); displacement (20.4px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Initial canonical position is outside registered overlap (65.3% < 70.0%)"
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([298, 264, 578, 471] within 12px of 588x576); displacement (8.6px < 100.0px) treated as boundary truncation artifact."
+                  }
+                ]
+              },
+              "bottle_01": {
+                "entity_id": "bottle_01",
+                "class_label": "bottle",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_visit_01_1",
+                "total_visits": 7,
+                "correct_visits": 4,
+                "accuracy": 0.5714,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 1.4px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 0.4px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 4.9px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Registration unverified or inlier ratio below threshold; absence cannot be confirmed."
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Non-detection without verified vacancy cannot confirm removal; patch appearance still resembles object."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 1.9px <= 35.0px)."
+                  }
+                ]
+              },
+              "cup_01": {
+                "entity_id": "cup_01",
+                "class_label": "cup",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_visit_01_2",
+                "total_visits": 7,
+                "correct_visits": 6,
+                "accuracy": 0.8571,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 5.9px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_MOVED",
+                    "observed_state": "CONFIRMED_MOVED",
+                    "is_match": true,
+                    "explanation": "Object relocated by 577.7px to new canonical position (exceeds effective threshold 48.4px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object returned to initial baseline position (moved 577.2px since last observation; baseline displacement: 1.4px <= 54.3px)."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 1.5px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([10, 254, 157, 414] within 12px of 588x576); displacement (3.1px < 100.0px) treated as boundary truncation artifact."
+                  }
+                ]
+              },
+              "cup_02": {
+                "entity_id": "cup_02",
+                "class_label": "cup",
+                "is_instantiated": false,
+                "mapped_system_id": null,
+                "total_visits": 3,
+                "correct_visits": 1,
+                "accuracy": 0.3333,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "INSUFFICIENT_EVIDENCE",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": true,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  }
+                ]
+              },
+              "notebook_01": {
+                "entity_id": "notebook_01",
+                "class_label": "book",
+                "is_instantiated": false,
+                "mapped_system_id": null,
+                "total_visits": 4,
+                "correct_visits": 1,
+                "accuracy": 0.25,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "INSUFFICIENT_EVIDENCE",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": true,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_REMOVED",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Unmatched ground-truth entity (never instantiated by detector)"
+                  }
+                ]
+              },
+              "plant_01": {
+                "entity_id": "plant_01",
+                "class_label": "potted plant",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_visit_01_5",
+                "total_visits": 7,
+                "correct_visits": 6,
+                "accuracy": 0.8571,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([2, 1, 193, 353] within 12px of 780x636); displacement (5.6px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Initial canonical position is outside registered overlap (69.2% < 70.0%)"
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 7, 166, 292] within 12px of 592x576); displacement (11.0px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([5, 5, 165, 296] within 12px of 584x576); displacement (6.7px < 100.0px) treated as boundary truncation artifact."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Detection clipped by image boundary ([0, 4, 143, 292] within 12px of 588x576); displacement (12.1px < 100.0px) treated as boundary truncation artifact."
+                  }
+                ]
+              },
+              "scissors_01": {
+                "entity_id": "scissors_01",
+                "class_label": "scissors",
+                "is_instantiated": true,
+                "mapped_system_id": "ent_visit_01_3",
+                "total_visits": 7,
+                "correct_visits": 4,
+                "accuracy": 0.5714,
+                "evaluations": [
+                  {
+                    "visit_id": "visit_01",
+                    "visit_index": 1,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "INSUFFICIENT_EVIDENCE",
+                    "is_match": false,
+                    "explanation": "Historical state record missing for visit"
+                  },
+                  {
+                    "visit_id": "visit_02",
+                    "visit_index": 2,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Object remains present (displacement 0.6px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_03",
+                    "visit_index": 3,
+                    "expected_state": "CONFIRMED_MOVED",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": false,
+                    "explanation": "Object remains present (displacement 28.0px <= 35.0px)."
+                  },
+                  {
+                    "visit_id": "visit_04",
+                    "visit_index": 4,
+                    "expected_state": "PENDING_REMOVAL",
+                    "observed_state": "PENDING_REMOVAL",
+                    "is_match": true,
+                    "explanation": "Vacant patch verified for 1 consecutive visit(s); transitioning to PENDING_REMOVAL."
+                  },
+                  {
+                    "visit_id": "visit_05",
+                    "visit_index": 5,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "PENDING_REMOVAL",
+                    "is_match": false,
+                    "explanation": "Registration unverified or failed"
+                  },
+                  {
+                    "visit_id": "visit_06",
+                    "visit_index": 6,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Re-detected near prior position (step displacement: 15.4px <= 56.0px)."
+                  },
+                  {
+                    "visit_id": "visit_07",
+                    "visit_index": 7,
+                    "expected_state": "CONFIRMED_PRESENT",
+                    "observed_state": "CONFIRMED_PRESENT",
+                    "is_match": true,
+                    "explanation": "Displacement (39.4px) within registration uncertainty margin (effective threshold: 52.5px = 35.0px + 17.5px uncertainty); preserved as CONFIRMED_PRESENT."
+                  }
+                ]
+              }
+            },
+            "per_class_results": {
+              "potted plant": {
+                "total_evaluations": 7,
+                "correct_evaluations": 6,
+                "accuracy": 0.8571
+              },
+              "cup": {
+                "total_evaluations": 10,
+                "correct_evaluations": 7,
+                "accuracy": 0.7
+              },
+              "bottle": {
+                "total_evaluations": 7,
+                "correct_evaluations": 4,
+                "accuracy": 0.5714
+              },
+              "scissors": {
+                "total_evaluations": 7,
+                "correct_evaluations": 4,
+                "accuracy": 0.5714
+              },
+              "book": {
+                "total_evaluations": 11,
+                "correct_evaluations": 7,
+                "accuracy": 0.6364
+              }
+            },
+            "uninstantiated_gt_entities": [
+              "cup_02",
+              "notebook_01"
+            ]
+          },
+          "secondary_event_evaluation": {
+            "metric_name": "TARGET_ENTITY_EVENT_EVALUATION",
+            "evaluation_tier": "SECONDARY_DIAGNOSTIC_METRIC",
+            "description": "Evaluates visit events bound to specific target entities, preventing unrelated entity transitions from satisfying events.",
+            "total_events_evaluated": 13,
+            "successful_events": 4,
+            "failed_events": 9,
+            "event_accuracy": 0.3077,
+            "primary_visit_events_evaluated": 6,
+            "primary_visit_events_passed": 3,
+            "primary_visit_event_accuracy": 0.5,
+            "primary_visit_records": [
+              {
+                "visit_id": "visit_02",
+                "visit_index": 2,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "cup_02",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "cup_01",
+                "passed": true
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "return_to_baseline",
+                "target_entity_id": "cup_01",
+                "passed": true
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "reappeared",
+                "target_entity_id": "scissors_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "bottle_01",
+                "passed": false
+              },
+              {
+                "visit_id": "visit_07",
+                "visit_index": 7,
+                "expected_event": "reappeared",
+                "target_entity_id": "bottle_01",
+                "passed": true
+              }
+            ],
+            "event_records": [
+              {
+                "visit_id": "visit_02",
+                "visit_index": 2,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "cup_02",
+                "target_sys_id": null,
+                "passed": false,
+                "reason": "Target cup_02 (None): no update"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "cup_01",
+                "target_sys_id": "ent_visit_01_2",
+                "passed": true,
+                "reason": "Target cup_01 (ent_visit_01_2): CONFIRMED_MOVED"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_moved",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_visit_01_3",
+                "passed": false,
+                "reason": "Target scissors_01 (ent_visit_01_3): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_03",
+                "visit_index": 3,
+                "expected_event": "object_removed",
+                "target_entity_id": "cup_02",
+                "target_sys_id": null,
+                "passed": false,
+                "reason": "Target cup_02 (None): no update"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "return_to_baseline",
+                "target_entity_id": "cup_01",
+                "target_sys_id": "ent_visit_01_2",
+                "passed": true,
+                "reason": "Target cup_01 (ent_visit_01_2): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_visit_01_3",
+                "passed": true,
+                "reason": "Target scissors_01 (ent_visit_01_3): PENDING_REMOVAL"
+              },
+              {
+                "visit_id": "visit_04",
+                "visit_index": 4,
+                "expected_event": "newly_appeared",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": null,
+                "passed": false,
+                "reason": "Target notebook_01 (None): no update"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_visit_01_1",
+                "passed": false,
+                "reason": "Target bottle_01 (ent_visit_01_1): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "object_pending_removal",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": null,
+                "passed": false,
+                "reason": "Target notebook_01 (None): no update"
+              },
+              {
+                "visit_id": "visit_05",
+                "visit_index": 5,
+                "expected_event": "reappeared",
+                "target_entity_id": "scissors_01",
+                "target_sys_id": "ent_visit_01_3",
+                "passed": false,
+                "reason": "Target scissors_01 (ent_visit_01_3): PENDING_REMOVAL"
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_visit_01_1",
+                "passed": false,
+                "reason": "Target bottle_01 (ent_visit_01_1): CONFIRMED_PRESENT"
+              },
+              {
+                "visit_id": "visit_06",
+                "visit_index": 6,
+                "expected_event": "object_removed",
+                "target_entity_id": "notebook_01",
+                "target_sys_id": null,
+                "passed": false,
+                "reason": "Target notebook_01 (None): no update"
+              },
+              {
+                "visit_id": "visit_07",
+                "visit_index": 7,
+                "expected_event": "reappeared",
+                "target_entity_id": "bottle_01",
+                "target_sys_id": "ent_visit_01_1",
+                "passed": true,
+                "reason": "Target bottle_01 (ent_visit_01_1): CONFIRMED_PRESENT"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "known_limitations_and_provenance_notes": [
+    "Track A requires genuine photographic imagery to compute valid precision, recall, and mAP.",
+    "Track B evaluates multi-visit state transitions with oracle bounding boxes to establish algorithmic upper bounds.",
+    "Track C evaluates actual detector predictions through the complete pipeline without substituting ground-truth boxes.",
+    "Planar homography registration assumes approximately coplanar workbench surface; significant 3D camera parallax will cause perspective distortion.",
+    "The 35-pixel movement threshold is defined in nominal 1920x1080 pixel coordinates."
+  ]
+}

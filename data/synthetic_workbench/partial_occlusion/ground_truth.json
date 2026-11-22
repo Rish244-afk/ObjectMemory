@@ -1,0 +1,50 @@
+{
+  "scenario_name": "partial_occlusion",
+  "description": "Workbench where one object is partially occluded by another surface.",
+  "is_synthetic": true,
+  "random_seed": 127,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": true,
+      "is_ambiguous": false,
+      "notes": "55% occluded by clipboard"
+    },
+    {
+      "object_id": "obj_pcb",
+      "label": "pcb",
+      "ref_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "query_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    }
+  ],
+  "metadata": {}
+}

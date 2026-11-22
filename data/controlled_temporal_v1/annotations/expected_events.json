@@ -1,0 +1,93 @@
+[
+  {
+    "sequence_id": "S01_lighting_only",
+    "visit_index": 2,
+    "event": "lighting_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  },
+  {
+    "sequence_id": "S01_lighting_only",
+    "visit_index": 4,
+    "event": "lighting_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  },
+  {
+    "sequence_id": "S02_cup_move_return",
+    "visit_index": 3,
+    "event": "object_moved",
+    "object_id": "cup_01"
+  },
+  {
+    "sequence_id": "S02_cup_move_return",
+    "visit_index": 4,
+    "event": "return_to_baseline",
+    "object_id": "cup_01"
+  },
+  {
+    "sequence_id": "S03_book_occlusion",
+    "visit_index": 3,
+    "event": "partial_occlusion",
+    "object_id": "book_01",
+    "should_create_removal": false
+  },
+  {
+    "sequence_id": "S03_book_occlusion",
+    "visit_index": 5,
+    "event": "reobserved",
+    "object_id": "book_01"
+  },
+  {
+    "sequence_id": "S04_bottle_removal",
+    "visit_index": 4,
+    "event": "object_removed",
+    "object_id": "bottle_01"
+  },
+  {
+    "sequence_id": "S04_bottle_removal",
+    "visit_index": 5,
+    "event": "continued_absence",
+    "object_id": "bottle_01"
+  },
+  {
+    "sequence_id": "S05_phone_move_persistent",
+    "visit_index": 3,
+    "event": "object_moved",
+    "object_id": "phone_01"
+  },
+  {
+    "sequence_id": "S05_phone_move_persistent",
+    "visit_index": 4,
+    "event": "movement_persists",
+    "object_id": "phone_01"
+  },
+  {
+    "sequence_id": "S06_camera_view_nuisance",
+    "visit_index": 2,
+    "event": "camera_view_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  },
+  {
+    "sequence_id": "S06_camera_view_nuisance",
+    "visit_index": 3,
+    "event": "camera_view_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  },
+  {
+    "sequence_id": "S06_camera_view_nuisance",
+    "visit_index": 4,
+    "event": "camera_view_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  },
+  {
+    "sequence_id": "S06_camera_view_nuisance",
+    "visit_index": 5,
+    "event": "camera_view_change",
+    "target": "scene",
+    "should_create_object_movement": false
+  }
+]

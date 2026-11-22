@@ -1,0 +1,45 @@
+{
+  "scenario_name": "object_removed",
+  "description": "Workbench where one component box has been completely removed.",
+  "is_synthetic": true,
+  "random_seed": 93,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    },
+    {
+      "object_id": "obj_compbox",
+      "label": "component_box",
+      "ref_bbox": [
+        140,
+        280,
+        270,
+        390
+      ],
+      "query_bbox": null,
+      "ground_truth_change": "REMOVED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Object removed, vacant mat remaining"
+    }
+  ],
+  "metadata": {}
+}

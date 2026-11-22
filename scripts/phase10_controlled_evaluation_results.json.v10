@@ -1,0 +1,468 @@
+{
+  "benchmark_name": "ObjectMemory Controlled Temporal Benchmark (6 Sequences, 30 Visits)",
+  "timestamp": "2026-10-21T04:06:56Z",
+  "provenance": "CC0-1.0 procedural rendering, non-photographic",
+  "scientific_classification": "CONTROLLED_SYNTHETIC_BENCHMARK",
+  "axes": {
+    "axis_1_object_detection": {
+      "scientific_caveat": "Illustrations are synthetic drawings. Detectors trained on natural photographs exhibit low recall on stylized objects. This axis verifies software execution and interoperability, NOT model superiority or real-world accuracy.",
+      "total_images_evaluated": 30,
+      "total_ground_truth_objects": 178,
+      "yolov8n": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 93.0
+      },
+      "yolo_world": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 253.85
+      }
+    },
+    "axis_2_registration": {
+      "total_pairs_evaluated": 24,
+      "successful_pairs": 24,
+      "overall_success_rate": 1.0,
+      "sequences": {
+        "S01_lighting_only": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.984,
+              "latency_ms": 98.69
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 93.31
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.9919,
+              "latency_ms": 89.73
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 96.81
+            }
+          ]
+        },
+        "S02_cup_move_return": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 91.76
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 0.9107,
+              "latency_ms": 85.96
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 128,
+              "inlier_ratio": 1.0,
+              "latency_ms": 100.06
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 101.34
+            }
+          ]
+        },
+        "S03_book_occlusion": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 114.7
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 122,
+              "inlier_ratio": 1.0,
+              "latency_ms": 137.92
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 124,
+              "inlier_ratio": 1.0,
+              "latency_ms": 129.0
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 91.52
+            }
+          ]
+        },
+        "S04_bottle_removal": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 130,
+              "inlier_ratio": 1.0,
+              "latency_ms": 89.29
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 83.69
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 104,
+              "inlier_ratio": 1.0,
+              "latency_ms": 77.88
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 1.0,
+              "latency_ms": 83.12
+            }
+          ]
+        },
+        "S05_phone_move_persistent": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 135,
+              "inlier_ratio": 1.0,
+              "latency_ms": 100.41
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 99.03
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 115,
+              "inlier_ratio": 0.9583,
+              "latency_ms": 91.73
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 93.55
+            }
+          ]
+        },
+        "S06_camera_view_nuisance": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 84,
+              "inlier_ratio": 0.6829,
+              "latency_ms": 84.41
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6154,
+              "latency_ms": 98.02
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 76,
+              "inlier_ratio": 0.6281,
+              "latency_ms": 95.83
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6372,
+              "latency_ms": 106.06
+            }
+          ]
+        }
+      }
+    },
+    "axis_3_cross_visit_association": {
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 4,
+      "sequences": {
+        "S01_lighting_only": {
+          "total_system_entities": 10,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 4,
+          "identity_switches": 0
+        },
+        "S02_cup_move_return": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S03_book_occlusion": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S04_bottle_removal": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S05_phone_move_persistent": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S06_camera_view_nuisance": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        }
+      }
+    },
+    "axis_4_temporal_event_classification": {
+      "total_expected_events": 14,
+      "successful_events": 14,
+      "event_accuracy": 1.0,
+      "false_movements": 0,
+      "false_removals": 0,
+      "evaluations": [
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 2,
+          "event": "lighting_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        },
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 4,
+          "event": "lighting_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        },
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 3,
+          "event": "object_moved",
+          "target": "cup_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_moved_updates": [
+              "ent_S02_cup_move_return_v1_1"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 4,
+          "event": "return_to_baseline",
+          "target": "cup_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_return_updates": [
+              "ent_S02_cup_move_return_v1_1"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 3,
+          "event": "partial_occlusion",
+          "target": "book_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_removals": []
+          }
+        },
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 5,
+          "event": "reobserved",
+          "target": "book_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "present_updates": [
+              "ent_S03_book_occlusion_v1_1",
+              "ent_S03_book_occlusion_v1_2",
+              "ent_S03_book_occlusion_v1_3",
+              "ent_S03_book_occlusion_v1_4",
+              "ent_S03_book_occlusion_v1_5",
+              "ent_S03_book_occlusion_v1_6"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 4,
+          "event": "object_removed",
+          "target": "bottle_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "pending_or_removed": []
+          }
+        },
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 5,
+          "event": "continued_absence",
+          "target": "bottle_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "absence_updates": [
+              "ent_S04_bottle_removal_v1_3"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 3,
+          "event": "object_moved",
+          "target": "phone_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_moved_updates": [
+              "ent_S05_phone_move_persistent_v1_4"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 4,
+          "event": "movement_persists",
+          "target": "phone_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "persistent_updates": [
+              "ent_S05_phone_move_persistent_v1_4"
+            ]
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 2,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 3,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 4,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 5,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": []
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "benchmark_name": "ObjectMemory Physical Workbench Benchmark (7 Sequences, 35 Visits)",
+  "dataset_name": "desk_pilot_01",
+  "dataset_version": "1.0.0-pilot",
+  "evaluation_version": "14c",
+  "timestamp": "2026-10-29T17:26:27Z",
+  "provenance": "Physical smartphone photographs cropped and saved as RGBA PNG without EXIF metadata. Evaluated as a real-world pilot validation sequence, not a formal laboratory metrology benchmark.",
+  "capture_status": "COMPLETE",
+  "summary_counts": {
+    "total_sequences": 1,
+    "total_visits": 7,
+    "images_present_on_disk": 7,
+    "images_awaiting_capture": 0,
+    "total_annotations": 42
+  },
+  "evaluation_configuration": {
+    "confidence_threshold": 0.2,
+    "iou_threshold": 0.5,
+    "canonical_classes": [
+      "book",
+      "bottle",
+      "cell phone",
+      "cup",
+      "scissors"
+    ],
+    "movement_threshold_px": 35.0,
+    "return_to_baseline_threshold_px": 35.0,
+    "min_registration_inlier_ratio": 0.15
+  },
+  "tracks": {
+    "track_a_natural_image_detection": {
+      "track_name": "TRACK_A_NATURAL_IMAGE_DETECTION",
+      "evaluation_mode": "REAL_DETECTOR_INFERENCE",
+      "description": "Evaluates object detection on real workbench photographs using letterbox preprocessing.",
+      "models": {
+        "yolov8n": {
+          "model_identifier": "yolov8n",
+          "preprocessing": "aspect-ratio-preserving letterbox with neutral-grey (114) padding",
+          "confidence_threshold": 0.2,
+          "iou_threshold": 0.5,
+          "total_ground_truth_objects": 34,
+          "total_predictions": 31,
+          "true_positives": 30,
+          "false_positives": 1,
+          "false_negatives": 4,
+          "precision": 0.9677,
+          "recall": 0.8824,
+          "f1_score": 0.9231,
+          "mean_inference_latency_ms": 290.31,
+          "total_frames_timed": 7,
+          "per_class_metrics": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 6,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "precision": 0.8571,
+              "recall": 0.8571,
+              "f1_score": 0.8571
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            }
+          }
+        },
+        "yolo-world": {
+          "model_identifier": "yolo-world",
+          "preprocessing": "aspect-ratio-preserving letterbox with neutral-grey (114) padding",
+          "confidence_threshold": 0.2,
+          "iou_threshold": 0.5,
+          "total_ground_truth_objects": 34,
+          "total_predictions": 24,
+          "true_positives": 23,
+          "false_positives": 1,
+          "false_negatives": 11,
+          "precision": 0.9583,
+          "recall": 0.6765,
+          "f1_score": 0.7931,
+          "mean_inference_latency_ms": 726.02,
+          "total_frames_timed": 7,
+          "per_class_metrics": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 5,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "precision": 0.8333,
+              "recall": 0.7143,
+              "f1_score": 0.7692
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 0,
+              "false_positives": 0,
+              "false_negatives": 6,
+              "precision": "N/A",
+              "recall": 0.0,
+              "f1_score": "N/A"
+            }
+          }
+        }
+      }
+    },
+    "track_b_oracle_temporal_evaluation": {
+      "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION",
+      "evaluation_mode": "ORACLE_GROUND_TRUTH_INPUTS",
+      "description": "Evaluates multi-visit temporal reasoning and entity association with idealized ground-truth bounding boxes.",
+      "total_events_evaluated": 6,
+      "successful_events": 3,
+      "failed_events": 3,
+      "event_accuracy": 0.5,
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 0,
+      "false_movements": 0,
+      "false_removals": 0,
+      "sequences": {
+        "desk_pilot_01": {
+          "identity_switches": 0,
+          "duplicate_tracks": 0,
+          "events_evaluated": 6,
+          "events_passed": 3,
+          "event_records": [
+            {
+              "visit_index": 2,
+              "visit_id": "visit_02",
+              "expected_event": "object_pending_removal",
+              "passed": false
+            },
+            {
+              "visit_index": 3,
+              "visit_id": "visit_03",
+              "expected_event": "object_moved",
+              "passed": true
+            },
+            {
+              "visit_index": 4,
+              "visit_id": "visit_04",
+              "expected_event": "return_to_baseline",
+              "passed": true
+            },
+            {
+              "visit_index": 5,
+              "visit_id": "visit_05",
+              "expected_event": "object_pending_removal",
+              "passed": true
+            },
+            {
+              "visit_index": 6,
+              "visit_id": "visit_06",
+              "expected_event": "object_removed",
+              "passed": false
+            },
+            {
+              "visit_index": 7,
+              "visit_id": "visit_07",
+              "expected_event": "object_removed",
+              "passed": false
+            }
+          ]
+        }
+      }
+    },
+    "track_c_end_to_end_physical_evaluation": {
+      "track_name": "TRACK_C_END_TO_END_PHYSICAL_EVALUATION",
+      "evaluation_mode": "REAL_DETECTOR_INPUT",
+      "detector_used": "yolov8n (letterbox=True)",
+      "confidence_threshold": 0.2,
+      "description": "Full end-to-end processing of photographic workbench imagery using actual detector outputs.",
+      "total_visits_processed": 7,
+      "total_detections_produced": 52,
+      "total_registration_failures": 1,
+      "total_events_evaluated": 6,
+      "successful_events": 3,
+      "failed_events": 3,
+      "end_to_end_event_accuracy": 0.5,
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 1,
+      "sequences": {
+        "desk_pilot_01": {
+          "visits_processed": 7,
+          "detections_produced": 52,
+          "registration_failures": 1,
+          "entities_persisted": 8,
+          "duplicate_tracks": 1,
+          "identity_switches": 0,
+          "events_evaluated": 6,
+          "events_passed": 3,
+          "events": [
+            {
+              "visit_index": 2,
+              "visit_id": "visit_02",
+              "expected_event": "object_pending_removal",
+              "passed": false
+            },
+            {
+              "visit_index": 3,
+              "visit_id": "visit_03",
+              "expected_event": "object_moved",
+              "passed": true
+            },
+            {
+              "visit_index": 4,
+              "visit_id": "visit_04",
+              "expected_event": "return_to_baseline",
+              "passed": true
+            },
+            {
+              "visit_index": 5,
+              "visit_id": "visit_05",
+              "expected_event": "object_pending_removal",
+              "passed": true
+            },
+            {
+              "visit_index": 6,
+              "visit_id": "visit_06",
+              "expected_event": "object_removed",
+              "passed": false
+            },
+            {
+              "visit_index": 7,
+              "visit_id": "visit_07",
+              "expected_event": "object_removed",
+              "passed": false
+            }
+          ]
+        }
+      }
+    }
+  },
+  "known_limitations_and_provenance_notes": [
+    "Track A requires genuine photographic imagery to compute valid precision, recall, and mAP.",
+    "Track B evaluates multi-visit state transitions with oracle bounding boxes to establish algorithmic upper bounds.",
+    "Track C evaluates actual detector predictions through the complete pipeline without substituting ground-truth boxes.",
+    "Planar homography registration assumes approximately coplanar workbench surface; significant 3D camera parallax will cause perspective distortion.",
+    "The 35-pixel movement threshold is defined in nominal 1920x1080 pixel coordinates."
+  ]
+}

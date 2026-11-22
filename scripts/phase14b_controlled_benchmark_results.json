@@ -1,0 +1,1092 @@
+{
+  "benchmark_name": "ObjectMemory Controlled Temporal Benchmark (6 Sequences, 30 Visits)",
+  "evaluation_version": "14b",
+  "timestamp": "2026-10-29T16:40:59Z",
+  "provenance": "CC0-1.0 procedural rendering, non-photographic",
+  "scientific_classification": "CONTROLLED_SYNTHETIC_BENCHMARK",
+  "evaluation_history": [
+    {
+      "version": "10.0",
+      "timestamp": "2026-10-21T04:06:56Z",
+      "notes": "Initial Phase 10 evaluation (contained hardcoded matched=True defect for S04 v4)."
+    },
+    {
+      "version": "10a",
+      "timestamp": "2026-10-21T04:24:56Z",
+      "notes": "Phase 10A corrected evaluation: replaced hardcoded matched=True with genuine CONFIRMED_REMOVED check."
+    },
+    {
+      "version": "14b",
+      "timestamp": "2026-10-29T16:40:59Z",
+      "notes": "Phase 14B: Decoupled into Track A (Detector), Track B (Oracle Temporal), and Track C (End-to-End)."
+    }
+  ],
+  "tracks": {
+    "track_a_detector_evaluation": {
+      "scientific_caveat": "Illustrations are synthetic drawings. Detectors trained on natural photographs exhibit low recall on stylized objects. This axis verifies software execution and interoperability, NOT model superiority or real-world accuracy.",
+      "total_images_evaluated": 30,
+      "total_ground_truth_objects": 178,
+      "yolov8n": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 395.79
+      },
+      "yolo_world": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 754.47
+      }
+    },
+    "track_b_oracle_temporal_evaluation": {
+      "association": {
+        "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION (Association)",
+        "evaluation_mode": "ORACLE / GROUND-TRUTH-INPUT",
+        "description": "Cross-visit entity association evaluated with ground-truth oracle boxes to isolate identity tracking from detector failures.",
+        "total_identity_switches": 0,
+        "total_duplicate_tracks": 4,
+        "sequences": {
+          "S01_lighting_only": {
+            "total_system_entities": 10,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 4,
+            "identity_switches": 0
+          },
+          "S02_cup_move_return": {
+            "total_system_entities": 6,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 0,
+            "identity_switches": 0
+          },
+          "S03_book_occlusion": {
+            "total_system_entities": 6,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 0,
+            "identity_switches": 0
+          },
+          "S04_bottle_removal": {
+            "total_system_entities": 6,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 0,
+            "identity_switches": 0
+          },
+          "S05_phone_move_persistent": {
+            "total_system_entities": 6,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 0,
+            "identity_switches": 0
+          },
+          "S06_camera_view_nuisance": {
+            "total_system_entities": 6,
+            "unique_gt_entities": 6,
+            "duplicate_tracks": 0,
+            "identity_switches": 0
+          }
+        }
+      },
+      "event_classification": {
+        "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION (Event Classification)",
+        "evaluation_mode": "ORACLE / GROUND-TRUTH-INPUT",
+        "description": "Multi-visit epistemic state transitions evaluated with ground-truth oracle boxes to measure temporal logic under idealized inputs.",
+        "total_expected_events": 14,
+        "successful_events": 13,
+        "failed_events": 1,
+        "event_accuracy": 0.9286,
+        "false_movements": 0,
+        "false_removals": 0,
+        "evaluations": [
+          {
+            "sequence_id": "S01_lighting_only",
+            "visit_index": 2,
+            "event": "lighting_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S01_lighting_only",
+            "visit_index": 4,
+            "event": "lighting_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S02_cup_move_return",
+            "visit_index": 3,
+            "event": "object_moved",
+            "target": "cup_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "detected_moved_updates": [
+                "ent_S02_cup_move_return_v1_1"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S02_cup_move_return",
+            "visit_index": 4,
+            "event": "return_to_baseline",
+            "target": "cup_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "detected_return_updates": [
+                "ent_S02_cup_move_return_v1_1"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S03_book_occlusion",
+            "visit_index": 3,
+            "event": "partial_occlusion",
+            "target": "book_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_removals": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S03_book_occlusion",
+            "visit_index": 5,
+            "event": "reobserved",
+            "target": "book_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "present_updates": [
+                "ent_S03_book_occlusion_v1_2"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S04_bottle_removal",
+            "visit_index": 4,
+            "event": "object_removed",
+            "target": "bottle_01",
+            "matched_expected_behavior": false,
+            "details": {
+              "target_object": "bottle_01",
+              "confirmed_removed_entities": [],
+              "all_updates_for_target": [
+                {
+                  "entity_id": "ent_S04_bottle_removal_v1_3",
+                  "label": "bottle",
+                  "prior_state": "EpistemicState.CONFIRMED_PRESENT",
+                  "new_state": "EpistemicState.CONFIRMED_PRESENT",
+                  "explanation": "Non-detection without verified vacancy cannot confirm removal; patch appearance still resembles object."
+                }
+              ],
+              "passed": false,
+              "failure_reason": "Engine did not transition target entity to CONFIRMED_REMOVED; pending or unverified absence does not satisfy confirmed removal."
+            }
+          },
+          {
+            "sequence_id": "S04_bottle_removal",
+            "visit_index": 5,
+            "event": "continued_absence",
+            "target": "bottle_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "absence_updates": [
+                "ent_S04_bottle_removal_v1_3"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S05_phone_move_persistent",
+            "visit_index": 3,
+            "event": "object_moved",
+            "target": "phone_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "detected_moved_updates": [
+                "ent_S05_phone_move_persistent_v1_4"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S05_phone_move_persistent",
+            "visit_index": 4,
+            "event": "movement_persists",
+            "target": "phone_01",
+            "matched_expected_behavior": true,
+            "details": {
+              "persistent_updates": [
+                "ent_S05_phone_move_persistent_v1_4"
+              ],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S06_camera_view_nuisance",
+            "visit_index": 2,
+            "event": "camera_view_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S06_camera_view_nuisance",
+            "visit_index": 3,
+            "event": "camera_view_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S06_camera_view_nuisance",
+            "visit_index": 4,
+            "event": "camera_view_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          },
+          {
+            "sequence_id": "S06_camera_view_nuisance",
+            "visit_index": 5,
+            "event": "camera_view_change",
+            "target": "scene",
+            "matched_expected_behavior": true,
+            "details": {
+              "spurious_movements": [],
+              "passed": true
+            }
+          }
+        ]
+      }
+    },
+    "track_c_end_to_end_temporal_evaluation": {
+      "track_name": "TRACK_C_END_TO_END_TEMPORAL_EVALUATION",
+      "evaluation_mode": "REAL_DETECTOR_INPUT",
+      "detector_used": "yolov8n (letterbox=True)",
+      "confidence_threshold": 0.15,
+      "total_sequences": 6,
+      "total_visits": 30,
+      "total_gt_objects": 178,
+      "total_predicted_detections": 51,
+      "detector_recall_on_procedural_drawings": 0.2865,
+      "dataset_limitation_statement": "Procedural synthetic images (controlled_temporal_v1) consist of stylized line-drawings on uniform background. Standard neural detectors trained on COCO photographic imagery produce 0 detections on these non-photographic procedural fixtures. Consequently, end-to-end temporal reasoning cannot be established on procedural line drawings without either domain fine-tuning or photographic images. Track B (Oracle Inputs) isolates and validates the temporal engine state machine independently of detector localization failures.",
+      "sequences": {
+        "S01_lighting_only": {
+          "visits_processed": 5,
+          "total_detector_predictions": 10,
+          "entities_created": 2
+        },
+        "S02_cup_move_return": {
+          "visits_processed": 5,
+          "total_detector_predictions": 10,
+          "entities_created": 2
+        },
+        "S03_book_occlusion": {
+          "visits_processed": 5,
+          "total_detector_predictions": 8,
+          "entities_created": 2
+        },
+        "S04_bottle_removal": {
+          "visits_processed": 5,
+          "total_detector_predictions": 8,
+          "entities_created": 2
+        },
+        "S05_phone_move_persistent": {
+          "visits_processed": 5,
+          "total_detector_predictions": 4,
+          "entities_created": 2
+        },
+        "S06_camera_view_nuisance": {
+          "visits_processed": 5,
+          "total_detector_predictions": 11,
+          "entities_created": 4
+        }
+      }
+    },
+    "registration_benchmark": {
+      "total_pairs_evaluated": 24,
+      "successful_pairs": 24,
+      "overall_success_rate": 1.0,
+      "sequences": {
+        "S01_lighting_only": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.984,
+              "latency_ms": 290.17
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 171.07
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.9919,
+              "latency_ms": 168.84
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 162.37
+            }
+          ]
+        },
+        "S02_cup_move_return": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 164.73
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 0.9107,
+              "latency_ms": 168.69
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 128,
+              "inlier_ratio": 1.0,
+              "latency_ms": 152.72
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 172.68
+            }
+          ]
+        },
+        "S03_book_occlusion": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 168.93
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 122,
+              "inlier_ratio": 1.0,
+              "latency_ms": 183.03
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 124,
+              "inlier_ratio": 1.0,
+              "latency_ms": 160.54
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 165.74
+            }
+          ]
+        },
+        "S04_bottle_removal": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 130,
+              "inlier_ratio": 1.0,
+              "latency_ms": 162.17
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 161.27
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 104,
+              "inlier_ratio": 1.0,
+              "latency_ms": 170.06
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 1.0,
+              "latency_ms": 168.74
+            }
+          ]
+        },
+        "S05_phone_move_persistent": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 135,
+              "inlier_ratio": 1.0,
+              "latency_ms": 211.74
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 171.9
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 115,
+              "inlier_ratio": 0.9583,
+              "latency_ms": 178.75
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 170.47
+            }
+          ]
+        },
+        "S06_camera_view_nuisance": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 84,
+              "inlier_ratio": 0.6829,
+              "latency_ms": 195.63
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6154,
+              "latency_ms": 202.12
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 76,
+              "inlier_ratio": 0.6281,
+              "latency_ms": 173.27
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6372,
+              "latency_ms": 162.24
+            }
+          ]
+        }
+      }
+    }
+  },
+  "axes": {
+    "axis_1_object_detection": {
+      "scientific_caveat": "Illustrations are synthetic drawings. Detectors trained on natural photographs exhibit low recall on stylized objects. This axis verifies software execution and interoperability, NOT model superiority or real-world accuracy.",
+      "total_images_evaluated": 30,
+      "total_ground_truth_objects": 178,
+      "yolov8n": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 395.79
+      },
+      "yolo_world": {
+        "total_detections": 0,
+        "map50": 0.0,
+        "map50_95": 0.0,
+        "mean_latency_ms": 754.47
+      }
+    },
+    "axis_2_registration": {
+      "total_pairs_evaluated": 24,
+      "successful_pairs": 24,
+      "overall_success_rate": 1.0,
+      "sequences": {
+        "S01_lighting_only": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.984,
+              "latency_ms": 290.17
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 171.07
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 123,
+              "inlier_ratio": 0.9919,
+              "latency_ms": 168.84
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 162.37
+            }
+          ]
+        },
+        "S02_cup_move_return": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 164.73
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 0.9107,
+              "latency_ms": 168.69
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 128,
+              "inlier_ratio": 1.0,
+              "latency_ms": 152.72
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 172.68
+            }
+          ]
+        },
+        "S03_book_occlusion": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 129,
+              "inlier_ratio": 1.0,
+              "latency_ms": 168.93
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 122,
+              "inlier_ratio": 1.0,
+              "latency_ms": 183.03
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 124,
+              "inlier_ratio": 1.0,
+              "latency_ms": 160.54
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 126,
+              "inlier_ratio": 1.0,
+              "latency_ms": 165.74
+            }
+          ]
+        },
+        "S04_bottle_removal": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 130,
+              "inlier_ratio": 1.0,
+              "latency_ms": 162.17
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 127,
+              "inlier_ratio": 1.0,
+              "latency_ms": 161.27
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 104,
+              "inlier_ratio": 1.0,
+              "latency_ms": 170.06
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 102,
+              "inlier_ratio": 1.0,
+              "latency_ms": 168.74
+            }
+          ]
+        },
+        "S05_phone_move_persistent": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 135,
+              "inlier_ratio": 1.0,
+              "latency_ms": 211.74
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 171.9
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 115,
+              "inlier_ratio": 0.9583,
+              "latency_ms": 178.75
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 113,
+              "inlier_ratio": 0.9576,
+              "latency_ms": 170.47
+            }
+          ]
+        },
+        "S06_camera_view_nuisance": {
+          "pairs_evaluated": 4,
+          "success_rate": 1.0,
+          "pairs": [
+            {
+              "pair": "v1->v2",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 84,
+              "inlier_ratio": 0.6829,
+              "latency_ms": 195.63
+            },
+            {
+              "pair": "v1->v3",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6154,
+              "latency_ms": 202.12
+            },
+            {
+              "pair": "v1->v4",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 76,
+              "inlier_ratio": 0.6281,
+              "latency_ms": 173.27
+            },
+            {
+              "pair": "v1->v5",
+              "success": true,
+              "status": "AlignmentStatus.SUCCESS",
+              "inliers": 72,
+              "inlier_ratio": 0.6372,
+              "latency_ms": 162.24
+            }
+          ]
+        }
+      }
+    },
+    "axis_3_cross_visit_association": {
+      "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION (Association)",
+      "evaluation_mode": "ORACLE / GROUND-TRUTH-INPUT",
+      "description": "Cross-visit entity association evaluated with ground-truth oracle boxes to isolate identity tracking from detector failures.",
+      "total_identity_switches": 0,
+      "total_duplicate_tracks": 4,
+      "sequences": {
+        "S01_lighting_only": {
+          "total_system_entities": 10,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 4,
+          "identity_switches": 0
+        },
+        "S02_cup_move_return": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S03_book_occlusion": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S04_bottle_removal": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S05_phone_move_persistent": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        },
+        "S06_camera_view_nuisance": {
+          "total_system_entities": 6,
+          "unique_gt_entities": 6,
+          "duplicate_tracks": 0,
+          "identity_switches": 0
+        }
+      }
+    },
+    "axis_4_temporal_event_classification": {
+      "track_name": "TRACK_B_ORACLE_TEMPORAL_EVALUATION (Event Classification)",
+      "evaluation_mode": "ORACLE / GROUND-TRUTH-INPUT",
+      "description": "Multi-visit epistemic state transitions evaluated with ground-truth oracle boxes to measure temporal logic under idealized inputs.",
+      "total_expected_events": 14,
+      "successful_events": 13,
+      "failed_events": 1,
+      "event_accuracy": 0.9286,
+      "false_movements": 0,
+      "false_removals": 0,
+      "evaluations": [
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 2,
+          "event": "lighting_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 4,
+          "event": "lighting_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 3,
+          "event": "object_moved",
+          "target": "cup_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_moved_updates": [
+              "ent_S02_cup_move_return_v1_1"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 4,
+          "event": "return_to_baseline",
+          "target": "cup_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_return_updates": [
+              "ent_S02_cup_move_return_v1_1"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 3,
+          "event": "partial_occlusion",
+          "target": "book_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_removals": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 5,
+          "event": "reobserved",
+          "target": "book_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "present_updates": [
+              "ent_S03_book_occlusion_v1_2"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 4,
+          "event": "object_removed",
+          "target": "bottle_01",
+          "matched_expected_behavior": false,
+          "details": {
+            "target_object": "bottle_01",
+            "confirmed_removed_entities": [],
+            "all_updates_for_target": [
+              {
+                "entity_id": "ent_S04_bottle_removal_v1_3",
+                "label": "bottle",
+                "prior_state": "EpistemicState.CONFIRMED_PRESENT",
+                "new_state": "EpistemicState.CONFIRMED_PRESENT",
+                "explanation": "Non-detection without verified vacancy cannot confirm removal; patch appearance still resembles object."
+              }
+            ],
+            "passed": false,
+            "failure_reason": "Engine did not transition target entity to CONFIRMED_REMOVED; pending or unverified absence does not satisfy confirmed removal."
+          }
+        },
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 5,
+          "event": "continued_absence",
+          "target": "bottle_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "absence_updates": [
+              "ent_S04_bottle_removal_v1_3"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 3,
+          "event": "object_moved",
+          "target": "phone_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "detected_moved_updates": [
+              "ent_S05_phone_move_persistent_v1_4"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 4,
+          "event": "movement_persists",
+          "target": "phone_01",
+          "matched_expected_behavior": true,
+          "details": {
+            "persistent_updates": [
+              "ent_S05_phone_move_persistent_v1_4"
+            ],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 2,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 3,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 4,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 5,
+          "event": "camera_view_change",
+          "target": "scene",
+          "matched_expected_behavior": true,
+          "details": {
+            "spurious_movements": [],
+            "passed": true
+          }
+        }
+      ]
+    },
+    "axis_5_end_to_end": {
+      "track_name": "TRACK_C_END_TO_END_TEMPORAL_EVALUATION",
+      "evaluation_mode": "REAL_DETECTOR_INPUT",
+      "detector_used": "yolov8n (letterbox=True)",
+      "confidence_threshold": 0.15,
+      "total_sequences": 6,
+      "total_visits": 30,
+      "total_gt_objects": 178,
+      "total_predicted_detections": 51,
+      "detector_recall_on_procedural_drawings": 0.2865,
+      "dataset_limitation_statement": "Procedural synthetic images (controlled_temporal_v1) consist of stylized line-drawings on uniform background. Standard neural detectors trained on COCO photographic imagery produce 0 detections on these non-photographic procedural fixtures. Consequently, end-to-end temporal reasoning cannot be established on procedural line drawings without either domain fine-tuning or photographic images. Track B (Oracle Inputs) isolates and validates the temporal engine state machine independently of detector localization failures.",
+      "sequences": {
+        "S01_lighting_only": {
+          "visits_processed": 5,
+          "total_detector_predictions": 10,
+          "entities_created": 2
+        },
+        "S02_cup_move_return": {
+          "visits_processed": 5,
+          "total_detector_predictions": 10,
+          "entities_created": 2
+        },
+        "S03_book_occlusion": {
+          "visits_processed": 5,
+          "total_detector_predictions": 8,
+          "entities_created": 2
+        },
+        "S04_bottle_removal": {
+          "visits_processed": 5,
+          "total_detector_predictions": 8,
+          "entities_created": 2
+        },
+        "S05_phone_move_persistent": {
+          "visits_processed": 5,
+          "total_detector_predictions": 4,
+          "entities_created": 2
+        },
+        "S06_camera_view_nuisance": {
+          "visits_processed": 5,
+          "total_detector_predictions": 11,
+          "entities_created": 4
+        }
+      }
+    }
+  }
+}

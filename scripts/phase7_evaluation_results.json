@@ -1,0 +1,998 @@
+{
+  "timestamp": "2026-10-20T16:41:14Z",
+  "phase": 7,
+  "title": "Phase 7 Real-World Validation and Empirical Uncertainty Calibration",
+  "runtime_seconds": 22.43,
+  "controlled_transformation_benchmark": {
+    "total_test_cases": 15,
+    "baseline_single_ref": {
+      "success_rate": 0.8667,
+      "success_count": 13,
+      "failure_count": 2,
+      "mean_pos_error_px": 0.065,
+      "mean_latency_ms": 209.05,
+      "cases": [
+        {
+          "test_case": "stable_jitter_1",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8278688524590164,
+          "num_inliers": 303,
+          "mean_reproj_error": 0.11208762379091618,
+          "mean_canonical_pos_error_px": 0.021733208559453487,
+          "latency_ms": 220.91
+        },
+        {
+          "test_case": "stable_jitter_2",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8345679012345679,
+          "num_inliers": 338,
+          "mean_reproj_error": 0.11521627759499575,
+          "mean_canonical_pos_error_px": 0.024534076545387508,
+          "latency_ms": 116.07
+        },
+        {
+          "test_case": "moderate_pan_1",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.9773913043478261,
+          "num_inliers": 562,
+          "mean_reproj_error": 0.006445099995256232,
+          "mean_canonical_pos_error_px": 0.0032478676119353624,
+          "latency_ms": 109.29
+        },
+        {
+          "test_case": "moderate_pan_2",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.7861111111111111,
+          "num_inliers": 283,
+          "mean_reproj_error": 0.09562929080754785,
+          "mean_canonical_pos_error_px": 0.013383664190769196,
+          "latency_ms": 123.03
+        },
+        {
+          "test_case": "large_pan_1",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8169398907103825,
+          "num_inliers": 299,
+          "mean_reproj_error": 0.020268595784247723,
+          "mean_canonical_pos_error_px": 0.027995254890993238,
+          "latency_ms": 108.45
+        },
+        {
+          "test_case": "large_pan_2",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.5868263473053892,
+          "num_inliers": 98,
+          "mean_reproj_error": 0.10988054422575116,
+          "mean_canonical_pos_error_px": 0.1448599833995104,
+          "latency_ms": 112.19
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_1",
+          "success": false,
+          "status": "SINGULAR_HOMOGRAPHY",
+          "inlier_ratio": 0.15,
+          "num_inliers": 12,
+          "mean_reproj_error": null,
+          "mean_canonical_pos_error_px": null,
+          "latency_ms": 131.25
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_2",
+          "success": false,
+          "status": "SINGULAR_HOMOGRAPHY",
+          "inlier_ratio": 0.23529411764705882,
+          "num_inliers": 16,
+          "mean_reproj_error": null,
+          "mean_canonical_pos_error_px": null,
+          "latency_ms": 378.07
+        },
+        {
+          "test_case": "scale_zoom_in",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8102409638554217,
+          "num_inliers": 269,
+          "mean_reproj_error": 0.1549614509818982,
+          "mean_canonical_pos_error_px": 0.09583413228392601,
+          "latency_ms": 241.55
+        },
+        {
+          "test_case": "scale_zoom_out",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8069620253164557,
+          "num_inliers": 255,
+          "mean_reproj_error": 0.1708939939071126,
+          "mean_canonical_pos_error_px": 0.07048060409724713,
+          "latency_ms": 273.15
+        },
+        {
+          "test_case": "rotation_tilt_5deg",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8029556650246306,
+          "num_inliers": 326,
+          "mean_reproj_error": 0.1273959604323888,
+          "mean_canonical_pos_error_px": 0.036831118166446686,
+          "latency_ms": 267.03
+        },
+        {
+          "test_case": "rotation_tilt_10deg",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.7956989247311828,
+          "num_inliers": 296,
+          "mean_reproj_error": 0.11816046155279554,
+          "mean_canonical_pos_error_px": 0.06948447786271572,
+          "latency_ms": 264.73
+        },
+        {
+          "test_case": "perspective_tilt_light",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.8365650969529086,
+          "num_inliers": 302,
+          "mean_reproj_error": 0.12730536690211963,
+          "mean_canonical_pos_error_px": 0.03256201231852174,
+          "latency_ms": 254.67
+        },
+        {
+          "test_case": "perspective_tilt_moderate",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.7733333333333333,
+          "num_inliers": 232,
+          "mean_reproj_error": 0.15089378080203547,
+          "mean_canonical_pos_error_px": 0.04014512685826048,
+          "latency_ms": 264.48
+        },
+        {
+          "test_case": "perspective_tilt_heavy",
+          "success": true,
+          "status": "SUCCESS",
+          "inlier_ratio": 0.6702127659574468,
+          "num_inliers": 126,
+          "mean_reproj_error": 0.22135689922350615,
+          "mean_canonical_pos_error_px": 0.2640086431056261,
+          "latency_ms": 270.82
+        }
+      ]
+    },
+    "phase6_7_adaptive": {
+      "success_rate": 1.0,
+      "success_count": 15,
+      "failure_count": 0,
+      "mean_pos_error_px": 0.089,
+      "mean_latency_ms": 912.02,
+      "keyframes_created": 5,
+      "chained_fallback_count": 4,
+      "false_movements_under_camera_motion": {
+        "fixed_35px_rule": 0,
+        "adaptive_uncertainty_rule": 0
+      },
+      "cases": [
+        {
+          "test_case": "stable_jitter_1",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8278688524590164,
+          "num_inliers": 303,
+          "mean_reproj_error": 0.11208762379091618,
+          "mean_canonical_pos_error_px": 0.022,
+          "latency_ms": 129.15,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "stable_jitter_2",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8345679012345679,
+          "num_inliers": 338,
+          "mean_reproj_error": 0.11521627759499575,
+          "mean_canonical_pos_error_px": 0.025,
+          "latency_ms": 125.62,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "moderate_pan_1",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": true,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.9773913043478261,
+          "num_inliers": 562,
+          "mean_reproj_error": 0.006445099995256232,
+          "mean_canonical_pos_error_px": 0.003,
+          "latency_ms": 107.32,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "moderate_pan_2",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": true,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.7861111111111111,
+          "num_inliers": 283,
+          "mean_reproj_error": 0.09562929080754785,
+          "mean_canonical_pos_error_px": 0.013,
+          "latency_ms": 244.21,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "large_pan_1",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": true,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8169398907103825,
+          "num_inliers": 299,
+          "mean_reproj_error": 0.020268595784247723,
+          "mean_canonical_pos_error_px": 0.028,
+          "latency_ms": 323.6,
+          "delta_u_px": 3.18,
+          "effective_threshold_px": 38.18,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "large_pan_2",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_05",
+          "is_direct_to_canonical": false,
+          "is_promoted": true,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8395904436860068,
+          "num_inliers": 246,
+          "mean_reproj_error": 0.11433094019099414,
+          "mean_canonical_pos_error_px": 0.096,
+          "latency_ms": 457.52,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_1",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_05",
+          "is_direct_to_canonical": false,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.941358024691358,
+          "num_inliers": 305,
+          "mean_reproj_error": 0.018893967204598384,
+          "mean_canonical_pos_error_px": 0.726,
+          "latency_ms": 956.74,
+          "delta_u_px": 5.74,
+          "effective_threshold_px": 40.74,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_2",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_05",
+          "is_direct_to_canonical": false,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8160919540229885,
+          "num_inliers": 142,
+          "mean_reproj_error": 3.721468617419789e-05,
+          "mean_canonical_pos_error_px": 0.03,
+          "latency_ms": 1619.74,
+          "delta_u_px": 10.09,
+          "effective_threshold_px": 45.09,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "scale_zoom_in",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8102409638554217,
+          "num_inliers": 269,
+          "mean_reproj_error": 0.1549614509818982,
+          "mean_canonical_pos_error_px": 0.096,
+          "latency_ms": 1314.2,
+          "delta_u_px": 1.13,
+          "effective_threshold_px": 36.13,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "scale_zoom_out",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8069620253164557,
+          "num_inliers": 255,
+          "mean_reproj_error": 0.1708939939071126,
+          "mean_canonical_pos_error_px": 0.07,
+          "latency_ms": 1464.18,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "rotation_tilt_5deg",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8029556650246306,
+          "num_inliers": 326,
+          "mean_reproj_error": 0.1273959604323888,
+          "mean_canonical_pos_error_px": 0.037,
+          "latency_ms": 1395.77,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "rotation_tilt_10deg",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.7956989247311828,
+          "num_inliers": 296,
+          "mean_reproj_error": 0.11816046155279554,
+          "mean_canonical_pos_error_px": 0.069,
+          "latency_ms": 1401.7,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "perspective_tilt_light",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.8365650969529086,
+          "num_inliers": 302,
+          "mean_reproj_error": 0.12730536690211963,
+          "mean_canonical_pos_error_px": 0.033,
+          "latency_ms": 1372.15,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "perspective_tilt_moderate",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.7733333333333333,
+          "num_inliers": 232,
+          "mean_reproj_error": 0.15089378080203547,
+          "mean_canonical_pos_error_px": 0.04,
+          "latency_ms": 1388.89,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        },
+        {
+          "test_case": "perspective_tilt_heavy",
+          "success": true,
+          "status": "SUCCESS",
+          "selected_keyframe": "visit_04",
+          "is_direct_to_canonical": false,
+          "is_promoted": false,
+          "decision_status": "ACCEPTED",
+          "inlier_ratio": 0.9060773480662984,
+          "num_inliers": 492,
+          "mean_reproj_error": 0.09710280125789857,
+          "mean_canonical_pos_error_px": 0.054,
+          "latency_ms": 1379.47,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "pos_error_exceeded_margin": false,
+          "fixed_false_movement": false,
+          "adaptive_false_movement": false
+        }
+      ]
+    },
+    "uncertainty_calibration": {
+      "is_statistically_calibrated": false,
+      "nature_of_uncertainty": "Engineering heuristic derived from linear penalties on reprojection error, inlier ratio, spatial coverage, and resolution scaling.",
+      "samples_evaluated": 15,
+      "samples_within_uncertainty_bound": 15,
+      "empirical_coverage_rate": 1.0,
+      "evaluations": [
+        {
+          "test_case": "stable_jitter_1",
+          "mean_pos_error_px": 0.021733208559453487,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "stable_jitter_2",
+          "mean_pos_error_px": 0.024534076545387508,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "moderate_pan_1",
+          "mean_pos_error_px": 0.0032478676119353624,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "moderate_pan_2",
+          "mean_pos_error_px": 0.013383664190769196,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "large_pan_1",
+          "mean_pos_error_px": 0.027995254890993238,
+          "delta_u_px": 3.1802549112913816,
+          "effective_threshold_px": 38.180254911291385,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "large_pan_2",
+          "mean_pos_error_px": 0.0959423559717834,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_1",
+          "mean_pos_error_px": 0.726309311389923,
+          "delta_u_px": 5.735595172984195,
+          "effective_threshold_px": 40.7355951729842,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "wide_pan_out_of_ref_2",
+          "mean_pos_error_px": 0.02990911155939102,
+          "delta_u_px": 10.087919595389899,
+          "effective_threshold_px": 45.0879195953899,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "scale_zoom_in",
+          "mean_pos_error_px": 0.09583413228392601,
+          "delta_u_px": 1.1331069801104265,
+          "effective_threshold_px": 36.133106980110426,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "scale_zoom_out",
+          "mean_pos_error_px": 0.07048060409724713,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "rotation_tilt_5deg",
+          "mean_pos_error_px": 0.036831118166446686,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "rotation_tilt_10deg",
+          "mean_pos_error_px": 0.06948447786271572,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "perspective_tilt_light",
+          "mean_pos_error_px": 0.03256201231852174,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "perspective_tilt_moderate",
+          "mean_pos_error_px": 0.04014512685826048,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        },
+        {
+          "test_case": "perspective_tilt_heavy",
+          "mean_pos_error_px": 0.05435498459264636,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "within_uncertainty_bound": true
+        }
+      ]
+    }
+  },
+  "real_workbench_temporal_evaluation": {
+    "dataset_name": "desk_pilot_01",
+    "total_visits": 7,
+    "total_annotations_evaluated": 42,
+    "unique_ground_truth_entities": 7,
+    "system_active_entities_created": 8,
+    "duplicate_entities_detected": 1,
+    "decisions_deferred_by_registration_gate": 1,
+    "false_movements": {
+      "count": 1,
+      "denominator": 28,
+      "rate": 0.0357
+    },
+    "missed_movements": {
+      "count": 2,
+      "denominator": 3,
+      "rate": 0.6667
+    },
+    "false_removals": {
+      "count": 1,
+      "denominator": 34,
+      "rate": 0.0294
+    },
+    "missed_removals": {
+      "count": 4,
+      "denominator": 4,
+      "rate": 1.0
+    },
+    "reappearance_recovery": {
+      "target_entity": "bottle_01",
+      "evaluated_in_visit": "visit_07",
+      "state_at_visit_06": "CONFIRMED_REMOVED",
+      "restored_state_at_visit_07": "CONFIRMED_PRESENT",
+      "verified": true
+    },
+    "evaluations": [
+      {
+        "visit_id": "visit_01",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "INSUFFICIENT_EVIDENCE",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "PENDING_REMOVAL",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "INSUFFICIENT_EVIDENCE",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "PENDING_REMOVAL",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT"
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2369 @@
+{
+  "dataset_name": "ObjectMemory Controlled Temporal Benchmark",
+  "version": "1.0",
+  "created_date": "2026-10-21",
+  "purpose": "Controlled integration and temporal-reasoning benchmark; not a real-world detector-accuracy benchmark.",
+  "image_dimensions": [
+    640,
+    480
+  ],
+  "sequence_count": 6,
+  "visits_per_sequence": 5,
+  "provenance": "Procedurally generated illustrations; no external images.",
+  "classes": [
+    "cup",
+    "book",
+    "bottle",
+    "phone",
+    "box",
+    "keys"
+  ],
+  "sequences": [
+    {
+      "sequence_id": "S01_lighting_only",
+      "scenario_type": "lighting_only",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S01_lighting_only_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S01_lighting_only_visit_02.png",
+          "nuisance_tags": [
+            "lighting_shift"
+          ],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S01_lighting_only_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S01_lighting_only_visit_04.png",
+          "nuisance_tags": [
+            "bright_lighting"
+          ],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S01_lighting_only_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 2,
+          "event": "lighting_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        },
+        {
+          "sequence_id": "S01_lighting_only",
+          "visit_index": 4,
+          "event": "lighting_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        }
+      ]
+    },
+    {
+      "sequence_id": "S02_cup_move_return",
+      "scenario_type": "move_return",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S02_cup_move_return_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S02_cup_move_return_visit_02.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S02_cup_move_return_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                350,
+                180,
+                404,
+                246
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S02_cup_move_return_visit_04.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S02_cup_move_return_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 3,
+          "event": "object_moved",
+          "object_id": "cup_01"
+        },
+        {
+          "sequence_id": "S02_cup_move_return",
+          "visit_index": 4,
+          "event": "return_to_baseline",
+          "object_id": "cup_01"
+        }
+      ]
+    },
+    {
+      "sequence_id": "S03_book_occlusion",
+      "scenario_type": "occlusion",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S03_book_occlusion_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S03_book_occlusion_visit_02.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S03_book_occlusion_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "partially_occluded"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S03_book_occlusion_visit_04.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "partially_occluded"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S03_book_occlusion_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 3,
+          "event": "partial_occlusion",
+          "object_id": "book_01",
+          "should_create_removal": false
+        },
+        {
+          "sequence_id": "S03_book_occlusion",
+          "visit_index": 5,
+          "event": "reobserved",
+          "object_id": "book_01"
+        }
+      ]
+    },
+    {
+      "sequence_id": "S04_bottle_removal",
+      "scenario_type": "removal",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S04_bottle_removal_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S04_bottle_removal_visit_02.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S04_bottle_removal_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S04_bottle_removal_visit_04.png",
+          "nuisance_tags": [],
+          "visible_object_count": 5,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S04_bottle_removal_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 5,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 4,
+          "event": "object_removed",
+          "object_id": "bottle_01"
+        },
+        {
+          "sequence_id": "S04_bottle_removal",
+          "visit_index": 5,
+          "event": "continued_absence",
+          "object_id": "bottle_01"
+        }
+      ]
+    },
+    {
+      "sequence_id": "S05_phone_move_persistent",
+      "scenario_type": "persistent_move",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S05_phone_move_persistent_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S05_phone_move_persistent_visit_02.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S05_phone_move_persistent_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                390,
+                260,
+                438,
+                342
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S05_phone_move_persistent_visit_04.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                390,
+                260,
+                438,
+                342
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S05_phone_move_persistent_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                390,
+                260,
+                438,
+                342
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 3,
+          "event": "object_moved",
+          "object_id": "phone_01"
+        },
+        {
+          "sequence_id": "S05_phone_move_persistent",
+          "visit_index": 4,
+          "event": "movement_persists",
+          "object_id": "phone_01"
+        }
+      ]
+    },
+    {
+      "sequence_id": "S06_camera_view_nuisance",
+      "scenario_type": "camera_nuisance",
+      "visits": [
+        {
+          "visit_index": 1,
+          "image": "images/S06_camera_view_nuisance_visit_01.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                92,
+                120,
+                146,
+                186
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                245,
+                145,
+                335,
+                207
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                440,
+                110,
+                482,
+                200
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                150,
+                310,
+                198,
+                392
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                350,
+                310,
+                424,
+                370
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                500,
+                340,
+                564,
+                370
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 2,
+          "image": "images/S06_camera_view_nuisance_visit_02.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                100,
+                116,
+                154,
+                182
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                253,
+                141,
+                343,
+                203
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                448,
+                106,
+                490,
+                196
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                158,
+                306,
+                206,
+                388
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                358,
+                306,
+                432,
+                366
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                508,
+                336,
+                572,
+                366
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 3,
+          "image": "images/S06_camera_view_nuisance_visit_03.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                102,
+                115,
+                156,
+                181
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                255,
+                140,
+                345,
+                202
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                450,
+                105,
+                492,
+                195
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                160,
+                305,
+                208,
+                387
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                360,
+                305,
+                434,
+                365
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                510,
+                335,
+                574,
+                365
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 4,
+          "image": "images/S06_camera_view_nuisance_visit_04.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                99,
+                117,
+                153,
+                183
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                252,
+                142,
+                342,
+                204
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                447,
+                107,
+                489,
+                197
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                157,
+                307,
+                205,
+                389
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                357,
+                307,
+                431,
+                367
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                507,
+                337,
+                571,
+                367
+              ],
+              "visibility": "visible"
+            }
+          ]
+        },
+        {
+          "visit_index": 5,
+          "image": "images/S06_camera_view_nuisance_visit_05.png",
+          "nuisance_tags": [],
+          "visible_object_count": 6,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class": "cup",
+              "bbox_xyxy": [
+                101,
+                116,
+                155,
+                182
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "book_01",
+              "class": "book",
+              "bbox_xyxy": [
+                254,
+                141,
+                344,
+                203
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "bottle_01",
+              "class": "bottle",
+              "bbox_xyxy": [
+                449,
+                106,
+                491,
+                196
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "phone_01",
+              "class": "phone",
+              "bbox_xyxy": [
+                159,
+                306,
+                207,
+                388
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "box_01",
+              "class": "box",
+              "bbox_xyxy": [
+                359,
+                306,
+                433,
+                366
+              ],
+              "visibility": "visible"
+            },
+            {
+              "object_id": "keys_01",
+              "class": "keys",
+              "bbox_xyxy": [
+                509,
+                336,
+                573,
+                366
+              ],
+              "visibility": "visible"
+            }
+          ]
+        }
+      ],
+      "expected_events": [
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 2,
+          "event": "camera_view_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 3,
+          "event": "camera_view_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 4,
+          "event": "camera_view_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        },
+        {
+          "sequence_id": "S06_camera_view_nuisance",
+          "visit_index": 5,
+          "event": "camera_view_change",
+          "target": "scene",
+          "should_create_object_movement": false
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Illustrated objects are not natural photographs and are not suitable for claims about real-world detector accuracy.",
+    "Boxes are renderer-derived, not human-verified.",
+    "Camera nuisance is approximated by small global translation, not full camera geometry."
+  ]
+}

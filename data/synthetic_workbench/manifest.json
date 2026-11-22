@@ -1,0 +1,53 @@
+{
+  "scenarios": [
+    {
+      "scenario_name": "no_change",
+      "description": "Workbench observed twice with identical objects and positions.",
+      "objects_count": 3,
+      "path": "no_change"
+    },
+    {
+      "scenario_name": "object_moved",
+      "description": "Workbench where one multimeter has been moved to a new position.",
+      "objects_count": 2,
+      "path": "object_moved"
+    },
+    {
+      "scenario_name": "object_added",
+      "description": "Workbench where a new tool (wire strippers) has been placed.",
+      "objects_count": 3,
+      "path": "object_added"
+    },
+    {
+      "scenario_name": "object_removed",
+      "description": "Workbench where one component box has been completely removed.",
+      "objects_count": 2,
+      "path": "object_removed"
+    },
+    {
+      "scenario_name": "lighting_change",
+      "description": "Workbench with identical objects under significantly altered illumination.",
+      "objects_count": 2,
+      "path": "lighting_change"
+    },
+    {
+      "scenario_name": "partial_occlusion",
+      "description": "Workbench where one object is partially occluded by another surface.",
+      "objects_count": 2,
+      "path": "partial_occlusion"
+    },
+    {
+      "scenario_name": "ambiguous_objects",
+      "description": "Workbench containing identical, visually ambiguous components.",
+      "objects_count": 3,
+      "path": "ambiguous_objects"
+    },
+    {
+      "scenario_name": "unreliable_alignment",
+      "description": "Registration failure test case: query surface lacks trackable features.",
+      "objects_count": 1,
+      "path": "unreliable_alignment"
+    }
+  ],
+  "is_synthetic": true
+}

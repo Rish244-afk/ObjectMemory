@@ -1,0 +1,607 @@
+{
+  "dataset_name": "Physical Workbench Lifecycle Benchmark v1",
+  "version": "1.0.0",
+  "created_date": "2026-10-29",
+  "provenance": "Controlled physical workbench benchmark protocol. Photographic data capture specification.",
+  "status": "AWAITING_PHYSICAL_DATA",
+  "default_image_dimensions": [
+    1920,
+    1080
+  ],
+  "target_objects": [
+    {
+      "object_id": "cup_01",
+      "class_label": "cup",
+      "description": "White ceramic coffee mug with handle",
+      "canonical_yolo_label": "cup"
+    },
+    {
+      "object_id": "book_01",
+      "class_label": "book",
+      "description": "Navy paperback book (~13x20 cm)",
+      "canonical_yolo_label": "book"
+    },
+    {
+      "object_id": "scissors_01",
+      "class_label": "scissors",
+      "description": "Red handle metal craft scissors",
+      "canonical_yolo_label": "scissors"
+    },
+    {
+      "object_id": "bottle_01",
+      "class_label": "bottle",
+      "description": "Clear plastic or metal reusable water bottle",
+      "canonical_yolo_label": "bottle"
+    },
+    {
+      "object_id": "phone_01",
+      "class_label": "cell phone",
+      "description": "Dark smartphone in matte case",
+      "canonical_yolo_label": "cell phone"
+    }
+  ],
+  "camera_rig_specification": {
+    "recommended_sensor": "DSLR, mirrorless, smartphone, or USB camera mounted to fixed tripod",
+    "mounting": "Rigid desktop or overhead boom arm looking downward at 45-60 degree oblique angle",
+    "exposure": "Manual mode with locked exposure time, aperture, ISO, and manual white balance",
+    "focus": "Manual focus locked on center workbench surface",
+    "resolution": [
+      1920,
+      1080
+    ]
+  },
+  "calibration_specification": {
+    "fiducial_type": "ArUco 4x4_50",
+    "marker_count": 4,
+    "marker_ids": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "placement": "Four perimeter corners of the active workbench area",
+    "purpose": "Provides reference planar coordinate frame and quantitative registration reprojection validation"
+  },
+  "sequences": [
+    {
+      "sequence_id": "EXP01_comprehensive_workbench",
+      "scenario_name": "Comprehensive Physical Workbench Lifecycle (13 Visits)",
+      "description": "End-to-end 13-visit real-world experiment covering all 8 physical scenarios: baseline establishment, stationary control, illumination stress, viewpoint perturbation, relocation, persistence, return-to-baseline, occlusion, occlusion recovery, removal progression, confirmed removal, and reappearance.",
+      "visits": [
+        {
+          "visit_id": "visit_01",
+          "visit_index": 1,
+          "image": "images/EXP01_comprehensive_workbench_visit_01.jpg",
+          "scenario_description": "Scenario 1: Baseline established. All 5 objects present at nominal locations.",
+          "expected_event": "baseline_established",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_02",
+          "visit_index": 2,
+          "image": "images/EXP01_comprehensive_workbench_visit_02.jpg",
+          "scenario_description": "Scenario 1: Stationary control. No physical objects moved.",
+          "expected_event": "baseline_stable",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_03",
+          "visit_index": 3,
+          "image": "images/EXP01_comprehensive_workbench_visit_03.jpg",
+          "scenario_description": "Scenario 6: Illumination stress. Room lighting reduced ~50%, objects stationary.",
+          "expected_event": "lighting_change",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_04",
+          "visit_index": 4,
+          "image": "images/EXP01_comprehensive_workbench_visit_04.jpg",
+          "scenario_description": "Scenario 7: Camera viewpoint jitter (~5 deg oblique shift). Planar homography compensates.",
+          "expected_event": "viewpoint_jitter",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_05",
+          "visit_index": 5,
+          "image": "images/EXP01_comprehensive_workbench_visit_05.jpg",
+          "scenario_description": "Scenario 2: Object relocation. cup_01 moved >35px away to temporary location.",
+          "expected_event": "object_moved",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_MOVED",
+              "expected_event": "object_moved"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_06",
+          "visit_index": 6,
+          "image": "images/EXP01_comprehensive_workbench_visit_06.jpg",
+          "scenario_description": "Scenario 3: Persistent relocation. cup_01 remains at the relocated position.",
+          "expected_event": "movement_persists",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_MOVED",
+              "expected_event": "movement_persists"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_07",
+          "visit_index": 7,
+          "image": "images/EXP01_comprehensive_workbench_visit_07.jpg",
+          "scenario_description": "Scenario 2: Return to baseline. cup_01 physically returned to initial reference position.",
+          "expected_event": "return_to_baseline",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT",
+              "expected_event": "return_to_baseline"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_08",
+          "visit_index": 8,
+          "image": "images/EXP01_comprehensive_workbench_visit_08.jpg",
+          "scenario_description": "Scenario 5: Temporary occlusion. scissors_01 partially occluded (~50%) by card.",
+          "expected_event": "partial_occlusion",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "PARTIALLY_OCCLUDED",
+              "absence_reason": "OCCLUSION",
+              "expected_state": "CONFIRMED_PRESENT",
+              "expected_event": "partial_occlusion"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_09",
+          "visit_index": 9,
+          "image": "images/EXP01_comprehensive_workbench_visit_09.jpg",
+          "scenario_description": "Scenario 5: Occlusion recovery. Card occluder removed, scissors_01 fully visible.",
+          "expected_event": "revealed",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT",
+              "expected_event": "revealed"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_10",
+          "visit_index": 10,
+          "image": "images/EXP01_comprehensive_workbench_visit_10.jpg",
+          "scenario_description": "Scenario 4: Removal progression 1. bottle_01 removed from scene. Streak 1.",
+          "expected_event": "object_pending_removal",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "ABSENT",
+              "absence_reason": "CONFIRMED_REMOVED",
+              "expected_state": "PENDING_REMOVAL",
+              "expected_event": "object_pending_removal"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_11",
+          "visit_index": 11,
+          "image": "images/EXP01_comprehensive_workbench_visit_11.jpg",
+          "scenario_description": "Scenario 4: Removal confirmation. bottle_01 absent for second visit. Confirmed removed.",
+          "expected_event": "object_removed",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "ABSENT",
+              "absence_reason": "CONFIRMED_REMOVED",
+              "expected_state": "CONFIRMED_REMOVED",
+              "expected_event": "object_removed"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_12",
+          "visit_index": 12,
+          "image": "images/EXP01_comprehensive_workbench_visit_12.jpg",
+          "scenario_description": "Scenario 4: Continued absence. bottle_01 remains removed.",
+          "expected_event": "continued_absence",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "ABSENT",
+              "absence_reason": "CONFIRMED_REMOVED",
+              "expected_state": "CONFIRMED_REMOVED",
+              "expected_event": "continued_absence"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_13",
+          "visit_index": 13,
+          "image": "images/EXP01_comprehensive_workbench_visit_13.jpg",
+          "scenario_description": "Scenario 8: Reappearance. bottle_01 returned to workbench after confirmed removal.",
+          "expected_event": "reappearance",
+          "aruco_markers_expected": true,
+          "annotations": [
+            {
+              "object_id": "cup_01",
+              "class_label": "cup",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "book_01",
+              "class_label": "book",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "scissors_01",
+              "class_label": "scissors",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            },
+            {
+              "object_id": "bottle_01",
+              "class_label": "bottle",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT",
+              "expected_event": "reappearance"
+            },
+            {
+              "object_id": "phone_01",
+              "class_label": "cell phone",
+              "visibility": "VISIBLE",
+              "expected_state": "CONFIRMED_PRESENT"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

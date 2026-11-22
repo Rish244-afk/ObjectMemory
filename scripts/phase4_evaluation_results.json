@@ -1,0 +1,2698 @@
+{
+  "timestamp": "2026-10-20T13:49:53Z",
+  "dataset_counts": {
+    "real_annotated": 7,
+    "real_descriptive": 4,
+    "synthetic": 8,
+    "total_evaluated": 19
+  },
+  "detectors_evaluated": [
+    "yolov8n",
+    "yolo-world"
+  ],
+  "latency_summary": {
+    "yolov8n": {
+      "init_latency_ms": 85.41159999731462,
+      "mean_steady_latency_ms": 98.2
+    },
+    "yolo_world": {
+      "init_latency_ms": 630.5731000029482,
+      "mean_steady_latency_ms": 316.7
+    }
+  },
+  "ground_truth_metrics": {
+    "yolov8n_iou50": {
+      "evaluated_visits": 7,
+      "iou_threshold": 0.5,
+      "overall": {
+        "true_positives": 30,
+        "false_positives": 22,
+        "false_negatives": 4,
+        "precision": 0.5769,
+        "recall": 0.8824,
+        "f1_score": 0.6977
+      },
+      "per_class": {
+        "book": {
+          "ground_truth_count": 8,
+          "true_positives": 6,
+          "false_positives": 0,
+          "false_negatives": 2,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1_score": 0.8571
+        },
+        "bottle": {
+          "ground_truth_count": 5,
+          "true_positives": 5,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "cup": {
+          "ground_truth_count": 8,
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333
+        },
+        "dining table": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "laptop": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "potted plant": {
+          "ground_truth_count": 7,
+          "true_positives": 6,
+          "false_positives": 1,
+          "false_negatives": 1,
+          "precision": 0.8571,
+          "recall": 0.8571,
+          "f1_score": 0.8571
+        },
+        "scissors": {
+          "ground_truth_count": 6,
+          "true_positives": 6,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "vase": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        }
+      }
+    },
+    "yolov8n_iou30": {
+      "evaluated_visits": 7,
+      "iou_threshold": 0.3,
+      "overall": {
+        "true_positives": 31,
+        "false_positives": 21,
+        "false_negatives": 3,
+        "precision": 0.5962,
+        "recall": 0.9118,
+        "f1_score": 0.7209
+      },
+      "per_class": {
+        "book": {
+          "ground_truth_count": 8,
+          "true_positives": 6,
+          "false_positives": 0,
+          "false_negatives": 2,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1_score": 0.8571
+        },
+        "bottle": {
+          "ground_truth_count": 5,
+          "true_positives": 5,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "cup": {
+          "ground_truth_count": 8,
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.875,
+          "f1_score": 0.9333
+        },
+        "dining table": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "laptop": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "potted plant": {
+          "ground_truth_count": 7,
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "scissors": {
+          "ground_truth_count": 6,
+          "true_positives": 6,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "vase": {
+          "ground_truth_count": 0,
+          "true_positives": 0,
+          "false_positives": 7,
+          "false_negatives": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        }
+      }
+    },
+    "yolo_world_iou50": {
+      "evaluated_visits": 7,
+      "iou_threshold": 0.5,
+      "overall": {
+        "true_positives": 24,
+        "false_positives": 5,
+        "false_negatives": 10,
+        "precision": 0.8276,
+        "recall": 0.7059,
+        "f1_score": 0.7619
+      },
+      "per_class": {
+        "book": {
+          "ground_truth_count": 8,
+          "true_positives": 5,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.8333,
+          "f1_score": 0.9091
+        },
+        "bottle": {
+          "ground_truth_count": 5,
+          "true_positives": 3,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "cup": {
+          "ground_truth_count": 8,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "mug": {
+          "ground_truth_count": 0,
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "notebook": {
+          "ground_truth_count": 0,
+          "true_positives": 2,
+          "false_positives": 4,
+          "false_negatives": 0,
+          "precision": 0.3333,
+          "recall": 1.0,
+          "f1_score": 0.5
+        },
+        "potted plant": {
+          "ground_truth_count": 7,
+          "true_positives": 5,
+          "false_positives": 1,
+          "false_negatives": 2,
+          "precision": 0.8333,
+          "recall": 0.7143,
+          "f1_score": 0.7692
+        },
+        "scissors": {
+          "ground_truth_count": 6,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "water bottle": {
+          "ground_truth_count": 0,
+          "true_positives": 2,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        }
+      }
+    },
+    "yolo_world_iou30": {
+      "evaluated_visits": 7,
+      "iou_threshold": 0.3,
+      "overall": {
+        "true_positives": 25,
+        "false_positives": 4,
+        "false_negatives": 9,
+        "precision": 0.8621,
+        "recall": 0.7353,
+        "f1_score": 0.7937
+      },
+      "per_class": {
+        "book": {
+          "ground_truth_count": 8,
+          "true_positives": 5,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.8333,
+          "f1_score": 0.9091
+        },
+        "bottle": {
+          "ground_truth_count": 5,
+          "true_positives": 3,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "cup": {
+          "ground_truth_count": 8,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "mug": {
+          "ground_truth_count": 0,
+          "true_positives": 7,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        },
+        "notebook": {
+          "ground_truth_count": 0,
+          "true_positives": 2,
+          "false_positives": 4,
+          "false_negatives": 0,
+          "precision": 0.3333,
+          "recall": 1.0,
+          "f1_score": 0.5
+        },
+        "potted plant": {
+          "ground_truth_count": 7,
+          "true_positives": 6,
+          "false_positives": 0,
+          "false_negatives": 1,
+          "precision": 1.0,
+          "recall": 0.8571,
+          "f1_score": 0.9231
+        },
+        "scissors": {
+          "ground_truth_count": 6,
+          "true_positives": 0,
+          "false_positives": 0,
+          "false_negatives": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1_score": 0.0
+        },
+        "water bottle": {
+          "ground_truth_count": 0,
+          "true_positives": 2,
+          "false_positives": 0,
+          "false_negatives": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1_score": 1.0
+        }
+      }
+    }
+  },
+  "temporal_scenarios": [
+    {
+      "scenario_number": 1,
+      "scenario_name": "Static Objects Continuity",
+      "description": "Stationary object with minor jitter (<35px) remains CONFIRMED_PRESENT without movement transitions.",
+      "expected_outcome": "State is CONFIRMED_PRESENT, 0 movement events.",
+      "actual_outcome": "State: CONFIRMED_PRESENT, updates: ['CONFIRMED_PRESENT']",
+      "passed": true,
+      "details": {
+        "entity_id": "ent_v1_1",
+        "state": "CONFIRMED_PRESENT"
+      }
+    },
+    {
+      "scenario_number": 2,
+      "scenario_name": "Genuine Object Movement Detection",
+      "description": "Object spatially displaced by 120px (>35px threshold) triggers CONFIRMED_MOVED with recorded displacement.",
+      "expected_outcome": "Transitions to CONFIRMED_MOVED with displacement ~120px.",
+      "actual_outcome": "State: CONFIRMED_MOVED, displacement: 122.00409829181969",
+      "passed": true,
+      "details": {
+        "updates": [
+          "CONFIRMED_MOVED"
+        ],
+        "displacement": 122.00409829181969
+      }
+    },
+    {
+      "scenario_number": 3,
+      "scenario_name": "Added Object Ingest",
+      "description": "Newly introduced object in the scene initializes in CONFIRMED_PRESENT.",
+      "expected_outcome": "New entity created in CONFIRMED_PRESENT.",
+      "actual_outcome": "Created count: 1, stapler state: CONFIRMED_PRESENT",
+      "passed": true,
+      "details": {
+        "stapler_id": "ent_v4_1"
+      }
+    },
+    {
+      "scenario_number": 4,
+      "scenario_name": "Genuine Object Removal Progression",
+      "description": "Absence on consecutive reliable visits progresses from PENDING_REMOVAL to CONFIRMED_REMOVED.",
+      "expected_outcome": "Visit 3: PENDING_REMOVAL, Visit 4: CONFIRMED_REMOVED.",
+      "actual_outcome": "Visit 3: PENDING_REMOVAL, Visit 4: CONFIRMED_REMOVED",
+      "passed": true,
+      "details": {
+        "v3_state": "PENDING_REMOVAL",
+        "v4_state": "CONFIRMED_REMOVED"
+      }
+    },
+    {
+      "scenario_number": 5,
+      "scenario_name": "Temporary Occlusion / Single Drop Resilience",
+      "description": "Single missed detection does NOT trigger false removal; recovers cleanly on redetection.",
+      "expected_outcome": "Remains PENDING_REMOVAL during occlusion, restored to CONFIRMED_PRESENT.",
+      "actual_outcome": "Occluded state: PENDING_REMOVAL, recovered: CONFIRMED_PRESENT",
+      "passed": true,
+      "details": {
+        "occluded": "PENDING_REMOVAL",
+        "recovered": "CONFIRMED_PRESENT"
+      }
+    },
+    {
+      "scenario_number": 6,
+      "scenario_name": "Reappearance After Confirmed Removal",
+      "description": "An object previously marked CONFIRMED_REMOVED that reappears is restored to CONFIRMED_PRESENT.",
+      "expected_outcome": "Restores entity to CONFIRMED_PRESENT while preserving history.",
+      "actual_outcome": "Post-reappearance state: CONFIRMED_PRESENT",
+      "passed": true,
+      "details": {
+        "entity_id": "ent_rv1_1",
+        "state": "CONFIRMED_PRESENT"
+      }
+    },
+    {
+      "scenario_number": 7,
+      "scenario_name": "Camera Viewpoint Canonical Mapping",
+      "description": "Projective transformation maps bounding boxes reliably into canonical space under camera shifts.",
+      "expected_outcome": "Valid canonical bounding box preserved across viewpoint shift.",
+      "actual_outcome": "Transformed canonical bbox: [208.2, 187.9, 307.6, 288.4]",
+      "passed": true,
+      "details": {
+        "canonical_bbox": [
+          208.16733067729083,
+          187.8727634194831,
+          307.61622156280913,
+          288.40436075322106
+        ]
+      }
+    },
+    {
+      "scenario_number": 8,
+      "scenario_name": "Detector Class Prediction Jitter Resilience",
+      "description": "Conservative cross-class association links identical spatial positions across fluctuating detector labels without duplicate identities.",
+      "expected_outcome": "Exactly 1 persistent entity maintained across 3 visits.",
+      "actual_outcome": "Total active entities: 1 (ID: ent_lv1_1)",
+      "passed": true,
+      "details": {
+        "entities": [
+          "ent_lv1_1"
+        ]
+      }
+    },
+    {
+      "scenario_number": 9,
+      "scenario_name": "Registration Failure Spatial Gating",
+      "description": "Failed registration strictly halts absence accumulation and spatial updating; blocks false removals.",
+      "expected_outcome": "Remains CONFIRMED_PRESENT with 0 consecutive absences.",
+      "actual_outcome": "State: CONFIRMED_PRESENT, streak: 0, transitions: 0",
+      "passed": true,
+      "details": {
+        "state": "CONFIRMED_PRESENT",
+        "vacant_streak": 0
+      }
+    }
+  ],
+  "all_temporal_scenarios_passed": true,
+  "detection_records_yolov8n": [
+    {
+      "image_id": "visit_01",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_01.png",
+      "resolution": [
+        780,
+        636
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 85.41159999731462,
+      "steady_latency_ms": 79.60503333500431,
+      "detections_count": 8,
+      "labels": [
+        "bottle",
+        "cup",
+        "laptop",
+        "scissors",
+        "vase",
+        "book",
+        "dining table",
+        "potted plant"
+      ],
+      "confidences": [
+        0.9557095766067505,
+        0.9105688333511353,
+        0.8909456729888916,
+        0.8585313558578491,
+        0.8091253638267517,
+        0.7166026830673218,
+        0.588387668132782,
+        0.5170894265174866
+      ],
+      "bboxes": [
+        [
+          280.0,
+          146.0,
+          377.0,
+          410.0
+        ],
+        [
+          33.0,
+          317.0,
+          210.0,
+          501.0
+        ],
+        [
+          648.0,
+          50.0,
+          777.0,
+          380.0
+        ],
+        [
+          210.0,
+          489.0,
+          491.0,
+          590.0
+        ],
+        [
+          0.0,
+          242.0,
+          102.0,
+          362.0
+        ],
+        [
+          406.0,
+          326.0,
+          754.0,
+          562.0
+        ],
+        [
+          1.0,
+          256.0,
+          777.0,
+          632.0
+        ],
+        [
+          0.0,
+          3.0,
+          202.0,
+          361.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_02",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_02.png",
+      "resolution": [
+        780,
+        636
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 78.8293666652559,
+      "detections_count": 8,
+      "labels": [
+        "bottle",
+        "cup",
+        "laptop",
+        "scissors",
+        "vase",
+        "book",
+        "dining table",
+        "potted plant"
+      ],
+      "confidences": [
+        0.9480872750282288,
+        0.9288601279258728,
+        0.9215424060821533,
+        0.8727868795394897,
+        0.795826256275177,
+        0.7650882601737976,
+        0.7229904532432556,
+        0.687532901763916
+      ],
+      "bboxes": [
+        [
+          280.0,
+          146.0,
+          376.0,
+          408.0
+        ],
+        [
+          30.0,
+          314.0,
+          207.0,
+          495.0
+        ],
+        [
+          647.0,
+          49.0,
+          779.0,
+          379.0
+        ],
+        [
+          206.0,
+          485.0,
+          488.0,
+          589.0
+        ],
+        [
+          6.0,
+          234.0,
+          95.0,
+          354.0
+        ],
+        [
+          409.0,
+          325.0,
+          752.0,
+          559.0
+        ],
+        [
+          11.0,
+          256.0,
+          779.0,
+          630.0
+        ],
+        [
+          3.0,
+          0.0,
+          195.0,
+          353.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_03",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_03.png",
+      "resolution": [
+        784,
+        636
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 76.34590000573856,
+      "detections_count": 7,
+      "labels": [
+        "bottle",
+        "scissors",
+        "cup",
+        "potted plant",
+        "book",
+        "vase",
+        "dining table"
+      ],
+      "confidences": [
+        0.9411202669143677,
+        0.9340478181838989,
+        0.9245444536209106,
+        0.7853308916091919,
+        0.7611477375030518,
+        0.7390996217727661,
+        0.5968956351280212
+      ],
+      "bboxes": [
+        [
+          216.0,
+          146.0,
+          313.0,
+          405.0
+        ],
+        [
+          120.0,
+          471.0,
+          393.0,
+          585.0
+        ],
+        [
+          564.0,
+          252.0,
+          725.0,
+          406.0
+        ],
+        [
+          0.0,
+          0.0,
+          160.0,
+          357.0
+        ],
+        [
+          322.0,
+          337.0,
+          669.0,
+          572.0
+        ],
+        [
+          0.0,
+          239.0,
+          88.0,
+          356.0
+        ],
+        [
+          0.0,
+          248.0,
+          765.0,
+          620.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_04",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_04.png",
+      "resolution": [
+        592,
+        576
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 75.92920000024606,
+      "detections_count": 7,
+      "labels": [
+        "bottle",
+        "laptop",
+        "cup",
+        "dining table",
+        "vase",
+        "potted plant",
+        "book"
+      ],
+      "confidences": [
+        0.9541521668434143,
+        0.9059559106826782,
+        0.895859956741333,
+        0.802463173866272,
+        0.7497969269752502,
+        0.6732344627380371,
+        0.5132034420967102
+      ],
+      "bboxes": [
+        [
+          206.0,
+          126.0,
+          286.0,
+          341.0
+        ],
+        [
+          471.0,
+          30.0,
+          590.0,
+          305.0
+        ],
+        [
+          14.0,
+          255.0,
+          162.0,
+          414.0
+        ],
+        [
+          0.0,
+          210.0,
+          590.0,
+          569.0
+        ],
+        [
+          0.0,
+          194.0,
+          79.0,
+          294.0
+        ],
+        [
+          0.0,
+          0.0,
+          166.0,
+          294.0
+        ],
+        [
+          294.0,
+          264.0,
+          591.0,
+          463.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_05",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_05.png",
+      "resolution": [
+        584,
+        576
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 83.00890000343013,
+      "detections_count": 7,
+      "labels": [
+        "cup",
+        "scissors",
+        "laptop",
+        "vase",
+        "potted plant",
+        "book",
+        "dining table"
+      ],
+      "confidences": [
+        0.9362141489982605,
+        0.9333897829055786,
+        0.9033198952674866,
+        0.7138564586639404,
+        0.6288871765136719,
+        0.49103567004203796,
+        0.32229024171829224
+      ],
+      "bboxes": [
+        [
+          25.0,
+          264.0,
+          178.0,
+          425.0
+        ],
+        [
+          166.0,
+          427.0,
+          402.0,
+          525.0
+        ],
+        [
+          457.0,
+          37.0,
+          583.0,
+          328.0
+        ],
+        [
+          1.0,
+          213.0,
+          81.0,
+          313.0
+        ],
+        [
+          0.0,
+          0.0,
+          169.0,
+          315.0
+        ],
+        [
+          294.0,
+          284.0,
+          568.0,
+          476.0
+        ],
+        [
+          2.0,
+          224.0,
+          583.0,
+          573.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_06",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_06.png",
+      "resolution": [
+        584,
+        576
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 77.5084666723463,
+      "detections_count": 7,
+      "labels": [
+        "cup",
+        "scissors",
+        "laptop",
+        "potted plant",
+        "vase",
+        "laptop",
+        "dining table"
+      ],
+      "confidences": [
+        0.9325500726699829,
+        0.9046530723571777,
+        0.8520143628120422,
+        0.7505479454994202,
+        0.637721598148346,
+        0.5531583428382874,
+        0.3954508304595947
+      ],
+      "bboxes": [
+        [
+          24.0,
+          260.0,
+          174.0,
+          422.0
+        ],
+        [
+          154.0,
+          422.0,
+          392.0,
+          523.0
+        ],
+        [
+          454.0,
+          30.0,
+          581.0,
+          308.0
+        ],
+        [
+          5.0,
+          0.0,
+          165.0,
+          297.0
+        ],
+        [
+          6.0,
+          202.0,
+          80.0,
+          298.0
+        ],
+        [
+          289.0,
+          266.0,
+          573.0,
+          466.0
+        ],
+        [
+          11.0,
+          210.0,
+          583.0,
+          574.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_07",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_07.png",
+      "resolution": [
+        588,
+        576
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 78.67186666893151,
+      "detections_count": 8,
+      "labels": [
+        "bottle",
+        "cup",
+        "scissors",
+        "laptop",
+        "vase",
+        "dining table",
+        "book",
+        "potted plant"
+      ],
+      "confidences": [
+        0.954763650894165,
+        0.9298546314239502,
+        0.9111658930778503,
+        0.8722992539405823,
+        0.7718394994735718,
+        0.7338019609451294,
+        0.6361964344978333,
+        0.6122817993164062
+      ],
+      "bboxes": [
+        [
+          208.0,
+          122.0,
+          290.0,
+          342.0
+        ],
+        [
+          10.0,
+          254.0,
+          158.0,
+          416.0
+        ],
+        [
+          129.0,
+          418.0,
+          367.0,
+          515.0
+        ],
+        [
+          458.0,
+          31.0,
+          581.0,
+          303.0
+        ],
+        [
+          0.0,
+          197.0,
+          63.0,
+          293.0
+        ],
+        [
+          1.0,
+          207.0,
+          587.0,
+          569.0
+        ],
+        [
+          297.0,
+          265.0,
+          577.0,
+          471.0
+        ],
+        [
+          0.0,
+          0.0,
+          144.0,
+          292.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "real_test_v01",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/objectmemory_real_test/images/visit_01.png",
+      "resolution": [
+        996,
+        747
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 77.10356667424396,
+      "detections_count": 1,
+      "labels": [
+        "scissors"
+      ],
+      "confidences": [
+        0.32368963956832886
+      ],
+      "bboxes": [
+        [
+          264.0,
+          363.0,
+          641.0,
+          670.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "real_test_v02",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/objectmemory_real_test/images/visit_02.png",
+      "resolution": [
+        627,
+        405
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 100.77396666747518,
+      "detections_count": 7,
+      "labels": [
+        "cell phone",
+        "scissors",
+        "potted plant",
+        "cake",
+        "carrot",
+        "cup",
+        "dining table"
+      ],
+      "confidences": [
+        0.5682625770568848,
+        0.5555722713470459,
+        0.5050433278083801,
+        0.45537081360816956,
+        0.38510093092918396,
+        0.3204369843006134,
+        0.3087347447872162
+      ],
+      "bboxes": [
+        [
+          285.0,
+          180.0,
+          409.0,
+          297.0
+        ],
+        [
+          460.0,
+          316.0,
+          604.0,
+          372.0
+        ],
+        [
+          38.0,
+          130.0,
+          142.0,
+          346.0
+        ],
+        [
+          289.0,
+          297.0,
+          386.0,
+          347.0
+        ],
+        [
+          201.0,
+          347.0,
+          257.0,
+          404.0
+        ],
+        [
+          50.0,
+          252.0,
+          141.0,
+          351.0
+        ],
+        [
+          9.0,
+          246.0,
+          625.0,
+          403.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "studio_demo_v03",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/studio_demo/images/visit_03.png",
+      "resolution": [
+        1672,
+        941
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 118.54756666677228,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "studio_demo_v04",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/studio_demo/images/visit_04.png",
+      "resolution": [
+        1672,
+        941
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 111.62086666930311,
+      "detections_count": 4,
+      "labels": [
+        "person",
+        "person",
+        "bottle",
+        "bottle"
+      ],
+      "confidences": [
+        0.5638456344604492,
+        0.5540817975997925,
+        0.41464513540267944,
+        0.3860532343387604
+      ],
+      "bboxes": [
+        [
+          1587.0,
+          96.0,
+          1635.0,
+          159.0
+        ],
+        [
+          1551.0,
+          95.0,
+          1593.0,
+          153.0
+        ],
+        [
+          1551.0,
+          730.0,
+          1636.0,
+          848.0
+        ],
+        [
+          1425.0,
+          696.0,
+          1501.0,
+          810.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_no_change",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/no_change/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 114.62006666503537,
+      "detections_count": 6,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.7861762046813965,
+        0.3810931444168091,
+        0.32773762941360474,
+        0.29345035552978516,
+        0.2866469919681549,
+        0.286563903093338
+      ],
+      "bboxes": [
+        [
+          518.0,
+          273.0,
+          527.0,
+          282.0
+        ],
+        [
+          403.0,
+          217.0,
+          412.0,
+          225.0
+        ],
+        [
+          533.0,
+          169.0,
+          544.0,
+          178.0
+        ],
+        [
+          586.0,
+          227.0,
+          591.0,
+          232.0
+        ],
+        [
+          618.0,
+          211.0,
+          627.0,
+          219.0
+        ],
+        [
+          481.0,
+          73.0,
+          490.0,
+          81.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_moved",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_moved/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 114.07159999847256,
+      "detections_count": 3,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.5723710060119629,
+        0.27726462483406067,
+        0.27022889256477356
+      ],
+      "bboxes": [
+        [
+          266.0,
+          359.0,
+          273.0,
+          365.0
+        ],
+        [
+          279.0,
+          295.0,
+          288.0,
+          304.0
+        ],
+        [
+          182.0,
+          319.0,
+          189.0,
+          325.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_added",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_added/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 113.69116666416328,
+      "detections_count": 2,
+      "labels": [
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.8120006322860718,
+        0.5521815419197083
+      ],
+      "bboxes": [
+        [
+          358.0,
+          329.0,
+          365.0,
+          335.0
+        ],
+        [
+          251.0,
+          452.0,
+          260.0,
+          462.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_removed",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_removed/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 117.09096667376191,
+      "detections_count": 5,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.8178474307060242,
+        0.5884215235710144,
+        0.3291545510292053,
+        0.32798099517822266,
+        0.2905084788799286
+      ],
+      "bboxes": [
+        [
+          327.0,
+          370.0,
+          337.0,
+          379.0
+        ],
+        [
+          613.0,
+          272.0,
+          621.0,
+          280.0
+        ],
+        [
+          74.0,
+          302.0,
+          79.0,
+          309.0
+        ],
+        [
+          34.0,
+          228.0,
+          39.0,
+          234.0
+        ],
+        [
+          361.0,
+          398.0,
+          367.0,
+          405.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_occlusion",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/partial_occlusion/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 112.67856667594363,
+      "detections_count": 8,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.8548203706741333,
+        0.8008083701133728,
+        0.7237670421600342,
+        0.683417797088623,
+        0.4307129383087158,
+        0.40779027342796326,
+        0.40610337257385254,
+        0.28586795926094055
+      ],
+      "bboxes": [
+        [
+          111.0,
+          421.0,
+          120.0,
+          429.0
+        ],
+        [
+          335.0,
+          421.0,
+          344.0,
+          429.0
+        ],
+        [
+          523.0,
+          430.0,
+          532.0,
+          439.0
+        ],
+        [
+          436.0,
+          203.0,
+          445.0,
+          212.0
+        ],
+        [
+          540.0,
+          332.0,
+          549.0,
+          340.0
+        ],
+        [
+          561.0,
+          115.0,
+          568.0,
+          122.0
+        ],
+        [
+          583.0,
+          230.0,
+          590.0,
+          237.0
+        ],
+        [
+          256.0,
+          436.0,
+          263.0,
+          443.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_lighting",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/lighting_change/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 113.41960000087663,
+      "detections_count": 4,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.5161944031715393,
+        0.42749544978141785,
+        0.27766117453575134,
+        0.2624318301677704
+      ],
+      "bboxes": [
+        [
+          235.0,
+          402.0,
+          244.0,
+          411.0
+        ],
+        [
+          271.0,
+          391.0,
+          280.0,
+          399.0
+        ],
+        [
+          120.0,
+          261.0,
+          129.0,
+          270.0
+        ],
+        [
+          218.0,
+          337.0,
+          228.0,
+          345.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_ambiguous",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/ambiguous_objects/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 109.87009999613899,
+      "detections_count": 15,
+      "labels": [
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball",
+        "sports ball"
+      ],
+      "confidences": [
+        0.7308457493782043,
+        0.7238628268241882,
+        0.719196081161499,
+        0.7119197249412537,
+        0.5014564990997314,
+        0.4286014437675476,
+        0.42794549465179443,
+        0.4269682765007019,
+        0.38007447123527527,
+        0.36922580003738403,
+        0.3415071964263916,
+        0.3357542157173157,
+        0.27144327759742737,
+        0.2660646140575409,
+        0.25705140829086304
+      ],
+      "bboxes": [
+        [
+          561.0,
+          353.0,
+          568.0,
+          360.0
+        ],
+        [
+          256.0,
+          364.0,
+          265.0,
+          373.0
+        ],
+        [
+          228.0,
+          381.0,
+          238.0,
+          390.0
+        ],
+        [
+          261.0,
+          244.0,
+          270.0,
+          253.0
+        ],
+        [
+          291.0,
+          300.0,
+          301.0,
+          309.0
+        ],
+        [
+          443.0,
+          376.0,
+          452.0,
+          385.0
+        ],
+        [
+          223.0,
+          187.0,
+          232.0,
+          196.0
+        ],
+        [
+          333.0,
+          345.0,
+          340.0,
+          352.0
+        ],
+        [
+          176.0,
+          240.0,
+          181.0,
+          245.0
+        ],
+        [
+          81.0,
+          180.0,
+          91.0,
+          188.0
+        ],
+        [
+          160.0,
+          424.0,
+          168.0,
+          431.0
+        ],
+        [
+          370.0,
+          455.0,
+          379.0,
+          463.0
+        ],
+        [
+          103.0,
+          133.0,
+          113.0,
+          141.0
+        ],
+        [
+          123.0,
+          223.0,
+          132.0,
+          231.0
+        ],
+        [
+          337.0,
+          105.0,
+          347.0,
+          113.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_unreliable",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/unreliable_alignment/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolov8n",
+      "detector_version": "onnx",
+      "prompts": null,
+      "confidence_threshold": 0.25,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 112.89553333093257,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    }
+  ],
+  "detection_records_world": [
+    {
+      "image_id": "visit_01",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_01.png",
+      "resolution": [
+        780,
+        636
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 630.5731000029482,
+      "steady_latency_ms": 330.53513333531254,
+      "detections_count": 5,
+      "labels": [
+        "water bottle",
+        "book",
+        "mug",
+        "potted plant",
+        "notebook"
+      ],
+      "confidences": [
+        0.5919604897499084,
+        0.3117285966873169,
+        0.24642619490623474,
+        0.24344968795776367,
+        0.17792201042175293
+      ],
+      "bboxes": [
+        [
+          279.0,
+          147.0,
+          376.0,
+          409.0
+        ],
+        [
+          406.0,
+          326.0,
+          753.0,
+          562.0
+        ],
+        [
+          31.0,
+          317.0,
+          212.0,
+          502.0
+        ],
+        [
+          0.0,
+          5.0,
+          201.0,
+          367.0
+        ],
+        [
+          645.0,
+          48.0,
+          779.0,
+          381.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_02",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_02.png",
+      "resolution": [
+        780,
+        636
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 312.27053333229077,
+      "detections_count": 5,
+      "labels": [
+        "bottle",
+        "book",
+        "notebook",
+        "mug",
+        "potted plant"
+      ],
+      "confidences": [
+        0.5939669609069824,
+        0.3593294620513916,
+        0.3325819671154022,
+        0.302672803401947,
+        0.26442939043045044
+      ],
+      "bboxes": [
+        [
+          278.0,
+          147.0,
+          374.0,
+          408.0
+        ],
+        [
+          408.0,
+          327.0,
+          753.0,
+          561.0
+        ],
+        [
+          646.0,
+          47.0,
+          779.0,
+          382.0
+        ],
+        [
+          29.0,
+          313.0,
+          207.0,
+          496.0
+        ],
+        [
+          3.0,
+          0.0,
+          193.0,
+          358.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_03",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_03.png",
+      "resolution": [
+        784,
+        636
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 311.2053666700376,
+      "detections_count": 4,
+      "labels": [
+        "water bottle",
+        "potted plant",
+        "book",
+        "mug"
+      ],
+      "confidences": [
+        0.5637363791465759,
+        0.3525896370410919,
+        0.3523032069206238,
+        0.21252843737602234
+      ],
+      "bboxes": [
+        [
+          216.0,
+          147.0,
+          312.0,
+          406.0
+        ],
+        [
+          0.0,
+          0.0,
+          159.0,
+          357.0
+        ],
+        [
+          322.0,
+          338.0,
+          669.0,
+          574.0
+        ],
+        [
+          565.0,
+          252.0,
+          724.0,
+          408.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_04",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_04.png",
+      "resolution": [
+        592,
+        576
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 326.3094000042959,
+      "detections_count": 5,
+      "labels": [
+        "bottle",
+        "notebook",
+        "mug",
+        "potted plant",
+        "book"
+      ],
+      "confidences": [
+        0.4945323169231415,
+        0.40119969844818115,
+        0.3434959053993225,
+        0.3176763653755188,
+        0.20235344767570496
+      ],
+      "bboxes": [
+        [
+          207.0,
+          127.0,
+          286.0,
+          341.0
+        ],
+        [
+          471.0,
+          29.0,
+          591.0,
+          307.0
+        ],
+        [
+          13.0,
+          255.0,
+          162.0,
+          415.0
+        ],
+        [
+          0.0,
+          0.0,
+          165.0,
+          320.0
+        ],
+        [
+          295.0,
+          265.0,
+          591.0,
+          464.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_05",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_05.png",
+      "resolution": [
+        584,
+        576
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 313.95250000544667,
+      "detections_count": 4,
+      "labels": [
+        "notebook",
+        "mug",
+        "notebook",
+        "potted plant"
+      ],
+      "confidences": [
+        0.353263258934021,
+        0.30381977558135986,
+        0.29705435037612915,
+        0.2287495732307434
+      ],
+      "bboxes": [
+        [
+          294.0,
+          287.0,
+          569.0,
+          477.0
+        ],
+        [
+          25.0,
+          265.0,
+          179.0,
+          427.0
+        ],
+        [
+          457.0,
+          38.0,
+          583.0,
+          331.0
+        ],
+        [
+          0.0,
+          0.0,
+          167.0,
+          318.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_06",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_06.png",
+      "resolution": [
+        584,
+        576
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 308.0189999988458,
+      "detections_count": 2,
+      "labels": [
+        "mug",
+        "notebook"
+      ],
+      "confidences": [
+        0.2851960062980652,
+        0.2289155125617981
+      ],
+      "bboxes": [
+        [
+          22.0,
+          261.0,
+          174.0,
+          423.0
+        ],
+        [
+          287.0,
+          267.0,
+          572.0,
+          466.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "visit_07",
+      "image_group": "real_annotated",
+      "image_path": "data/real_workbench/visits/visit_07.png",
+      "resolution": [
+        588,
+        576
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 316.19716666076175,
+      "detections_count": 4,
+      "labels": [
+        "bottle",
+        "potted plant",
+        "mug",
+        "book"
+      ],
+      "confidences": [
+        0.5758410096168518,
+        0.3782937824726105,
+        0.3152981102466583,
+        0.22980543971061707
+      ],
+      "bboxes": [
+        [
+          208.0,
+          123.0,
+          290.0,
+          341.0
+        ],
+        [
+          0.0,
+          0.0,
+          144.0,
+          303.0
+        ],
+        [
+          9.0,
+          253.0,
+          160.0,
+          416.0
+        ],
+        [
+          298.0,
+          265.0,
+          578.0,
+          471.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "real_test_v01",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/objectmemory_real_test/images/visit_01.png",
+      "resolution": [
+        996,
+        747
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 319.17323333133635,
+      "detections_count": 1,
+      "labels": [
+        "mug"
+      ],
+      "confidences": [
+        0.1833902895450592
+      ],
+      "bboxes": [
+        [
+          263.0,
+          363.0,
+          404.0,
+          471.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "real_test_v02",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/objectmemory_real_test/images/visit_02.png",
+      "resolution": [
+        627,
+        405
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 328.43406665779185,
+      "detections_count": 1,
+      "labels": [
+        "potted plant"
+      ],
+      "confidences": [
+        0.15417498350143433
+      ],
+      "bboxes": [
+        [
+          38.0,
+          130.0,
+          135.0,
+          277.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "studio_demo_v03",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/studio_demo/images/visit_03.png",
+      "resolution": [
+        1672,
+        941
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 315.42923333957634,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "studio_demo_v04",
+      "image_group": "real_descriptive",
+      "image_path": "data/workspaces/studio_demo/images/visit_04.png",
+      "resolution": [
+        1672,
+        941
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 319.1147333418485,
+      "detections_count": 2,
+      "labels": [
+        "bottle",
+        "bottle"
+      ],
+      "confidences": [
+        0.2103969156742096,
+        0.1713300347328186
+      ],
+      "bboxes": [
+        [
+          1423.0,
+          697.0,
+          1504.0,
+          811.0
+        ],
+        [
+          1555.0,
+          730.0,
+          1637.0,
+          849.0
+        ]
+      ],
+      "error": null
+    },
+    {
+      "image_id": "synth_no_change",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/no_change/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 319.9523666698951,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_moved",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_moved/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 303.0887666682247,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_added",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_added/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 316.6698333370732,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_removed",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/object_removed/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 314.8528333355595,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_occlusion",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/partial_occlusion/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 313.20489999779966,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_lighting",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/lighting_change/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 319.4557000000107,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_ambiguous",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/ambiguous_objects/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 310.6826333338783,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    },
+    {
+      "image_id": "synth_unreliable",
+      "image_group": "synthetic",
+      "image_path": "data/synthetic_workbench/unreliable_alignment/query.png",
+      "resolution": [
+        640,
+        480
+      ],
+      "detector_name": "yolo-world",
+      "detector_version": "yolov8s-worldv2",
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "confidence_threshold": 0.15,
+      "init_latency_ms": 0.0,
+      "steady_latency_ms": 318.29473333103425,
+      "detections_count": 0,
+      "labels": [],
+      "confidences": [],
+      "bboxes": [],
+      "error": null
+    }
+  ]
+}

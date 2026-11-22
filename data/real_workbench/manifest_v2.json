@@ -1,0 +1,878 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "desk_pilot_01",
+  "provenance": "EXPLORATORY_PILOT",
+  "metadata": {
+    "description": "Seven-visit physical desk scene for ObjectMemory pilot evaluation. Scene: potted plant, mug (cup_01), second white cup (cup_02), water bottle (bottle_01), red scissors (scissors_01), navy hardcover book (book_01), spiral kraft notebook (notebook_01). Evaluated branches: CONFIRMED_PRESENT, CONFIRMED_MOVED (mug relocation x2), CONFIRMED_REMOVED (second cup, bottle), PENDING_REMOVAL, reappearance after CONFIRMED_REMOVED (bottle V7), NEWLY_APPEARED (notebook V4), ambiguous occlusion (scissors V4 - see notes).",
+    "sensor": "Smartphone camera, overhead desk capture, ambient indoor lighting",
+    "image_provenance": "Physical smartphone photographs cropped and saved as RGBA PNG without EXIF metadata. Evaluated as a real-world pilot validation sequence, not a formal laboratory metrology benchmark.",
+    "resolution_groups": {
+      "group_A_visits": [
+        "visit_01",
+        "visit_02",
+        "visit_03"
+      ],
+      "group_A_resolution": [
+        780,
+        636
+      ],
+      "group_B_visits": [
+        "visit_04",
+        "visit_05",
+        "visit_06",
+        "visit_07"
+      ],
+      "group_B_resolution_approx": [
+        584,
+        576
+      ],
+      "note": "V1-V3 (~780x636) and V4-V7 (~584x576) have different fields of view. The 35px movement threshold is resolution-dependent. Registration homography must accommodate the FOV shift between V3 and V4. This is a documented limitation of the pilot; no threshold change is made."
+    },
+    "entities_excluded": [
+      "laptop - partially visible at right edge in all visits, excluded from tracked set per user instruction"
+    ],
+    "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX"
+  },
+  "sequences": [
+    {
+      "sequence_id": "desk_pilot_seq_01",
+      "environment_id": "desk_pilot_workspace",
+      "dataset_name": "desk_pilot_01",
+      "observations": [
+        {
+          "observation_id": "visit_01",
+          "timestamp": "2026-10-15T09:00:00Z",
+          "image_path": "visits/visit_01.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                165.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Control. Potted plant top-left, partially cropped at left and top edges. Stationary control across all 7 visits.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                318.0,
+                220.0,
+                540.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Primary white mug with handle, left-center. Bbox estimated from grid: x=10-220, y=318-540. Handle extends left to ~x=10.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": [
+                75.0,
+                280.0,
+                200.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "INSUFFICIENT_EVIDENCE",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Second white cylindrical cup (no visible handle), positioned behind/right of cup_01 in V1 only. Visible in V1 close-up crop. Expected INSUFFICIENT_EVIDENCE at first visit (not yet confirmed present). Will be ABSENT from V2 onward.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "INSUFFICIENT_EVIDENCE"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                277.0,
+                148.0,
+                384.0,
+                408.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Clear plastic bottle with blue cap, centre of desk. Bbox estimated: cap top ~y=148, base ~y=408, sides x=277-384. Transparent body may yield variable detector confidence.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                183.0,
+                484.0,
+                470.0,
+                600.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Red-handled scissors, centre-bottom. Handles left ~x=183, blade tip right ~x=470, top ~y=484, bottom ~y=600.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                425.0,
+                340.0,
+                740.0,
+                560.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T09:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Dark navy hardcover book, closed, centre-right. Control object; stationary across all visits.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Baseline \u2014 all objects present"
+          }
+        },
+        {
+          "observation_id": "visit_02",
+          "timestamp": "2026-10-15T10:00:00Z",
+          "image_path": "visits/visit_02.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                165.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Stationary. Same position as V1.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                318.0,
+                210.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Primary mug unchanged from V1. cup_02 has been removed, making cup_01 the only white cup.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Second cup no longer visible. First reliable absence: streak=1. Transitions from INSUFFICIENT_EVIDENCE to PENDING_REMOVAL.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "PENDING_REMOVAL"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                277.0,
+                148.0,
+                384.0,
+                408.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Unchanged position.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                163.0,
+                492.0,
+                460.0,
+                604.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Scissors appear slightly lower-left vs V1. Small positional shift; not clearly >= 35px. Annotated as UNCHANGED. If the engine measures the centroid and finds displacement >= 35px, actual system state will differ \u2014 this is an open observation.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                425.0,
+                345.0,
+                740.0,
+                560.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T10:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Unchanged.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Second cup removed; scissors slightly repositioned"
+          }
+        },
+        {
+          "observation_id": "visit_03",
+          "timestamp": "2026-10-15T11:00:00Z",
+          "image_path": "visits/visit_03.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                80.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Stationary. V3 is 784px wide; plant is cropped more at left edge.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                548.0,
+                250.0,
+                730.0,
+                420.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "RELOCATED",
+              "evidence_notes": "Cup_01 has moved from left-center (~x=10-220) to right-center (~x=548-730), in front of the laptop. Large centroid shift. RELOCATED -> CONFIRMED_MOVED.",
+              "metadata": {
+                "expected_event": "RELOCATED",
+                "raw_expected_state": "CONFIRMED_MOVED"
+              }
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Second consecutive absence (streak=2). PENDING_REMOVAL -> CONFIRMED_REMOVED.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "CONFIRMED_REMOVED"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                197.0,
+                150.0,
+                310.0,
+                400.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Bottle appears stationary though frame shifted slightly (V3=784px wide). Bbox adjusted for frame width.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                90.0,
+                465.0,
+                290.0,
+                590.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "RELOCATED",
+              "evidence_notes": "Scissors clearly moved to lower-left. Prior V2 centroid was ~(312,548); V3 centroid ~(190,528). Displacement visible and large. RELOCATED -> CONFIRMED_MOVED.",
+              "metadata": {
+                "expected_event": "RELOCATED",
+                "raw_expected_state": "CONFIRMED_MOVED"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                310.0,
+                340.0,
+                655.0,
+                570.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T11:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Book stationary. Slightly wider bbox in V3 due to frame width (784px).",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Mug relocated to right; scissors repositioned to bottom-left"
+          }
+        },
+        {
+          "observation_id": "visit_04",
+          "timestamp": "2026-10-15T12:00:00Z",
+          "image_path": "visits/visit_04.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                118.0,
+                240.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "V4 is 592px wide. Plant scaled proportionally.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                258.0,
+                175.0,
+                440.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "RELOCATED",
+              "evidence_notes": "Cup_01 returned to initial baseline position on the left from its V3 right-side position. This is a return-to-baseline relocation (physical displacement ~575.9px relative to V3, baseline displacement ~1.8px <= 54.3px). Transition: CONFIRMED_MOVED -> CONFIRMED_PRESENT (return to baseline event detected).",
+              "metadata": {
+                "expected_event": "RELOCATED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                193.0,
+                125.0,
+                288.0,
+                345.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Bottle still present, roughly same desk position. Bbox scaled to V4 frame (592px wide).",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "AMBIGUOUS: scissors are not visible in V4. The spiral notebook occupies the lower-center area where scissors were in V3. Whether the scissors are physically under the notebook (FULLY_OCCLUDED) or were removed before it was placed (ABSENT) CANNOT be determined from the image. Per instruction, we do NOT label FULLY_OCCLUDED without image evidence of actual occlusion. Recording as ABSENT (streak=1). If scissors were actually occluded, the engine will incorrectly increment removal streak. This ambiguity is a known limitation of this pilot visit.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "PENDING_REMOVAL"
+              }
+            },
+            {
+              "object_id": "notebook_01",
+              "class_name": "book",
+              "bounding_box": [
+                60.0,
+                390.0,
+                400.0,
+                540.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "INSUFFICIENT_EVIDENCE",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "NEWLY_APPEARED",
+              "evidence_notes": "Spiral kraft-paper notebook, newly placed on desk. Annotated as entity_label='book' because that is the COCO-80 class the YOLOv8n detector will fire for this object. expected_state=INSUFFICIENT_EVIDENCE at first visit (not yet confirmed). WARNING: In V4, two 'book'-label objects exist (notebook_01 + book_01). The evaluator must disambiguate them by spatial IoU; book_01 and notebook_01 have non-overlapping bboxes so IoU=0 between them.",
+              "metadata": {
+                "expected_event": "NEWLY_APPEARED",
+                "raw_expected_state": "INSUFFICIENT_EVIDENCE"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                295.0,
+                245.0,
+                542.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T12:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Navy hardcover book, stationary. Bbox scaled to V4 frame.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Mug returned to left; spiral notebook appeared; scissors absent/ambiguous"
+          }
+        },
+        {
+          "observation_id": "visit_05",
+          "timestamp": "2026-10-15T13:00:00Z",
+          "image_path": "visits/visit_05.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                116.0,
+                240.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Stationary. V5 is 584px wide.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                268.0,
+                175.0,
+                445.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Mug remains stationary at its returned baseline position. expected_state is CONFIRMED_PRESENT.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Bottle is absent for the first time. streak=1. CONFIRMED_PRESENT -> PENDING_REMOVAL.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "PENDING_REMOVAL"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                130.0,
+                425.0,
+                380.0,
+                543.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "NEWLY_APPEARED",
+              "evidence_notes": "Scissors are visible again. Prior expected_state was PENDING_REMOVAL (V4 absence). They reappear here. annotated_event=NEWLY_APPEARED preserves entity_id=scissors_01 (same persistent identity). expected_state=CONFIRMED_PRESENT set explicitly to override policy derivation from prior PENDING_REMOVAL + VISIBLE observation. NOTE: If scissors were actually occluded in V4 (ambiguity), this reappearance is just an uncovering \u2014 CONFIRMED_MOVED (from V3) would be more appropriate. The ambiguity from V4 propagates here.",
+              "metadata": {
+                "expected_event": "NEWLY_APPEARED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "notebook_01",
+              "class_name": "book",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Spiral notebook removed. First absence after appearing in V4. streak=1 for notebook_01.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "PENDING_REMOVAL"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                285.0,
+                255.0,
+                520.0,
+                490.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T13:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Navy hardcover book, stationary.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Bottle removed (streak=1); notebook gone; scissors reappeared"
+          }
+        },
+        {
+          "observation_id": "visit_06",
+          "timestamp": "2026-10-15T14:00:00Z",
+          "image_path": "visits/visit_06.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                116.0,
+                240.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Stationary.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                268.0,
+                175.0,
+                445.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Mug at same returned baseline position as V5. expected_state is CONFIRMED_PRESENT.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Second consecutive absence (streak=2). PENDING_REMOVAL -> CONFIRMED_REMOVED.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "CONFIRMED_REMOVED"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                125.0,
+                425.0,
+                360.0,
+                543.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Scissors visible at similar position to V5.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "notebook_01",
+              "class_name": "book",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Second consecutive absence (streak=2 for notebook_01). PENDING_REMOVAL -> CONFIRMED_REMOVED.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "CONFIRMED_REMOVED"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                285.0,
+                268.0,
+                520.0,
+                490.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T14:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Navy hardcover book, stationary.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Bottle still absent (streak=2, CONFIRMED_REMOVED); notebook still absent"
+          }
+        },
+        {
+          "observation_id": "visit_07",
+          "timestamp": "2026-10-15T15:00:00Z",
+          "image_path": "visits/visit_07.png",
+          "objects": [
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                0.0,
+                0.0,
+                117.0,
+                240.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Stationary.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                10.0,
+                258.0,
+                160.0,
+                435.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Mug at returned baseline position, unchanged from V5-V6. expected_state is CONFIRMED_PRESENT.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                176.0,
+                120.0,
+                286.0,
+                340.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "NEWLY_APPEARED",
+              "evidence_notes": "Bottle has returned to the desk after CONFIRMED_REMOVED in V6. Same entity_id 'bottle_01' \u2014 persistent identity is preserved. annotated_event=NEWLY_APPEARED signals physical reintroduction. expected_state=CONFIRMED_PRESENT set EXPLICITLY because derivation from CONFIRMED_REMOVED + VISIBLE is not guaranteed. Engine docstring confirms: 'If entity in CONFIRMED_REMOVED is re-observed, transitions to CONFIRMED_PRESENT.' This annotation tests that branch.",
+              "metadata": {
+                "expected_event": "NEWLY_APPEARED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                118.0,
+                418.0,
+                350.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Scissors visible. Slightly lower position vs V6.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            },
+            {
+              "object_id": "notebook_01",
+              "class_name": "book",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "ABSENT",
+              "evidence_notes": "Notebook remains absent. Stays CONFIRMED_REMOVED.",
+              "metadata": {
+                "expected_event": "ABSENT",
+                "raw_expected_state": "CONFIRMED_REMOVED"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                295.0,
+                248.0,
+                525.0,
+                490.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-10-15T15:00:00Z",
+              "event_id": "UNCHANGED",
+              "evidence_notes": "Navy hardcover book, stationary.",
+              "metadata": {
+                "expected_event": "UNCHANGED",
+                "raw_expected_state": "CONFIRMED_PRESENT"
+              }
+            }
+          ],
+          "metadata": {
+            "session_name": "Bottle reappears after CONFIRMED_REMOVED"
+          }
+        }
+      ],
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "lighting_conditions": "Consistent ambient indoor lighting across all visits"
+      }
+    }
+  ]
+}

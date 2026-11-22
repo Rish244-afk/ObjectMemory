@@ -1,0 +1,5138 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "Physical Workbench Benchmark v1",
+  "provenance": "GENUINE_PHYSICAL",
+  "status": "AWAITING_PHYSICAL_DATA",
+  "metadata": {
+    "specification_version": "2.0.0",
+    "target_objects_count": 10,
+    "scenarios_count": 5,
+    "total_observations_planned": 25,
+    "sensor": "DSLR / Mirrorless / High-Res Smartphone mounted on rigid boom rig at 45-60 deg oblique angle",
+    "target_resolution": [
+      1920,
+      1080
+    ],
+    "calibration": "ArUco DICT_4X4_50 perimeter markers (ID 0, 1, 2, 3)",
+    "target_objects": [
+      {
+        "object_id": "cup_01",
+        "class_name": "cup",
+        "desc": "White ceramic coffee mug with handle",
+        "base_box": [
+          100.0,
+          150.0,
+          220.0,
+          290.0
+        ]
+      },
+      {
+        "object_id": "book_01",
+        "class_name": "book",
+        "desc": "Navy hardcover textbook",
+        "base_box": [
+          300.0,
+          100.0,
+          520.0,
+          280.0
+        ]
+      },
+      {
+        "object_id": "scissors_01",
+        "class_name": "scissors",
+        "desc": "Red craft scissors with steel blades",
+        "base_box": [
+          600.0,
+          180.0,
+          720.0,
+          250.0
+        ]
+      },
+      {
+        "object_id": "bottle_01",
+        "class_name": "bottle",
+        "desc": "Translucent reusable water bottle",
+        "base_box": [
+          800.0,
+          80.0,
+          910.0,
+          360.0
+        ]
+      },
+      {
+        "object_id": "phone_01",
+        "class_name": "cell phone",
+        "desc": "Black smartphone in matte case",
+        "base_box": [
+          150.0,
+          400.0,
+          270.0,
+          550.0
+        ]
+      },
+      {
+        "object_id": "mouse_01",
+        "class_name": "mouse",
+        "desc": "Optical computer mouse with scroll wheel",
+        "base_box": [
+          400.0,
+          420.0,
+          480.0,
+          530.0
+        ]
+      },
+      {
+        "object_id": "keyboard_01",
+        "class_name": "keyboard",
+        "desc": "Compact mechanical desktop keyboard",
+        "base_box": [
+          550.0,
+          380.0,
+          950.0,
+          520.0
+        ]
+      },
+      {
+        "object_id": "bowl_01",
+        "class_name": "bowl",
+        "desc": "White ceramic snack bowl",
+        "base_box": [
+          1050.0,
+          200.0,
+          1200.0,
+          350.0
+        ]
+      },
+      {
+        "object_id": "laptop_01",
+        "class_name": "laptop",
+        "desc": "14-inch silver laptop computer",
+        "base_box": [
+          1300.0,
+          150.0,
+          1750.0,
+          500.0
+        ]
+      },
+      {
+        "object_id": "plant_01",
+        "class_name": "potted plant",
+        "desc": "Succulent in white ceramic pot",
+        "base_box": [
+          50.0,
+          50.0,
+          180.0,
+          200.0
+        ]
+      }
+    ],
+    "status_explanation": "Specification and ground-truth annotation structure complete. Awaiting photographic frame capture into data/physical_workbench_v1/images/."
+  },
+  "sequences": [
+    {
+      "sequence_id": "S01_stationary_baseline",
+      "environment_id": "workbench_studio_rig_01",
+      "dataset_name": "Physical Workbench Benchmark v1",
+      "challenge_mode": "STATIONARY_CONTROL",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "observations": [
+        {
+          "observation_id": "S01_obs_01",
+          "timestamp": "2026-11-20T10:01:00Z",
+          "image_path": "images/S01_obs_01.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Initial baseline placement",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "condition": "nominal_lighting",
+            "viewpoint": "nominal_45_deg"
+          }
+        },
+        {
+          "observation_id": "S01_obs_02",
+          "timestamp": "2026-11-20T10:02:00Z",
+          "image_path": "images/S01_obs_02.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 2",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "condition": "nominal_lighting",
+            "viewpoint": "nominal_45_deg"
+          }
+        },
+        {
+          "observation_id": "S01_obs_03",
+          "timestamp": "2026-11-20T10:03:00Z",
+          "image_path": "images/S01_obs_03.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 3",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "condition": "nominal_lighting",
+            "viewpoint": "nominal_45_deg"
+          }
+        },
+        {
+          "observation_id": "S01_obs_04",
+          "timestamp": "2026-11-20T10:04:00Z",
+          "image_path": "images/S01_obs_04.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 4",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "condition": "nominal_lighting",
+            "viewpoint": "nominal_45_deg"
+          }
+        },
+        {
+          "observation_id": "S01_obs_05",
+          "timestamp": "2026-11-20T10:05:00Z",
+          "image_path": "images/S01_obs_05.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T10:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control check visit 5",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "condition": "nominal_lighting",
+            "viewpoint": "nominal_45_deg"
+          }
+        }
+      ],
+      "split": "TEST",
+      "metadata": {
+        "scenario_name": "Scenario 1: Stationary objects under normal conditions",
+        "visits_count": 5
+      }
+    },
+    {
+      "sequence_id": "S02_object_relocation",
+      "environment_id": "workbench_studio_rig_01",
+      "dataset_name": "Physical Workbench Benchmark v1",
+      "challenge_mode": "RELOCATION",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "observations": [
+        {
+          "observation_id": "S02_obs_01",
+          "timestamp": "2026-11-20T11:01:00Z",
+          "image_path": "images/S02_obs_01.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S02_obs_02",
+          "timestamp": "2026-11-20T11:02:00Z",
+          "image_path": "images/S02_obs_02.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S02_obs_03",
+          "timestamp": "2026-11-20T11:03:00Z",
+          "image_path": "images/S02_obs_03.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                350.0,
+                150.0,
+                470.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "object_moved",
+              "evidence_notes": "Mug relocated 15cm right",
+              "metadata": {
+                "expected_event": "object_moved",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S02_obs_04",
+          "timestamp": "2026-11-20T11:04:00Z",
+          "image_path": "images/S02_obs_04.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                350.0,
+                150.0,
+                470.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "object_moved",
+              "evidence_notes": "Mug relocated 15cm right",
+              "metadata": {
+                "expected_event": "object_moved",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                570.0,
+                480.0,
+                680.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "object_moved",
+              "evidence_notes": "Mouse relocated 10cm down",
+              "metadata": {
+                "expected_event": "object_moved",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S02_obs_05",
+          "timestamp": "2026-11-20T11:05:00Z",
+          "image_path": "images/S02_obs_05.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "return_to_baseline",
+              "evidence_notes": "Mug returned to baseline spot",
+              "metadata": {
+                "expected_event": "return_to_baseline",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                570.0,
+                480.0,
+                680.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "object_moved",
+              "evidence_notes": "Mouse relocated 10cm down",
+              "metadata": {
+                "expected_event": "object_moved",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T11:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        }
+      ],
+      "split": "TEST",
+      "metadata": {
+        "scenario_name": "Scenario 2: Genuine object relocation",
+        "visits_count": 5
+      }
+    },
+    {
+      "sequence_id": "S03_object_removal",
+      "environment_id": "workbench_studio_rig_01",
+      "dataset_name": "Physical Workbench Benchmark v1",
+      "challenge_mode": "REMOVAL",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "observations": [
+        {
+          "observation_id": "S03_obs_01",
+          "timestamp": "2026-11-20T12:01:00Z",
+          "image_path": "images/S03_obs_01.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S03_obs_02",
+          "timestamp": "2026-11-20T12:02:00Z",
+          "image_path": "images/S03_obs_02.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Bottle physically removed from table (streak 1)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S03_obs_03",
+          "timestamp": "2026-11-20T12:03:00Z",
+          "image_path": "images/S03_obs_03.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Bottle confirmed removed (streak 2 vacancy confirmed)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S03_obs_04",
+          "timestamp": "2026-11-20T12:04:00Z",
+          "image_path": "images/S03_obs_04.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Scissors removed from desk (streak 1)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Bottle confirmed removed (streak 2 vacancy confirmed)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S03_obs_05",
+          "timestamp": "2026-11-20T12:05:00Z",
+          "image_path": "images/S03_obs_05.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Scissors confirmed removed (streak 2)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": null,
+              "visibility_status": "UNOBSERVED",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "object_removed",
+              "evidence_notes": "Bottle confirmed removed (streak 2 vacancy confirmed)",
+              "metadata": {
+                "expected_event": "object_removed",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T12:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        }
+      ],
+      "split": "TEST",
+      "metadata": {
+        "scenario_name": "Scenario 3: Genuine object removal",
+        "visits_count": 5
+      }
+    },
+    {
+      "sequence_id": "S04_temporary_occlusion_and_reappearance",
+      "environment_id": "workbench_studio_rig_01",
+      "dataset_name": "Physical Workbench Benchmark v1",
+      "challenge_mode": "OCCLUSION_AND_REAPPEARANCE",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "observations": [
+        {
+          "observation_id": "S04_obs_01",
+          "timestamp": "2026-11-20T13:01:00Z",
+          "image_path": "images/S04_obs_01.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S04_obs_02",
+          "timestamp": "2026-11-20T13:02:00Z",
+          "image_path": "images/S04_obs_02.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "PARTIALLY_OCCLUDED",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "partial_occlusion",
+              "evidence_notes": "Cardboard placed over top half of phone",
+              "metadata": {
+                "expected_event": "partial_occlusion",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S04_obs_03",
+          "timestamp": "2026-11-20T13:03:00Z",
+          "image_path": "images/S04_obs_03.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "HEAVILY_OCCLUDED",
+              "object_state": "INSUFFICIENT_EVIDENCE",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "heavy_occlusion",
+              "evidence_notes": "Phone heavily covered by folder",
+              "metadata": {
+                "expected_event": "heavy_occlusion",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S04_obs_04",
+          "timestamp": "2026-11-20T13:04:00Z",
+          "image_path": "images/S04_obs_04.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "occlusion_recovery",
+              "evidence_notes": "Occluder removed, phone fully observable again",
+              "metadata": {
+                "expected_event": "occlusion_recovery",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        },
+        {
+          "observation_id": "S04_obs_05",
+          "timestamp": "2026-11-20T13:05:00Z",
+          "image_path": "images/S04_obs_05.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "reappeared",
+              "evidence_notes": "Bottle returned to table surface after removal",
+              "metadata": {
+                "expected_event": "reappeared",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T13:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary check",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ]
+        }
+      ],
+      "split": "TEST",
+      "metadata": {
+        "scenario_name": "Scenario 4: Temporary occlusion and subsequent reappearance",
+        "visits_count": 5
+      }
+    },
+    {
+      "sequence_id": "S05_viewpoint_and_lighting_perturbation",
+      "environment_id": "workbench_studio_rig_01",
+      "dataset_name": "Physical Workbench Benchmark v1",
+      "challenge_mode": "NUISANCE_PERTURBATIONS",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "observations": [
+        {
+          "observation_id": "S05_obs_01",
+          "timestamp": "2026-11-20T14:01:00Z",
+          "image_path": "images/S05_obs_01.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:01:00Z",
+              "event_id": "baseline_established",
+              "evidence_notes": "Baseline established",
+              "metadata": {
+                "expected_event": "baseline_established",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "lighting": "nominal_450_lux",
+            "viewpoint": "nominal_rig_pose"
+          }
+        },
+        {
+          "observation_id": "S05_obs_02",
+          "timestamp": "2026-11-20T14:02:00Z",
+          "image_path": "images/S05_obs_02.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:02:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under dim light",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "lighting": "dimmed_200_lux",
+            "viewpoint": "nominal_rig_pose"
+          }
+        },
+        {
+          "observation_id": "S05_obs_03",
+          "timestamp": "2026-11-20T14:03:00Z",
+          "image_path": "images/S05_obs_03.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:03:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under shadow",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "lighting": "directional_shadow",
+            "viewpoint": "nominal_rig_pose"
+          }
+        },
+        {
+          "observation_id": "S05_obs_04",
+          "timestamp": "2026-11-20T14:04:00Z",
+          "image_path": "images/S05_obs_04.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:04:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under viewpoint jitter",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "lighting": "nominal_450_lux",
+            "viewpoint": "perturbed_tilt_4deg"
+          }
+        },
+        {
+          "observation_id": "S05_obs_05",
+          "timestamp": "2026-11-20T14:05:00Z",
+          "image_path": "images/S05_obs_05.jpg",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                100.0,
+                150.0,
+                220.0,
+                290.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic coffee mug with handle"
+              }
+            },
+            {
+              "object_id": "book_01",
+              "class_name": "book",
+              "bounding_box": [
+                300.0,
+                100.0,
+                520.0,
+                280.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Navy hardcover textbook"
+              }
+            },
+            {
+              "object_id": "scissors_01",
+              "class_name": "scissors",
+              "bounding_box": [
+                600.0,
+                180.0,
+                720.0,
+                250.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Red craft scissors with steel blades"
+              }
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [
+                800.0,
+                80.0,
+                910.0,
+                360.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Translucent reusable water bottle"
+              }
+            },
+            {
+              "object_id": "phone_01",
+              "class_name": "cell phone",
+              "bounding_box": [
+                150.0,
+                400.0,
+                270.0,
+                550.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Black smartphone in matte case"
+              }
+            },
+            {
+              "object_id": "mouse_01",
+              "class_name": "mouse",
+              "bounding_box": [
+                400.0,
+                420.0,
+                480.0,
+                530.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Optical computer mouse with scroll wheel"
+              }
+            },
+            {
+              "object_id": "keyboard_01",
+              "class_name": "keyboard",
+              "bounding_box": [
+                550.0,
+                380.0,
+                950.0,
+                520.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Compact mechanical desktop keyboard"
+              }
+            },
+            {
+              "object_id": "bowl_01",
+              "class_name": "bowl",
+              "bounding_box": [
+                1050.0,
+                200.0,
+                1200.0,
+                350.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "White ceramic snack bowl"
+              }
+            },
+            {
+              "object_id": "laptop_01",
+              "class_name": "laptop",
+              "bounding_box": [
+                1300.0,
+                150.0,
+                1750.0,
+                500.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "14-inch silver laptop computer"
+              }
+            },
+            {
+              "object_id": "plant_01",
+              "class_name": "potted plant",
+              "bounding_box": [
+                50.0,
+                50.0,
+                180.0,
+                200.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-20T14:05:00Z",
+              "event_id": "baseline_stable",
+              "evidence_notes": "Stationary control under height perturbation",
+              "metadata": {
+                "expected_event": "baseline_stable",
+                "target_description": "Succulent in white ceramic pot"
+              }
+            }
+          ],
+          "metadata": {
+            "lighting": "nominal_450_lux",
+            "viewpoint": "raised_height_10cm"
+          }
+        }
+      ],
+      "split": "TEST",
+      "metadata": {
+        "scenario_name": "Scenario 5: Camera viewpoint or lighting changes",
+        "visits_count": 5
+      }
+    }
+  ]
+}

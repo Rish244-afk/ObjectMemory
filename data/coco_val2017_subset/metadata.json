@@ -1,0 +1,199 @@
+{
+  "provenance": "Official COCO 2017 Validation Set (http://cocodataset.org)",
+  "license": "Creative Commons Attribution 4.0 License (CC-BY 4.0)",
+  "selection_criteria": "20 images covering 8 benchmark classes: cup, bottle, book, laptop, scissors, potted plant, chair, cell phone",
+  "total_images": 20,
+  "total_annotations": 84,
+  "target_classes": [
+    "cup",
+    "bottle",
+    "book",
+    "laptop",
+    "scissors",
+    "potted plant",
+    "chair",
+    "cell phone"
+  ],
+  "images": [
+    {
+      "image_id": 3845,
+      "file_name": "000000003845.jpg",
+      "sha256": "d5c4394c712e5c24586f2531e2adf25d14e398993cc12af561ca760f20881df0",
+      "width": 500,
+      "height": 375,
+      "coco_url": "http://images.cocodataset.org/val2017/000000003845.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 2431,
+      "file_name": "000000002431.jpg",
+      "sha256": "fa0ce7b066c2fe7bd0892aa2c6361943148db9766de60241e69d8026a18e05ad",
+      "width": 457,
+      "height": 640,
+      "coco_url": "http://images.cocodataset.org/val2017/000000002431.jpg",
+      "annotations_count": 2
+    },
+    {
+      "image_id": 2157,
+      "file_name": "000000002157.jpg",
+      "sha256": "1a038609e5ceb0719105b1438d257c3d588e45384cb7ffe77b137e4d7e3ed477",
+      "width": 640,
+      "height": 427,
+      "coco_url": "http://images.cocodataset.org/val2017/000000002157.jpg",
+      "annotations_count": 2
+    },
+    {
+      "image_id": 3934,
+      "file_name": "000000003934.jpg",
+      "sha256": "c7b1180c75a332e8768a4ca76b1fe8b3e3e073e2b925d94f43fa5439535d5dcf",
+      "width": 375,
+      "height": 500,
+      "coco_url": "http://images.cocodataset.org/val2017/000000003934.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 13923,
+      "file_name": "000000013923.jpg",
+      "sha256": "91494500cd053f1c4e547edc53f62edce2b088588bf9b4dbc8ceaea86ad4d49e",
+      "width": 640,
+      "height": 427,
+      "coco_url": "http://images.cocodataset.org/val2017/000000013923.jpg",
+      "annotations_count": 11
+    },
+    {
+      "image_id": 99024,
+      "file_name": "000000099024.jpg",
+      "sha256": "b4fcb2faf1245d03bc09e0964bd345c13e01eb8aef4deb403cbf14379875c3b4",
+      "width": 640,
+      "height": 482,
+      "coco_url": "http://images.cocodataset.org/val2017/000000099024.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 1503,
+      "file_name": "000000001503.jpg",
+      "sha256": "06c721f0a62bcb9fcb2d2d0cc0b9edd63092084a8773a18c4b5a7bd6fb4f095d",
+      "width": 320,
+      "height": 240,
+      "coco_url": "http://images.cocodataset.org/val2017/000000001503.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 4134,
+      "file_name": "000000004134.jpg",
+      "sha256": "2c922f6ec30f9c4eca2b373c8808f63979c26f4d89242754b3576bf78db1108b",
+      "width": 640,
+      "height": 425,
+      "coco_url": "http://images.cocodataset.org/val2017/000000004134.jpg",
+      "annotations_count": 3
+    },
+    {
+      "image_id": 1993,
+      "file_name": "000000001993.jpg",
+      "sha256": "039f3bfb862023bde7f835a36c32d8f59a3e66488863c2a47b7b746e78c44186",
+      "width": 640,
+      "height": 419,
+      "coco_url": "http://images.cocodataset.org/val2017/000000001993.jpg",
+      "annotations_count": 2
+    },
+    {
+      "image_id": 5193,
+      "file_name": "000000005193.jpg",
+      "sha256": "2f0360e89d71b146cbfaee05e934303864fa61d9bf1a1f5cc0c2e508b8191b8d",
+      "width": 640,
+      "height": 425,
+      "coco_url": "http://images.cocodataset.org/val2017/000000005193.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 5001,
+      "file_name": "000000005001.jpg",
+      "sha256": "99600c56dc25c72dc1cc1d1f2b09aa33b97142560b54d034fa83a38fcf3c5b0f",
+      "width": 640,
+      "height": 480,
+      "coco_url": "http://images.cocodataset.org/val2017/000000005001.jpg",
+      "annotations_count": 2
+    },
+    {
+      "image_id": 4795,
+      "file_name": "000000004795.jpg",
+      "sha256": "6f8994bac6aef0602d4aa4397ecd4b7d579f5b18f66058a2df021352dd22bdc6",
+      "width": 640,
+      "height": 480,
+      "coco_url": "http://images.cocodataset.org/val2017/000000004795.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 14038,
+      "file_name": "000000014038.jpg",
+      "sha256": "7dc972133bcc2e8e49ca1c2b7c20678eecb0c853e78f085f7270f295e1349350",
+      "width": 640,
+      "height": 427,
+      "coco_url": "http://images.cocodataset.org/val2017/000000014038.jpg",
+      "annotations_count": 18
+    },
+    {
+      "image_id": 3661,
+      "file_name": "000000003661.jpg",
+      "sha256": "8746b068c166782f4b4fb7e6be9d16e5311e9c15bc867e21409b7f5d2eddefb4",
+      "width": 640,
+      "height": 384,
+      "coco_url": "http://images.cocodataset.org/val2017/000000003661.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 1268,
+      "file_name": "000000001268.jpg",
+      "sha256": "8e85a2e71ee512fe748a3a3be9bb40b8591e8c501c0f3896efcb5be5999ec236",
+      "width": 640,
+      "height": 427,
+      "coco_url": "http://images.cocodataset.org/val2017/000000001268.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 2685,
+      "file_name": "000000002685.jpg",
+      "sha256": "2430b9bffb5ff52dfbaf7b922ac8018547e233a5996a6b017bd1a206a46c5bdb",
+      "width": 640,
+      "height": 555,
+      "coco_url": "http://images.cocodataset.org/val2017/000000002685.jpg",
+      "annotations_count": 10
+    },
+    {
+      "image_id": 139,
+      "file_name": "000000000139.jpg",
+      "sha256": "ffe0f0cec3b2e27aab1967229cdf0a0d7751dcdd5800322f0b8ac0dffb3b8a8d",
+      "width": 640,
+      "height": 426,
+      "coco_url": "http://images.cocodataset.org/val2017/000000000139.jpg",
+      "annotations_count": 8
+    },
+    {
+      "image_id": 1296,
+      "file_name": "000000001296.jpg",
+      "sha256": "34a98da7c11bc8811e6eec445145bb16f3d5f4338945ba116edcc1fe554d181b",
+      "width": 427,
+      "height": 640,
+      "coco_url": "http://images.cocodataset.org/val2017/000000001296.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 2592,
+      "file_name": "000000002592.jpg",
+      "sha256": "ffa3d472d44184b1f48878f7b097189723e57a24f36c44c29e4bc561110fbf41",
+      "width": 640,
+      "height": 366,
+      "coco_url": "http://images.cocodataset.org/val2017/000000002592.jpg",
+      "annotations_count": 1
+    },
+    {
+      "image_id": 632,
+      "file_name": "000000000632.jpg",
+      "sha256": "a4cd7f45ac1ce27eaafb254b23af7c0b18a064be08870ceaaf03b2147f2ce550",
+      "width": 640,
+      "height": 483,
+      "coco_url": "http://images.cocodataset.org/val2017/000000000632.jpg",
+      "annotations_count": 16
+    }
+  ]
+}

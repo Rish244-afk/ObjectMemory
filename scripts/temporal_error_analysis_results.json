@@ -1,0 +1,389 @@
+{
+  "audit_version": "Phase 5 Task 3 Temporal Error Analysis",
+  "engineered_test_counts": {
+    "false_movements": 0,
+    "false_removals": 0,
+    "missed_movements": 0,
+    "missed_removals": 0,
+    "duplicate_entities": 0,
+    "incorrect_associations": 0,
+    "registration_gated_decisions": 1,
+    "uncertain_deferred_decisions": 1,
+    "scenarios_audited": 10,
+    "scenarios_passed": 10,
+    "details": [
+      "Registration failure gated state transition",
+      "Single frame drop deferred to PENDING_REMOVAL"
+    ]
+  },
+  "physical_sequence_measurements": {
+    "yolov8n": {
+      "detector": "yolov8n",
+      "total_visits_processed": 7,
+      "false_movement_events": 2,
+      "false_removal_events": 0,
+      "missed_movement_events": 1,
+      "missed_removal_events": 0,
+      "duplicate_entities": 1,
+      "incorrect_entity_associations": 0,
+      "registration_gated_decisions": 5,
+      "uncertain_deferred_decisions": 2,
+      "per_visit_audit": [
+        {
+          "visit_id": "visit_01",
+          "session_name": "Baseline \u2014 all objects present",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 1.0,
+          "detections_count": 8,
+          "new_entities": 8,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_01_ent_visit_01_1_discovery",
+              "entity_id": "ent_visit_01_1",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_2_discovery",
+              "entity_id": "ent_visit_01_2",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_3_discovery",
+              "entity_id": "ent_visit_01_3",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_4_discovery",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_5_discovery",
+              "entity_id": "ent_visit_01_5",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_6_discovery",
+              "entity_id": "ent_visit_01_6",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_7_discovery",
+              "entity_id": "ent_visit_01_7",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_8_discovery",
+              "entity_id": "ent_visit_01_8",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_02",
+          "session_name": "Second cup removed; scissors slightly repositioned",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.5532,
+          "detections_count": 8,
+          "new_entities": 0,
+          "events_recorded": []
+        },
+        {
+          "visit_id": "visit_03",
+          "session_name": "Mug relocated to right; scissors repositioned to bottom-left",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.3412,
+          "detections_count": 7,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_03_ent_visit_01_2_confirmed_moved",
+              "entity_id": "ent_visit_01_2",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_MOVED",
+              "displacement": 577.1906498097716
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_04",
+          "session_name": "Mug returned to left; spiral notebook appeared; scissors absent/ambiguous",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2222,
+          "detections_count": 7,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_04_ent_visit_01_2_confirmed_present",
+              "entity_id": "ent_visit_01_2",
+              "prior_state": "CONFIRMED_MOVED",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.0
+            },
+            {
+              "event_id": "evt_visit_04_ent_visit_01_4_pending_removal",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "PENDING_REMOVAL",
+              "displacement": null
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_05",
+          "session_name": "Bottle removed (streak=1); notebook gone; scissors reappeared",
+          "registration_status": "INSUFFICIENT_INLIERS",
+          "inlier_ratio": 0.1809,
+          "detections_count": 7,
+          "new_entities": 0,
+          "events_recorded": []
+        },
+        {
+          "visit_id": "visit_06",
+          "session_name": "Bottle still absent (streak=2, CONFIRMED_REMOVED); notebook still absent",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2535,
+          "detections_count": 7,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_06_ent_visit_01_4_confirmed_present",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "PENDING_REMOVAL",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.0
+            },
+            {
+              "event_id": "evt_visit_06_ent_visit_01_6_confirmed_moved",
+              "entity_id": "ent_visit_01_6",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_MOVED",
+              "displacement": 98.25143401196938
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_07",
+          "session_name": "Bottle reappears after CONFIRMED_REMOVED",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2527,
+          "detections_count": 8,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_07_ent_visit_01_4_confirmed_moved",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_MOVED",
+              "displacement": 37.99666716531194
+            },
+            {
+              "event_id": "evt_visit_07_ent_visit_01_6_confirmed_present",
+              "entity_id": "ent_visit_01_6",
+              "prior_state": "CONFIRMED_MOVED",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    "yolo-world": {
+      "detector": "yolo-world",
+      "total_visits_processed": 7,
+      "false_movement_events": 1,
+      "false_removal_events": 0,
+      "missed_movement_events": 1,
+      "missed_removal_events": 0,
+      "duplicate_entities": 0,
+      "incorrect_entity_associations": 0,
+      "registration_gated_decisions": 5,
+      "uncertain_deferred_decisions": 0,
+      "per_visit_audit": [
+        {
+          "visit_id": "visit_01",
+          "session_name": "Baseline \u2014 all objects present",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 1.0,
+          "detections_count": 5,
+          "new_entities": 5,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_01_ent_visit_01_1_discovery",
+              "entity_id": "ent_visit_01_1",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_2_discovery",
+              "entity_id": "ent_visit_01_2",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_3_discovery",
+              "entity_id": "ent_visit_01_3",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_4_discovery",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            },
+            {
+              "event_id": "evt_visit_01_ent_visit_01_5_discovery",
+              "entity_id": "ent_visit_01_5",
+              "prior_state": "INSUFFICIENT_EVIDENCE",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": null
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_02",
+          "session_name": "Second cup removed; scissors slightly repositioned",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.5532,
+          "detections_count": 5,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_02_ent_visit_01_1_class_mismatch",
+              "entity_id": "ent_visit_01_1",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.9847481850748139
+            },
+            {
+              "event_id": "evt_visit_02_ent_visit_01_4_class_mismatch",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 1.4667623171976538
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_03",
+          "session_name": "Mug relocated to right; scissors repositioned to bottom-left",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.3412,
+          "detections_count": 4,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_03_ent_visit_01_3_confirmed_moved",
+              "entity_id": "ent_visit_01_3",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_MOVED",
+              "displacement": 578.5836740152018
+            },
+            {
+              "event_id": "evt_visit_03_ent_visit_01_4_class_mismatch",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 32.15726458439366
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_04",
+          "session_name": "Mug returned to left; spiral notebook appeared; scissors absent/ambiguous",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2222,
+          "detections_count": 5,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_04_ent_visit_01_1_class_mismatch",
+              "entity_id": "ent_visit_01_1",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 2.2805778888532338
+            },
+            {
+              "event_id": "evt_visit_04_ent_visit_01_3_confirmed_present",
+              "entity_id": "ent_visit_01_3",
+              "prior_state": "CONFIRMED_MOVED",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.0
+            },
+            {
+              "event_id": "evt_visit_04_ent_visit_01_4_class_mismatch",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 19.075739285798676
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_05",
+          "session_name": "Bottle removed (streak=1); notebook gone; scissors reappeared",
+          "registration_status": "INSUFFICIENT_INLIERS",
+          "inlier_ratio": 0.1809,
+          "detections_count": 4,
+          "new_entities": 0,
+          "events_recorded": []
+        },
+        {
+          "visit_id": "visit_06",
+          "session_name": "Bottle still absent (streak=2, CONFIRMED_REMOVED); notebook still absent",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2535,
+          "detections_count": 3,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_06_ent_visit_01_4_confirmed_moved",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_PRESENT",
+              "new_state": "CONFIRMED_MOVED",
+              "displacement": 98.84099162768203
+            }
+          ]
+        },
+        {
+          "visit_id": "visit_07",
+          "session_name": "Bottle reappears after CONFIRMED_REMOVED",
+          "registration_status": "SUCCESS",
+          "inlier_ratio": 0.2527,
+          "detections_count": 4,
+          "new_entities": 0,
+          "events_recorded": [
+            {
+              "event_id": "evt_visit_07_ent_visit_01_4_confirmed_present",
+              "entity_id": "ent_visit_01_4",
+              "prior_state": "CONFIRMED_MOVED",
+              "new_state": "CONFIRMED_PRESENT",
+              "displacement": 0.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

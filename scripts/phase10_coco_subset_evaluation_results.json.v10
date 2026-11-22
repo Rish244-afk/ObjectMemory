@@ -1,0 +1,88 @@
+{
+  "benchmark_name": "COCO 2017 Validation Subset (20 Images, 8 Classes)",
+  "timestamp": "2026-10-21T04:00:59Z",
+  "provenance": "Official COCO 2017 Validation Set (http://cocodataset.org)",
+  "license": "Creative Commons Attribution 4.0 License (CC-BY 4.0)",
+  "target_classes": [
+    "cup",
+    "bottle",
+    "book",
+    "laptop",
+    "scissors",
+    "potted plant",
+    "chair",
+    "cell phone"
+  ],
+  "total_images": 20,
+  "total_ground_truth_objects": 84,
+  "hardware": {
+    "platform": "Windows-10-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 186 Stepping 3, GenuineIntel",
+    "cpu_count_logical": 12,
+    "cpu_count_physical": 10,
+    "total_ram_gb": 15.69,
+    "python_version": "3.11.9"
+  },
+  "models": {
+    "yolov8n": {
+      "model_name": "yolov8n",
+      "backend": "OpenCV DNN (CPU)",
+      "confidence_threshold": 0.25,
+      "target_classes": [
+        "cup",
+        "bottle",
+        "book",
+        "laptop",
+        "scissors",
+        "potted plant",
+        "chair",
+        "cell phone"
+      ],
+      "tp": 18,
+      "fp": 10,
+      "fn": 66,
+      "precision": 0.6429,
+      "recall": 0.2143,
+      "f1_score": 0.3214,
+      "map50": 0.345,
+      "map50_95": 0.2779,
+      "latency_ms": {
+        "mean": 66.28,
+        "median": 64.39,
+        "p95": 100.45,
+        "min": 47.51,
+        "max": 107.68
+      }
+    },
+    "yolo-world": {
+      "model_name": "yolo-world",
+      "backend": "ONNX Runtime (CPU) with CLIP Text Prompts",
+      "confidence_threshold": 0.25,
+      "target_classes": [
+        "cup",
+        "bottle",
+        "book",
+        "laptop",
+        "scissors",
+        "potted plant",
+        "chair",
+        "cell phone"
+      ],
+      "tp": 7,
+      "fp": 6,
+      "fn": 77,
+      "precision": 0.5385,
+      "recall": 0.0833,
+      "f1_score": 0.1443,
+      "map50": 0.1716,
+      "map50_95": 0.1457,
+      "latency_ms": {
+        "mean": 296.27,
+        "median": 277.95,
+        "p95": 404.62,
+        "min": 231.06,
+        "max": 470.48
+      }
+    }
+  }
+}

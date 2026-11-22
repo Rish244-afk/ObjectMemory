@@ -1,0 +1,30 @@
+{
+  "dataset_name": "desk_pilot_01",
+  "dataset_version": "1.0.0-pilot",
+  "status": "PASSED",
+  "capture_status": "COMPLETE",
+  "provenance": "Physical smartphone photographs cropped and saved as RGBA PNG without EXIF metadata. Evaluated as a real-world pilot validation sequence, not a formal laboratory metrology benchmark.",
+  "total_sequences": 1,
+  "total_visits": 7,
+  "images_found": 7,
+  "images_missing": 0,
+  "total_annotations": 42,
+  "errors": [],
+  "warnings": [
+    "Canonical scenario 'S01_stationary_baseline' not defined in manifest.",
+    "Canonical scenario 'S02_temporary_movement_return' not defined in manifest.",
+    "Canonical scenario 'S03_persistent_relocation' not defined in manifest.",
+    "Canonical scenario 'S04_permanent_removal' not defined in manifest.",
+    "Canonical scenario 'S05_partial_occlusion' not defined in manifest.",
+    "Canonical scenario 'S06_illumination_stress' not defined in manifest.",
+    "Canonical scenario 'S07_viewpoint_perturbation' not defined in manifest.",
+    "Sequence 'desk_pilot_01' has 7 visits; standard protocol expects 5 visits.",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_01'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_02'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_03'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_04'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_05'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_06'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']",
+    "Non-canonical class 'potted plant' in 'desk_pilot_01' visit 'visit_07'. Standard classes: ['book', 'bottle', 'cell phone', 'cup', 'scissors']"
+  ]
+}

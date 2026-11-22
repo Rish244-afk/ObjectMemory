@@ -1,0 +1,1080 @@
+{
+  "phase": 8,
+  "timestamp": "2026-10-20T17:15:19Z",
+  "description": "ObjectMemory Studio Phase 8 Temporal Reliability & Provenance Audit",
+  "controlled_benchmark": {
+    "baseline_single_ref": {
+      "success_rate": 0.8667,
+      "success_count": 13,
+      "failure_count": 2,
+      "mean_latency_ms": 156.96,
+      "cases": [
+        {
+          "case": "stable_jitter_1",
+          "success": true,
+          "inliers": 428,
+          "inlier_ratio": 0.8664,
+          "mean_error_px": 0.039,
+          "latency_ms": 134.4
+        },
+        {
+          "case": "stable_jitter_2",
+          "success": true,
+          "inliers": 445,
+          "inlier_ratio": 0.8777,
+          "mean_error_px": 0.029,
+          "latency_ms": 190.01
+        },
+        {
+          "case": "moderate_pan_1",
+          "success": true,
+          "inliers": 719,
+          "inlier_ratio": 0.9612,
+          "mean_error_px": 0.015,
+          "latency_ms": 137.01
+        },
+        {
+          "case": "moderate_pan_2",
+          "success": true,
+          "inliers": 325,
+          "inlier_ratio": 0.842,
+          "mean_error_px": 0.023,
+          "latency_ms": 114.86
+        },
+        {
+          "case": "large_pan_1",
+          "success": true,
+          "inliers": 418,
+          "inlier_ratio": 0.9268,
+          "mean_error_px": 0.019,
+          "latency_ms": 85.0
+        },
+        {
+          "case": "large_pan_2",
+          "success": true,
+          "inliers": 163,
+          "inlier_ratio": 0.7026,
+          "mean_error_px": 0.344,
+          "latency_ms": 101.85
+        },
+        {
+          "case": "wide_pan_out_of_ref_1",
+          "success": false,
+          "inliers": 72,
+          "inlier_ratio": 0.4966,
+          "mean_error_px": null,
+          "latency_ms": 107.36
+        },
+        {
+          "case": "wide_pan_out_of_ref_2",
+          "success": false,
+          "inliers": 17,
+          "inlier_ratio": 0.2,
+          "mean_error_px": null,
+          "latency_ms": 139.07
+        },
+        {
+          "case": "scale_zoom_in",
+          "success": true,
+          "inliers": 373,
+          "inlier_ratio": 0.8109,
+          "mean_error_px": 0.092,
+          "latency_ms": 101.44
+        },
+        {
+          "case": "scale_zoom_out",
+          "success": true,
+          "inliers": 292,
+          "inlier_ratio": 0.8044,
+          "mean_error_px": 0.065,
+          "latency_ms": 98.36
+        },
+        {
+          "case": "rotation_tilt_5deg",
+          "success": true,
+          "inliers": 396,
+          "inlier_ratio": 0.848,
+          "mean_error_px": 0.037,
+          "latency_ms": 93.2
+        },
+        {
+          "case": "rotation_tilt_10deg",
+          "success": true,
+          "inliers": 387,
+          "inlier_ratio": 0.8619,
+          "mean_error_px": 0.064,
+          "latency_ms": 262.89
+        },
+        {
+          "case": "perspective_tilt_light",
+          "success": true,
+          "inliers": 346,
+          "inlier_ratio": 0.8418,
+          "mean_error_px": 0.032,
+          "latency_ms": 264.68
+        },
+        {
+          "case": "perspective_tilt_moderate",
+          "success": true,
+          "inliers": 305,
+          "inlier_ratio": 0.8866,
+          "mean_error_px": 0.094,
+          "latency_ms": 269.86
+        },
+        {
+          "case": "perspective_tilt_heavy",
+          "success": true,
+          "inliers": 186,
+          "inlier_ratio": 0.775,
+          "mean_error_px": 0.102,
+          "latency_ms": 254.43
+        }
+      ]
+    },
+    "adaptive_keyframe": {
+      "success_rate": 1.0,
+      "success_count": 15,
+      "failure_count": 0,
+      "mean_pos_error_px": 0.066,
+      "mean_latency_ms": 655.49,
+      "keyframes_created": 5,
+      "chained_count": 3,
+      "cases": [
+        {
+          "case": "stable_jitter_1",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 428,
+          "inlier_ratio": 0.8664,
+          "spatial_coverage": 0.9294,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.039,
+          "latency_ms": 139.83
+        },
+        {
+          "case": "stable_jitter_2",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 445,
+          "inlier_ratio": 0.8777,
+          "spatial_coverage": 0.9224,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.029,
+          "latency_ms": 156.78
+        },
+        {
+          "case": "moderate_pan_1",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 719,
+          "inlier_ratio": 0.9612,
+          "spatial_coverage": 0.8883,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.015,
+          "latency_ms": 136.16
+        },
+        {
+          "case": "moderate_pan_2",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 325,
+          "inlier_ratio": 0.842,
+          "spatial_coverage": 0.6939,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.023,
+          "latency_ms": 291.66
+        },
+        {
+          "case": "large_pan_1",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 418,
+          "inlier_ratio": 0.9268,
+          "spatial_coverage": 0.6206,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.019,
+          "latency_ms": 315.54
+        },
+        {
+          "case": "large_pan_2",
+          "success": true,
+          "selected_keyframe": "visit_05",
+          "is_direct_to_canonical": false,
+          "inliers": 336,
+          "inlier_ratio": 0.8317,
+          "spatial_coverage": 0.76,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.068,
+          "latency_ms": 326.48
+        },
+        {
+          "case": "wide_pan_out_of_ref_1",
+          "success": true,
+          "selected_keyframe": "visit_05",
+          "is_direct_to_canonical": false,
+          "inliers": 391,
+          "inlier_ratio": 0.8947,
+          "spatial_coverage": 0.6292,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.075,
+          "latency_ms": 405.45
+        },
+        {
+          "case": "wide_pan_out_of_ref_2",
+          "success": true,
+          "selected_keyframe": "visit_06",
+          "is_direct_to_canonical": false,
+          "inliers": 167,
+          "inlier_ratio": 0.7626,
+          "spatial_coverage": 0.437,
+          "delta_u_px": 1.58,
+          "effective_threshold_px": 36.58,
+          "mean_error_px": 0.242,
+          "latency_ms": 680.21
+        },
+        {
+          "case": "scale_zoom_in",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 373,
+          "inlier_ratio": 0.8109,
+          "spatial_coverage": 0.7984,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.092,
+          "latency_ms": 494.52
+        },
+        {
+          "case": "scale_zoom_out",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 292,
+          "inlier_ratio": 0.8044,
+          "spatial_coverage": 0.9093,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.065,
+          "latency_ms": 508.21
+        },
+        {
+          "case": "rotation_tilt_5deg",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 396,
+          "inlier_ratio": 0.848,
+          "spatial_coverage": 0.9074,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.037,
+          "latency_ms": 1029.44
+        },
+        {
+          "case": "rotation_tilt_10deg",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 387,
+          "inlier_ratio": 0.8619,
+          "spatial_coverage": 0.8761,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.064,
+          "latency_ms": 1337.9
+        },
+        {
+          "case": "perspective_tilt_light",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 346,
+          "inlier_ratio": 0.8418,
+          "spatial_coverage": 0.9109,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.032,
+          "latency_ms": 1309.18
+        },
+        {
+          "case": "perspective_tilt_moderate",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 305,
+          "inlier_ratio": 0.8866,
+          "spatial_coverage": 0.8201,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.094,
+          "latency_ms": 1384.39
+        },
+        {
+          "case": "perspective_tilt_heavy",
+          "success": true,
+          "selected_keyframe": "visit_00",
+          "is_direct_to_canonical": true,
+          "inliers": 186,
+          "inlier_ratio": 0.775,
+          "spatial_coverage": 0.6444,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "mean_error_px": 0.102,
+          "latency_ms": 1316.61
+        }
+      ]
+    },
+    "uncertainty_calibration": {
+      "heuristic_type": "Linear dynamic uncertainty Delta_U",
+      "empirical_coverage_rate": 1.0,
+      "samples_evaluated": 15,
+      "evaluations": [
+        {
+          "case": "stable_jitter_1",
+          "max_actual_error_px": 0.123,
+          "mean_actual_error_px": 0.039,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "stable_jitter_2",
+          "max_actual_error_px": 0.053,
+          "mean_actual_error_px": 0.029,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "moderate_pan_1",
+          "max_actual_error_px": 0.048,
+          "mean_actual_error_px": 0.015,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "moderate_pan_2",
+          "max_actual_error_px": 0.049,
+          "mean_actual_error_px": 0.023,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "large_pan_1",
+          "max_actual_error_px": 0.043,
+          "mean_actual_error_px": 0.019,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "large_pan_2",
+          "max_actual_error_px": 0.137,
+          "mean_actual_error_px": 0.068,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "wide_pan_out_of_ref_1",
+          "max_actual_error_px": 0.161,
+          "mean_actual_error_px": 0.075,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "wide_pan_out_of_ref_2",
+          "max_actual_error_px": 0.461,
+          "mean_actual_error_px": 0.242,
+          "delta_u_px": 1.58,
+          "effective_threshold_px": 36.58,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 1.58,
+            "effective_threshold_px": 36.58,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 1.58,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "scale_zoom_in",
+          "max_actual_error_px": 0.152,
+          "mean_actual_error_px": 0.092,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "scale_zoom_out",
+          "max_actual_error_px": 0.164,
+          "mean_actual_error_px": 0.065,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "rotation_tilt_5deg",
+          "max_actual_error_px": 0.061,
+          "mean_actual_error_px": 0.037,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "rotation_tilt_10deg",
+          "max_actual_error_px": 0.097,
+          "mean_actual_error_px": 0.064,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "perspective_tilt_light",
+          "max_actual_error_px": 0.048,
+          "mean_actual_error_px": 0.032,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "perspective_tilt_moderate",
+          "max_actual_error_px": 0.219,
+          "mean_actual_error_px": 0.094,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        },
+        {
+          "case": "perspective_tilt_heavy",
+          "max_actual_error_px": 0.198,
+          "mean_actual_error_px": 0.102,
+          "delta_u_px": 0.0,
+          "effective_threshold_px": 35.0,
+          "error_bounded_by_threshold": true,
+          "uncertainty_breakdown": {
+            "base_threshold_px": 35.0,
+            "delta_u_px": 0.0,
+            "effective_threshold_px": 35.0,
+            "u_reproj_px": 0.0,
+            "u_inlier_px": 0.0,
+            "u_coverage_px": 0.0,
+            "u_scale_px": 0.0
+          }
+        }
+      ]
+    }
+  },
+  "real_workbench_benchmark": {
+    "dataset_name": "desk_pilot_01",
+    "total_visits": 7,
+    "total_evaluations": 42,
+    "matched_evaluations": 27,
+    "overall_accuracy": 0.6429,
+    "movement_metrics": {
+      "false_movement_count": 0,
+      "total_unchanged_evaluations": 28,
+      "false_movement_rate": 0.0,
+      "missed_movement_count": 2,
+      "total_relocated_evaluations": 3,
+      "movement_sensitivity": 0.3333,
+      "return_to_baseline_detected": true,
+      "return_to_baseline_events": [
+        {
+          "visit_id": "visit_04",
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "consecutive_displacement": 575.8862680165996,
+          "baseline_displacement": 1.7526010451035656,
+          "explanation": "Object returned to initial baseline position (moved 575.9px since last observation; baseline displacement: 1.8px <= 54.3px)."
+        }
+      ]
+    },
+    "removal_metrics": {
+      "false_removal_count": 0,
+      "total_visible_evaluations": 34,
+      "false_removal_rate": 0.0,
+      "pending_removal_conservatism": "Verified: single missed detection or unverified vacancy transitions to PENDING_REMOVAL before CONFIRMED_REMOVED."
+    },
+    "reappearance_recovery": {
+      "bottle_01_v7_restored": true
+    },
+    "evaluations": [
+      {
+        "visit_id": "visit_01",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "INSUFFICIENT_EVIDENCE",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_01",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_02",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "cup_02",
+        "label": "cup",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_MOVED",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_03",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "RELOCATED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "PENDING_REMOVAL",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "INSUFFICIENT_EVIDENCE",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_04",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "PENDING_REMOVAL",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "PENDING_REMOVAL",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_05",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_06",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "plant_01",
+        "label": "potted plant",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "cup_01",
+        "label": "cup",
+        "expected_state": "CONFIRMED_MOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "bottle_01",
+        "label": "bottle",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "NEWLY_APPEARED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "scissors_01",
+        "label": "scissors",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "notebook_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_REMOVED",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "ABSENT",
+        "physical_observation": "ABSENT",
+        "is_state_match": false
+      },
+      {
+        "visit_id": "visit_07",
+        "entity_id": "book_01",
+        "label": "book",
+        "expected_state": "CONFIRMED_PRESENT",
+        "observed_state": "CONFIRMED_PRESENT",
+        "annotated_event": "UNCHANGED",
+        "physical_observation": "VISIBLE",
+        "is_state_match": true
+      }
+    ]
+  },
+  "before_vs_after_comparison": {
+    "false_movements": {
+      "phase7": 1,
+      "phase8": 0,
+      "improvement": "Eliminated book_01 false movement in Visit 6 via initial bbox canonical overlap check and 12px border margin."
+    },
+    "return_to_baseline": {
+      "phase7": "Conflated with 'unchanged' (displacement recorded as 0.0px, movement missed).",
+      "phase8": "Explicitly detected with consecutive step displacement (575.9px) and baseline displacement (1.8px).",
+      "events_detected": 1
+    },
+    "removal_reasoning": {
+      "phase7": "Direct jump prevented, but unverified vacancy held indefinitely in CONFIRMED_PRESENT.",
+      "phase8": "Multi-stage conservative reasoning: 1 unobserved visit -> PENDING_REMOVAL; 3 consecutive reliably registered unobserved visits -> CONFIRMED_REMOVED."
+    },
+    "dataset_provenance": {
+      "phase7": "Discrepancy: manifest had is_template=true; api had hardcoded SYNTHETIC_PILOT.",
+      "phase8": "Reconciled: is_template=false, documented as PHYSICAL_PILOT (7 real photographs, hand-estimated grid bboxes +/-15px)."
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "scenario_name": "object_added",
+  "description": "Workbench where a new tool (wire strippers) has been placed.",
+  "is_synthetic": true,
+  "random_seed": 76,
+  "expected_alignment_success": true,
+  "objects": [
+    {
+      "object_id": "obj_multimeter",
+      "label": "multimeter",
+      "ref_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "query_bbox": [
+        280,
+        80,
+        390,
+        260
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    },
+    {
+      "object_id": "obj_pcb",
+      "label": "pcb",
+      "ref_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "query_bbox": [
+        60,
+        60,
+        220,
+        190
+      ],
+      "ground_truth_change": "UNCHANGED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": ""
+    },
+    {
+      "object_id": "obj_strippers",
+      "label": "wire_strippers",
+      "ref_bbox": null,
+      "query_bbox": [
+        420,
+        260,
+        540,
+        370
+      ],
+      "ground_truth_change": "ADDED",
+      "is_occluded": false,
+      "is_ambiguous": false,
+      "notes": "Newly placed tool"
+    }
+  ],
+  "metadata": {}
+}

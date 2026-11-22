@@ -1,0 +1,14 @@
+{
+  "dataset_name": "Physical Workbench Benchmark v1",
+  "dataset_version": "1.0.0",
+  "status": "PASSED",
+  "capture_status": "AWAITING_PHYSICAL_DATA",
+  "provenance": "Controlled physical workbench benchmark protocol. Photographic data capture specification.",
+  "total_sequences": 7,
+  "total_visits": 35,
+  "images_found": 0,
+  "images_missing": 35,
+  "total_annotations": 175,
+  "errors": [],
+  "warnings": []
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ObjectMemory Controlled Temporal Benchmark",
+  "version": "1.0",
+  "license": "CC0-1.0 for generated files in this package",
+  "source_images": "None; procedurally generated",
+  "statistics": {
+    "sequences": 6,
+    "visits_per_sequence": 5,
+    "images": 30,
+    "classes": 6
+  },
+  "intended_use": [
+    "temporal reasoning integration tests",
+    "controlled event handling tests",
+    "persistence and annotation schema tests"
+  ],
+  "not_intended_for": [
+    "real-world detector accuracy claims",
+    "YOLOv8n versus YOLO-World natural-image benchmark"
+  ],
+  "caveats": [
+    "Illustrated objects are not natural photographs and are not suitable for claims about real-world detector accuracy.",
+    "Boxes are renderer-derived, not human-verified.",
+    "Camera nuisance is approximated by small global translation, not full camera geometry."
+  ]
+}

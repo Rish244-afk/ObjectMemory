@@ -1,0 +1,4131 @@
+{
+  "audit_version": "Phase 5 Task 1 Ground Truth Audit",
+  "ground_truth_source": "C:\\Users\\Rishh\\.gemini\\antigravity\\scratch\\objectmemory\\data\\real_workbench\\manifest.json",
+  "total_annotated_visits": 7,
+  "total_ground_truth_instances": 34,
+  "models": {
+    "yolov8n": {
+      "model_name": "yolov8n",
+      "confidence_threshold": 0.25,
+      "prompts": null,
+      "iou_thresholds": {
+        "iou_50": {
+          "iou_threshold": 0.5,
+          "overall": {
+            "total_ground_truth": 34,
+            "true_positives": 30,
+            "false_positives": 22,
+            "false_negatives": 4,
+            "precision": 0.5769,
+            "recall": 0.8824,
+            "f1_score": 0.6977,
+            "sum_tp_fn_equals_gt": true
+          },
+          "per_class": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571,
+              "sum_tp_fn_equals_gt": true
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333,
+              "sum_tp_fn_equals_gt": true
+            },
+            "dining table": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "laptop": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 6,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "precision": 0.8571,
+              "recall": 0.8571,
+              "f1_score": 0.8571,
+              "sum_tp_fn_equals_gt": true
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "vase": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            }
+          },
+          "per_visit_tables": [
+            {
+              "visit_id": "visit_01",
+              "ground_truth_count": 6,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9557,
+                  "predicted_bbox": [
+                    280.0,
+                    146.0,
+                    377.0,
+                    410.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.8941
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9106,
+                  "predicted_bbox": [
+                    33.0,
+                    317.0,
+                    210.0,
+                    501.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    220,
+                    540
+                  ],
+                  "iou": 0.6922
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.8585,
+                  "predicted_bbox": [
+                    210.0,
+                    489.0,
+                    491.0,
+                    590.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    183,
+                    484,
+                    470,
+                    600
+                  ],
+                  "iou": 0.7415
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7166,
+                  "predicted_bbox": [
+                    406.0,
+                    326.0,
+                    754.0,
+                    562.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    340,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8438
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.5171,
+                  "predicted_bbox": [
+                    0.0,
+                    3.0,
+                    202.0,
+                    361.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.6504
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.8909,
+                  "predicted_bbox": [
+                    648.0,
+                    50.0,
+                    777.0,
+                    380.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.8091,
+                  "predicted_bbox": [
+                    0.0,
+                    242.0,
+                    102.0,
+                    362.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.5884,
+                  "predicted_bbox": [
+                    1.0,
+                    256.0,
+                    777.0,
+                    632.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "cup_02",
+                  "raw_label": "cup",
+                  "canonical_label": "cup",
+                  "bbox": [
+                    75,
+                    280,
+                    200,
+                    360
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_02",
+              "ground_truth_count": 5,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9481,
+                  "predicted_bbox": [
+                    280.0,
+                    146.0,
+                    376.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.891
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9289,
+                  "predicted_bbox": [
+                    30.0,
+                    314.0,
+                    207.0,
+                    495.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    210,
+                    530
+                  ],
+                  "iou": 0.7268
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.8728,
+                  "predicted_bbox": [
+                    206.0,
+                    485.0,
+                    488.0,
+                    589.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    163,
+                    492,
+                    460,
+                    604
+                  ],
+                  "iou": 0.6492
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7651,
+                  "predicted_bbox": [
+                    409.0,
+                    325.0,
+                    752.0,
+                    559.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    345,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8366
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6875,
+                  "predicted_bbox": [
+                    3.0,
+                    0.0,
+                    195.0,
+                    353.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.6844
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.9215,
+                  "predicted_bbox": [
+                    647.0,
+                    49.0,
+                    779.0,
+                    379.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7958,
+                  "predicted_bbox": [
+                    6.0,
+                    234.0,
+                    95.0,
+                    354.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.723,
+                  "predicted_bbox": [
+                    11.0,
+                    256.0,
+                    779.0,
+                    630.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            },
+            {
+              "visit_id": "visit_03",
+              "ground_truth_count": 5,
+              "prediction_count": 7,
+              "true_positives": 4,
+              "false_positives": 3,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9411,
+                  "predicted_bbox": [
+                    216.0,
+                    146.0,
+                    313.0,
+                    405.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    197,
+                    150,
+                    310,
+                    400
+                  ],
+                  "iou": 0.7867
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.934,
+                  "predicted_bbox": [
+                    120.0,
+                    471.0,
+                    393.0,
+                    585.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    90,
+                    465,
+                    290,
+                    590
+                  ],
+                  "iou": 0.5275
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9245,
+                  "predicted_bbox": [
+                    564.0,
+                    252.0,
+                    725.0,
+                    406.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    548,
+                    250,
+                    730,
+                    420
+                  ],
+                  "iou": 0.8014
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7611,
+                  "predicted_bbox": [
+                    322.0,
+                    337.0,
+                    669.0,
+                    572.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    310,
+                    340,
+                    655,
+                    570
+                  ],
+                  "iou": 0.9085
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.7853,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    160.0,
+                    357.0
+                  ],
+                  "reason": "IoU below threshold",
+                  "best_unmatched_iou": 0.4062
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7391,
+                  "predicted_bbox": [
+                    0.0,
+                    239.0,
+                    88.0,
+                    356.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.5969,
+                  "predicted_bbox": [
+                    0.0,
+                    248.0,
+                    765.0,
+                    620.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_03",
+                  "entity_id": "plant_01",
+                  "raw_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "bbox": [
+                    0,
+                    0,
+                    80,
+                    290
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_04",
+              "ground_truth_count": 5,
+              "prediction_count": 7,
+              "true_positives": 4,
+              "false_positives": 3,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9542,
+                  "predicted_bbox": [
+                    206.0,
+                    126.0,
+                    286.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    193,
+                    125,
+                    288,
+                    345
+                  ],
+                  "iou": 0.823
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.8959,
+                  "predicted_bbox": [
+                    14.0,
+                    255.0,
+                    162.0,
+                    414.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    175,
+                    440
+                  ],
+                  "iou": 0.7576
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6732,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    166.0,
+                    294.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    118,
+                    240
+                  ],
+                  "iou": 0.5803
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.5132,
+                  "predicted_bbox": [
+                    294.0,
+                    264.0,
+                    591.0,
+                    463.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    245,
+                    542,
+                    500
+                  ],
+                  "iou": 0.6739
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.906,
+                  "predicted_bbox": [
+                    471.0,
+                    30.0,
+                    590.0,
+                    305.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.8025,
+                  "predicted_bbox": [
+                    0.0,
+                    210.0,
+                    590.0,
+                    569.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7498,
+                  "predicted_bbox": [
+                    0.0,
+                    194.0,
+                    79.0,
+                    294.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_04",
+                  "entity_id": "notebook_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    60,
+                    390,
+                    400,
+                    540
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_05",
+              "ground_truth_count": 4,
+              "prediction_count": 7,
+              "true_positives": 4,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9362,
+                  "predicted_bbox": [
+                    25.0,
+                    264.0,
+                    178.0,
+                    425.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7775
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9334,
+                  "predicted_bbox": [
+                    166.0,
+                    427.0,
+                    402.0,
+                    525.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    130,
+                    425,
+                    380,
+                    543
+                  ],
+                  "iou": 0.6625
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6289,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    169.0,
+                    315.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.523
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.491,
+                  "predicted_bbox": [
+                    294.0,
+                    284.0,
+                    568.0,
+                    476.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    255,
+                    520,
+                    490
+                  ],
+                  "iou": 0.6734
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.9033,
+                  "predicted_bbox": [
+                    457.0,
+                    37.0,
+                    583.0,
+                    328.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7139,
+                  "predicted_bbox": [
+                    1.0,
+                    213.0,
+                    81.0,
+                    313.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.3223,
+                  "predicted_bbox": [
+                    2.0,
+                    224.0,
+                    583.0,
+                    573.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            },
+            {
+              "visit_id": "visit_06",
+              "ground_truth_count": 4,
+              "prediction_count": 7,
+              "true_positives": 3,
+              "false_positives": 4,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9326,
+                  "predicted_bbox": [
+                    24.0,
+                    260.0,
+                    174.0,
+                    422.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7597
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9047,
+                  "predicted_bbox": [
+                    154.0,
+                    422.0,
+                    392.0,
+                    523.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    125,
+                    425,
+                    360,
+                    543
+                  ],
+                  "iou": 0.6393
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.7505,
+                  "predicted_bbox": [
+                    5.0,
+                    0.0,
+                    165.0,
+                    297.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.5468
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.852,
+                  "predicted_bbox": [
+                    454.0,
+                    30.0,
+                    581.0,
+                    308.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.6377,
+                  "predicted_bbox": [
+                    6.0,
+                    202.0,
+                    80.0,
+                    298.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.5532,
+                  "predicted_bbox": [
+                    289.0,
+                    266.0,
+                    573.0,
+                    466.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.3955,
+                  "predicted_bbox": [
+                    11.0,
+                    210.0,
+                    583.0,
+                    574.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "book_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    285,
+                    268,
+                    520,
+                    490
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_07",
+              "ground_truth_count": 5,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9548,
+                  "predicted_bbox": [
+                    208.0,
+                    122.0,
+                    290.0,
+                    342.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    176,
+                    120,
+                    286,
+                    340
+                  ],
+                  "iou": 0.6738
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9299,
+                  "predicted_bbox": [
+                    10.0,
+                    254.0,
+                    158.0,
+                    416.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    160,
+                    435
+                  ],
+                  "iou": 0.8615
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9112,
+                  "predicted_bbox": [
+                    129.0,
+                    418.0,
+                    367.0,
+                    515.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    118,
+                    418,
+                    350,
+                    530
+                  ],
+                  "iou": 0.7758
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.6362,
+                  "predicted_bbox": [
+                    297.0,
+                    265.0,
+                    577.0,
+                    471.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    248,
+                    525,
+                    490
+                  ],
+                  "iou": 0.7076
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6123,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    144.0,
+                    292.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    117,
+                    240
+                  ],
+                  "iou": 0.6678
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.8723,
+                  "predicted_bbox": [
+                    458.0,
+                    31.0,
+                    581.0,
+                    303.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7718,
+                  "predicted_bbox": [
+                    0.0,
+                    197.0,
+                    63.0,
+                    293.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.7338,
+                  "predicted_bbox": [
+                    1.0,
+                    207.0,
+                    587.0,
+                    569.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            }
+          ],
+          "matched_records_count": 30,
+          "unmatched_predictions_count": 22,
+          "unmatched_ground_truth_count": 4
+        },
+        "iou_30": {
+          "iou_threshold": 0.3,
+          "overall": {
+            "total_ground_truth": 34,
+            "true_positives": 31,
+            "false_positives": 21,
+            "false_negatives": 3,
+            "precision": 0.5962,
+            "recall": 0.9118,
+            "f1_score": 0.7209,
+            "sum_tp_fn_equals_gt": true
+          },
+          "per_class": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "precision": 1.0,
+              "recall": 0.75,
+              "f1_score": 0.8571,
+              "sum_tp_fn_equals_gt": true
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333,
+              "sum_tp_fn_equals_gt": true
+            },
+            "dining table": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "laptop": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "vase": {
+              "ground_truth_count": 0,
+              "true_positives": 0,
+              "false_positives": 7,
+              "false_negatives": 0,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            }
+          },
+          "per_visit_tables": [
+            {
+              "visit_id": "visit_01",
+              "ground_truth_count": 6,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9557,
+                  "predicted_bbox": [
+                    280.0,
+                    146.0,
+                    377.0,
+                    410.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.8941
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9106,
+                  "predicted_bbox": [
+                    33.0,
+                    317.0,
+                    210.0,
+                    501.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    220,
+                    540
+                  ],
+                  "iou": 0.6922
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.8585,
+                  "predicted_bbox": [
+                    210.0,
+                    489.0,
+                    491.0,
+                    590.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    183,
+                    484,
+                    470,
+                    600
+                  ],
+                  "iou": 0.7415
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7166,
+                  "predicted_bbox": [
+                    406.0,
+                    326.0,
+                    754.0,
+                    562.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    340,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8438
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.5171,
+                  "predicted_bbox": [
+                    0.0,
+                    3.0,
+                    202.0,
+                    361.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.6504
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.8909,
+                  "predicted_bbox": [
+                    648.0,
+                    50.0,
+                    777.0,
+                    380.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.8091,
+                  "predicted_bbox": [
+                    0.0,
+                    242.0,
+                    102.0,
+                    362.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.5884,
+                  "predicted_bbox": [
+                    1.0,
+                    256.0,
+                    777.0,
+                    632.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "cup_02",
+                  "raw_label": "cup",
+                  "canonical_label": "cup",
+                  "bbox": [
+                    75,
+                    280,
+                    200,
+                    360
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_02",
+              "ground_truth_count": 5,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9481,
+                  "predicted_bbox": [
+                    280.0,
+                    146.0,
+                    376.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.891
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9289,
+                  "predicted_bbox": [
+                    30.0,
+                    314.0,
+                    207.0,
+                    495.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    210,
+                    530
+                  ],
+                  "iou": 0.7268
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.8728,
+                  "predicted_bbox": [
+                    206.0,
+                    485.0,
+                    488.0,
+                    589.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    163,
+                    492,
+                    460,
+                    604
+                  ],
+                  "iou": 0.6492
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7651,
+                  "predicted_bbox": [
+                    409.0,
+                    325.0,
+                    752.0,
+                    559.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    345,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8366
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6875,
+                  "predicted_bbox": [
+                    3.0,
+                    0.0,
+                    195.0,
+                    353.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.6844
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.9215,
+                  "predicted_bbox": [
+                    647.0,
+                    49.0,
+                    779.0,
+                    379.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7958,
+                  "predicted_bbox": [
+                    6.0,
+                    234.0,
+                    95.0,
+                    354.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.723,
+                  "predicted_bbox": [
+                    11.0,
+                    256.0,
+                    779.0,
+                    630.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            },
+            {
+              "visit_id": "visit_03",
+              "ground_truth_count": 5,
+              "prediction_count": 7,
+              "true_positives": 5,
+              "false_positives": 2,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9411,
+                  "predicted_bbox": [
+                    216.0,
+                    146.0,
+                    313.0,
+                    405.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    197,
+                    150,
+                    310,
+                    400
+                  ],
+                  "iou": 0.7867
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.934,
+                  "predicted_bbox": [
+                    120.0,
+                    471.0,
+                    393.0,
+                    585.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    90,
+                    465,
+                    290,
+                    590
+                  ],
+                  "iou": 0.5275
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9245,
+                  "predicted_bbox": [
+                    564.0,
+                    252.0,
+                    725.0,
+                    406.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    548,
+                    250,
+                    730,
+                    420
+                  ],
+                  "iou": 0.8014
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.7853,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    160.0,
+                    357.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    80,
+                    290
+                  ],
+                  "iou": 0.4062
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.7611,
+                  "predicted_bbox": [
+                    322.0,
+                    337.0,
+                    669.0,
+                    572.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    310,
+                    340,
+                    655,
+                    570
+                  ],
+                  "iou": 0.9085
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7391,
+                  "predicted_bbox": [
+                    0.0,
+                    239.0,
+                    88.0,
+                    356.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.5969,
+                  "predicted_bbox": [
+                    0.0,
+                    248.0,
+                    765.0,
+                    620.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            },
+            {
+              "visit_id": "visit_04",
+              "ground_truth_count": 5,
+              "prediction_count": 7,
+              "true_positives": 4,
+              "false_positives": 3,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9542,
+                  "predicted_bbox": [
+                    206.0,
+                    126.0,
+                    286.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    193,
+                    125,
+                    288,
+                    345
+                  ],
+                  "iou": 0.823
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.8959,
+                  "predicted_bbox": [
+                    14.0,
+                    255.0,
+                    162.0,
+                    414.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    175,
+                    440
+                  ],
+                  "iou": 0.7576
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6732,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    166.0,
+                    294.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    118,
+                    240
+                  ],
+                  "iou": 0.5803
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.5132,
+                  "predicted_bbox": [
+                    294.0,
+                    264.0,
+                    591.0,
+                    463.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    245,
+                    542,
+                    500
+                  ],
+                  "iou": 0.6739
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.906,
+                  "predicted_bbox": [
+                    471.0,
+                    30.0,
+                    590.0,
+                    305.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.8025,
+                  "predicted_bbox": [
+                    0.0,
+                    210.0,
+                    590.0,
+                    569.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7498,
+                  "predicted_bbox": [
+                    0.0,
+                    194.0,
+                    79.0,
+                    294.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_04",
+                  "entity_id": "notebook_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    60,
+                    390,
+                    400,
+                    540
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_05",
+              "ground_truth_count": 4,
+              "prediction_count": 7,
+              "true_positives": 4,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9362,
+                  "predicted_bbox": [
+                    25.0,
+                    264.0,
+                    178.0,
+                    425.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7775
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9334,
+                  "predicted_bbox": [
+                    166.0,
+                    427.0,
+                    402.0,
+                    525.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    130,
+                    425,
+                    380,
+                    543
+                  ],
+                  "iou": 0.6625
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6289,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    169.0,
+                    315.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.523
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.491,
+                  "predicted_bbox": [
+                    294.0,
+                    284.0,
+                    568.0,
+                    476.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    255,
+                    520,
+                    490
+                  ],
+                  "iou": 0.6734
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.9033,
+                  "predicted_bbox": [
+                    457.0,
+                    37.0,
+                    583.0,
+                    328.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7139,
+                  "predicted_bbox": [
+                    1.0,
+                    213.0,
+                    81.0,
+                    313.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.3223,
+                  "predicted_bbox": [
+                    2.0,
+                    224.0,
+                    583.0,
+                    573.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            },
+            {
+              "visit_id": "visit_06",
+              "ground_truth_count": 4,
+              "prediction_count": 7,
+              "true_positives": 3,
+              "false_positives": 4,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9326,
+                  "predicted_bbox": [
+                    24.0,
+                    260.0,
+                    174.0,
+                    422.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7597
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9047,
+                  "predicted_bbox": [
+                    154.0,
+                    422.0,
+                    392.0,
+                    523.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    125,
+                    425,
+                    360,
+                    543
+                  ],
+                  "iou": 0.6393
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.7505,
+                  "predicted_bbox": [
+                    5.0,
+                    0.0,
+                    165.0,
+                    297.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.5468
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.852,
+                  "predicted_bbox": [
+                    454.0,
+                    30.0,
+                    581.0,
+                    308.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.6377,
+                  "predicted_bbox": [
+                    6.0,
+                    202.0,
+                    80.0,
+                    298.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.5532,
+                  "predicted_bbox": [
+                    289.0,
+                    266.0,
+                    573.0,
+                    466.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.3955,
+                  "predicted_bbox": [
+                    11.0,
+                    210.0,
+                    583.0,
+                    574.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "book_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    285,
+                    268,
+                    520,
+                    490
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_07",
+              "ground_truth_count": 5,
+              "prediction_count": 8,
+              "true_positives": 5,
+              "false_positives": 3,
+              "false_negatives": 0,
+              "matched": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.9548,
+                  "predicted_bbox": [
+                    208.0,
+                    122.0,
+                    290.0,
+                    342.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    176,
+                    120,
+                    286,
+                    340
+                  ],
+                  "iou": 0.6738
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "cup",
+                  "canonical_label": "cup",
+                  "confidence": 0.9299,
+                  "predicted_bbox": [
+                    10.0,
+                    254.0,
+                    158.0,
+                    416.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    160,
+                    435
+                  ],
+                  "iou": 0.8615
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "scissors",
+                  "canonical_label": "scissors",
+                  "confidence": 0.9112,
+                  "predicted_bbox": [
+                    129.0,
+                    418.0,
+                    367.0,
+                    515.0
+                  ],
+                  "matched_entity_id": "scissors_01",
+                  "ground_truth_label": "scissors",
+                  "ground_truth_bbox": [
+                    118,
+                    418,
+                    350,
+                    530
+                  ],
+                  "iou": 0.7758
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.6362,
+                  "predicted_bbox": [
+                    297.0,
+                    265.0,
+                    577.0,
+                    471.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    248,
+                    525,
+                    490
+                  ],
+                  "iou": 0.7076
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.6123,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    144.0,
+                    292.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    117,
+                    240
+                  ],
+                  "iou": 0.6678
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "laptop",
+                  "canonical_label": "laptop",
+                  "confidence": 0.8723,
+                  "predicted_bbox": [
+                    458.0,
+                    31.0,
+                    581.0,
+                    303.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "vase",
+                  "canonical_label": "vase",
+                  "confidence": 0.7718,
+                  "predicted_bbox": [
+                    0.0,
+                    197.0,
+                    63.0,
+                    293.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "dining table",
+                  "canonical_label": "dining table",
+                  "confidence": 0.7338,
+                  "predicted_bbox": [
+                    1.0,
+                    207.0,
+                    587.0,
+                    569.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": []
+            }
+          ],
+          "matched_records_count": 31,
+          "unmatched_predictions_count": 21,
+          "unmatched_ground_truth_count": 3
+        }
+      }
+    },
+    "yolo_world": {
+      "model_name": "yolo_world",
+      "confidence_threshold": 0.15,
+      "prompts": [
+        "potted plant",
+        "plant",
+        "cup",
+        "mug",
+        "bottle",
+        "water bottle",
+        "scissors",
+        "book",
+        "notebook",
+        "tool",
+        "pliers",
+        "container"
+      ],
+      "iou_thresholds": {
+        "iou_50": {
+          "iou_threshold": 0.5,
+          "overall": {
+            "total_ground_truth": 34,
+            "true_positives": 24,
+            "false_positives": 5,
+            "false_negatives": 10,
+            "precision": 0.8276,
+            "recall": 0.7059,
+            "f1_score": 0.7619,
+            "sum_tp_fn_equals_gt": true
+          },
+          "per_class": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 4,
+              "false_negatives": 1,
+              "precision": 0.6364,
+              "recall": 0.875,
+              "f1_score": 0.7368,
+              "sum_tp_fn_equals_gt": true
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333,
+              "sum_tp_fn_equals_gt": true
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 5,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "precision": 0.8333,
+              "recall": 0.7143,
+              "f1_score": 0.7692,
+              "sum_tp_fn_equals_gt": true
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 0,
+              "false_positives": 0,
+              "false_negatives": 6,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            }
+          },
+          "per_visit_tables": [
+            {
+              "visit_id": "visit_01",
+              "ground_truth_count": 6,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "matched": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "water bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.592,
+                  "predicted_bbox": [
+                    279.0,
+                    147.0,
+                    376.0,
+                    409.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.9003
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3117,
+                  "predicted_bbox": [
+                    406.0,
+                    326.0,
+                    753.0,
+                    562.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    340,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8462
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2464,
+                  "predicted_bbox": [
+                    31.0,
+                    317.0,
+                    212.0,
+                    502.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    220,
+                    540
+                  ],
+                  "iou": 0.7116
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2434,
+                  "predicted_bbox": [
+                    0.0,
+                    5.0,
+                    201.0,
+                    367.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.639
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.1779,
+                  "predicted_bbox": [
+                    645.0,
+                    48.0,
+                    779.0,
+                    381.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "cup_02",
+                  "raw_label": "cup",
+                  "canonical_label": "cup",
+                  "bbox": [
+                    75,
+                    280,
+                    200,
+                    360
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                },
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    183,
+                    484,
+                    470,
+                    600
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_02",
+              "ground_truth_count": 5,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.594,
+                  "predicted_bbox": [
+                    278.0,
+                    147.0,
+                    374.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.8941
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3593,
+                  "predicted_bbox": [
+                    408.0,
+                    327.0,
+                    753.0,
+                    561.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    345,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8389
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3027,
+                  "predicted_bbox": [
+                    29.0,
+                    313.0,
+                    207.0,
+                    496.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    210,
+                    530
+                  ],
+                  "iou": 0.7319
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2644,
+                  "predicted_bbox": [
+                    3.0,
+                    0.0,
+                    193.0,
+                    358.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.682
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.3326,
+                  "predicted_bbox": [
+                    646.0,
+                    47.0,
+                    779.0,
+                    382.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_02",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    163,
+                    492,
+                    460,
+                    604
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_03",
+              "ground_truth_count": 5,
+              "prediction_count": 4,
+              "true_positives": 3,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "matched": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "water bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.5637,
+                  "predicted_bbox": [
+                    216.0,
+                    147.0,
+                    312.0,
+                    406.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    197,
+                    150,
+                    310,
+                    400
+                  ],
+                  "iou": 0.7935
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3523,
+                  "predicted_bbox": [
+                    322.0,
+                    338.0,
+                    669.0,
+                    574.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    310,
+                    340,
+                    655,
+                    570
+                  ],
+                  "iou": 0.9048
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2125,
+                  "predicted_bbox": [
+                    565.0,
+                    252.0,
+                    724.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    548,
+                    250,
+                    730,
+                    420
+                  ],
+                  "iou": 0.8017
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3526,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    159.0,
+                    357.0
+                  ],
+                  "reason": "IoU below threshold",
+                  "best_unmatched_iou": 0.4087
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_03",
+                  "entity_id": "plant_01",
+                  "raw_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "bbox": [
+                    0,
+                    0,
+                    80,
+                    290
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                },
+                {
+                  "visit_id": "visit_03",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    90,
+                    465,
+                    290,
+                    590
+                  ],
+                  "expected_state": "CONFIRMED_MOVED"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_04",
+              "ground_truth_count": 5,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.4945,
+                  "predicted_bbox": [
+                    207.0,
+                    127.0,
+                    286.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    193,
+                    125,
+                    288,
+                    345
+                  ],
+                  "iou": 0.8089
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3435,
+                  "predicted_bbox": [
+                    13.0,
+                    255.0,
+                    162.0,
+                    415.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    175,
+                    440
+                  ],
+                  "iou": 0.7676
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3177,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    165.0,
+                    320.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    118,
+                    240
+                  ],
+                  "iou": 0.5364
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.2024,
+                  "predicted_bbox": [
+                    295.0,
+                    265.0,
+                    591.0,
+                    464.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    245,
+                    542,
+                    500
+                  ],
+                  "iou": 0.6758
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.4012,
+                  "predicted_bbox": [
+                    471.0,
+                    29.0,
+                    591.0,
+                    307.0
+                  ],
+                  "reason": "IoU below threshold",
+                  "best_unmatched_iou": 0.0479
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_04",
+                  "entity_id": "notebook_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    60,
+                    390,
+                    400,
+                    540
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_05",
+              "ground_truth_count": 4,
+              "prediction_count": 4,
+              "true_positives": 3,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.3533,
+                  "predicted_bbox": [
+                    294.0,
+                    287.0,
+                    569.0,
+                    477.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    255,
+                    520,
+                    490
+                  ],
+                  "iou": 0.6654
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3038,
+                  "predicted_bbox": [
+                    25.0,
+                    265.0,
+                    179.0,
+                    427.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7871
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2287,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    167.0,
+                    318.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.5242
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.2971,
+                  "predicted_bbox": [
+                    457.0,
+                    38.0,
+                    583.0,
+                    331.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_05",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    130,
+                    425,
+                    380,
+                    543
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_06",
+              "ground_truth_count": 4,
+              "prediction_count": 2,
+              "true_positives": 2,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "matched": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2852,
+                  "predicted_bbox": [
+                    22.0,
+                    261.0,
+                    174.0,
+                    423.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7784
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.2289,
+                  "predicted_bbox": [
+                    287.0,
+                    267.0,
+                    572.0,
+                    466.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    268,
+                    520,
+                    490
+                  ],
+                  "iou": 0.7352
+                }
+              ],
+              "unmatched_predictions": [],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "plant_01",
+                  "raw_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                },
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    125,
+                    425,
+                    360,
+                    543
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_07",
+              "ground_truth_count": 5,
+              "prediction_count": 4,
+              "true_positives": 4,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.5758,
+                  "predicted_bbox": [
+                    208.0,
+                    123.0,
+                    290.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    176,
+                    120,
+                    286,
+                    340
+                  ],
+                  "iou": 0.673
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3783,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    144.0,
+                    303.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    117,
+                    240
+                  ],
+                  "iou": 0.6436
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3153,
+                  "predicted_bbox": [
+                    9.0,
+                    253.0,
+                    160.0,
+                    416.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    160,
+                    435
+                  ],
+                  "iou": 0.863
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.2298,
+                  "predicted_bbox": [
+                    298.0,
+                    265.0,
+                    578.0,
+                    471.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    248,
+                    525,
+                    490
+                  ],
+                  "iou": 0.7024
+                }
+              ],
+              "unmatched_predictions": [],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_07",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    118,
+                    418,
+                    350,
+                    530
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            }
+          ],
+          "matched_records_count": 24,
+          "unmatched_predictions_count": 5,
+          "unmatched_ground_truth_count": 10
+        },
+        "iou_30": {
+          "iou_threshold": 0.3,
+          "overall": {
+            "total_ground_truth": 34,
+            "true_positives": 25,
+            "false_positives": 4,
+            "false_negatives": 9,
+            "precision": 0.8621,
+            "recall": 0.7353,
+            "f1_score": 0.7937,
+            "sum_tp_fn_equals_gt": true
+          },
+          "per_class": {
+            "book": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 4,
+              "false_negatives": 1,
+              "precision": 0.6364,
+              "recall": 0.875,
+              "f1_score": 0.7368,
+              "sum_tp_fn_equals_gt": true
+            },
+            "bottle": {
+              "ground_truth_count": 5,
+              "true_positives": 5,
+              "false_positives": 0,
+              "false_negatives": 0,
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1_score": 1.0,
+              "sum_tp_fn_equals_gt": true
+            },
+            "cup": {
+              "ground_truth_count": 8,
+              "true_positives": 7,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.875,
+              "f1_score": 0.9333,
+              "sum_tp_fn_equals_gt": true
+            },
+            "potted plant": {
+              "ground_truth_count": 7,
+              "true_positives": 6,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "precision": 1.0,
+              "recall": 0.8571,
+              "f1_score": 0.9231,
+              "sum_tp_fn_equals_gt": true
+            },
+            "scissors": {
+              "ground_truth_count": 6,
+              "true_positives": 0,
+              "false_positives": 0,
+              "false_negatives": 6,
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1_score": 0.0,
+              "sum_tp_fn_equals_gt": true
+            }
+          },
+          "per_visit_tables": [
+            {
+              "visit_id": "visit_01",
+              "ground_truth_count": 6,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 2,
+              "matched": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "water bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.592,
+                  "predicted_bbox": [
+                    279.0,
+                    147.0,
+                    376.0,
+                    409.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.9003
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3117,
+                  "predicted_bbox": [
+                    406.0,
+                    326.0,
+                    753.0,
+                    562.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    340,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8462
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2464,
+                  "predicted_bbox": [
+                    31.0,
+                    317.0,
+                    212.0,
+                    502.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    220,
+                    540
+                  ],
+                  "iou": 0.7116
+                },
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2434,
+                  "predicted_bbox": [
+                    0.0,
+                    5.0,
+                    201.0,
+                    367.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.639
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_01",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.1779,
+                  "predicted_bbox": [
+                    645.0,
+                    48.0,
+                    779.0,
+                    381.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "cup_02",
+                  "raw_label": "cup",
+                  "canonical_label": "cup",
+                  "bbox": [
+                    75,
+                    280,
+                    200,
+                    360
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                },
+                {
+                  "visit_id": "visit_01",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    183,
+                    484,
+                    470,
+                    600
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_02",
+              "ground_truth_count": 5,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.594,
+                  "predicted_bbox": [
+                    278.0,
+                    147.0,
+                    374.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    277,
+                    148,
+                    384,
+                    408
+                  ],
+                  "iou": 0.8941
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3593,
+                  "predicted_bbox": [
+                    408.0,
+                    327.0,
+                    753.0,
+                    561.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    425,
+                    345,
+                    740,
+                    560
+                  ],
+                  "iou": 0.8389
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3027,
+                  "predicted_bbox": [
+                    29.0,
+                    313.0,
+                    207.0,
+                    496.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    318,
+                    210,
+                    530
+                  ],
+                  "iou": 0.7319
+                },
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2644,
+                  "predicted_bbox": [
+                    3.0,
+                    0.0,
+                    193.0,
+                    358.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    165,
+                    290
+                  ],
+                  "iou": 0.682
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_02",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.3326,
+                  "predicted_bbox": [
+                    646.0,
+                    47.0,
+                    779.0,
+                    382.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_02",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    163,
+                    492,
+                    460,
+                    604
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_03",
+              "ground_truth_count": 5,
+              "prediction_count": 4,
+              "true_positives": 4,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "water bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.5637,
+                  "predicted_bbox": [
+                    216.0,
+                    147.0,
+                    312.0,
+                    406.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    197,
+                    150,
+                    310,
+                    400
+                  ],
+                  "iou": 0.7935
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3526,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    159.0,
+                    357.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    80,
+                    290
+                  ],
+                  "iou": 0.4087
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.3523,
+                  "predicted_bbox": [
+                    322.0,
+                    338.0,
+                    669.0,
+                    574.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    310,
+                    340,
+                    655,
+                    570
+                  ],
+                  "iou": 0.9048
+                },
+                {
+                  "visit_id": "visit_03",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2125,
+                  "predicted_bbox": [
+                    565.0,
+                    252.0,
+                    724.0,
+                    408.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    548,
+                    250,
+                    730,
+                    420
+                  ],
+                  "iou": 0.8017
+                }
+              ],
+              "unmatched_predictions": [],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_03",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    90,
+                    465,
+                    290,
+                    590
+                  ],
+                  "expected_state": "CONFIRMED_MOVED"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_04",
+              "ground_truth_count": 5,
+              "prediction_count": 5,
+              "true_positives": 4,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.4945,
+                  "predicted_bbox": [
+                    207.0,
+                    127.0,
+                    286.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    193,
+                    125,
+                    288,
+                    345
+                  ],
+                  "iou": 0.8089
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3435,
+                  "predicted_bbox": [
+                    13.0,
+                    255.0,
+                    162.0,
+                    415.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    175,
+                    440
+                  ],
+                  "iou": 0.7676
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3177,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    165.0,
+                    320.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    118,
+                    240
+                  ],
+                  "iou": 0.5364
+                },
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.2024,
+                  "predicted_bbox": [
+                    295.0,
+                    265.0,
+                    591.0,
+                    464.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    245,
+                    542,
+                    500
+                  ],
+                  "iou": 0.6758
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_04",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.4012,
+                  "predicted_bbox": [
+                    471.0,
+                    29.0,
+                    591.0,
+                    307.0
+                  ],
+                  "reason": "IoU below threshold",
+                  "best_unmatched_iou": 0.0479
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_04",
+                  "entity_id": "notebook_01",
+                  "raw_label": "book",
+                  "canonical_label": "book",
+                  "bbox": [
+                    60,
+                    390,
+                    400,
+                    540
+                  ],
+                  "expected_state": "INSUFFICIENT_EVIDENCE"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_05",
+              "ground_truth_count": 4,
+              "prediction_count": 4,
+              "true_positives": 3,
+              "false_positives": 1,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.3533,
+                  "predicted_bbox": [
+                    294.0,
+                    287.0,
+                    569.0,
+                    477.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    255,
+                    520,
+                    490
+                  ],
+                  "iou": 0.6654
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3038,
+                  "predicted_bbox": [
+                    25.0,
+                    265.0,
+                    179.0,
+                    427.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7871
+                },
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.2287,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    167.0,
+                    318.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "iou": 0.5242
+                }
+              ],
+              "unmatched_predictions": [
+                {
+                  "visit_id": "visit_05",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.2971,
+                  "predicted_bbox": [
+                    457.0,
+                    38.0,
+                    583.0,
+                    331.0
+                  ],
+                  "reason": "No matching ground-truth class/spatial overlap",
+                  "best_unmatched_iou": 0.0
+                }
+              ],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_05",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    130,
+                    425,
+                    380,
+                    543
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_06",
+              "ground_truth_count": 4,
+              "prediction_count": 2,
+              "true_positives": 2,
+              "false_positives": 0,
+              "false_negatives": 2,
+              "matched": [
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.2852,
+                  "predicted_bbox": [
+                    22.0,
+                    261.0,
+                    174.0,
+                    423.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    268,
+                    175,
+                    445
+                  ],
+                  "iou": 0.7784
+                },
+                {
+                  "visit_id": "visit_06",
+                  "predicted_label": "notebook",
+                  "canonical_label": "book",
+                  "confidence": 0.2289,
+                  "predicted_bbox": [
+                    287.0,
+                    267.0,
+                    572.0,
+                    466.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    285,
+                    268,
+                    520,
+                    490
+                  ],
+                  "iou": 0.7352
+                }
+              ],
+              "unmatched_predictions": [],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "plant_01",
+                  "raw_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "bbox": [
+                    0,
+                    0,
+                    116,
+                    240
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                },
+                {
+                  "visit_id": "visit_06",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    125,
+                    425,
+                    360,
+                    543
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            },
+            {
+              "visit_id": "visit_07",
+              "ground_truth_count": 5,
+              "prediction_count": 4,
+              "true_positives": 4,
+              "false_positives": 0,
+              "false_negatives": 1,
+              "matched": [
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "bottle",
+                  "canonical_label": "bottle",
+                  "confidence": 0.5758,
+                  "predicted_bbox": [
+                    208.0,
+                    123.0,
+                    290.0,
+                    341.0
+                  ],
+                  "matched_entity_id": "bottle_01",
+                  "ground_truth_label": "bottle",
+                  "ground_truth_bbox": [
+                    176,
+                    120,
+                    286,
+                    340
+                  ],
+                  "iou": 0.673
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "potted plant",
+                  "canonical_label": "potted plant",
+                  "confidence": 0.3783,
+                  "predicted_bbox": [
+                    0.0,
+                    0.0,
+                    144.0,
+                    303.0
+                  ],
+                  "matched_entity_id": "plant_01",
+                  "ground_truth_label": "potted plant",
+                  "ground_truth_bbox": [
+                    0,
+                    0,
+                    117,
+                    240
+                  ],
+                  "iou": 0.6436
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "mug",
+                  "canonical_label": "cup",
+                  "confidence": 0.3153,
+                  "predicted_bbox": [
+                    9.0,
+                    253.0,
+                    160.0,
+                    416.0
+                  ],
+                  "matched_entity_id": "cup_01",
+                  "ground_truth_label": "cup",
+                  "ground_truth_bbox": [
+                    10,
+                    258,
+                    160,
+                    435
+                  ],
+                  "iou": 0.863
+                },
+                {
+                  "visit_id": "visit_07",
+                  "predicted_label": "book",
+                  "canonical_label": "book",
+                  "confidence": 0.2298,
+                  "predicted_bbox": [
+                    298.0,
+                    265.0,
+                    578.0,
+                    471.0
+                  ],
+                  "matched_entity_id": "book_01",
+                  "ground_truth_label": "book",
+                  "ground_truth_bbox": [
+                    295,
+                    248,
+                    525,
+                    490
+                  ],
+                  "iou": 0.7024
+                }
+              ],
+              "unmatched_predictions": [],
+              "unmatched_ground_truth": [
+                {
+                  "visit_id": "visit_07",
+                  "entity_id": "scissors_01",
+                  "raw_label": "scissors",
+                  "canonical_label": "scissors",
+                  "bbox": [
+                    118,
+                    418,
+                    350,
+                    530
+                  ],
+                  "expected_state": "CONFIRMED_PRESENT"
+                }
+              ]
+            }
+          ],
+          "matched_records_count": 25,
+          "unmatched_predictions_count": 4,
+          "unmatched_ground_truth_count": 9
+        }
+      }
+    }
+  }
+}
