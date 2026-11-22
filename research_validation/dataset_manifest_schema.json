@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ObjectMemoryDatasetManifest",
+  "description": "Standardized unified observation and object lifecycle manifest schema for ObjectMemory multi-dataset benchmarking.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "dataset_name",
+    "environment_id",
+    "sequence_id",
+    "coordinate_convention",
+    "observations"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["1.0.0"]
+    },
+    "dataset_name": {
+      "type": "string",
+      "enum": [
+        "OpenLORIS-Scene",
+        "ChangeSim",
+        "OpenLORIS-Object",
+        "PhysicalWorkbench"
+      ],
+      "description": "Name of the underlying dataset."
+    },
+    "environment_id": {
+      "type": "string",
+      "description": "Specific environment identifier (e.g., 'office1', 'Warehouse_0', 'desk_pilot_01')."
+    },
+    "sequence_id": {
+      "type": "string",
+      "description": "Specific continuous trajectory or visit sequence ID (e.g., 'office1-1', 'Seq_0', 'S01_stationary_baseline')."
+    },
+    "coordinate_convention": {
+      "type": "string",
+      "enum": [
+        "PIXEL_XMIN_YMIN_XMAX_YMAX",
+        "NORMALIZED_XMIN_YMIN_XMAX_YMAX"
+      ],
+      "default": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "description": "Bounding box coordinate convention."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Dataset-specific metadata, camera calibration parameters, and hardware details.",
+      "properties": {
+        "camera_intrinsics": {
+          "type": "object",
+          "properties": {
+            "fx": { "type": "number" },
+            "fy": { "type": "number" },
+            "cx": { "type": "number" },
+            "cy": { "type": "number" },
+            "width": { "type": "integer" },
+            "height": { "type": "integer" }
+          }
+        },
+        "license": { "type": "string" },
+        "provenance_notes": { "type": "string" }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "description": "Chronologically ordered list of visual observations in the sequence.",
+      "items": {
+        "$ref": "#/definitions/ObservationEntry"
+      }
+    }
+  },
+  "definitions": {
+    "ObservationEntry": {
+      "type": "object",
+      "required": [
+        "dataset_name",
+        "environment_id",
+        "sequence_id",
+        "observation_id",
+        "timestamp",
+        "image_path",
+        "split"
+      ],
+      "properties": {
+        "dataset_name": { "type": "string" },
+        "environment_id": { "type": "string" },
+        "sequence_id": { "type": "string" },
+        "observation_id": {
+          "type": "string",
+          "description": "Unique observation identifier (e.g., 'obs_office1_1_0001', 'obs_wh0_seq0_0050')."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "ISO-8601 timestamp or synchronized Unix epoch timestamp in seconds."
+        },
+        "image_path": {
+          "type": "string",
+          "description": "Relative file path from project root to the primary RGB image."
+        },
+        "depth_path": {
+          "type": ["string", "null"],
+          "description": "Relative file path to metric depth map (if available)."
+        },
+        "semantic_path": {
+          "type": ["string", "null"],
+          "description": "Relative file path to pixel semantic segmentation mask (if available)."
+        },
+        "change_mask_path": {
+          "type": ["string", "null"],
+          "description": "Relative file path to ground-truth change segmentation mask (if available)."
+        },
+        "camera_pose": {
+          "type": ["object", "null"],
+          "description": "6-DoF camera pose in world coordinate frame (tx, ty, tz, qx, qy, qz, qw).",
+          "properties": {
+            "tx": { "type": "number" },
+            "ty": { "type": "number" },
+            "tz": { "type": "number" },
+            "qx": { "type": "number" },
+            "qy": { "type": "number" },
+            "qz": { "type": "number" },
+            "qw": { "type": "number" },
+            "frame_convention": {
+              "type": "string",
+              "enum": ["TUM_OPTITRACK", "NED_AIRSIM", "CAMERA_OPTICAL"]
+            }
+          },
+          "required": ["tx", "ty", "tz", "qx", "qy", "qz", "qw"]
+        },
+        "source_annotation_path": {
+          "type": ["string", "null"],
+          "description": "Relative file path to raw source annotation file (if applicable)."
+        },
+        "split": {
+          "type": "string",
+          "enum": ["DEVELOPMENT", "VALIDATION", "TEST"],
+          "description": "Evaluation split assignment for this sequence."
+        },
+        "objects": {
+          "type": "array",
+          "description": "Ground truth object annotations present or expected in this observation.",
+          "items": {
+            "$ref": "#/definitions/ObjectAnnotation"
+          }
+        }
+      }
+    },
+    "ObjectAnnotation": {
+      "type": "object",
+      "required": [
+        "object_id",
+        "class_name",
+        "bounding_box",
+        "visibility_status",
+        "object_state",
+        "timestamp"
+      ],
+      "properties": {
+        "object_id": {
+          "type": "string",
+          "description": "Persistent canonical entity identifier across visits (e.g., 'cup_01', 'crate_104')."
+        },
+        "class_name": {
+          "type": "string",
+          "description": "Semantic category label (e.g., 'cup', 'bottle', 'chair', 'forklift')."
+        },
+        "bounding_box": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "Coordinates [x_min, y_min, x_max, y_max]."
+        },
+        "visibility_status": {
+          "type": "string",
+          "enum": [
+            "CLEARLY_VISIBLE",
+            "PARTIALLY_OCCLUDED",
+            "OUT_OF_FRAME",
+            "UNOBSERVED",
+            "UNCERTAIN"
+          ],
+          "description": "Observational visibility state of the object in this specific view."
+        },
+        "object_state": {
+          "type": "string",
+          "enum": [
+            "CONFIRMED_PRESENT",
+            "MOVED",
+            "MOVED_BACK_TO_BASELINE",
+            "PENDING_REMOVAL",
+            "CONFIRMED_REMOVED",
+            "AMBIGUOUS_IDENTITY"
+          ],
+          "description": "Epistemic state of the object relative to its baseline history."
+        },
+        "event_id": {
+          "type": ["string", "null"],
+          "description": "Unique change event ID if a transition occurred at this observation (null if unchanged)."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "Timestamp of the observation."
+        },
+        "annotation_confidence": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 1.0,
+          "description": "Confidence of the ground truth label (1.0 for verified ground truth)."
+        },
+        "evidence_notes": {
+          "type": ["string", "null"],
+          "description": "Forensic notes explaining why this state, bbox, or visibility status was assigned."
+        }
+      }
+    }
+  }
+}

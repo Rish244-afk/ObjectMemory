@@ -1,0 +1,141 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "PhysicalWorkbench-Benchmark",
+  "dataset_root": "data/physical_workbench",
+  "metadata": {
+    "camera_sensor": "Sony A6400 35mm Prime",
+    "mounting": "Rigid desktop overhead boom arm at 50 degree oblique angle",
+    "lighting": "Controlled Fluorescent Overhead (5000K)",
+    "license": "Proprietary / ObjectMemory Project Internal",
+    "provenance_notes": "Physical multi-visit photographic dataset captured under Phase 2 Benchmark Protocol 2.0."
+  },
+  "sequences": [
+    {
+      "sequence_id": "PHYS-01-STAT",
+      "environment_id": "bench_01",
+      "challenge_mode": "STATIONARY_LIGHTING_DRIFT",
+      "reference_image": "PHYS-01-STAT/visit_01.png",
+      "calibration_file": "PHYS-01-STAT/calibration.json",
+      "ground_truth_file": "PHYS-01-STAT/ground_truth.json",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "sequence_description": "Stationary control objects evaluated under daylight, overhead, and task lamp variations."
+      },
+      "observations": [
+        {
+          "observation_id": "phys01_v01",
+          "timestamp": "2026-11-14T09:00:00Z",
+          "image_path": "PHYS-01-STAT/visit_01.png",
+          "source_annotation_path": "PHYS-01-STAT/visit_01_ann.json",
+          "split": "TEST",
+          "objects": [
+            {
+              "object_id": "multimeter_01",
+              "class_name": "multimeter",
+              "bounding_box": [120.0, 150.0, 260.0, 320.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-14T09:00:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Stationary baseline multimeter on bench center-left."
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [340.0, 110.0, 420.0, 380.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-14T09:00:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Stationary water bottle on bench center-right."
+            }
+          ]
+        },
+        {
+          "observation_id": "phys01_v02",
+          "timestamp": "2026-11-14T09:30:00Z",
+          "image_path": "PHYS-01-STAT/visit_02.png",
+          "source_annotation_path": "PHYS-01-STAT/visit_02_ann.json",
+          "split": "TEST",
+          "objects": [
+            {
+              "object_id": "multimeter_01",
+              "class_name": "multimeter",
+              "bounding_box": [121.0, 149.0, 261.0, 319.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-14T09:30:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Object remains stationary under task lighting."
+            },
+            {
+              "object_id": "bottle_01",
+              "class_name": "bottle",
+              "bounding_box": [340.0, 110.0, 420.0, 380.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-14T09:30:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Object remains stationary under task lighting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sequence_id": "PHYS-02-MOVE",
+      "environment_id": "bench_01",
+      "challenge_mode": "RELOCATION_AND_RETURN",
+      "reference_image": "PHYS-02-MOVE/visit_01.png",
+      "calibration_file": "PHYS-02-MOVE/calibration.json",
+      "ground_truth_file": "PHYS-02-MOVE/ground_truth.json",
+      "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+      "split": "TEST",
+      "metadata": {
+        "sequence_description": "Object relocation followed by return to initial baseline position."
+      },
+      "observations": [
+        {
+          "observation_id": "phys02_v01",
+          "timestamp": "2026-11-14T10:00:00Z",
+          "image_path": "PHYS-02-MOVE/visit_01.png",
+          "source_annotation_path": "PHYS-02-MOVE/visit_01_ann.json",
+          "split": "TEST",
+          "objects": [
+            {
+              "object_id": "pliers_01",
+              "class_name": "pliers",
+              "bounding_box": [200.0, 200.0, 310.0, 290.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-14T10:00:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Initial baseline position."
+            }
+          ]
+        },
+        {
+          "observation_id": "phys02_v02",
+          "timestamp": "2026-11-14T10:15:00Z",
+          "image_path": "PHYS-02-MOVE/visit_02.png",
+          "source_annotation_path": "PHYS-02-MOVE/visit_02_ann.json",
+          "split": "TEST",
+          "objects": [
+            {
+              "object_id": "pliers_01",
+              "class_name": "pliers",
+              "bounding_box": [320.0, 200.0, 430.0, 290.0],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "MOVED",
+              "event_id": "evt_phys02_v02_pliers_reloc",
+              "timestamp": "2026-11-14T10:15:00Z",
+              "annotation_confidence": 1.0,
+              "evidence_notes": "Pliers moved +120px to the right along workbench."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

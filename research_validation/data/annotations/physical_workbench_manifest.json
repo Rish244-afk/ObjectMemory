@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0.0",
+  "dataset_name": "PhysicalWorkbench",
+  "environment_id": "desk_pilot_01",
+  "sequence_id": "S01_seven_visit_pilot",
+  "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+  "metadata": {
+    "camera_intrinsics": {
+      "fx": 1000.0,
+      "fy": 1000.0,
+      "cx": 390.0,
+      "cy": 318.0,
+      "width": 780,
+      "height": 636
+    },
+    "license": "Proprietary / ObjectMemory Project Internal",
+    "provenance_notes": "Physical smartphone photographs cropped and saved as PNG across seven discrete visits."
+  },
+  "observations": [
+    {
+      "dataset_name": "PhysicalWorkbench",
+      "environment_id": "desk_pilot_01",
+      "sequence_id": "S01_seven_visit_pilot",
+      "observation_id": "obs_pilot_v01",
+      "timestamp": "2026-10-15T09:00:00Z",
+      "image_path": "data/real_workbench/visits/visit_01.png",
+      "depth_path": null,
+      "semantic_path": null,
+      "change_mask_path": null,
+      "camera_pose": null,
+      "source_annotation_path": "data/real_workbench/manifest.json",
+      "split": "DEVELOPMENT",
+      "objects": [
+        {
+          "object_id": "plant_01",
+          "class_name": "potted plant",
+          "bounding_box": [0, 0, 165, 290],
+          "visibility_status": "CLEARLY_VISIBLE",
+          "object_state": "CONFIRMED_PRESENT",
+          "event_id": null,
+          "timestamp": "2026-10-15T09:00:00Z",
+          "annotation_confidence": 1.0,
+          "evidence_notes": "Stationary control potted plant."
+        },
+        {
+          "object_id": "cup_01",
+          "class_name": "cup",
+          "bounding_box": [10, 318, 220, 540],
+          "visibility_status": "CLEARLY_VISIBLE",
+          "object_state": "CONFIRMED_PRESENT",
+          "event_id": null,
+          "timestamp": "2026-10-15T09:00:00Z",
+          "annotation_confidence": 1.0,
+          "evidence_notes": "Primary white mug with handle."
+        },
+        {
+          "object_id": "bottle_01",
+          "class_name": "bottle",
+          "bounding_box": [245, 175, 345, 495],
+          "visibility_status": "CLEARLY_VISIBLE",
+          "object_state": "CONFIRMED_PRESENT",
+          "event_id": null,
+          "timestamp": "2026-10-15T09:00:00Z",
+          "annotation_confidence": 1.0,
+          "evidence_notes": "Clear water bottle."
+        }
+      ]
+    },
+    {
+      "dataset_name": "PhysicalWorkbench",
+      "environment_id": "desk_pilot_01",
+      "sequence_id": "S01_seven_visit_pilot",
+      "observation_id": "obs_pilot_v02",
+      "timestamp": "2026-10-15T09:10:00Z",
+      "image_path": "data/real_workbench/visits/visit_02.png",
+      "depth_path": null,
+      "semantic_path": null,
+      "change_mask_path": null,
+      "camera_pose": null,
+      "source_annotation_path": "data/real_workbench/manifest.json",
+      "split": "DEVELOPMENT",
+      "objects": [
+        {
+          "object_id": "plant_01",
+          "class_name": "potted plant",
+          "bounding_box": [0, 0, 165, 290],
+          "visibility_status": "CLEARLY_VISIBLE",
+          "object_state": "CONFIRMED_PRESENT",
+          "event_id": null,
+          "timestamp": "2026-10-15T09:10:00Z",
+          "annotation_confidence": 1.0,
+          "evidence_notes": "Stationary control."
+        },
+        {
+          "object_id": "cup_01",
+          "class_name": "cup",
+          "bounding_box": [180, 240, 390, 460],
+          "visibility_status": "CLEARLY_VISIBLE",
+          "object_state": "MOVED",
+          "event_id": "evt_v02_cup01_reloc",
+          "timestamp": "2026-10-15T09:10:00Z",
+          "annotation_confidence": 1.0,
+          "evidence_notes": "Cup translated to center-right desk area."
+        }
+      ]
+    }
+  ]
+}

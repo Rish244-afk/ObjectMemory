@@ -1,0 +1,144 @@
+{
+  "demonstration_id": "OBJECTMEMORY_FINAL_DEMO_01",
+  "timestamp": "2026-11-21T22:45:00Z",
+  "workspace_id": "_demo_workspace",
+  "total_steps": 7,
+  "steps": [
+    {
+      "step": 1,
+      "name": "Initial Scene Ingestion",
+      "session_id": "visit_01",
+      "registration_status": "SUCCESS",
+      "detections_count": 5,
+      "active_entities": 5
+    },
+    {
+      "step": 2,
+      "name": "Repeated Stationary Observation",
+      "session_id": "visit_02",
+      "registration_status": "SUCCESS",
+      "entity_state_counts": {
+        "CONFIRMED_PRESENT": 5
+      },
+      "change_events_count": 5
+    },
+    {
+      "step": 3,
+      "name": "Object Relocation",
+      "session_id": "visit_03",
+      "entity_state_counts": {
+        "CONFIRMED_PRESENT": 4,
+        "CONFIRMED_MOVED": 1
+      },
+      "movement_events": [
+        {
+          "event_id": "evt_visit_03_ent_visit_01_2_confirmed_moved",
+          "entity_id": "ent_visit_01_2",
+          "from_session_id": "visit_02",
+          "to_session_id": "visit_03",
+          "timestamp": "2026-11-21T10:20:00Z",
+          "prior_state": "CONFIRMED_PRESENT",
+          "new_state": "CONFIRMED_MOVED",
+          "source": "TEMPORAL_MEMORY",
+          "displacement_distance": 198.86318324875734,
+          "explanation": "Object relocated by 198.9px to new canonical position (exceeds effective threshold 35.0px).",
+          "supporting_evidence": {
+            "displacement": 198.86318324875734,
+            "consecutive_displacement": 198.86318324875734,
+            "baseline_displacement": 198.8934683071842,
+            "is_consecutive_moved": true,
+            "is_return_to_baseline": false,
+            "confidence": 0.9047759771347046,
+            "match_confidence": 0.9986417179862849,
+            "registration_reliable": true,
+            "spatial_comparison_reliable": true,
+            "is_cross_class": false,
+            "detected_label": "cup",
+            "established_label": "cup",
+            "uncertainty_breakdown": {
+              "base_threshold_px": 35.0,
+              "delta_u_px": 0.0,
+              "effective_threshold_px": 35.0,
+              "u_reproj_px": 0.0,
+              "u_inlier_px": 0.0,
+              "u_coverage_px": 0.0,
+              "u_scale_px": 0.0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "step": 4,
+      "name": "Object Removal and Confirmation",
+      "visit4_states": {
+        "CONFIRMED_PRESENT": 4,
+        "PENDING_REMOVAL": 1
+      },
+      "visit5_states": {
+        "CONFIRMED_PRESENT": 4,
+        "CONFIRMED_REMOVED": 1
+      },
+      "removal_events": [
+        {
+          "event_id": "evt_visit_04_ent_visit_01_3_pending_removal",
+          "entity_id": "ent_visit_01_3",
+          "from_session_id": "visit_03",
+          "to_session_id": "visit_04",
+          "timestamp": "2026-11-21T10:30:00Z",
+          "prior_state": "CONFIRMED_PRESENT",
+          "new_state": "PENDING_REMOVAL",
+          "source": "TEMPORAL_MEMORY",
+          "displacement_distance": null,
+          "explanation": "Vacant patch verified for 1 consecutive visit(s); transitioning to PENDING_REMOVAL.",
+          "supporting_evidence": {
+            "consecutive_vacant_visits": 1,
+            "unobserved_streak": 1,
+            "vacancy_verified": true
+          }
+        },
+        {
+          "event_id": "evt_visit_05_ent_visit_01_3_confirmed_removed",
+          "entity_id": "ent_visit_01_3",
+          "from_session_id": "visit_03",
+          "to_session_id": "visit_05",
+          "timestamp": "2026-11-21T10:40:00Z",
+          "prior_state": "PENDING_REMOVAL",
+          "new_state": "CONFIRMED_REMOVED",
+          "source": "TEMPORAL_MEMORY",
+          "displacement_distance": null,
+          "explanation": "Vacant patch verified for 2 consecutive visit(s); transitioning to CONFIRMED_REMOVED.",
+          "supporting_evidence": {
+            "consecutive_vacant_visits": 2,
+            "unobserved_streak": 3,
+            "vacancy_verified": true
+          }
+        }
+      ]
+    },
+    {
+      "step": 5,
+      "name": "Occlusion and Recovery",
+      "visit6_states": {
+        "PENDING_REMOVAL": 1,
+        "CONFIRMED_PRESENT": 4
+      },
+      "visit7_states": {
+        "CONFIRMED_PRESENT": 5
+      }
+    },
+    {
+      "step": 6,
+      "name": "Historical Object Retrieval",
+      "entities_count": 5,
+      "events_count": 12
+    },
+    {
+      "step": 7,
+      "name": "Registration Failure Handling",
+      "session_id": "visit_08",
+      "registration_status": "INSUFFICIENT_INLIERS",
+      "detections_count": 0
+    }
+  ]
+}
