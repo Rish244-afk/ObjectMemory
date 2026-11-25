@@ -12,6 +12,7 @@ import {
   Server,
   Compass,
   BarChart3,
+  ScanSearch,
 } from 'lucide-react';
 
 export type ActiveTab =
@@ -21,7 +22,8 @@ export type ActiveTab =
   | 'entities'
   | 'timeline'
   | 'diagnostics'
-  | 'evaluation';
+  | 'evaluation'
+  | 'eth';
 
 interface NavbarProps {
   currentWorkspace: WorkspaceSummary | null;
@@ -75,6 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { tab: 'timeline', label: 'Change Timeline', icon: <Clock className="w-4 h-4" /> },
     { tab: 'diagnostics', label: 'Diagnostics', icon: <Activity className="w-4 h-4" /> },
     { tab: 'evaluation', label: 'Evaluation Lab', icon: <BarChart3 className="w-4 h-4" /> },
+    { tab: 'eth', label: 'ETH Registration', icon: <ScanSearch className="w-4 h-4" /> },
   ];
 
   return (

@@ -91,8 +91,14 @@ class CrossVisitEntityAssociator:
             ent_sig = entity_signatures.get(ent.entity_id)
 
             for j, det in enumerate(detections):
-                # A. Category compatibility: must match label if both present
-                if ent.label and det.label and ent.label != det.label:
+                # A. Category compatibility: allow matching against confirmed label or known raw predicted labels
+                ent_meta = ent.metadata or {}
+                known_labels = set(ent_meta.get("raw_predicted_labels") or [])
+                if ent.label:
+                    known_labels.add(ent.label)
+                if ent_meta.get("original_raw_label"):
+                    known_labels.add(ent_meta["original_raw_label"])
+                if known_labels and det.label and det.label not in known_labels:
                     continue
 
                 # B. Visual signature similarity

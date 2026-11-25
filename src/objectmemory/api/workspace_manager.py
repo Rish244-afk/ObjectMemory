@@ -78,6 +78,15 @@ class WorkspaceManager:
         key = (detector_name or default_name).strip().lower()
         with self._global_lock:
             if key not in self._detector_instances:
+                # Evict other non-default heavy models when switching to avoid holding multiple large ONNX sessions
+                for old_key in list(self._detector_instances.keys()):
+                    if old_key != default_name and old_key != key:
+                        old_inst = self._detector_instances.pop(old_key)
+                        if hasattr(old_inst, "unload"):
+                            try:
+                                old_inst.unload()
+                            except Exception:
+                                pass
                 if key in ("yolov8m", "yolov8") and self.weights_path.exists():
                     self._detector_instances[key] = DetectorRegistry.get(key, weights_path=str(self.weights_path))
                 else:
@@ -336,7 +345,7 @@ class WorkspaceManager:
                 metadata={"notes": notes, "original_filename": filename},
             )
 
-            # 6. Execute pipeline
+            # 6. Execute pipeline (normal frozen threshold)
             if target_classes:
                 det_cfg = DetectorConfiguration(
                     confidence_threshold=confidence_threshold,
@@ -349,6 +358,19 @@ class WorkspaceManager:
             else:
                 result: RealVisitProcessingResult = runner.process_visit(
                     visit_frame,
+                    confidence_threshold=confidence_threshold,
+                )
+
+            # 6b. Record raw label provenance & run evidence-gated sub-threshold recovery if needed
+            self._sync_entity_raw_label_metadata(runner.store, session_id)
+            if not is_first_session and not target_classes:
+                self._attempt_subthreshold_recovery(
+                    runner=runner,
+                    img=img,
+                    session_id=session_id,
+                    ts_utc=ts_utc,
+                    reg=result.registration,
+                    accepted_detections=result.detection_batch.detections,
                     confidence_threshold=confidence_threshold,
                 )
 
@@ -468,6 +490,48 @@ class WorkspaceManager:
     # Query Functions
     # ---------------------------------------------------------------------------
 
+    def _format_entity_summary(self, e: Any) -> Dict[str, Any]:
+        meta = dict(e.metadata or {})
+        canon = None
+        if e.canonical_bbox:
+            canon = {
+                "x_min": e.canonical_bbox.x_min,
+                "y_min": e.canonical_bbox.y_min,
+                "x_max": e.canonical_bbox.x_max,
+                "y_max": e.canonical_bbox.y_max,
+            }
+        raw_labels = list(meta.get("raw_predicted_labels") or [])
+        if not raw_labels:
+            raw_labels = [meta.get("original_raw_label", e.label)]
+        raw_label = meta.get("original_raw_label") or raw_labels[-1]
+        raw_conf = meta.get("original_raw_confidence")
+        if raw_conf is None:
+            raw_conf = meta.get("initial_confidence")
+        confirmed = meta.get("confirmed_label")
+        provenance = meta.get("label_provenance") or ("USER_CONFIRMED" if confirmed else "MODEL_PREDICTED")
+        confirmed_at = meta.get("label_confirmed_at")
+        class_uncertain = (
+            len(set(raw_labels)) > 1
+            or (raw_conf is not None and float(raw_conf) < 0.55)
+            or bool(confirmed and confirmed != raw_label)
+        )
+        return {
+            "entity_id": e.entity_id,
+            "label": e.label,
+            "raw_label": raw_label,
+            "raw_confidence": float(raw_conf) if raw_conf is not None else None,
+            "confirmed_label": confirmed,
+            "label_provenance": provenance,
+            "label_confirmed_at": confirmed_at,
+            "observed_labels": sorted(set(raw_labels)),
+            "class_uncertain": class_uncertain,
+            "created_at": e.created_at,
+            "current_state": e.current_state.value,
+            "canonical_bbox": canon,
+            "last_seen_session_id": e.last_seen_session_id,
+            "metadata": e.metadata,
+        }
+
     def list_entities(self, workspace_id: str, state: Optional[str] = None) -> List[Dict[str, Any]]:
         slug = _sanitize_slug(workspace_id)
         db_path = self._db_path(slug)
@@ -477,26 +541,7 @@ class WorkspaceManager:
         target_state = EpistemicState(state) if state else None
         with SQLiteMemoryStore(db_path, check_same_thread=False) as store:
             entities = store.list_entities(state=target_state)
-            out = []
-            for e in entities:
-                canon = None
-                if e.canonical_bbox:
-                    canon = {
-                        "x_min": e.canonical_bbox.x_min,
-                        "y_min": e.canonical_bbox.y_min,
-                        "x_max": e.canonical_bbox.x_max,
-                        "y_max": e.canonical_bbox.y_max,
-                    }
-                out.append({
-                    "entity_id": e.entity_id,
-                    "label": e.label,
-                    "created_at": e.created_at,
-                    "current_state": e.current_state.value,
-                    "canonical_bbox": canon,
-                    "last_seen_session_id": e.last_seen_session_id,
-                    "metadata": e.metadata,
-                })
-            return out
+            return [self._format_entity_summary(e) for e in entities]
 
     def get_entity_detail(self, workspace_id: str, entity_id: str) -> Optional[Dict[str, Any]]:
         slug = _sanitize_slug(workspace_id)
@@ -509,23 +554,7 @@ class WorkspaceManager:
             if not ent:
                 return None
 
-            canon = None
-            if ent.canonical_bbox:
-                canon = {
-                    "x_min": ent.canonical_bbox.x_min,
-                    "y_min": ent.canonical_bbox.y_min,
-                    "x_max": ent.canonical_bbox.x_max,
-                    "y_max": ent.canonical_bbox.y_max,
-                }
-            entity_summary = {
-                "entity_id": ent.entity_id,
-                "label": ent.label,
-                "created_at": ent.created_at,
-                "current_state": ent.current_state.value,
-                "canonical_bbox": canon,
-                "last_seen_session_id": ent.last_seen_session_id,
-                "metadata": ent.metadata,
-            }
+            entity_summary = self._format_entity_summary(ent)
 
             observations = store.list_observations_for_entity(entity_id)
             obs_out = []
@@ -822,88 +851,713 @@ class WorkspaceManager:
             if not ref_sess or not query_sess:
                 raise KeyError(f"One or both sessions not found: {ref_id}, {query_id}")
 
-            # Get observations in ref and query sessions
+            # Get observations, raw detections, and events in ref and query sessions
             ref_obs = {o.entity_id: o for o in store.list_observations_for_session(ref_id) if o.entity_id}
             query_obs = {o.entity_id: o for o in store.list_observations_for_session(query_id) if o.entity_id}
+            ref_raws = store.list_raw_detections_for_session(ref_id)
+            query_raws = store.list_raw_detections_for_session(query_id)
             query_events = {e.entity_id: e for e in store.list_change_events_for_session(query_id)}
 
-            # Compute each entity's state as of query_id (instead of latest workspace state)
+            # Compute each entity's state at ref_id and query_id, plus intermediate movement/removal transitions
             session_order = {s.session_id: i for i, s in enumerate(sessions)}
+            r_order = session_order.get(ref_id, 0)
             q_order = session_order.get(query_id, len(sessions) - 1)
+
+            # Detect if ref and query span across a reset/restarted sequence (e.g. a second V01 upload)
+            cross_sequence_warning: Optional[str] = None
+            lo_ord, hi_ord = min(r_order, q_order), max(r_order, q_order)
+            for idx_s in range(lo_ord + 1, hi_ord + 1):
+                s_name = sessions[idx_s].session_name or ""
+                if re.search(r"\b(V01|visit[_\s]?0?1)\b", s_name, re.IGNORECASE) and idx_s > 0:
+                    cross_sequence_warning = (
+                        f"Selected visits appear to span across two separate sequences "
+                        f"('{sessions[idx_s].session_id}: {s_name}' restarts at V01). "
+                        f"Select visits from the same scenario sequence for valid comparison."
+                    )
+                    break
+
+            state_at_ref: Dict[str, str] = {}
             state_at_query: Dict[str, str] = {}
+            moved_between: Dict[str, float] = {}
+            events_in_window_entities: set[str] = set()
             cur_ev = store.conn.execute(
-                "SELECT entity_id, to_session_id, new_state FROM change_events ORDER BY timestamp ASC, event_id ASC;"
+                "SELECT entity_id, to_session_id, new_state, displacement_distance FROM change_events ORDER BY timestamp ASC, rowid ASC;"
             )
             for row in cur_ev.fetchall():
-                if session_order.get(row["to_session_id"], -1) <= q_order:
+                ev_ord = session_order.get(row["to_session_id"], -1)
+                if ev_ord <= r_order:
+                    state_at_ref[row["entity_id"]] = row["new_state"]
+                if ev_ord <= q_order:
                     state_at_query[row["entity_id"]] = row["new_state"]
+                if r_order < ev_ord <= q_order:
+                    events_in_window_entities.add(row["entity_id"])
+                    if row["new_state"] == "CONFIRMED_MOVED" and row["displacement_distance"] is not None:
+                        moved_between[row["entity_id"]] = float(row["displacement_distance"])
 
-            all_entity_ids = sorted(list(set(ref_obs.keys()).union(query_obs.keys())))
+            def _bbox_dict(b: Any) -> Optional[Dict[str, float]]:
+                if b is None:
+                    return None
+                return {"x_min": b.x_min, "y_min": b.y_min, "x_max": b.x_max, "y_max": b.y_max}
+
+            # Check alignment quality from query observations, raw detections, and temporal events
+            qualities = [o.alignment_quality for o in query_obs.values() if o.alignment_quality is not None]
+            evt_reg_failed = any(
+                e.new_state == EpistemicState.INSUFFICIENT_EVIDENCE
+                and "registration" in (e.explanation or "").lower()
+                for e in query_events.values()
+            )
+            raw_reg_failed = bool(
+                query_raws
+                and all(r.registration_status != "SUCCESS" and r.canonical_bbox is None for r in query_raws)
+            )
+            if qualities:
+                inlier_ratio = float(np.mean(qualities))
+            elif evt_reg_failed or raw_reg_failed:
+                inlier_ratio = 0.0
+            else:
+                inlier_ratio = 1.0
+            reg_reliable = (query_id == sessions[0].session_id) or (
+                inlier_ratio >= 0.20 and not evt_reg_failed and not raw_reg_failed
+            )
+
+            all_entity_ids = sorted(
+                list(set(ref_obs.keys()).union(query_obs.keys()).union(events_in_window_entities))
+            )
             items = []
             for eid in all_entity_ids:
                 ent = store.get_entity(eid)
                 label = ent.label if ent else "unknown"
+                ent_meta = (ent.metadata or {}) if ent else {}
+                created_sess = ent_meta.get("created_in_session")
+                created_ord = session_order.get(created_sess, 0) if created_sess else 0
+
                 r_o = ref_obs.get(eid)
                 q_o = query_obs.get(eid)
                 ev = query_events.get(eid)
-                fallback_state = state_at_query.get(eid) or (ent.current_state.value if ent else "CONFIRMED_PRESENT")
+                ref_st = state_at_ref.get(eid) or ("NONE" if created_ord > r_order else "CONFIRMED_PRESENT")
+                query_st = state_at_query.get(eid) or (ent.current_state.value if ent else "CONFIRMED_PRESENT")
 
-                r_box = (
-                    {"x_min": r_o.canonical_bbox.x_min, "y_min": r_o.canonical_bbox.y_min, "x_max": r_o.canonical_bbox.x_max, "y_max": r_o.canonical_bbox.y_max}
-                    if r_o and r_o.canonical_bbox else None
-                )
-                q_box = (
-                    {"x_min": q_o.canonical_bbox.x_min, "y_min": q_o.canonical_bbox.y_min, "x_max": q_o.canonical_bbox.x_max, "y_max": q_o.canonical_bbox.y_max}
-                    if q_o and q_o.canonical_bbox else None
-                )
+                r_box = _bbox_dict(r_o.canonical_bbox if r_o else None)
+                q_box = _bbox_dict(q_o.canonical_bbox if q_o else None)
+                r_raw_box = _bbox_dict(r_o.raw_bbox if r_o else None)
+                q_raw_box = _bbox_dict(q_o.raw_bbox if q_o else None)
 
-                if eid not in ref_obs and eid in query_obs:
-                    status_change = "ADDED"
-                    prior_st = "NONE"
-                    new_st = fallback_state
-                    expl = "Entity first observed in query session."
+                # Compute actual canonical centroid displacement between ref and query when both exist
+                pair_disp: Optional[float] = None
+                if r_o and r_o.canonical_bbox and q_o and q_o.canonical_bbox:
+                    rcx = (r_o.canonical_bbox.x_min + r_o.canonical_bbox.x_max) / 2.0
+                    rcy = (r_o.canonical_bbox.y_min + r_o.canonical_bbox.y_max) / 2.0
+                    qcx = (q_o.canonical_bbox.x_min + q_o.canonical_bbox.x_max) / 2.0
+                    qcy = (q_o.canonical_bbox.y_min + q_o.canonical_bbox.y_max) / 2.0
+                    pair_disp = float(np.hypot(qcx - rcx, qcy - rcy))
+
+                if created_ord > r_order:
+                    if query_st == "CONFIRMED_REMOVED":
+                        status_change = query_st
+                        movement_status = "REMOVED"
+                        prior_st = "NONE"
+                        new_st = query_st
+                        expl = f"Entity introduced after {ref_id} and transitioned to {query_st} by {query_id}."
+                    elif query_st == "PENDING_REMOVAL":
+                        status_change = query_st
+                        movement_status = "NOT_DETECTED"
+                        prior_st = "NONE"
+                        new_st = query_st
+                        expl = f"Entity introduced after {ref_id} and not detected in {query_id}."
+                    else:
+                        status_change = "ADDED"
+                        movement_status = "ADDED"
+                        prior_st = "NONE"
+                        new_st = query_st
+                        expl = "Entity first observed after reference session."
+                    disp = pair_disp if pair_disp is not None else (ev.displacement_distance if ev else moved_between.get(eid))
+                elif not reg_reliable and eid in ref_obs and eid not in query_obs:
+                    status_change = "INSUFFICIENT_EVIDENCE"
+                    movement_status = "REGISTRATION_UNRELIABLE"
+                    prior_st = ref_st
+                    new_st = "INSUFFICIENT_EVIDENCE"
+                    expl = f"Planar registration unreliable in {query_id}; positional comparison withheld."
+                    disp = None
+                elif query_st == "CONFIRMED_REMOVED" and ref_st not in ("CONFIRMED_REMOVED", "PENDING_REMOVAL"):
+                    status_change = query_st
+                    movement_status = "REMOVED"
+                    prior_st = ref_st
+                    new_st = query_st
+                    expl = ev.explanation if ev else f"Entity transitioned to {query_st} by {query_id}."
+                    disp = None
+                elif query_st == "PENDING_REMOVAL" and ref_st not in ("CONFIRMED_REMOVED", "PENDING_REMOVAL"):
+                    status_change = query_st
+                    movement_status = "NOT_DETECTED"
+                    prior_st = ref_st
+                    new_st = query_st
+                    expl = ev.explanation if ev else f"Entity temporarily not detected in {query_id} (pending confirmation)."
+                    disp = None
+                elif ev and ev.new_state == EpistemicState.CONFIRMED_MOVED:
+                    status_change = "CONFIRMED_MOVED"
+                    movement_status = "MOVED"
+                    prior_st = ref_st
+                    new_st = "CONFIRMED_MOVED"
+                    expl = ev.explanation
+                    disp = pair_disp if pair_disp is not None else ev.displacement_distance
+                elif query_st == "CONFIRMED_MOVED" and ref_st != "CONFIRMED_MOVED":
+                    status_change = "CONFIRMED_MOVED"
+                    movement_status = "MOVED"
+                    prior_st = ref_st
+                    new_st = "CONFIRMED_MOVED"
+                    disp = pair_disp if pair_disp is not None else moved_between.get(eid)
+                    disp_str = f" ({disp:.1f} px)" if disp is not None else ""
+                    expl = f"Entity relocated between {ref_id} and {query_id}{disp_str}."
+                elif query_st == "PENDING_MOVEMENT" or (ev and ev.new_state.value == "PENDING_MOVEMENT"):
+                    status_change = "PENDING_MOVEMENT"
+                    movement_status = "PENDING_MOVEMENT"
+                    prior_st = ref_st
+                    new_st = "PENDING_MOVEMENT"
+                    expl = ev.explanation if ev else f"Candidate movement in {query_id} awaiting multi-visit confirmation."
+                    disp = pair_disp if pair_disp is not None else (ev.displacement_distance if ev else None)
+                elif query_st == "AMBIGUOUS_IDENTITY" or (ev and ev.new_state.value == "AMBIGUOUS_IDENTITY"):
+                    status_change = "AMBIGUOUS_IDENTITY"
+                    movement_status = "IDENTITY_AMBIGUOUS"
+                    prior_st = ref_st
+                    new_st = "AMBIGUOUS_IDENTITY"
+                    expl = ev.explanation if ev else f"Multiple competing association candidates in {query_id}."
+                    disp = None
+                elif query_st == "INSUFFICIENT_EVIDENCE" or (ev and ev.new_state.value == "INSUFFICIENT_EVIDENCE"):
+                    status_change = "INSUFFICIENT_EVIDENCE"
+                    expl = ev.explanation if ev else f"Insufficient positional or visual evidence in {query_id}."
+                    movement_status = "REGISTRATION_UNRELIABLE" if ("registration" in expl.lower() or not reg_reliable) else "INSUFFICIENT_EVIDENCE"
+                    prior_st = ref_st
+                    new_st = "INSUFFICIENT_EVIDENCE"
+                    disp = None
                 elif eid in ref_obs and eid not in query_obs:
                     status_change = "MISSING_IN_QUERY"
-                    prior_st = "CONFIRMED_PRESENT"
-                    new_st = fallback_state
-                    expl = "Entity not detected in query session."
+                    movement_status = "NOT_DETECTED" if reg_reliable else "REGISTRATION_UNRELIABLE"
+                    prior_st = ref_st
+                    new_st = query_st
+                    expl = "Entity not detected in query session." if reg_reliable else "Registration unreliable; entity could not be verified."
+                    disp = None
                 elif ev:
                     status_change = ev.new_state.value
                     prior_st = ev.prior_state.value
                     new_st = ev.new_state.value
                     expl = ev.explanation
+                    disp = pair_disp if pair_disp is not None else ev.displacement_distance
+                    if not reg_reliable:
+                        movement_status = "REGISTRATION_UNRELIABLE"
+                        disp = None
+                    elif pair_disp is not None:
+                        movement_status = "NOT_MOVED"
+                    else:
+                        movement_status = "INSUFFICIENT_EVIDENCE"
                 else:
                     status_change = "UNCHANGED"
-                    prior_st = fallback_state
-                    new_st = prior_st
-                    expl = "No state transition triggered."
+                    prior_st = ref_st
+                    new_st = query_st
+                    disp = pair_disp
+                    if not reg_reliable:
+                        movement_status = "REGISTRATION_UNRELIABLE"
+                        expl = f"Planar registration unreliable in {query_id}; cannot confirm stationary vs. moved."
+                        disp = None
+                    elif pair_disp is not None:
+                        movement_status = "NOT_MOVED"
+                        expl = f"Verified stationary in canonical frame (displacement {pair_disp:.1f} px)."
+                    else:
+                        movement_status = "INSUFFICIENT_EVIDENCE"
+                        expl = "Canonical bounding boxes unavailable for both visits."
 
-                disp = ev.displacement_distance if ev else None
+                # Surface raw model labels, confirmed label provenance, and evidence source honestly
+                raw_labels = list(ent_meta.get("raw_predicted_labels") or [])
+                if not raw_labels:
+                    raw_labels = [ent_meta.get("original_raw_label", label)]
+                raw_label = ent_meta.get("original_raw_label") or (raw_labels[-1] if raw_labels else label)
+                confirmed_lbl = ent_meta.get("confirmed_label")
+                lbl_prov = ent_meta.get("label_provenance") or ("USER_CONFIRMED" if confirmed_lbl else "MODEL_PREDICTED")
+                ev_src = "MODEL_DETECTION"
+                if q_o and isinstance(q_o.raw_evidence, dict) and q_o.raw_evidence.get("evidence_source"):
+                    ev_src = str(q_o.raw_evidence["evidence_source"])
+                elif ev and ev.source in ("HUMAN_CONFIRMED", "SUB_THRESHOLD_RECOVERY"):
+                    ev_src = ev.source
+
+                r_conf = r_o.detector_confidence if r_o else None
+                q_conf = q_o.detector_confidence if q_o else None
+                min_conf = min([c for c in (r_conf, q_conf) if c is not None], default=1.0)
+                class_uncertain = (len(set(raw_labels)) > 1) or (min_conf < 0.55) or bool(confirmed_lbl and confirmed_lbl != raw_label)
 
                 items.append({
                     "entity_id": eid,
                     "label": label,
+                    "raw_label": raw_label,
+                    "confirmed_label": confirmed_lbl,
+                    "label_provenance": lbl_prov,
+                    "evidence_source": ev_src,
+                    "observed_labels": sorted(set(raw_labels)),
+                    "class_uncertain": class_uncertain,
                     "status_change": status_change,
+                    "movement_status": movement_status,
                     "prior_state": prior_st,
                     "new_state": new_st,
                     "displacement_px": disp,
+                    "ref_confidence": r_conf,
+                    "query_confidence": q_conf,
                     "ref_bbox": r_box,
                     "query_bbox": q_box,
+                    "ref_raw_bbox": r_raw_box,
+                    "query_raw_bbox": q_raw_box,
                     "explanation": expl,
                 })
-
-            # Check alignment quality from query observations
-            qualities = [o.alignment_quality for o in query_obs.values() if o.alignment_quality is not None]
-            inlier_ratio = float(np.mean(qualities)) if qualities else 1.0
 
             return {
                 "workspace_id": slug,
                 "reference_session_id": ref_id,
                 "query_session_id": query_id,
-                "registration_status": "SUCCESS" if inlier_ratio >= 0.20 else "DEGRADED",
+                "registration_status": "SUCCESS" if reg_reliable else "DEGRADED",
                 "registration_inlier_ratio": inlier_ratio,
+                "ref_detections_count": len(ref_raws),
+                "query_detections_count": len(query_raws),
+                "cross_sequence_warning": cross_sequence_warning,
                 "items": items,
             }
+
+    def _sync_entity_raw_label_metadata(self, store: SQLiteMemoryStore, session_id: str) -> None:
+        """Persists original raw model label/confidence and observed label history without overwriting confirmed labels."""
+        for obs in store.list_observations_for_session(session_id):
+            if not obs.entity_id:
+                continue
+            ent = store.get_entity(obs.entity_id)
+            if not ent:
+                continue
+            meta = dict(ent.metadata or {})
+            ev_dict = obs.raw_evidence if isinstance(obs.raw_evidence, dict) else {}
+            det_lbl = ev_dict.get("detected_label") or ev_dict.get("raw_label") or ent.label
+            changed = False
+            if "original_raw_label" not in meta:
+                meta["original_raw_label"] = det_lbl
+                changed = True
+            if "original_raw_confidence" not in meta and obs.detector_confidence is not None:
+                meta["original_raw_confidence"] = float(obs.detector_confidence)
+                changed = True
+            raw_list = list(meta.get("raw_predicted_labels") or [])
+            if not raw_list:
+                raw_list = [meta["original_raw_label"]]
+                changed = True
+            if det_lbl and det_lbl not in raw_list:
+                raw_list.append(det_lbl)
+                changed = True
+            meta["raw_predicted_labels"] = raw_list
+            if "label_provenance" not in meta:
+                meta["label_provenance"] = "USER_CONFIRMED" if meta.get("confirmed_label") else "MODEL_PREDICTED"
+                changed = True
+            if changed:
+                store.conn.execute(
+                    "UPDATE entities SET metadata_json = ? WHERE entity_id = ?;",
+                    (json.dumps(meta), ent.entity_id),
+                )
+        store.conn.commit()
+
+    def _attempt_subthreshold_recovery(
+        self,
+        runner: RealImagePipelineRunner,
+        img: np.ndarray,
+        session_id: str,
+        ts_utc: str,
+        reg: Any,
+        accepted_detections: List[Any],
+        confidence_threshold: float,
+    ) -> None:
+        """
+        Separate, strictly evidence-gated candidate recovery for unmatched entities.
+        Never alters raw_detections or frozen production confidence_threshold (0.25).
+        Requires reliable registration, 0.12 <= conf < threshold, no overlap with accepted detections,
+        appearance cosine similarity >= 0.85, and unambiguous one-to-one separation.
+        """
+        if not reg or not reg.success or reg.homography is None:
+            return
+        if reg.inlier_ratio is not None and reg.inlier_ratio < runner.temporal_config.min_registration_inlier_ratio:
+            return
+
+        store = runner.store
+        obs_in_sess = {o.entity_id for o in store.list_observations_for_session(session_id) if o.entity_id}
+        unmatched_ents = [
+            e for e in store.list_entities()
+            if e.entity_id not in obs_in_sess and e.current_state != EpistemicState.CONFIRMED_REMOVED
+        ]
+        if not unmatched_ents:
+            return
+
+        try:
+            low_batch = runner.detector.detect(img, confidence_threshold=0.10)
+        except Exception:
+            return
+
+        from objectmemory.baseline.comparator import calculate_bbox_iou
+        from objectmemory.detection.models import BoundingBox as DetBBox
+        from objectmemory.domain.models import Observation as DomObs, ChangeEvent as DomEvt
+        from objectmemory.domain.states import VisibilityStatus
+        from objectmemory.detection.pipeline import transform_bbox_to_canonical
+
+        sub_cands = []
+        for c in low_batch.detections:
+            if c.confidence < 0.12 or c.confidence >= confidence_threshold:
+                continue
+            overlaps_accepted = any(
+                calculate_bbox_iou(c.raw_bbox, a.raw_bbox) >= 0.20
+                for a in accepted_detections
+            )
+            if not overlaps_accepted:
+                sub_cands.append(c)
+        if not sub_cands:
+            return
+
+        # Load entity latest signature vectors
+        ent_sigs: Dict[str, np.ndarray] = {}
+        for ent in unmatched_ents:
+            for o in reversed(store.list_observations_for_entity(ent.entity_id)):
+                vec = (o.raw_evidence or {}).get("signature_vector") if isinstance(o.raw_evidence, dict) else None
+                if vec:
+                    ent_sigs[ent.entity_id] = np.asarray(vec, dtype=np.float32)
+                    break
+        if not ent_sigs:
+            return
+
+        cand_sigs = [runner.signature_extractor.extract(img, c.raw_bbox) for c in sub_cands]
+        sim_mat = np.zeros((len(unmatched_ents), len(sub_cands)), dtype=float)
+        for i, ent in enumerate(unmatched_ents):
+            evec = ent_sigs.get(ent.entity_id)
+            if evec is None:
+                continue
+            enorm = float(np.linalg.norm(evec))
+            if enorm <= 1e-8:
+                continue
+            for j, csig in enumerate(cand_sigs):
+                if csig is None or not csig.is_valid or csig.combined_vector is None:
+                    continue
+                cvec = csig.combined_vector
+                cnorm = float(np.linalg.norm(cvec))
+                if cnorm > 1e-8:
+                    sim_mat[i, j] = float(np.dot(evec, cvec) / (enorm * cnorm))
+
+        used_cands: set[int] = set()
+        for i, ent in enumerate(unmatched_ents):
+            row_sims = sim_mat[i]
+            best_j = int(np.argmax(row_sims))
+            best_sim = min(1.0, max(0.0, float(row_sims[best_j])))
+            if best_sim < 0.85 or best_j in used_cands:
+                continue
+            # Ambiguity check: no competing candidate within 0.05 or competing entity >= 0.80
+            second_cand_sim = max([float(row_sims[k]) for k in range(len(sub_cands)) if k != best_j], default=0.0)
+            other_ent_sim = max([float(sim_mat[r, best_j]) for r in range(len(unmatched_ents)) if r != i], default=0.0)
+            if best_sim - second_cand_sim < 0.05 or other_ent_sim >= 0.80:
+                continue
+
+            used_cands.add(best_j)
+            cand = sub_cands[best_j]
+            csig = cand_sigs[best_j]
+            canon_box = transform_bbox_to_canonical(cand.raw_bbox, reg.homography, ref_size=reg.ref_size)
+            if canon_box is None:
+                continue
+
+            meta = dict(ent.metadata or {})
+            raw_list = list(meta.get("raw_predicted_labels") or [meta.get("original_raw_label", ent.label)])
+            if cand.label not in raw_list:
+                raw_list.append(cand.label)
+            meta["raw_predicted_labels"] = raw_list
+            meta["vacant_streak"] = 0
+            meta["unobserved_streak"] = 0
+            meta["last_reliable_canonical_bbox"] = [canon_box.x_min, canon_box.y_min, canon_box.x_max, canon_box.y_max]
+
+            init_list = meta.get("initial_canonical_bbox")
+            init_box = DetBBox(*init_list) if init_list else ent.canonical_bbox
+            disp = 0.0
+            if init_box is not None:
+                icx, icy = (init_box.x_min + init_box.x_max) / 2.0, (init_box.y_min + init_box.y_max) / 2.0
+                ccx, ccy = (canon_box.x_min + canon_box.x_max) / 2.0, (canon_box.y_min + canon_box.y_max) / 2.0
+                disp = float(np.hypot(ccx - icx, ccy - icy))
+
+            target_state = (
+                EpistemicState.CONFIRMED_MOVED
+                if disp > runner.engine.config.movement_displacement_threshold
+                else EpistemicState.CONFIRMED_PRESENT
+            )
+            obs_id = f"obs_{session_id}_{ent.entity_id}_rec"
+            sig_list = csig.combined_vector.tolist() if csig and csig.combined_vector is not None else None
+            store.add_observation(
+                DomObs(
+                    observation_id=obs_id,
+                    session_id=session_id,
+                    timestamp=ts_utc,
+                    image_reference=f"memory://{session_id}.png",
+                    entity_id=ent.entity_id,
+                    raw_bbox=cand.raw_bbox,
+                    canonical_bbox=canon_box,
+                    visibility_status=VisibilityStatus.CLEARLY_VISIBLE,
+                    detector_confidence=float(cand.confidence),
+                    identity_match_score=best_sim,
+                    alignment_quality=float(reg.inlier_ratio or 1.0),
+                    raw_evidence={
+                        "evidence_source": "SUB_THRESHOLD_RECOVERY",
+                        "raw_label": cand.label,
+                        "raw_confidence": float(cand.confidence),
+                        "appearance_similarity": round(best_sim, 4),
+                        "normal_detector_threshold": confidence_threshold,
+                        "signature_vector": sig_list,
+                    },
+                )
+            )
+            store.conn.execute("UPDATE entities SET metadata_json = ? WHERE entity_id = ?;", (json.dumps(meta), ent.entity_id))
+            store.conn.commit()
+
+            expl = (
+                f"Sub-threshold candidate recovered via appearance similarity ({best_sim:.3f}, "
+                f"raw '{cand.label}' conf={cand.confidence:.3f} < {confidence_threshold:.2f}); "
+                f"canonical displacement {disp:.1f}px."
+            )
+            if target_state != ent.current_state or target_state == EpistemicState.CONFIRMED_MOVED:
+                evt = DomEvt(
+                    event_id=f"evt_{session_id}_{ent.entity_id}_rec_{target_state.value.lower()}",
+                    entity_id=ent.entity_id,
+                    from_session_id=ent.last_seen_session_id,
+                    to_session_id=session_id,
+                    timestamp=ts_utc,
+                    prior_state=ent.current_state,
+                    new_state=target_state,
+                    source="SUB_THRESHOLD_RECOVERY",
+                    displacement_distance=disp,
+                    supporting_evidence={
+                        "evidence_source": "SUB_THRESHOLD_RECOVERY",
+                        "raw_label": cand.label,
+                        "raw_confidence": float(cand.confidence),
+                        "appearance_similarity": round(best_sim, 4),
+                        "displacement": disp,
+                    },
+                    explanation=expl,
+                )
+                store.record_state_transition(
+                    entity_id=ent.entity_id,
+                    new_state=target_state,
+                    event=evt,
+                    canonical_bbox=canon_box,
+                    last_seen_session_id=session_id,
+                )
+
+    def update_entity_label(
+        self,
+        workspace_id: str,
+        entity_id: str,
+        confirmed_label: str,
+    ) -> Dict[str, Any]:
+        """Allows user confirmation of an entity's semantic label while preserving raw detector predictions."""
+        slug = _sanitize_slug(workspace_id)
+        db_path = self._db_path(slug)
+        if not db_path.exists():
+            raise KeyError(f"Workspace '{slug}' not found.")
+        cleaned = confirmed_label.strip()
+        if not cleaned:
+            raise ValueError("Confirmed label cannot be empty.")
+
+        with self._get_workspace_lock(slug):
+            with SQLiteMemoryStore(db_path, check_same_thread=False) as store:
+                ent = store.get_entity(entity_id)
+                if not ent:
+                    raise KeyError(f"Entity '{entity_id}' not found in workspace '{slug}'.")
+                meta = dict(ent.metadata or {})
+                if "original_raw_label" not in meta:
+                    meta["original_raw_label"] = ent.label
+                raw_list = list(meta.get("raw_predicted_labels") or [meta["original_raw_label"]])
+                meta["raw_predicted_labels"] = raw_list
+                meta["confirmed_label"] = cleaned
+                meta["label_provenance"] = "USER_CONFIRMED"
+                meta["label_confirmed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                store.conn.execute(
+                    "UPDATE entities SET label = ?, metadata_json = ? WHERE entity_id = ?;",
+                    (cleaned, json.dumps(meta), entity_id),
+                )
+                store.conn.commit()
+                updated = store.get_entity(entity_id)
+                return self._format_entity_summary(updated)
+
+    def clear_entity_label(
+        self,
+        workspace_id: str,
+        entity_id: str,
+    ) -> Dict[str, Any]:
+        """Clears user-confirmed label and restores model-derived labelling."""
+        slug = _sanitize_slug(workspace_id)
+        db_path = self._db_path(slug)
+        if not db_path.exists():
+            raise KeyError(f"Workspace '{slug}' not found.")
+
+        with self._get_workspace_lock(slug):
+            with SQLiteMemoryStore(db_path, check_same_thread=False) as store:
+                ent = store.get_entity(entity_id)
+                if not ent:
+                    raise KeyError(f"Entity '{entity_id}' not found in workspace '{slug}'.")
+                meta = dict(ent.metadata or {})
+                restored_label = meta.get("original_raw_label") or (meta.get("raw_predicted_labels") or [ent.label])[0]
+                meta["confirmed_label"] = None
+                meta["label_provenance"] = "MODEL_PREDICTED"
+                meta["label_confirmed_at"] = None
+                store.conn.execute(
+                    "UPDATE entities SET label = ?, metadata_json = ? WHERE entity_id = ?;",
+                    (restored_label, json.dumps(meta), entity_id),
+                )
+                store.conn.commit()
+                updated = store.get_entity(entity_id)
+                return self._format_entity_summary(updated)
+
+    def confirm_entity_location(
+        self,
+        workspace_id: str,
+        session_id: str,
+        entity_id: str,
+        bbox_dict: Dict[str, float],
+        notes: Optional[str] = None,
+    ) -> Dict[str, Any]:
+        """
+        Human-assisted location confirmation for an existing entity in a visit.
+        Never modifies raw_detections; gates movement decisions on registration reliability.
+        """
+        slug = _sanitize_slug(workspace_id)
+        db_path = self._db_path(slug)
+        if not db_path.exists():
+            raise KeyError(f"Workspace '{slug}' not found.")
+
+        from objectmemory.detection.models import BoundingBox as DetBBox
+        from objectmemory.domain.models import Observation as DomObs, ChangeEvent as DomEvt
+        from objectmemory.domain.states import VisibilityStatus
+        from objectmemory.detection.pipeline import transform_bbox_to_canonical
+        from objectmemory.registration.registrar import PlanarRegistrar
+        from objectmemory.temporal.models import TemporalEngineConfig
+
+        with self._get_workspace_lock(slug):
+            with SQLiteMemoryStore(db_path, check_same_thread=False) as store:
+                ent = store.get_entity(entity_id)
+                if not ent:
+                    raise KeyError(f"Entity '{entity_id}' not found in workspace '{slug}'.")
+                sessions = store.list_sessions(order_asc=True)
+                sess = store.get_session(session_id)
+                if not sess:
+                    raise KeyError(f"Session '{session_id}' not found in workspace '{slug}'.")
+
+                q_img_path = self._images_dir(slug) / f"{session_id}.png"
+                r_sess_id = sessions[0].session_id
+                r_img_path = self._images_dir(slug) / f"{r_sess_id}.png"
+                if not q_img_path.exists() or not r_img_path.exists():
+                    raise ValueError("Stored session images required for human location confirmation are missing.")
+
+                q_img = cv2.imread(str(q_img_path))
+                r_img = cv2.imread(str(r_img_path))
+                if q_img is None or r_img is None:
+                    raise ValueError("Failed to decode stored session images.")
+
+                h_img, w_img = q_img.shape[:2]
+                x1, y1, x2, y2 = float(bbox_dict["x_min"]), float(bbox_dict["y_min"]), float(bbox_dict["x_max"]), float(bbox_dict["y_max"])
+                if x1 < 0 or y1 < 0 or x2 > w_img or y2 > h_img or x2 <= x1 or y2 <= y1:
+                    raise ValueError(f"Bounding box [{x1}, {y1}, {x2}, {y2}] is invalid for image size {w_img}x{h_img}.")
+                raw_bbox = DetBBox(x1, y1, x2, y2)
+
+                registrar = PlanarRegistrar()
+                reg = registrar.register(r_img, q_img) if session_id != r_sess_id else registrar.register(r_img, r_img)
+                tcfg = TemporalEngineConfig()
+                is_reg_reliable = bool(
+                    reg.success
+                    and reg.homography is not None
+                    and (reg.inlier_ratio is None or reg.inlier_ratio >= tcfg.min_registration_inlier_ratio)
+                )
+
+                now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                prior_state = ent.current_state
+                canon_box: Optional[DetBBox] = None
+                disp: Optional[float] = None
+
+                if is_reg_reliable:
+                    canon_box = transform_bbox_to_canonical(raw_bbox, reg.homography, ref_size=reg.ref_size)
+                    meta = dict(ent.metadata or {})
+                    init_list = meta.get("initial_canonical_bbox")
+                    init_box = DetBBox(*init_list) if init_list else ent.canonical_bbox
+                    if canon_box is not None and init_box is not None:
+                        icx, icy = (init_box.x_min + init_box.x_max) / 2.0, (init_box.y_min + init_box.y_max) / 2.0
+                        ccx, ccy = (canon_box.x_min + canon_box.x_max) / 2.0, (canon_box.y_min + canon_box.y_max) / 2.0
+                        disp = float(np.hypot(ccx - icx, ccy - icy))
+                        new_state = EpistemicState.CONFIRMED_MOVED if disp > tcfg.movement_displacement_threshold else EpistemicState.CONFIRMED_PRESENT
+                    else:
+                        new_state = EpistemicState.CONFIRMED_PRESENT
+                    meta["vacant_streak"] = 0
+                    meta["unobserved_streak"] = 0
+                    if canon_box is not None:
+                        meta["last_reliable_canonical_bbox"] = [canon_box.x_min, canon_box.y_min, canon_box.x_max, canon_box.y_max]
+                    expl = f"Human-confirmed location in {session_id}" + (f" (displacement: {disp:.1f}px)." if disp is not None else ".")
+                    if notes:
+                        expl += f" Note: {notes}"
+                else:
+                    new_state = EpistemicState.INSUFFICIENT_EVIDENCE
+                    expl = f"Human-confirmed location in {session_id} withheld from movement claim due to unreliable registration ({reg.status.value})."
+
+                obs_id = f"obs_{session_id}_{entity_id}_human_{int(time.time() * 1000)}"
+                store.add_observation(
+                    DomObs(
+                        observation_id=obs_id,
+                        session_id=session_id,
+                        timestamp=sess.timestamp,
+                        image_reference=f"memory://{session_id}.png",
+                        entity_id=entity_id,
+                        raw_bbox=raw_bbox,
+                        canonical_bbox=canon_box,
+                        visibility_status=VisibilityStatus.CLEARLY_VISIBLE if is_reg_reliable else VisibilityStatus.UNCERTAIN,
+                        detector_confidence=None,
+                        identity_match_score=1.0,
+                        alignment_quality=float(reg.inlier_ratio or 0.0),
+                        raw_evidence={
+                            "evidence_source": "HUMAN_CONFIRMED",
+                            "coordinate_system": "raw_pixel",
+                            "image_size": [w_img, h_img],
+                            "confirmed_at": now_utc,
+                            "notes": notes,
+                            "registration_reliable": is_reg_reliable,
+                        },
+                    )
+                )
+                if is_reg_reliable:
+                    store.conn.execute("UPDATE entities SET metadata_json = ? WHERE entity_id = ?;", (json.dumps(meta), entity_id))
+                    store.conn.commit()
+
+                evt = DomEvt(
+                    event_id=f"evt_{session_id}_{entity_id}_human_{int(time.time() * 1000)}",
+                    entity_id=entity_id,
+                    from_session_id=ent.last_seen_session_id,
+                    to_session_id=session_id,
+                    timestamp=sess.timestamp,
+                    prior_state=prior_state,
+                    new_state=new_state,
+                    source="HUMAN_CONFIRMED",
+                    displacement_distance=disp,
+                    supporting_evidence={
+                        "evidence_source": "HUMAN_CONFIRMED",
+                        "confirmed_at": now_utc,
+                        "registration_reliable": is_reg_reliable,
+                        "displacement": disp,
+                    },
+                    explanation=expl,
+                )
+                store.record_state_transition(
+                    entity_id=entity_id,
+                    new_state=new_state,
+                    event=evt,
+                    canonical_bbox=canon_box,
+                    last_seen_session_id=session_id if is_reg_reliable else ent.last_seen_session_id,
+                )
+
+                return {
+                    "workspace_id": slug,
+                    "session_id": session_id,
+                    "entity_id": entity_id,
+                    "evidence_source": "HUMAN_CONFIRMED",
+                    "registration_reliable": is_reg_reliable,
+                    "prior_state": prior_state.value,
+                    "new_state": new_state.value,
+                    "displacement_px": disp,
+                    "canonical_bbox": {"x_min": canon_box.x_min, "y_min": canon_box.y_min, "x_max": canon_box.x_max, "y_max": canon_box.y_max} if canon_box else None,
+                    "raw_bbox": bbox_dict,
+                    "explanation": expl,
+                }
 
     def get_image_file_path(self, workspace_id: str, filename: str) -> Optional[Path]:
         slug = _sanitize_slug(workspace_id)

@@ -182,6 +182,13 @@ class SessionDetailResponse(BaseModel):
 class EntitySummary(BaseModel):
     entity_id: str
     label: str
+    raw_label: Optional[str] = None
+    raw_confidence: Optional[float] = None
+    confirmed_label: Optional[str] = None
+    label_provenance: str = "MODEL_PREDICTED"
+    label_confirmed_at: Optional[str] = None
+    observed_labels: List[str] = Field(default_factory=list)
+    class_uncertain: bool = False
     created_at: str
     current_state: str
     canonical_bbox: Optional[BoundingBoxSchema] = None
@@ -225,15 +232,50 @@ class DetectorListResponse(BaseModel):
     detectors: List[DetectorInfoSchema]
 
 
-class ComparisonDiffItem(BaseModel):
+class EntityLabelUpdate(BaseModel):
+    label: str = Field(..., min_length=1, max_length=64, description="User-confirmed semantic label for the entity")
+
+
+class ConfirmLocationRequest(BaseModel):
+    entity_id: str = Field(..., min_length=1, description="Persistent entity ID")
+    bbox: BoundingBoxSchema = Field(..., description="User-provided bounding box in raw image pixel coordinates")
+    notes: Optional[str] = Field(None, description="Optional operator note")
+
+
+class ConfirmLocationResponse(BaseModel):
+    workspace_id: str
+    session_id: str
     entity_id: str
-    label: str
-    status_change: str
+    evidence_source: str = "HUMAN_CONFIRMED"
+    registration_reliable: bool
     prior_state: str
     new_state: str
     displacement_px: Optional[float] = None
+    canonical_bbox: Optional[BoundingBoxSchema] = None
+    raw_bbox: BoundingBoxSchema
+    explanation: str
+
+
+class ComparisonDiffItem(BaseModel):
+    entity_id: str
+    label: str
+    raw_label: Optional[str] = None
+    confirmed_label: Optional[str] = None
+    label_provenance: str = "MODEL_PREDICTED"
+    evidence_source: str = "MODEL_DETECTION"
+    observed_labels: List[str] = Field(default_factory=list)
+    class_uncertain: bool = False
+    status_change: str
+    movement_status: str = "NOT_MOVED"
+    prior_state: str
+    new_state: str
+    displacement_px: Optional[float] = None
+    ref_confidence: Optional[float] = None
+    query_confidence: Optional[float] = None
     ref_bbox: Optional[BoundingBoxSchema] = None
     query_bbox: Optional[BoundingBoxSchema] = None
+    ref_raw_bbox: Optional[BoundingBoxSchema] = None
+    query_raw_bbox: Optional[BoundingBoxSchema] = None
     explanation: str
 
 
@@ -243,4 +285,7 @@ class ComparisonResponse(BaseModel):
     query_session_id: str
     registration_status: str
     registration_inlier_ratio: float
+    ref_detections_count: int = 0
+    query_detections_count: int = 0
+    cross_sequence_warning: Optional[str] = None
     items: List[ComparisonDiffItem]

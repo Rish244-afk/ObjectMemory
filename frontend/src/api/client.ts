@@ -13,8 +13,15 @@ import type {
   EntitySummary,
   EvaluationRunRequest,
   EvaluationRunResponse,
+  EthFramesResponse,
+  EthHistoricalSummaryResponse,
+  EthRegisterRequest,
+  EthRegisterResponse,
+  EthSessionsResponse,
   HealthResponse,
   ObservationSubmissionResult,
+  ConfirmLocationRequest,
+  ConfirmLocationResponse,
   SessionDetailResponse,
   SessionSummary,
   WorkspaceCreatePayload,
@@ -193,6 +200,41 @@ export const api = {
     );
   },
 
+  async confirmEntityLabel(workspaceId: string, entityId: string, label: string): Promise<EntitySummary> {
+    return request<EntitySummary>(
+      `/api/workspaces/${encodeURIComponent(workspaceId)}/entities/${encodeURIComponent(entityId)}/label`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ label }),
+      }
+    );
+  },
+
+  async clearEntityLabel(workspaceId: string, entityId: string): Promise<EntitySummary> {
+    return request<EntitySummary>(
+      `/api/workspaces/${encodeURIComponent(workspaceId)}/entities/${encodeURIComponent(entityId)}/label`,
+      {
+        method: 'DELETE',
+      }
+    );
+  },
+
+  async confirmEntityLocation(
+    workspaceId: string,
+    sessionId: string,
+    payload: ConfirmLocationRequest
+  ): Promise<ConfirmLocationResponse> {
+    return request<ConfirmLocationResponse>(
+      `/api/workspaces/${encodeURIComponent(workspaceId)}/observations/${encodeURIComponent(sessionId)}/confirm-location`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      }
+    );
+  },
+
   // Change Events
   async listChangeEvents(workspaceId: string): Promise<ChangeEventSummary[]> {
     return request<ChangeEventSummary[]>(`/api/workspaces/${encodeURIComponent(workspaceId)}/events`);
@@ -240,5 +282,35 @@ export const api = {
 
   getEvaluationExportUrl(runId: string, format: 'json' | 'csv' = 'json'): string {
     return `${API_BASE_URL}/api/evaluation/runs/${encodeURIComponent(runId)}/export?format=${format}`;
+  },
+
+  // Supplementary ETH ASL Lounge Registration Evaluation
+  async listEthSessions(): Promise<EthSessionsResponse> {
+    return request<EthSessionsResponse>('/api/eth-lounge/sessions');
+  },
+
+  async listEthFrames(sessionId: string, offset = 0, limit = 100, stride = 1): Promise<EthFramesResponse> {
+    const params = new URLSearchParams({
+      offset: String(offset),
+      limit: String(limit),
+      stride: String(stride),
+    });
+    return request<EthFramesResponse>(`/api/eth-lounge/sessions/${encodeURIComponent(sessionId)}/frames?${params.toString()}`);
+  },
+
+  getEthFrameUrl(sessionId: string, filename: string): string {
+    return `${API_BASE_URL}/api/eth-lounge/sessions/${encodeURIComponent(sessionId)}/frames/${encodeURIComponent(filename)}`;
+  },
+
+  async registerEthPair(payload: EthRegisterRequest): Promise<EthRegisterResponse> {
+    return request<EthRegisterResponse>('/api/eth-lounge/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+  },
+
+  async getEthHistoricalSummary(): Promise<EthHistoricalSummaryResponse> {
+    return request<EthHistoricalSummaryResponse>('/api/eth-lounge/historical-summary');
   },
 };

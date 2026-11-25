@@ -137,7 +137,18 @@ Use the 6 genuine physical tabletop scenarios in `data/physical_pilot_v2/` (`V01
 
 ---
 
-## 7. Expected Behavior & Known Limitations
+## 7. Supplementary ETH ASL Lounge Registration Evaluation
+
+If the ETH ASL Lounge frames are extracted locally under `data/eth_asl_lounge/extracted/observation_01..10/rgb/`, you can also test 2D planar registration under 3D room viewpoint shifts:
+
+1. Select any workspace in the top bar and open the **ETH Registration** tab.
+2. Select Reference and Query sessions/frames (or click **Preset: Adjacent (0 → 1)** and **Preset: 150-Frame Gap (0 → 150)**).
+3. Click **Run Planar Registration** to inspect `PlanarRegistrar` status, inliers, reprojection error, overlap fraction, aligned warp output, and failure warnings.
+4. *Note:* This view is strictly a supplementary registration evaluation; ETH ASL Lounge has no 2D object-lifecycle ground truth, and Physical Pilot v2 remains the primary benchmark.
+
+---
+
+## 8. Expected Behavior & Known Limitations
 
 - **Inference Speed:** `yolov8m` runs on CPU at ~619 ms per 1600×1200 image. Batch uploads of 5 images typically complete in 3–5 seconds.
 - **Planar Surface Requirement:** Planar homography co-registration assumes objects rest on a dominant flat surface (tabletop/workbench). Large 3D camera translations across a room will cause registration failure (`UNREGISTERED`), which safely freezes absence counters rather than corrupting memory.
@@ -149,7 +160,7 @@ Use the 6 genuine physical tabletop scenarios in `data/physical_pilot_v2/` (`V01
 
 ---
 
-## 8. Troubleshooting
+## 9. Troubleshooting
 
 | Issue | Likely Cause | Resolution |
 | :--- | :--- | :--- |

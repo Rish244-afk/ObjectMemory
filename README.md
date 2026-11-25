@@ -5,7 +5,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-1.0-teal.svg)](https://fastapi.tiangolo.com/)
 [![React 18](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev/)
-[![Tests Passing](https://img.shields.io/badge/tests-400%20passed%2C%201%20skipped-brightgreen.svg)]()
+[![Tests Passing](https://img.shields.io/badge/tests-427%20passed%2C%201%20skipped-brightgreen.svg)]()
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE)
 
 ---
@@ -18,13 +18,13 @@ Standard deep detectors operate frame-by-frame: a temporary occlusion or shadow 
 
 1. **Epistemic State Tracking**: Decouples transient visual detections (`Observation`) from long-term persistent state (`WorkbenchEntity`), maintaining explicit belief states: `CONFIRMED_PRESENT`, `CONFIRMED_MOVED`, `PENDING_REMOVAL`, `CONFIRMED_REMOVED`, `INSUFFICIENT_EVIDENCE`, and `AMBIGUOUS_IDENTITY`.
 2. **Planar Homography Co-Registration**: Normalizes camera viewpoint variations using SIFT/ORB features and RANSAC homography estimation ($p_{\text{ref}} \sim H p_{\text{query}}$) with strict geometric distortion gating.
-3. **CPU-Friendly Object Detection**: Uses pretrained Ultralytics **YOLOv8 Medium ONNX** (`models/yolov8m.onnx`, ~99.0 MB) as the production default detector strictly on CPU via OpenCV DNN, with **YOLOv8 Nano** (`models/yolov8n.onnx`, ~12.2 MB) and **YOLO-World v2 Small** (`models/yolov8s-worldv2.onnx`, open-vocabulary) retained as selectable alternatives.
+3. **CPU-Friendly Object Detection**: Uses pretrained Ultralytics **YOLOv8 Medium ONNX** (`models/yolov8m.onnx`, ~99.0 MB) as the production default detector strictly on CPU via OpenCV DNN, with **YOLOv8 Nano** (`models/yolov8n.onnx`, ~12.2 MB), **YOLO26 Medium** (`models/yolo26m.onnx`, ~78.1 MB via ONNX Runtime), and **YOLO-World v2 Small** (`models/yolov8s-worldv2.onnx`, open-vocabulary) retained as selectable alternatives.
 4. **Spatial-Temporal Association**: Employs Kuhn-Munkres optimal bipartite matching with displacement gating, appearance similarity, and ambiguity margins to prevent false identity swaps.
 5. **Multi-Visit Vacancy Verification**: Enforces a multi-visit absence streak ($\ge 2$ consecutive visits) combined with visual patch vacancy verification to suppress false removal alarms.
 6. **Auditable Change Ledger**: Commits all transitions to an ACID-compliant SQLite store with explainable natural-language rationales and historical coordinates.
 
 ### Implemented vs. Experimentally Validated Scope
-- **Implemented System Capabilities**: Full 7-stage backend pipeline, `DetectorRegistry` (`yolov8m` default, `yolov8n`, `yolo-world`, `mock`), isolated per-workspace SQLite persistence, FastAPI REST backend, and React 18 SPA supporting single-image upload, chronological multi-image batch upload, webcam capture, visit comparison, and timeline/entity inspection.
+- **Implemented System Capabilities**: Full 7-stage backend pipeline, `DetectorRegistry` (`yolov8m` default, `yolov8n`, `yolo-world`, `mock`), isolated per-workspace SQLite persistence, FastAPI REST backend, React 18 SPA supporting single/batch/webcam ingest, visit comparison, timeline/entity inspection, and a supplementary **ETH Registration** tab (`/api/eth-lounge/*`) for 2D planar registration testing on ETH ASL Lounge frames.
 - **Experimentally Validated Scope**: Evaluated on controlled tabletop benchmarks (Synthetic Workbench v2, 7-frame Desk Pilot, and 6-scenario / 30-observation Physical Pilot v2) and a non-planar failure-boundary check (OpenLORIS-Scene `office1-1`). Results from the small physical pilot reflect controlled tabletop conditions and do not establish general-world or unconstrained 3D environment accuracy.
 
 ---
@@ -143,9 +143,11 @@ Move-Item yolov8m.onnx models/yolov8m.onnx -Force
 ### 4.2 Interactive Full-Stack Application
 From the repository root (ensuring `src` is on `PYTHONPATH`):
 ```powershell
+cd C:\Users\Rishh\.gemini\antigravity\scratch\objectmemory
 $env:PYTHONPATH = "src"
 python -m uvicorn objectmemory.api.app:app --host 127.0.0.1 --port 8000
 ```
+*(After a fresh `git clone`, run the same `uvicorn` command from your cloned `ObjectMemory` directory, and run `cd frontend; npm install; npm run build` if `frontend/dist/` has not been built yet.)*
 - Web Application: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 - REST API Documentation: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 - Health Check: [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health)
@@ -158,9 +160,9 @@ Output log is saved to `research_validation/results/demo_execution_log.json`.
 
 ### 4.4 Running Automated Tests
 ```powershell
-python -m pytest -o pythonpath=src tests/
+python -m pytest -o pythonpath=src
 ```
-*Last verified suite run: 400 passed, 1 skipped, 0 failed.*
+*Last verified suite run: 427 passed, 1 skipped, 0 failed.*
 
 ---
 
@@ -216,5 +218,8 @@ objectmemory/
 
 For full technical and academic documentation, refer to:
 - Final Project Report: [FINAL_PROJECT_REPORT.md](FINAL_PROJECT_REPORT.md)
+- Final Project Stabilization Report: [research_validation/FINAL_PROJECT_STABILIZATION_REPORT.md](research_validation/FINAL_PROJECT_STABILIZATION_REPORT.md)
 - YOLOv8m Integration & Oracle Audit: [research_validation/larger_detector_experiment/YOLOV8M_INTEGRATION_REPORT.md](research_validation/larger_detector_experiment/YOLOV8M_INTEGRATION_REPORT.md)
+- YOLO26m Implementation & Live Evaluation: [research_validation/YOLO26M_IMPLEMENTATION_AND_LIVE_EVALUATION_REPORT.md](research_validation/YOLO26M_IMPLEMENTATION_AND_LIVE_EVALUATION_REPORT.md)
+- Dataset Guide: [data/README.md](data/README.md) | Model Guide: [models/README.md](models/README.md)
 - Demonstration Guide: [DEMO_GUIDE.md](DEMO_GUIDE.md)

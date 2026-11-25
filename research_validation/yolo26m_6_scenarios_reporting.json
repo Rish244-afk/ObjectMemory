@@ -1,0 +1,543 @@
+{
+  "stationary": {
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 6,
+      "q_dets": 4,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 2.8
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "book",
+          "movement_status": "NOT_DETECTED",
+          "status_change": "MISSING_IN_QUERY",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 2.7
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "bottle",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 5.7
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "SUB_THRESHOLD_RECOVERY",
+          "displacement_px": 3.3
+        },
+        {
+          "entity_id": "ent_visit_04_1",
+          "label": "cell phone",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "SUB_THRESHOLD_RECOVERY",
+          "displacement_px": null
+        }
+      ]
+    }
+  },
+  "movement": {
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 6,
+      "q_dets": 7,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 3.0
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 6.8
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 11.2
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "bottle",
+          "movement_status": "REMOVED",
+          "status_change": "CONFIRMED_REMOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "vase",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 28.1
+        },
+        {
+          "entity_id": "ent_visit_02_1",
+          "label": "book",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_03_1",
+          "label": "cell phone",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        }
+      ]
+    }
+  },
+  "removal": {
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 7,
+      "q_dets": 7,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 3.4
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 9.0
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.7
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "bottle",
+          "movement_status": "REMOVED",
+          "status_change": "CONFIRMED_REMOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "vase",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 9.4
+        },
+        {
+          "entity_id": "ent_visit_01_7",
+          "label": "cell phone",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 6.0
+        },
+        {
+          "entity_id": "ent_visit_02_1",
+          "label": "book",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_02_2",
+          "label": "book",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        }
+      ]
+    }
+  },
+  "addition": {
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 8,
+      "q_dets": 10,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 9.6
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 21.1
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.6
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "vase",
+          "movement_status": "MOVED",
+          "status_change": "CONFIRMED_MOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 42.1
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "bottle",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_7",
+          "label": "cell phone",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "SUB_THRESHOLD_RECOVERY",
+          "displacement_px": 3.9
+        },
+        {
+          "entity_id": "ent_visit_01_8",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 5.1
+        },
+        {
+          "entity_id": "ent_visit_03_1",
+          "label": "banana",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_03_2",
+          "label": "dining table",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_05_1",
+          "label": "book",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        }
+      ]
+    }
+  },
+  "occlusion": {
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 8,
+      "q_dets": 8,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "vase",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "bottle",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_7",
+          "label": "cell phone",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_01_8",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 0.0
+        },
+        {
+          "entity_id": "ent_visit_02_1",
+          "label": "dining table",
+          "movement_status": "ADDED",
+          "status_change": "ADDED",
+          "evidence_source": "SUB_THRESHOLD_RECOVERY",
+          "displacement_px": 31.2
+        }
+      ]
+    }
+  },
+  "return_to_baseline": {
+    "visit_01->visit_03": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 8,
+      "q_dets": 8,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 1.4
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 1.9
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "vase",
+          "movement_status": "MOVED",
+          "status_change": "CONFIRMED_MOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 46.0
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "bottle",
+          "movement_status": "MOVED",
+          "status_change": "CONFIRMED_MOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 841.7
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 3.4
+        },
+        {
+          "entity_id": "ent_visit_01_7",
+          "label": "cell phone",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 1.0
+        },
+        {
+          "entity_id": "ent_visit_01_8",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 5.8
+        }
+      ]
+    },
+    "visit_01->visit_05": {
+      "registration_status": "SUCCESS",
+      "ref_dets": 8,
+      "q_dets": 8,
+      "items": [
+        {
+          "entity_id": "ent_visit_01_1",
+          "label": "scissors",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 8.1
+        },
+        {
+          "entity_id": "ent_visit_01_2",
+          "label": "cup",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 6.6
+        },
+        {
+          "entity_id": "ent_visit_01_3",
+          "label": "vase",
+          "movement_status": "MOVED",
+          "status_change": "CONFIRMED_MOVED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 8.6
+        },
+        {
+          "entity_id": "ent_visit_01_4",
+          "label": "bottle",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 26.9
+        },
+        {
+          "entity_id": "ent_visit_01_5",
+          "label": "potted plant",
+          "movement_status": "INSUFFICIENT_EVIDENCE",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": null
+        },
+        {
+          "entity_id": "ent_visit_01_6",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 1.9
+        },
+        {
+          "entity_id": "ent_visit_01_7",
+          "label": "cell phone",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 2.8
+        },
+        {
+          "entity_id": "ent_visit_01_8",
+          "label": "book",
+          "movement_status": "NOT_MOVED",
+          "status_change": "UNCHANGED",
+          "evidence_source": "MODEL_DETECTION",
+          "displacement_px": 11.7
+        }
+      ]
+    }
+  }
+}

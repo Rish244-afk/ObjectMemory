@@ -1,0 +1,2414 @@
+{
+  "parity_checks": [
+    {
+      "observation": "stationary_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9147
+        ],
+        [
+          "book",
+          0.5945
+        ],
+        [
+          "potted plant",
+          0.5824
+        ],
+        [
+          "book",
+          0.509
+        ],
+        [
+          "bottle",
+          0.4747
+        ],
+        [
+          "cup",
+          0.4034
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9147
+        ],
+        [
+          "book",
+          0.5945
+        ],
+        [
+          "potted plant",
+          0.5824
+        ],
+        [
+          "book",
+          0.509
+        ],
+        [
+          "bottle",
+          0.4747
+        ],
+        [
+          "cup",
+          0.4034
+        ]
+      ]
+    },
+    {
+      "observation": "movement_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.8974
+        ],
+        [
+          "cup",
+          0.7921
+        ],
+        [
+          "potted plant",
+          0.6324
+        ],
+        [
+          "book",
+          0.5102
+        ],
+        [
+          "bottle",
+          0.4705
+        ],
+        [
+          "vase",
+          0.273
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.8974
+        ],
+        [
+          "cup",
+          0.7921
+        ],
+        [
+          "potted plant",
+          0.6324
+        ],
+        [
+          "book",
+          0.5102
+        ],
+        [
+          "bottle",
+          0.4705
+        ],
+        [
+          "vase",
+          0.273
+        ]
+      ]
+    },
+    {
+      "observation": "movement_V05",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9014
+        ],
+        [
+          "cup",
+          0.7706
+        ],
+        [
+          "potted plant",
+          0.7149
+        ],
+        [
+          "cell phone",
+          0.4322
+        ],
+        [
+          "book",
+          0.4035
+        ],
+        [
+          "vase",
+          0.3559
+        ],
+        [
+          "book",
+          0.2801
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9014
+        ],
+        [
+          "cup",
+          0.7706
+        ],
+        [
+          "potted plant",
+          0.7149
+        ],
+        [
+          "cell phone",
+          0.4322
+        ],
+        [
+          "book",
+          0.4035
+        ],
+        [
+          "vase",
+          0.3559
+        ],
+        [
+          "book",
+          0.2801
+        ]
+      ]
+    },
+    {
+      "observation": "removal_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9672
+        ],
+        [
+          "cup",
+          0.769
+        ],
+        [
+          "book",
+          0.705
+        ],
+        [
+          "potted plant",
+          0.5859
+        ],
+        [
+          "bottle",
+          0.5652
+        ],
+        [
+          "vase",
+          0.3444
+        ],
+        [
+          "cell phone",
+          0.3055
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9672
+        ],
+        [
+          "cup",
+          0.769
+        ],
+        [
+          "book",
+          0.705
+        ],
+        [
+          "potted plant",
+          0.5859
+        ],
+        [
+          "bottle",
+          0.5652
+        ],
+        [
+          "vase",
+          0.3444
+        ],
+        [
+          "cell phone",
+          0.3055
+        ]
+      ]
+    },
+    {
+      "observation": "addition_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9538
+        ],
+        [
+          "cup",
+          0.8732
+        ],
+        [
+          "book",
+          0.7729
+        ],
+        [
+          "potted plant",
+          0.621
+        ],
+        [
+          "vase",
+          0.6153
+        ],
+        [
+          "bottle",
+          0.5964
+        ],
+        [
+          "cell phone",
+          0.5809
+        ],
+        [
+          "book",
+          0.5559
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9538
+        ],
+        [
+          "cup",
+          0.8732
+        ],
+        [
+          "book",
+          0.7729
+        ],
+        [
+          "potted plant",
+          0.621
+        ],
+        [
+          "vase",
+          0.6153
+        ],
+        [
+          "bottle",
+          0.5964
+        ],
+        [
+          "cell phone",
+          0.5809
+        ],
+        [
+          "book",
+          0.5559
+        ]
+      ]
+    },
+    {
+      "observation": "occlusion_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9538
+        ],
+        [
+          "cup",
+          0.8732
+        ],
+        [
+          "book",
+          0.7729
+        ],
+        [
+          "potted plant",
+          0.621
+        ],
+        [
+          "vase",
+          0.6153
+        ],
+        [
+          "bottle",
+          0.5964
+        ],
+        [
+          "cell phone",
+          0.5809
+        ],
+        [
+          "book",
+          0.5559
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9538
+        ],
+        [
+          "cup",
+          0.8732
+        ],
+        [
+          "book",
+          0.7729
+        ],
+        [
+          "potted plant",
+          0.621
+        ],
+        [
+          "vase",
+          0.6153
+        ],
+        [
+          "bottle",
+          0.5964
+        ],
+        [
+          "cell phone",
+          0.5809
+        ],
+        [
+          "book",
+          0.5559
+        ]
+      ]
+    },
+    {
+      "observation": "return_to_baseline_V01",
+      "exact_match": true,
+      "ultralytics_onnx": [
+        [
+          "scissors",
+          0.9429
+        ],
+        [
+          "cup",
+          0.8876
+        ],
+        [
+          "vase",
+          0.7655
+        ],
+        [
+          "bottle",
+          0.7145
+        ],
+        [
+          "potted plant",
+          0.6262
+        ],
+        [
+          "book",
+          0.6101
+        ],
+        [
+          "cell phone",
+          0.4725
+        ],
+        [
+          "book",
+          0.371
+        ]
+      ],
+      "yolo26m_adapter": [
+        [
+          "scissors",
+          0.9429
+        ],
+        [
+          "cup",
+          0.8876
+        ],
+        [
+          "vase",
+          0.7655
+        ],
+        [
+          "bottle",
+          0.7145
+        ],
+        [
+          "potted plant",
+          0.6262
+        ],
+        [
+          "book",
+          0.6101
+        ],
+        [
+          "cell phone",
+          0.4725
+        ],
+        [
+          "book",
+          0.371
+        ]
+      ]
+    }
+  ],
+  "summary": {
+    "DETECTED": 161,
+    "MISSED_LOW_CONF": 13,
+    "MISSED_NO_CANDIDATE": 3
+  },
+  "rows": [
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5824,
+      "iou": 0.782,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.509,
+      "iou": 0.883,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.4747,
+      "iou": 0.775,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9147,
+      "iou": 0.965,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.2451,
+      "iou": 0.879,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2451, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "stationary/V01.jpeg",
+      "sequence": "stationary",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.4034,
+      "iou": 0.707,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6751,
+      "iou": 0.794,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.4247,
+      "iou": 0.859,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.3429,
+      "iou": 0.717,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8801,
+      "iou": 0.962,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.131,
+      "iou": 0.886,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.1310, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "stationary/V02.jpeg",
+      "sequence": "stationary",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.4708,
+      "iou": 0.686,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5493,
+      "iou": 0.779,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.4146,
+      "iou": 0.851,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.6554,
+      "iou": 0.725,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8757,
+      "iou": 0.968,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.2266,
+      "iou": 0.846,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2266, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "stationary/V03.jpeg",
+      "sequence": "stationary",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.684,
+      "iou": 0.655,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5241,
+      "iou": 0.807,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.4675,
+      "iou": 0.846,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5595,
+      "iou": 0.727,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8953,
+      "iou": 0.963,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.2714,
+      "iou": 0.85,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V04.jpeg",
+      "sequence": "stationary",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.5975,
+      "iou": 0.65,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5531,
+      "iou": 0.805,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.2764,
+      "iou": 0.88,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5089,
+      "iou": 0.752,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.864,
+      "iou": 0.971,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.1344,
+      "iou": 0.892,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.1344, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "stationary/V05.jpeg",
+      "sequence": "stationary",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup (sub-0.25)",
+      "confidence": 0.1699,
+      "iou": 0.686,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.1699, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6324,
+      "iou": 0.772,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book (sub-0.25)",
+      "confidence": 0.2285,
+      "iou": 0.893,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2285, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.4705,
+      "iou": 0.516,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8974,
+      "iou": 0.96,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.0747,
+      "iou": 0.886,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.0747, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V01.jpeg",
+      "sequence": "movement",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.7921,
+      "iou": 0.689,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.7247,
+      "iou": 0.801,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.649,
+      "iou": 0.891,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "NONE",
+      "confidence": 0.0,
+      "iou": 0.0,
+      "status": "MISSED_NO_CANDIDATE",
+      "failure_reason": "No candidate >= 0.05 (vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9268,
+      "iou": 0.977,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.2131,
+      "iou": 0.853,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2131, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V02.jpeg",
+      "sequence": "movement",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8008,
+      "iou": 0.607,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.713,
+      "iou": 0.819,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.3944,
+      "iou": 0.881,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "NONE",
+      "confidence": 0.0,
+      "iou": 0.0,
+      "status": "MISSED_NO_CANDIDATE",
+      "failure_reason": "No candidate >= 0.05 (vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9512,
+      "iou": 0.961,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.5784,
+      "iou": 0.849,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V03.jpeg",
+      "sequence": "movement",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.576,
+      "iou": 0.603,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6838,
+      "iou": 0.822,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.3467,
+      "iou": 0.87,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle (sub-0.25)",
+      "confidence": 0.0655,
+      "iou": 0.804,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.0655, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9432,
+      "iou": 0.975,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.6604,
+      "iou": 0.846,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V04.jpeg",
+      "sequence": "movement",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8055,
+      "iou": 0.607,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.7149,
+      "iou": 0.81,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.4035,
+      "iou": 0.879,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "NONE",
+      "confidence": 0.0,
+      "iou": 0.0,
+      "status": "MISSED_NO_CANDIDATE",
+      "failure_reason": "No candidate >= 0.05 (vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9014,
+      "iou": 0.97,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.4322,
+      "iou": 0.842,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "movement/V05.jpeg",
+      "sequence": "movement",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.7706,
+      "iou": 0.62,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5859,
+      "iou": 0.813,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.705,
+      "iou": 0.921,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5652,
+      "iou": 0.785,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9672,
+      "iou": 0.969,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3055,
+      "iou": 0.967,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V01.jpeg",
+      "sequence": "removal",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.769,
+      "iou": 0.772,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V02.jpeg",
+      "sequence": "removal",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6131,
+      "iou": 0.781,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V02.jpeg",
+      "sequence": "removal",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.6518,
+      "iou": 0.903,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V02.jpeg",
+      "sequence": "removal",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9172,
+      "iou": 0.971,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V02.jpeg",
+      "sequence": "removal",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.4005,
+      "iou": 0.844,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V02.jpeg",
+      "sequence": "removal",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.9356,
+      "iou": 0.846,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V03.jpeg",
+      "sequence": "removal",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6725,
+      "iou": 0.828,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V03.jpeg",
+      "sequence": "removal",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.6255,
+      "iou": 0.902,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V03.jpeg",
+      "sequence": "removal",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9381,
+      "iou": 0.97,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V03.jpeg",
+      "sequence": "removal",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3347,
+      "iou": 0.902,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V03.jpeg",
+      "sequence": "removal",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8496,
+      "iou": 0.864,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V04.jpeg",
+      "sequence": "removal",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6307,
+      "iou": 0.823,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V04.jpeg",
+      "sequence": "removal",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.753,
+      "iou": 0.906,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V04.jpeg",
+      "sequence": "removal",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9424,
+      "iou": 0.974,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V04.jpeg",
+      "sequence": "removal",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.4567,
+      "iou": 0.888,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V04.jpeg",
+      "sequence": "removal",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.9248,
+      "iou": 0.851,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V05.jpeg",
+      "sequence": "removal",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6187,
+      "iou": 0.812,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V05.jpeg",
+      "sequence": "removal",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.683,
+      "iou": 0.907,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V05.jpeg",
+      "sequence": "removal",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9267,
+      "iou": 0.966,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V05.jpeg",
+      "sequence": "removal",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.2733,
+      "iou": 0.889,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "removal/V05.jpeg",
+      "sequence": "removal",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.9334,
+      "iou": 0.865,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.621,
+      "iou": 0.865,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.7729,
+      "iou": 0.891,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5964,
+      "iou": 0.841,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9538,
+      "iou": 0.958,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.5809,
+      "iou": 0.964,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V01.jpeg",
+      "sequence": "addition",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8732,
+      "iou": 0.845,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5859,
+      "iou": 0.813,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.705,
+      "iou": 0.921,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5652,
+      "iou": 0.785,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9672,
+      "iou": 0.969,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3055,
+      "iou": 0.967,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V02.jpeg",
+      "sequence": "addition",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.769,
+      "iou": 0.772,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.7199,
+      "iou": 0.851,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.822,
+      "iou": 0.912,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.7609,
+      "iou": 0.89,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9491,
+      "iou": 0.976,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3864,
+      "iou": 0.937,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.7324,
+      "iou": 0.861,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V03.jpeg",
+      "sequence": "addition",
+      "gt_object": "banana_01 (banana)",
+      "gt_class": "banana",
+      "prediction": "banana",
+      "confidence": 0.8926,
+      "iou": 0.851,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.7033,
+      "iou": 0.845,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.752,
+      "iou": 0.917,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.8725,
+      "iou": 0.897,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8938,
+      "iou": 0.973,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.1896,
+      "iou": 0.928,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.1896, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.6821,
+      "iou": 0.719,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V04.jpeg",
+      "sequence": "addition",
+      "gt_object": "banana_01 (banana)",
+      "gt_class": "banana",
+      "prediction": "banana",
+      "confidence": 0.8829,
+      "iou": 0.838,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.7092,
+      "iou": 0.813,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.8726,
+      "iou": 0.923,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.9254,
+      "iou": 0.891,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8919,
+      "iou": 0.973,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.2309,
+      "iou": 0.912,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2309, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8869,
+      "iou": 0.713,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "addition/V05.jpeg",
+      "sequence": "addition",
+      "gt_object": "banana_01 (banana)",
+      "gt_class": "banana",
+      "prediction": "banana",
+      "confidence": 0.8826,
+      "iou": 0.837,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.621,
+      "iou": 0.865,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.7729,
+      "iou": 0.891,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5964,
+      "iou": 0.841,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9538,
+      "iou": 0.958,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.5809,
+      "iou": 0.964,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V01.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8732,
+      "iou": 0.845,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V02.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6782,
+      "iou": 0.844,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V02.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.6205,
+      "iou": 0.818,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V02.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9585,
+      "iou": 0.969,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V02.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.2525,
+      "iou": 0.957,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V02.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.7561,
+      "iou": 0.807,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V03.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5107,
+      "iou": 0.822,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V03.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.7301,
+      "iou": 0.828,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V03.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.933,
+      "iou": 0.979,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V03.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone (sub-0.25)",
+      "confidence": 0.2089,
+      "iou": 0.939,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.2089, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "occlusion/V03.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.7612,
+      "iou": 0.785,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5859,
+      "iou": 0.813,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.705,
+      "iou": 0.921,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5652,
+      "iou": 0.785,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9672,
+      "iou": 0.969,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3055,
+      "iou": 0.967,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V04.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.769,
+      "iou": 0.772,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.621,
+      "iou": 0.865,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.7729,
+      "iou": 0.891,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.5964,
+      "iou": 0.841,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9538,
+      "iou": 0.958,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.5809,
+      "iou": 0.964,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "occlusion/V05.jpeg",
+      "sequence": "occlusion",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8732,
+      "iou": 0.845,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6262,
+      "iou": 0.818,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.6101,
+      "iou": 0.854,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.7145,
+      "iou": 0.782,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9429,
+      "iou": 0.97,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.4725,
+      "iou": 0.956,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V01.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8876,
+      "iou": 0.82,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5451,
+      "iou": 0.861,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.8587,
+      "iou": 0.822,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle (sub-0.25)",
+      "confidence": 0.169,
+      "iou": 0.982,
+      "status": "MISSED_LOW_CONF",
+      "failure_reason": "Below frozen 0.25 threshold (conf=0.1690, vis=CLEARLY_VISIBLE)"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9399,
+      "iou": 0.961,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.5575,
+      "iou": 0.97,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V02.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8798,
+      "iou": 0.779,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.6283,
+      "iou": 0.825,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.8282,
+      "iou": 0.844,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.2603,
+      "iou": 0.904,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9187,
+      "iou": 0.982,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.3997,
+      "iou": 0.951,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V03.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8345,
+      "iou": 0.736,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.5261,
+      "iou": 0.844,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.7784,
+      "iou": 0.811,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.6226,
+      "iou": 0.782,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.8833,
+      "iou": 0.959,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.584,
+      "iou": 0.964,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V04.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.8982,
+      "iou": 0.811,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "plant_01 (potted plant)",
+      "gt_class": "potted plant",
+      "prediction": "potted plant",
+      "confidence": 0.3091,
+      "iou": 0.863,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "book_01 (book)",
+      "gt_class": "book",
+      "prediction": "book",
+      "confidence": 0.7317,
+      "iou": 0.809,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "bottle_01 (bottle)",
+      "gt_class": "bottle",
+      "prediction": "bottle",
+      "confidence": 0.6906,
+      "iou": 0.742,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "scissors_01 (scissors)",
+      "gt_class": "scissors",
+      "prediction": "scissors",
+      "confidence": 0.9296,
+      "iou": 0.97,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "phone_01 (cell phone)",
+      "gt_class": "cell phone",
+      "prediction": "cell phone",
+      "confidence": 0.2764,
+      "iou": 0.953,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    },
+    {
+      "image": "return_to_baseline/V05.jpeg",
+      "sequence": "return_to_baseline",
+      "gt_object": "cup_01 (cup)",
+      "gt_class": "cup",
+      "prediction": "cup",
+      "confidence": 0.9323,
+      "iou": 0.779,
+      "status": "DETECTED",
+      "failure_reason": "OK"
+    }
+  ]
+}

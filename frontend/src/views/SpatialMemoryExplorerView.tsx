@@ -130,7 +130,7 @@ export const SpatialMemoryExplorerView: React.FC<SpatialMemoryExplorerViewProps>
     return () => {
       mounted = false;
     };
-  }, [workspace.workspace_id]);
+  }, [workspace.workspace_id, workspace.total_sessions, workspace.total_entities, workspace.total_events]);
 
   // Load detail when entity is selected
   useEffect(() => {
@@ -173,44 +173,50 @@ export const SpatialMemoryExplorerView: React.FC<SpatialMemoryExplorerViewProps>
 
   const selectedSpatial = selectedEntityId ? spatialData.get(selectedEntityId) : undefined;
 
-  // State styling helper
+  // Authoritative 5-color semantic status mapping
   const getStateColors = (st: string) => {
     switch (st) {
       case 'CONFIRMED_PRESENT':
+      case 'CONFIRMED_ADDED':
+      case 'NOT_MOVED':
         return {
-          stroke: '#10b981', // emerald-500
-          fill: 'rgba(16, 185, 129, 0.15)',
+          stroke: '#10b981', // green (emerald-500)
+          fill: 'rgba(16, 185, 129, 0.16)',
           badge: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
         };
       case 'CONFIRMED_MOVED':
+      case 'MOVED':
+      case 'PENDING_MOVEMENT':
         return {
-          stroke: '#f59e0b', // amber-500
+          stroke: '#f59e0b', // yellow/amber (amber-500)
           fill: 'rgba(245, 158, 11, 0.22)',
           badge: 'bg-amber-500/20 text-amber-400 border-amber-500/30',
         };
-      case 'PENDING_REMOVAL':
+      case 'CONFIRMED_REMOVED':
+      case 'REMOVED':
         return {
-          stroke: '#f43f5e', // rose-500
-          fill: 'rgba(244, 63, 94, 0.15)',
+          stroke: '#f43f5e', // red (rose-500)
+          fill: 'rgba(244, 63, 94, 0.18)',
           badge: 'bg-rose-500/20 text-rose-400 border-rose-500/30',
         };
-      case 'CONFIRMED_ABSENT':
-        return {
-          stroke: '#64748b', // slate-500
-          fill: 'rgba(100, 116, 139, 0.1)',
-          badge: 'bg-slate-500/20 text-slate-400 border-slate-500/30',
-        };
+      case 'AMBIGUOUS_IDENTITY':
+      case 'IDENTITY_AMBIGUOUS':
       case 'REAPPEARED':
         return {
           stroke: '#a855f7', // purple-500
-          fill: 'rgba(168, 85, 247, 0.2)',
+          fill: 'rgba(168, 85, 247, 0.20)',
           badge: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
         };
+      case 'INSUFFICIENT_EVIDENCE':
+      case 'PENDING_REMOVAL':
+      case 'NOT_DETECTED':
+      case 'REGISTRATION_UNRELIABLE':
+      case 'CONFIRMED_ABSENT':
       default:
         return {
-          stroke: '#3b82f6', // blue-500
-          fill: 'rgba(59, 130, 246, 0.15)',
-          badge: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
+          stroke: '#64748b', // grey (slate-500)
+          fill: 'rgba(100, 116, 139, 0.14)',
+          badge: 'bg-slate-500/20 text-slate-400 border-slate-500/30',
         };
     }
   };
@@ -336,7 +342,7 @@ export const SpatialMemoryExplorerView: React.FC<SpatialMemoryExplorerViewProps>
           <div className="bg-neutral-900/60 border-b border-neutral-800/60 px-6 py-2 flex items-center justify-between gap-4 z-10">
             {/* Epistemic State Filter Pills */}
             <div className="flex items-center gap-1.5 overflow-x-auto text-xs">
-              {['ALL', 'CONFIRMED_PRESENT', 'CONFIRMED_MOVED', 'PENDING_REMOVAL', 'CONFIRMED_ABSENT'].map((st) => (
+              {['ALL', 'CONFIRMED_PRESENT', 'CONFIRMED_MOVED', 'CONFIRMED_REMOVED', 'PENDING_REMOVAL', 'INSUFFICIENT_EVIDENCE', 'AMBIGUOUS_IDENTITY'].map((st) => (
                 <button
                   key={st}
                   type="button"
@@ -532,10 +538,16 @@ export const SpatialMemoryExplorerView: React.FC<SpatialMemoryExplorerViewProps>
                           width={width}
                           height={height}
                           rx="6"
-                          fill={ent.current_state === 'CONFIRMED_ABSENT' ? 'url(#absentStripe)' : colors.fill}
+                          fill={ent.current_state === 'CONFIRMED_REMOVED' || ent.current_state === 'CONFIRMED_ABSENT' ? 'url(#absentStripe)' : colors.fill}
                           stroke={isSelected ? '#ffffff' : colors.stroke}
                           strokeWidth={isSelected ? '4' : '2'}
-                          strokeDasharray={ent.current_state === 'PENDING_REMOVAL' ? '6 4' : undefined}
+                          strokeDasharray={
+                            ent.current_state === 'CONFIRMED_REMOVED' ||
+                            ent.current_state === 'PENDING_REMOVAL' ||
+                            ent.current_state === 'INSUFFICIENT_EVIDENCE'
+                              ? '6 4'
+                              : undefined
+                          }
                           className="hover:stroke-white transition"
                         />
 
@@ -570,22 +582,26 @@ export const SpatialMemoryExplorerView: React.FC<SpatialMemoryExplorerViewProps>
                 </svg>
 
                 {/* Floating Canvas Legend */}
-                <div className="absolute bottom-3 left-3 bg-neutral-950/85 backdrop-blur-md border border-neutral-800 rounded-lg p-2.5 flex items-center gap-3 text-[10px] font-mono text-neutral-300">
+                <div className="absolute bottom-3 left-3 bg-neutral-950/85 backdrop-blur-md border border-neutral-800 rounded-lg p-2.5 flex flex-wrap items-center gap-3 text-[10px] font-mono text-neutral-300">
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-emerald-500 inline-block" />
                     <span>Present</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-amber-500 inline-block" />
-                    <span>Moved</span>
+                    <span>Moved / Pending</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-xs bg-rose-500 border border-dashed border-rose-300 inline-block" />
-                    <span>Pending Removal</span>
+                    <span>Removed</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <span className="w-2.5 h-2.5 rounded-xs bg-slate-600 inline-block" />
-                    <span>Absent</span>
+                    <span className="w-2.5 h-2.5 rounded-xs bg-slate-500 inline-block" />
+                    <span>Insufficient / Not Detected</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2.5 h-2.5 rounded-xs bg-purple-500 inline-block" />
+                    <span>Ambiguous</span>
                   </div>
                 </div>
               </div>

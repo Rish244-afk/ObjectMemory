@@ -36,20 +36,38 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
   const [viewMode, setViewMode] = useState<'side-by-side' | 'slider'>('side-by-side');
   const [eventFilter, setEventFilter] = useState<string>('ALL');
   const [highlightedEntityId, setHighlightedEntityId] = useState<string | null>(null);
+  const [editingEntityId, setEditingEntityId] = useState<string | null>(null);
+  const [editingLabel, setEditingLabel] = useState<string>('');
+  const [humanLocEntityId, setHumanLocEntityId] = useState<string>('');
+  const [humanBbox, setHumanBbox] = useState<{ x_min: string; y_min: string; x_max: string; y_max: string }>({
+    x_min: '',
+    y_min: '',
+    x_max: '',
+    y_max: '',
+  });
+  const [humanNotes, setHumanNotes] = useState<string>('');
+  const [submittingHumanLoc, setSubmittingHumanLoc] = useState<boolean>(false);
 
   // Synchronized Pan & Zoom state for dual canvases
   const [isSyncLocked, setIsSyncLocked] = useState(true);
   const [sharedZoom, setSharedZoom] = useState(1.0);
   const [sharedPan, setSharedPan] = useState({ x: 0, y: 0 });
 
-  // Load session list on mount
+  // Load session list on mount (default to latest contiguous sequence if multiple V01 uploads exist)
   useEffect(() => {
     const load = async () => {
       try {
         const sList = await api.listObservations(workspace.workspace_id);
         setSessions(sList);
         if (sList.length >= 2) {
-          setRefSessionId(sList[0].session_id);
+          let seqStartIdx = 0;
+          for (let i = sList.length - 2; i >= 0; i--) {
+            if (/\b(V01|visit[_\s]?0?1)\b/i.test(sList[i].session_name || '')) {
+              seqStartIdx = i;
+              break;
+            }
+          }
+          setRefSessionId(sList[seqStartIdx].session_id);
           setQuerySessionId(sList[sList.length - 1].session_id);
         }
       } catch (err: any) {
@@ -57,7 +75,7 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
       }
     };
     load();
-  }, [workspace.workspace_id]);
+  }, [workspace.workspace_id, workspace.total_sessions]);
 
   const fetchComparison = async () => {
     if (!refSessionId || !querySessionId) return;
@@ -91,37 +109,57 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
   // Filter comparison items
   const filteredItems = comparison
     ? comparison.items.filter((item) => {
+        const ms = item.movement_status || item.status_change;
         if (eventFilter === 'ALL') return true;
-        if (eventFilter === 'MOVED') return item.status_change === 'CONFIRMED_MOVED' || item.status_change === 'MOVED';
-        if (eventFilter === 'ADDED') return item.status_change === 'CONFIRMED_ADDED' || item.status_change === 'ADDED';
-        if (eventFilter === 'REMOVED')
+        if (eventFilter === 'MOVED') return ms === 'MOVED' || ms === 'PENDING_MOVEMENT' || item.status_change === 'CONFIRMED_MOVED';
+        if (eventFilter === 'NOT_MOVED') return ms === 'NOT_MOVED' || item.status_change === 'UNCHANGED';
+        if (eventFilter === 'UNCERTAIN')
           return (
-            item.status_change === 'CONFIRMED_REMOVED' ||
-            item.status_change === 'PENDING_REMOVAL' ||
-            item.status_change === 'MISSING_IN_QUERY' ||
-            item.status_change === 'REMOVED'
+            ms === 'PENDING_MOVEMENT' ||
+            ms === 'INSUFFICIENT_EVIDENCE' ||
+            ms === 'IDENTITY_AMBIGUOUS' ||
+            ms === 'REGISTRATION_UNRELIABLE' ||
+            ms === 'NOT_DETECTED'
           );
-        if (eventFilter === 'UNCHANGED') return item.status_change === 'UNCHANGED';
+        if (eventFilter === 'ADDED') return ms === 'ADDED' || item.status_change === 'ADDED';
+        if (eventFilter === 'REMOVED') return ms === 'REMOVED' || item.status_change === 'CONFIRMED_REMOVED';
         return true;
       })
     : [];
 
   const refBoxes: OverlayBox[] = filteredItems
-    .filter((it) => it.ref_bbox != null)
+    .filter((it) => (it.ref_bbox ?? it.ref_raw_bbox) != null)
     .map((it) => ({
       id: it.entity_id,
-      label: `${it.label} (${it.entity_id})`,
-      bbox: it.ref_bbox,
+      label: `${it.label} (${it.entity_id})${it.ref_bbox == null ? ' [raw]' : ''}`,
+      bbox: it.ref_bbox ?? it.ref_raw_bbox,
+      confidence: it.ref_confidence ?? undefined,
       status: it.prior_state,
+      strokeDasharray: it.ref_bbox == null ? '4 4' : undefined,
     }));
 
   const queryBoxes: OverlayBox[] = filteredItems
-    .filter((it) => it.query_bbox != null)
+    .filter((it) => (it.query_bbox ?? it.query_raw_bbox) != null)
     .map((it) => ({
       id: it.entity_id,
-      label: `${it.label} (${it.entity_id})`,
-      bbox: it.query_bbox,
+      label: `${it.label} (${it.entity_id})${
+        it.evidence_source === 'HUMAN_CONFIRMED'
+          ? ' [human]'
+          : it.evidence_source === 'SUB_THRESHOLD_RECOVERY'
+          ? ' [recovered]'
+          : it.query_bbox == null
+          ? ' [raw]'
+          : ''
+      }`,
+      bbox: it.query_bbox ?? it.query_raw_bbox,
+      confidence: it.query_confidence ?? undefined,
       status: it.new_state,
+      strokeDasharray:
+        it.query_bbox == null ||
+        it.evidence_source === 'HUMAN_CONFIRMED' ||
+        it.evidence_source === 'SUB_THRESHOLD_RECOVERY'
+          ? '4 4'
+          : undefined,
     }));
 
   // Build displacement vectors for items with both bboxes and non-zero displacement
@@ -281,7 +319,7 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
           {comparison && (
             <div className="flex items-center gap-1.5 text-xs">
               <span className="text-[10px] uppercase font-mono text-[#64748B] mr-1">Filter:</span>
-              {(['ALL', 'MOVED', 'ADDED', 'REMOVED', 'UNCHANGED'] as const).map((filter) => (
+              {(['ALL', 'MOVED', 'NOT_MOVED', 'UNCERTAIN', 'ADDED', 'REMOVED'] as const).map((filter) => (
                 <button
                   key={filter}
                   type="button"
@@ -292,13 +330,26 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
                       : 'bg-[#090B10] text-[#94A3B8] hover:text-[#F8FAFC] border border-[#232A3B]'
                   }`}
                 >
-                  {filter}
+                  {filter.replace('_', ' ')}
                 </button>
               ))}
             </div>
           )}
         </div>
       </div>
+
+      {/* Cross-Sequence Isolation Warning Banner */}
+      {comparison?.cross_sequence_warning && (
+        <div className="p-4 bg-rose-950/40 border border-rose-800/80 rounded-xl flex items-start gap-3 text-xs text-rose-200 animate-in fade-in duration-150">
+          <AlertTriangle className="w-5 h-5 shrink-0 text-rose-400 mt-0.5" />
+          <div className="space-y-1">
+            <span className="font-bold text-rose-300 block">
+              Warning: Cross-Sequence Comparison Detected
+            </span>
+            <p className="text-rose-200/85 leading-relaxed">{comparison.cross_sequence_warning}</p>
+          </div>
+        </div>
+      )}
 
       {/* Prominent Registration Gating Warning Banner */}
       {isRegistrationDegraded && (
@@ -357,6 +408,8 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
                 zoom={isSyncLocked ? sharedZoom : undefined}
                 pan={isSyncLocked ? sharedPan : undefined}
                 onZoomPanChange={isSyncLocked ? handleSharedZoomPanChange : undefined}
+                totalDetectionsCount={comparison.ref_detections_count}
+                filterActive={eventFilter !== 'ALL'}
               />
 
               <BoundingBoxCanvas
@@ -371,6 +424,8 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
                 zoom={isSyncLocked ? sharedZoom : undefined}
                 pan={isSyncLocked ? sharedPan : undefined}
                 onZoomPanChange={isSyncLocked ? handleSharedZoomPanChange : undefined}
+                totalDetectionsCount={comparison.query_detections_count}
+                filterActive={eventFilter !== 'ALL'}
               />
             </div>
           ) : (
@@ -449,21 +504,120 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
                           />
                           {item.entity_id}
                         </td>
-                        <td className="px-5 py-3 text-[#F8FAFC] font-sans">{item.label}</td>
+                        <td className="px-5 py-3 text-[#F8FAFC] font-sans">
+                          {editingEntityId === item.entity_id ? (
+                            <form
+                              onSubmit={async (e) => {
+                                e.preventDefault();
+                                if (!editingLabel.trim()) return;
+                                await api.confirmEntityLabel(workspace.workspace_id, item.entity_id, editingLabel.trim());
+                                setEditingEntityId(null);
+                                fetchComparison();
+                              }}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center gap-1"
+                            >
+                              <input
+                                type="text"
+                                value={editingLabel}
+                                onChange={(e) => setEditingLabel(e.target.value)}
+                                className="w-24 bg-[#090B10] border border-[#06B6D4]/50 rounded px-1.5 py-0.5 text-xs text-[#F8FAFC]"
+                                autoFocus
+                              />
+                              <button type="submit" className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-cyan-600 text-white cursor-pointer">
+                                Save
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => setEditingEntityId(null)}
+                                className="text-[10px] font-mono px-1 py-0.5 text-[#94A3B8] cursor-pointer"
+                              >
+                                ×
+                              </button>
+                            </form>
+                          ) : (
+                            <div className="flex flex-col gap-1">
+                              <div className="flex items-center gap-1.5">
+                                <span>{item.label}</span>
+                                {item.class_uncertain && (
+                                  <span
+                                    className="px-1.5 py-0.5 rounded text-[9px] font-mono bg-amber-950/60 text-amber-300 border border-amber-700/50"
+                                    title={`Raw detector prediction: ${item.raw_label || item.label}`}
+                                  >
+                                    uncertain
+                                  </span>
+                                )}
+                                <button
+                                  type="button"
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setEditingEntityId(item.entity_id);
+                                    setEditingLabel(item.confirmed_label || item.label);
+                                  }}
+                                  className="text-[10px] font-mono text-[#64748B] hover:text-[#22D3EE] ml-1 cursor-pointer"
+                                  title="Confirm or revise semantic label (preserves raw detector prediction)"
+                                >
+                                  edit
+                                </button>
+                                {item.confirmed_label && (
+                                  <button
+                                    type="button"
+                                    onClick={async (e) => {
+                                      e.stopPropagation();
+                                      await api.clearEntityLabel(workspace.workspace_id, item.entity_id);
+                                      fetchComparison();
+                                    }}
+                                    className="text-[10px] font-mono text-rose-400/80 hover:text-rose-300 cursor-pointer"
+                                    title="Clear confirmed label and restore model prediction"
+                                  >
+                                    clear
+                                  </button>
+                                )}
+                              </div>
+                              {item.raw_label && (
+                                <span className="text-[10px] font-mono text-[#94A3B8]">
+                                  Model prediction: {item.raw_label}
+                                  {item.confirmed_label ? ` • User-confirmed: ${item.confirmed_label}` : ''}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </td>
                         <td className="px-5 py-3">
-                          <StatusBadge status={item.status_change} size="sm" />
+                          <div className="flex flex-col gap-1">
+                            <StatusBadge status={item.movement_status || item.status_change} size="sm" />
+                            {item.evidence_source && item.evidence_source !== 'MODEL_DETECTION' && (
+                              <span className="text-[9px] font-mono px-1.5 py-0.5 rounded bg-indigo-950/60 text-indigo-300 border border-indigo-700/50 w-fit">
+                                {item.evidence_source === 'HUMAN_CONFIRMED' ? 'HUMAN-CONFIRMED' : 'RECOVERY-ASSISTED'}
+                              </span>
+                            )}
+                          </div>
                         </td>
                         <td className="px-5 py-3 text-[#94A3B8]">{item.prior_state}</td>
                         <td className="px-5 py-3 text-[#F8FAFC]">{item.new_state}</td>
                         <td className="px-5 py-3">
-                          {item.displacement_px != null ? (
-                            <span className="text-[#22D3EE] font-bold inline-flex items-center gap-1">
-                              <ArrowUpRight className="w-3.5 h-3.5" />
-                              {item.displacement_px.toFixed(1)} px
-                            </span>
-                          ) : (
-                            <span className="text-[#64748B]">—</span>
-                          )}
+                          <div className="flex flex-col gap-0.5">
+                            {item.displacement_px != null ? (
+                              <span className="text-[#22D3EE] font-bold inline-flex items-center gap-1">
+                                <ArrowUpRight className="w-3.5 h-3.5" />
+                                {item.displacement_px.toFixed(1)} px
+                              </span>
+                            ) : (
+                              <span className="text-[#64748B] text-[10px]">Not comparable</span>
+                            )}
+                            {(item.ref_bbox || item.ref_raw_bbox) && (
+                              <span className="text-[9px] text-[#64748B]">
+                                Ref: [{Math.round((item.ref_bbox ?? item.ref_raw_bbox)!.x_min)},{Math.round((item.ref_bbox ?? item.ref_raw_bbox)!.y_min)},{Math.round((item.ref_bbox ?? item.ref_raw_bbox)!.x_max)},{Math.round((item.ref_bbox ?? item.ref_raw_bbox)!.y_max)}]
+                              </span>
+                            )}
+                            {(item.query_bbox || item.query_raw_bbox) ? (
+                              <span className="text-[9px] text-[#94A3B8]">
+                                Qry: [{Math.round((item.query_bbox ?? item.query_raw_bbox)!.x_min)},{Math.round((item.query_bbox ?? item.query_raw_bbox)!.y_min)},{Math.round((item.query_bbox ?? item.query_raw_bbox)!.x_max)},{Math.round((item.query_bbox ?? item.query_raw_bbox)!.y_max)}]
+                              </span>
+                            ) : (
+                              <span className="text-[9px] text-amber-400/80">Qry: Not detected</span>
+                            )}
+                          </div>
                         </td>
                         <td className="px-5 py-3 text-[#F8FAFC] font-sans text-xs max-w-md leading-relaxed">
                           {item.explanation}
@@ -474,6 +628,85 @@ export const SceneComparisonView: React.FC<SceneComparisonViewProps> = ({ worksp
                 </tbody>
               </table>
             </div>
+          </div>
+
+          {/* Human-Assisted Location Confirmation (for missed detections in Query) */}
+          <div className="bg-[#11141D] border border-[#232A3B] rounded-xl p-5 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h3 className="text-xs font-mono uppercase tracking-wider text-indigo-300 font-semibold">
+                  Human-Assisted Location Confirmation (Fallback for Missed Detections)
+                </h3>
+                <p className="text-[11px] text-[#94A3B8] mt-0.5">
+                  Explicitly confirm an entity&apos;s raw pixel bounding box in {querySessionId}. Recorded separately as HUMAN_CONFIRMED without modifying raw detector outputs.
+                </p>
+              </div>
+            </div>
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                if (!humanLocEntityId) return;
+                setSubmittingHumanLoc(true);
+                setError(null);
+                try {
+                  await api.confirmEntityLocation(workspace.workspace_id, querySessionId, {
+                    entity_id: humanLocEntityId,
+                    bbox: {
+                      x_min: Number(humanBbox.x_min),
+                      y_min: Number(humanBbox.y_min),
+                      x_max: Number(humanBbox.x_max),
+                      y_max: Number(humanBbox.y_max),
+                    },
+                    notes: humanNotes.trim() || undefined,
+                  });
+                  setHumanNotes('');
+                  await fetchComparison();
+                } catch (err: any) {
+                  setError(err.detail || err.message || 'Human location confirmation failed.');
+                } finally {
+                  setSubmittingHumanLoc(false);
+                }
+              }}
+              className="grid grid-cols-2 sm:grid-cols-7 gap-2 items-end"
+            >
+              <div className="col-span-2">
+                <label className="block text-[10px] font-mono text-[#94A3B8] mb-1">Entity</label>
+                <select
+                  value={humanLocEntityId}
+                  onChange={(e) => setHumanLocEntityId(e.target.value)}
+                  className="w-full bg-[#090B10] border border-[#232A3B] rounded px-2 py-1.5 text-xs font-mono text-[#F8FAFC]"
+                >
+                  <option value="">Select entity...</option>
+                  {comparison.items.map((it) => (
+                    <option key={it.entity_id} value={it.entity_id}>
+                      {it.label} ({it.entity_id})
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {(['x_min', 'y_min', 'x_max', 'y_max'] as const).map((coord) => (
+                <div key={coord}>
+                  <label className="block text-[10px] font-mono text-[#94A3B8] mb-1">{coord}</label>
+                  <input
+                    type="number"
+                    step="1"
+                    required
+                    value={humanBbox[coord]}
+                    onChange={(e) => setHumanBbox((prev) => ({ ...prev, [coord]: e.target.value }))}
+                    className="w-full bg-[#090B10] border border-[#232A3B] rounded px-2 py-1.5 text-xs font-mono text-[#F8FAFC]"
+                  />
+                </div>
+              ))}
+              <div>
+                <button
+                  type="submit"
+                  disabled={!humanLocEntityId || submittingHumanLoc}
+                  className="w-full px-3 py-1.5 rounded bg-indigo-600 hover:bg-indigo-500 text-xs font-mono font-semibold text-white cursor-pointer disabled:opacity-40"
+                >
+                  {submittingHumanLoc ? 'Saving...' : 'Confirm Box'}
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       ) : null}

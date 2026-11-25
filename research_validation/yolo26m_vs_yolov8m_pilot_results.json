@@ -1,0 +1,796 @@
+{
+  "dataset": "data/physical_pilot_v2/manifest_v2.json",
+  "frozen_config": "B3 (conf=0.25, nms=0.45, iou=0.50)",
+  "models": {
+    "yolov8m": {
+      "detector_name": "yolov8m",
+      "model_info": {
+        "name": "OpenCVDNN_YOLOV8_ONNX",
+        "framework": "onnx",
+        "architecture": "yolov8",
+        "weights_path": "models\\yolov8m.onnx",
+        "backend": "OpenCV DNN (CPU)",
+        "license": "Apache-2.0 / BSD / MIT (dependent on imported weights)",
+        "is_available": true,
+        "availability_error": null,
+        "is_open_vocabulary": false,
+        "is_synthetic": false,
+        "classes_count": 80,
+        "input_size": [
+          640,
+          640
+        ],
+        "nms_threshold": 0.45,
+        "limitations": [
+          "Standard COCO models are trained on general consumer objects (e.g., bottle, cup, laptop, mouse, scissors).",
+          "They do NOT contain domain-specific classes for workbench tools (multimeter, PCB, soldering iron, wire stripper).",
+          "Small electronics components fall below standard COCO object resolution.",
+          "CPU execution speed scales with resolution (measured ~115ms per frame on modern x86 CPU)."
+        ]
+      },
+      "memory": {
+        "rss_before_mb": 97.57,
+        "rss_after_mb": 319.44,
+        "tracemalloc_peak_mb": 67.56
+      },
+      "detector_only": {
+        "iou_threshold": 0.5,
+        "confidence_threshold": 0.25,
+        "total_gt_visible": 177,
+        "total_target_predictions": 168,
+        "non_target_predictions": 18,
+        "total_tp": 160,
+        "total_fp_target": 8,
+        "total_fn": 17,
+        "overall_recall": 0.904,
+        "overall_precision": 0.9524,
+        "duplicate_detections": 0,
+        "incorrect_class_predictions_count": 5,
+        "incorrect_class_predictions": [
+          {
+            "observation": "stationary_V01",
+            "gt_class": "bottle",
+            "predicted_class": "hair drier",
+            "confidence": 0.268,
+            "iou": 0.788
+          },
+          {
+            "observation": "stationary_V02",
+            "gt_class": "bottle",
+            "predicted_class": "hair drier",
+            "confidence": 0.3805,
+            "iou": 0.728
+          },
+          {
+            "observation": "stationary_V03",
+            "gt_class": "bottle",
+            "predicted_class": "hair drier",
+            "confidence": 0.5383,
+            "iou": 0.74
+          },
+          {
+            "observation": "stationary_V04",
+            "gt_class": "bottle",
+            "predicted_class": "hair drier",
+            "confidence": 0.3673,
+            "iou": 0.741
+          },
+          {
+            "observation": "movement_V01",
+            "gt_class": "bottle",
+            "predicted_class": "hair drier",
+            "confidence": 0.502,
+            "iou": 0.522
+          }
+        ],
+        "missed_without_overlap_count": 12,
+        "missed_without_overlap": [
+          {
+            "observation": "stationary_V02",
+            "gt_class": "potted plant",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V05",
+            "gt_class": "potted plant",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V05",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V01",
+            "gt_class": "potted plant",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V02",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V03",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V04",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V05",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "removal_V01",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "addition_V02",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "occlusion_V04",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "return_to_baseline_V02",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          }
+        ],
+        "confidence_distribution_target": {
+          "count": 168,
+          "min": 0.2523,
+          "median": 0.8341,
+          "mean": 0.7597,
+          "p90": 0.9361,
+          "max": 0.9499
+        },
+        "mean_inference_ms": 927.04,
+        "p95_inference_ms": 1111.36,
+        "per_class": {
+          "potted plant": {
+            "gt_visible": 30,
+            "predictions": 27,
+            "tp": 27,
+            "fp": 0,
+            "fn": 3,
+            "recall": 0.9,
+            "precision": 1.0
+          },
+          "book": {
+            "gt_visible": 28,
+            "predictions": 36,
+            "tp": 28,
+            "fp": 8,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 0.7778
+          },
+          "bottle": {
+            "gt_visible": 26,
+            "predictions": 12,
+            "tp": 12,
+            "fp": 0,
+            "fn": 14,
+            "recall": 0.4615,
+            "precision": 1.0
+          },
+          "scissors": {
+            "gt_visible": 30,
+            "predictions": 30,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          },
+          "cell phone": {
+            "gt_visible": 30,
+            "predictions": 30,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          },
+          "cup": {
+            "gt_visible": 30,
+            "predictions": 30,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          },
+          "banana": {
+            "gt_visible": 3,
+            "predictions": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          }
+        }
+      },
+      "objectmemory_b3": {
+        "metrics": "BenchmarkMetrics(total_observations_processed=30, total_entity_evaluations=183, false_removal_rate=0.005555555555555556, false_removal_count=1, false_removal_denominator=180, false_discovery_proportion=1.0, false_discovery_count=1, false_discovery_denominator=1, removal_recall=0.0, removal_recall_count=0, removal_recall_denominator=3, event_removal_recall=0.0, event_removal_recall_count=0, event_removal_recall_denominator=1, confirmation_rate=0.3333333333333333, confirmed_change_events_count=1, total_eligible_change_events=3, unconfirmed_change_events_count=2, mean_confirmation_delay_visits=2.0, confirmation_delay_events_count=1, unsupported_movement_rate=0.0, unsupported_movement_count=0, unsupported_movement_denominator=172, identity_consistency=0.8938547486033519, identity_consistency_numerator=160, identity_consistency_denominator=179, id_switches=0, id_switch_rate=0.0, id_switch_transitions=126, fragmented_identities=0, spurious_system_tracks=11, duplicate_identities=11, historical_retrieval_accuracy=1.0, historical_retrieval_count=2, historical_retrieval_denominator=2, detection_true_positives=None, detection_false_positives=None, detection_false_negatives=None, detection_precision=None, detection_recall=None, detection_f1_score=None, overall_state_accuracy=0.8907103825136612, correct_state_evaluations=163)",
+        "per_sequence": {
+          "physical_pilot_v2_stationary": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 25,
+            "frr_num": 0,
+            "frr_den": 30,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 30,
+            "ic_num": 23,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 18,
+            "fragmented_identities": 0,
+            "spurious_tracks": 1,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": [
+              "bottle_01"
+            ]
+          },
+          "physical_pilot_v2_movement": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 24,
+            "frr_num": 0,
+            "frr_den": 30,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 1,
+            "unconfirmed_events": 1,
+            "umr_num": 0,
+            "umr_den": 26,
+            "ic_num": 24,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 19,
+            "fragmented_identities": 0,
+            "spurious_tracks": 1,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": [
+              "bottle_01"
+            ]
+          },
+          "physical_pilot_v2_removal": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 25,
+            "frr_num": 0,
+            "frr_den": 27,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 3,
+            "event_rr_num": 0,
+            "event_rr_den": 1,
+            "cr_num": 0,
+            "cr_den": 1,
+            "unconfirmed_events": 1,
+            "umr_num": 0,
+            "umr_den": 26,
+            "ic_num": 25,
+            "ic_den": 26,
+            "id_switches": 0,
+            "id_transitions": 20,
+            "fragmented_identities": 0,
+            "spurious_tracks": 2,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": [
+              "bottle_01"
+            ]
+          },
+          "physical_pilot_v2_addition": {
+            "observations_processed": 5,
+            "entity_evaluations": 33,
+            "correct_state_evaluations": 32,
+            "frr_num": 0,
+            "frr_den": 33,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 32,
+            "ic_num": 32,
+            "ic_den": 33,
+            "id_switches": 0,
+            "id_transitions": 25,
+            "fragmented_identities": 0,
+            "spurious_tracks": 3,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_occlusion": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 28,
+            "frr_num": 1,
+            "frr_den": 30,
+            "fdp_num": 1,
+            "fdp_den": 1,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 30,
+            "ic_num": 27,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 21,
+            "fragmented_identities": 0,
+            "spurious_tracks": 2,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_return_to_baseline": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 29,
+            "frr_num": 0,
+            "frr_den": 30,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 1,
+            "cr_den": 1,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 28,
+            "ic_num": 29,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 23,
+            "fragmented_identities": 0,
+            "spurious_tracks": 2,
+            "delay_visits_sum": 2,
+            "delay_events_count": 1,
+            "hra_num": 2,
+            "hra_den": 2,
+            "uninstantiated_gt_entities": []
+          }
+        }
+      }
+    },
+    "yolo26m": {
+      "detector_name": "yolo26m",
+      "model_info": {
+        "name": "YOLO26m_ONNXRUNTIME",
+        "framework": "onnxruntime",
+        "architecture": "yolo26m",
+        "model_version": "ultralytics-8.4.218 / yolo26m",
+        "official_source": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt",
+        "weights_path": "models\\yolo26m.onnx",
+        "weights_sha256": "992d8f3a0ff47b0ce19a6b889f6ac2dc14c2088a955e7505775acead012fbbd8",
+        "weights_size_bytes": 81900125,
+        "backend": "ONNX Runtime (CPUExecutionProvider)",
+        "license": "AGPL-3.0 (Ultralytics YOLO26)",
+        "is_available": true,
+        "is_loaded": true,
+        "availability_error": null,
+        "is_open_vocabulary": false,
+        "is_synthetic": false,
+        "classes_count": 80,
+        "input_size": [
+          640,
+          640
+        ],
+        "nms_threshold": 0.45,
+        "output_format": "(1, 84, 8400)"
+      },
+      "memory": {
+        "rss_before_mb": 313.94,
+        "rss_after_mb": 725.79,
+        "tracemalloc_peak_mb": 68.04
+      },
+      "detector_only": {
+        "iou_threshold": 0.5,
+        "confidence_threshold": 0.25,
+        "total_gt_visible": 177,
+        "total_target_predictions": 184,
+        "non_target_predictions": 29,
+        "total_tp": 161,
+        "total_fp_target": 23,
+        "total_fn": 16,
+        "overall_recall": 0.9096,
+        "overall_precision": 0.875,
+        "duplicate_detections": 0,
+        "incorrect_class_predictions_count": 0,
+        "incorrect_class_predictions": [],
+        "missed_without_overlap_count": 16,
+        "missed_without_overlap": [
+          {
+            "observation": "stationary_V01",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V02",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V03",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V05",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "stationary_V05",
+            "gt_class": "cup",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V01",
+            "gt_class": "book",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V01",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V02",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V02",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V03",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V04",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "movement_V05",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "addition_V04",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "addition_V05",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "occlusion_V03",
+            "gt_class": "cell phone",
+            "visibility": "CLEARLY_VISIBLE"
+          },
+          {
+            "observation": "return_to_baseline_V02",
+            "gt_class": "bottle",
+            "visibility": "CLEARLY_VISIBLE"
+          }
+        ],
+        "confidence_distribution_target": {
+          "count": 184,
+          "min": 0.2525,
+          "median": 0.6504,
+          "mean": 0.6576,
+          "p90": 0.9287,
+          "max": 0.9672
+        },
+        "mean_inference_ms": 481.93,
+        "p95_inference_ms": 646.09,
+        "per_class": {
+          "potted plant": {
+            "gt_visible": 30,
+            "predictions": 30,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          },
+          "book": {
+            "gt_visible": 28,
+            "predictions": 50,
+            "tp": 27,
+            "fp": 23,
+            "fn": 1,
+            "recall": 0.9643,
+            "precision": 0.54
+          },
+          "bottle": {
+            "gt_visible": 26,
+            "predictions": 21,
+            "tp": 21,
+            "fp": 0,
+            "fn": 5,
+            "recall": 0.8077,
+            "precision": 1.0
+          },
+          "scissors": {
+            "gt_visible": 30,
+            "predictions": 30,
+            "tp": 30,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          },
+          "cell phone": {
+            "gt_visible": 30,
+            "predictions": 21,
+            "tp": 21,
+            "fp": 0,
+            "fn": 9,
+            "recall": 0.7,
+            "precision": 1.0
+          },
+          "cup": {
+            "gt_visible": 30,
+            "predictions": 29,
+            "tp": 29,
+            "fp": 0,
+            "fn": 1,
+            "recall": 0.9667,
+            "precision": 1.0
+          },
+          "banana": {
+            "gt_visible": 3,
+            "predictions": 3,
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "recall": 1.0,
+            "precision": 1.0
+          }
+        }
+      },
+      "objectmemory_b3": {
+        "metrics": "BenchmarkMetrics(total_observations_processed=30, total_entity_evaluations=183, false_removal_rate=0.016666666666666666, false_removal_count=3, false_removal_denominator=180, false_discovery_proportion=0.6, false_discovery_count=3, false_discovery_denominator=5, removal_recall=0.6666666666666666, removal_recall_count=2, removal_recall_denominator=3, event_removal_recall=1.0, event_removal_recall_count=1, event_removal_recall_denominator=1, confirmation_rate=0.6666666666666666, confirmed_change_events_count=2, total_eligible_change_events=3, unconfirmed_change_events_count=1, mean_confirmation_delay_visits=2.0, confirmation_delay_events_count=2, unsupported_movement_rate=0.0, unsupported_movement_count=0, unsupported_movement_denominator=172, identity_consistency=0.8994413407821229, identity_consistency_numerator=161, identity_consistency_denominator=179, id_switches=0, id_switch_rate=0.0, id_switch_transitions=124, fragmented_identities=0, spurious_system_tracks=15, duplicate_identities=15, historical_retrieval_accuracy=1.0, historical_retrieval_count=2, historical_retrieval_denominator=2, detection_true_positives=None, detection_false_positives=None, detection_false_negatives=None, detection_precision=None, detection_recall=None, detection_f1_score=None, overall_state_accuracy=0.907103825136612, correct_state_evaluations=166)",
+        "per_sequence": {
+          "physical_pilot_v2_stationary": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 27,
+            "frr_num": 0,
+            "frr_den": 30,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 30,
+            "ic_num": 25,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 19,
+            "fragmented_identities": 0,
+            "spurious_tracks": 1,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_movement": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 23,
+            "frr_num": 2,
+            "frr_den": 30,
+            "fdp_num": 2,
+            "fdp_den": 2,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 1,
+            "unconfirmed_events": 1,
+            "umr_num": 0,
+            "umr_den": 26,
+            "ic_num": 23,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 17,
+            "fragmented_identities": 0,
+            "spurious_tracks": 2,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_removal": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 28,
+            "frr_num": 0,
+            "frr_den": 27,
+            "fdp_num": 0,
+            "fdp_den": 2,
+            "rr_num": 2,
+            "rr_den": 3,
+            "event_rr_num": 1,
+            "event_rr_den": 1,
+            "cr_num": 1,
+            "cr_den": 1,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 26,
+            "ic_num": 26,
+            "ic_den": 26,
+            "id_switches": 0,
+            "id_transitions": 20,
+            "fragmented_identities": 0,
+            "spurious_tracks": 3,
+            "delay_visits_sum": 2,
+            "delay_events_count": 1,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_addition": {
+            "observations_processed": 5,
+            "entity_evaluations": 33,
+            "correct_state_evaluations": 31,
+            "frr_num": 0,
+            "frr_den": 33,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 32,
+            "ic_num": 31,
+            "ic_den": 33,
+            "id_switches": 0,
+            "id_transitions": 24,
+            "fragmented_identities": 0,
+            "spurious_tracks": 4,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_occlusion": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 28,
+            "frr_num": 1,
+            "frr_den": 30,
+            "fdp_num": 1,
+            "fdp_den": 1,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 0,
+            "cr_den": 0,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 30,
+            "ic_num": 27,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 21,
+            "fragmented_identities": 0,
+            "spurious_tracks": 3,
+            "delay_visits_sum": 0,
+            "delay_events_count": 0,
+            "hra_num": 0,
+            "hra_den": 0,
+            "uninstantiated_gt_entities": []
+          },
+          "physical_pilot_v2_return_to_baseline": {
+            "observations_processed": 5,
+            "entity_evaluations": 30,
+            "correct_state_evaluations": 29,
+            "frr_num": 0,
+            "frr_den": 30,
+            "fdp_num": 0,
+            "fdp_den": 0,
+            "rr_num": 0,
+            "rr_den": 0,
+            "event_rr_num": 0,
+            "event_rr_den": 0,
+            "cr_num": 1,
+            "cr_den": 1,
+            "unconfirmed_events": 0,
+            "umr_num": 0,
+            "umr_den": 28,
+            "ic_num": 29,
+            "ic_den": 30,
+            "id_switches": 0,
+            "id_transitions": 23,
+            "fragmented_identities": 0,
+            "spurious_tracks": 2,
+            "delay_visits_sum": 2,
+            "delay_events_count": 1,
+            "hra_num": 2,
+            "hra_den": 2,
+            "uninstantiated_gt_entities": []
+          }
+        }
+      }
+    }
+  }
+}

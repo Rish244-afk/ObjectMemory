@@ -62,7 +62,26 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
   const [notes, setNotes] = useState('');
   const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.25);
   const [detectors, setDetectors] = useState<DetectorInfo[]>([]);
-  const [selectedDetector, setSelectedDetector] = useState<string>('yolov8m');
+  const [selectedDetector, setSelectedDetector] = useState<string>(() => {
+    try {
+      return localStorage.getItem('objectmemory_selected_detector') || 'yolov8m';
+    } catch {
+      return 'yolov8m';
+    }
+  });
+  const handleSelectDetector = (val: string) => {
+    setSelectedDetector(val);
+    try {
+      localStorage.setItem('objectmemory_selected_detector', val);
+    } catch {
+      // ignore storage errors
+    }
+    if (val.includes('world') && confidenceThreshold > 0.2) {
+      setConfidenceThreshold(0.15);
+    } else if (!val.includes('world') && confidenceThreshold < 0.2) {
+      setConfidenceThreshold(0.25);
+    }
+  };
   const [customPrompts, setCustomPrompts] = useState<string>(
     'notebook, book, bottle, cup, scissors, drawing compass, pliers'
   );
@@ -85,6 +104,8 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
   const [webcamCountdown, setWebcamCountdown] = useState<number | null>(null);
   const [isAutoCapturing, setIsAutoCapturing] = useState(false);
   const [webcamError, setWebcamError] = useState<string | null>(null);
+  const [droppedWebcamFrames, setDroppedWebcamFrames] = useState<number>(0);
+  const analyzingRef = useRef<boolean>(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const streamRef = useRef<MediaStream | null>(null);
   const countdownTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -115,12 +136,25 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
   };
 
   useEffect(() => {
+    setSelectedSessionId(null);
+    setSelectedSessionDetail(null);
     fetchSessions();
     api
       .getDetectors()
       .then((res) => {
         setDetectors(res.detectors);
-        if (res.default_detector) setSelectedDetector(res.default_detector);
+        let saved: string | null = null;
+        try {
+          saved = localStorage.getItem('objectmemory_selected_detector');
+        } catch {
+          saved = null;
+        }
+        const savedValid = saved && res.detectors.some((d) => d.name === saved && d.is_available);
+        if (savedValid && saved) {
+          setSelectedDetector(saved);
+        } else if (res.default_detector) {
+          setSelectedDetector(res.default_detector);
+        }
       })
       .catch((err) => console.error('Failed to load detectors:', err));
   }, [workspace.workspace_id]);
@@ -215,6 +249,7 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
     } catch (err: any) {
       setAnalysisError(err.detail || err.message || 'Scene analysis failed.');
     } finally {
+      analyzingRef.current = false;
       setAnalyzing(false);
     }
   };
@@ -334,6 +369,11 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
 
   const handleCaptureWebcamVisit = async () => {
     if (!webcamActive) return;
+    if (analyzingRef.current) {
+      setDroppedWebcamFrames((c) => c + 1);
+      return;
+    }
+    analyzingRef.current = true;
     setAnalyzing(true);
     setAnalysisError(null);
     try {
@@ -356,6 +396,7 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
     } catch (err: any) {
       setAnalysisError(err.detail || err.message || 'Webcam analysis failed.');
     } finally {
+      analyzingRef.current = false;
       setAnalyzing(false);
     }
   };
@@ -898,15 +939,7 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
                   </label>
                   <select
                     value={selectedDetector}
-                    onChange={(e) => {
-                      const val = e.target.value;
-                      setSelectedDetector(val);
-                      if (val.includes('world') && confidenceThreshold > 0.2) {
-                        setConfidenceThreshold(0.15);
-                      } else if (!val.includes('world') && confidenceThreshold < 0.2) {
-                        setConfidenceThreshold(0.25);
-                      }
-                    }}
+                    onChange={(e) => handleSelectDetector(e.target.value)}
                     className="w-full px-2.5 py-2 bg-[#090B10] border border-[#232A3B] rounded-lg text-xs text-[#F8FAFC] focus:outline-hidden focus:border-[#06B6D4] cursor-pointer"
                   >
                     {detectors.map((d) => (
@@ -1070,7 +1103,7 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
                 </label>
                 <select
                   value={selectedDetector}
-                  onChange={(e) => setSelectedDetector(e.target.value)}
+                  onChange={(e) => handleSelectDetector(e.target.value)}
                   className="w-full px-2.5 py-2 bg-[#090B10] border border-[#232A3B] rounded-lg text-xs text-[#F8FAFC] focus:outline-hidden focus:border-[#06B6D4] cursor-pointer"
                 >
                   {detectors.map((d) => (
@@ -1277,8 +1310,30 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
                     )}
                   </button>
 
-                  <div className="p-2.5 bg-[#090B10] rounded-lg border border-[#232A3B] text-[11px] text-[#94A3B8] font-mono leading-relaxed">
-                    Captured frames undergo planar homography registration, bounding-box canonicalization, and bipartite memory association.
+                  <div className="p-2.5 bg-[#090B10] rounded-lg border border-[#232A3B] text-[11px] text-[#94A3B8] font-mono leading-relaxed space-y-1.5">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <span className="text-[#F8FAFC] font-semibold">
+                        Active Detector: <span className="text-[#06B6D4]">{selectedDetector.toUpperCase()}</span>
+                        {selectedDetector === 'yolov8m' ? ' (Default)' : ' (Alternative)'}
+                      </span>
+                      <span>Skipped ticks: {droppedWebcamFrames}</span>
+                    </div>
+                    {lastResult && (
+                      <div className="flex flex-wrap gap-1.5 pt-1 border-t border-[#232A3B]/60">
+                        <span className={`px-1.5 py-0.5 rounded text-[10px] ${lastResult.detections.length > 0 ? 'bg-emerald-950/60 text-emerald-300 border border-emerald-700/40' : 'bg-amber-950/60 text-amber-300 border border-amber-700/40'}`}>
+                          {lastResult.detections.length > 0 ? `Detected (${lastResult.detections.length})` : 'Not detected (0)'}
+                        </span>
+                        <span className={`px-1.5 py-0.5 rounded text-[10px] ${lastResult.registration.success ? 'bg-cyan-950/60 text-cyan-300 border border-cyan-700/40' : 'bg-rose-950/60 text-rose-300 border border-rose-700/40'}`}>
+                          {lastResult.registration.success ? `Reg: ${lastResult.registration.status}` : `Registration unreliable (${lastResult.registration.status})`}
+                        </span>
+                        <span className="px-1.5 py-0.5 rounded text-[10px] bg-[#181D29] text-[#CBD5E1] border border-[#232A3B]">
+                          {lastResult.total_latency_ms.toFixed(0)} ms
+                        </span>
+                      </div>
+                    )}
+                    <div className="text-[10px] text-[#64748B]">
+                      Epistemic gating: a single missed frame marks PENDING_REMOVAL / INSUFFICIENT_EVIDENCE rather than CONFIRMED_REMOVED; unreliable registration withholds movement claims.
+                    </div>
                   </div>
                 </div>
               )}

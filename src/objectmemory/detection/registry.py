@@ -239,6 +239,29 @@ class DetectorRegistry:
             is_default=False,
         )
 
+        # 3b. Register YOLO26m optional alternative
+        def yolo26m_factory(
+            weights_path: Optional[str | Path] = None,
+            **kwargs: Any,
+        ) -> ObjectDetector:
+            from objectmemory.detection.yolo26 import YOLO26mDetector
+
+            return YOLO26mDetector(
+                weights_path=weights_path,
+                **kwargs,
+            )
+
+        cls.register(
+            "yolo26m",
+            yolo26m_factory,
+            metadata={
+                "description": "Pretrained YOLO26 Medium running via ONNX Runtime on CPU (80 COCO classes, optional alternative).",
+                "is_open_vocabulary": False,
+                "is_synthetic": False,
+            },
+            is_default=False,
+        )
+
         # 3. Register Mock detector
         def mock_factory(**kwargs: Any) -> ObjectDetector:
             return MockObjectDetector(**kwargs)

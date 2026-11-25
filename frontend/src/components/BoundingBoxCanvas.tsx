@@ -39,6 +39,8 @@ interface BoundingBoxCanvasProps {
   zoom?: number;
   pan?: { x: number; y: number };
   onZoomPanChange?: (zoom: number, pan: { x: number; y: number }) => void;
+  totalDetectionsCount?: number;
+  filterActive?: boolean;
 }
 
 export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
@@ -54,6 +56,8 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
   zoom: controlledZoom,
   pan: controlledPan,
   onZoomPanChange,
+  totalDetectionsCount,
+  filterActive = false,
 }) => {
   const [naturalSize, setNaturalSize] = useState<{ width: number; height: number } | null>(null);
   const [showLabels, setShowLabels] = useState(true);
@@ -275,7 +279,14 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
 
           {naturalSize && (
             <span className="text-[11px] font-mono text-[#64748B] ml-2 hidden sm:inline">
-              {naturalSize.width}×{naturalSize.height}px • {validBoxes.length} {validBoxes.length === 1 ? 'obj' : 'objs'}
+              {naturalSize.width}×{naturalSize.height}px •{' '}
+              {totalDetectionsCount !== undefined
+                ? filterActive
+                  ? `${totalDetectionsCount} dets (${validBoxes.length} shown)`
+                  : totalDetectionsCount !== validBoxes.length
+                  ? `${totalDetectionsCount} dets (${validBoxes.length} mapped)`
+                  : `${totalDetectionsCount} ${totalDetectionsCount === 1 ? 'det' : 'dets'}`
+                : `${validBoxes.length} ${validBoxes.length === 1 ? 'obj' : 'objs'}`}
             </span>
           )}
         </div>
@@ -424,6 +435,32 @@ export const BoundingBoxCanvas: React.FC<BoundingBoxCanvasProps> = ({
                     } else if (theme === 'query') {
                       defaultStroke = '#06B6D4'; // cyan-500
                       defaultFill = 'rgba(6, 182, 212, 0.12)';
+                    }
+
+                    // Apply authoritative status semantics when status is provided
+                    if (b.status) {
+                      const stNorm = b.status.toUpperCase();
+                      if (stNorm === 'CONFIRMED_PRESENT' || stNorm === 'CONFIRMED_ADDED' || stNorm === 'NOT_MOVED' || stNorm === 'ADDED') {
+                        defaultStroke = '#10B981';
+                        defaultFill = 'rgba(16, 185, 129, 0.14)';
+                      } else if (stNorm === 'CONFIRMED_MOVED' || stNorm === 'MOVED' || stNorm === 'PENDING_MOVEMENT') {
+                        defaultStroke = '#F59E0B';
+                        defaultFill = 'rgba(245, 158, 11, 0.18)';
+                      } else if (stNorm === 'CONFIRMED_REMOVED' || stNorm === 'REMOVED') {
+                        defaultStroke = '#F43F5E';
+                        defaultFill = 'rgba(244, 63, 94, 0.16)';
+                      } else if (stNorm === 'AMBIGUOUS_IDENTITY' || stNorm === 'IDENTITY_AMBIGUOUS') {
+                        defaultStroke = '#A855F7';
+                        defaultFill = 'rgba(168, 85, 247, 0.18)';
+                      } else if (
+                        stNorm === 'INSUFFICIENT_EVIDENCE' ||
+                        stNorm === 'PENDING_REMOVAL' ||
+                        stNorm === 'NOT_DETECTED' ||
+                        stNorm === 'REGISTRATION_UNRELIABLE'
+                      ) {
+                        defaultStroke = '#64748B';
+                        defaultFill = 'rgba(100, 116, 139, 0.14)';
+                      }
                     }
 
                     if (b.strokeColor) defaultStroke = b.strokeColor;

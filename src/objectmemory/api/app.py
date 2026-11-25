@@ -14,10 +14,13 @@ from fastapi.responses import FileResponse, JSONResponse
 from objectmemory.api.schemas import (
     ChangeEventSummary,
     ComparisonResponse,
+    ConfirmLocationRequest,
+    ConfirmLocationResponse,
     DetectorInfoSchema,
     DetectorListResponse,
     DiagnosticsResponse,
     EntityDetailResponse,
+    EntityLabelUpdate,
     EntitySummary,
     ObservationSubmissionResult,
     SessionDetailResponse,
@@ -30,6 +33,7 @@ from objectmemory.api.schemas import (
 from objectmemory.detection.registry import DetectorRegistry
 from objectmemory.api.workspace_manager import WorkspaceManager
 from objectmemory.api.evaluation import router as evaluation_router
+from objectmemory.api.eth_registration import router as eth_router
 
 logger = logging.getLogger(__name__)
 
@@ -62,8 +66,9 @@ def create_app(manager: Optional[WorkspaceManager] = None) -> FastAPI:
         allow_headers=["*"],
     )
 
-    # Mount Evaluation Router
+    # Mount Evaluation Router & Supplementary ETH Registration Router
     app.include_router(evaluation_router)
+    app.include_router(eth_router)
 
     # Attach manager to app state
     app.state.manager = manager
@@ -345,8 +350,70 @@ def create_app(manager: Optional[WorkspaceManager] = None) -> FastAPI:
         try:
             entities = mgr.list_entities(workspace_id, state=state)
             return [EntitySummary(**e) for e in entities]
+        except ValueError as exc:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
         except KeyError as exc:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+
+    @app.patch(
+        "/api/workspaces/{workspace_id}/entities/{entity_id}/label",
+        response_model=EntitySummary,
+        tags=["Entities"],
+    )
+    def confirm_entity_label(
+        workspace_id: str,
+        entity_id: str,
+        payload: EntityLabelUpdate,
+    ) -> EntitySummary:
+        mgr: WorkspaceManager = app.state.manager
+        try:
+            res = mgr.update_entity_label(workspace_id, entity_id, payload.label)
+            return EntitySummary(**res)
+        except KeyError as exc:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+        except ValueError as exc:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
+
+    @app.delete(
+        "/api/workspaces/{workspace_id}/entities/{entity_id}/label",
+        response_model=EntitySummary,
+        tags=["Entities"],
+    )
+    def clear_entity_label(
+        workspace_id: str,
+        entity_id: str,
+    ) -> EntitySummary:
+        mgr: WorkspaceManager = app.state.manager
+        try:
+            res = mgr.clear_entity_label(workspace_id, entity_id)
+            return EntitySummary(**res)
+        except KeyError as exc:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+
+    @app.post(
+        "/api/workspaces/{workspace_id}/observations/{session_id}/confirm-location",
+        response_model=ConfirmLocationResponse,
+        tags=["Observations"],
+    )
+    def confirm_entity_location(
+        workspace_id: str,
+        session_id: str,
+        payload: ConfirmLocationRequest,
+    ) -> ConfirmLocationResponse:
+        mgr: WorkspaceManager = app.state.manager
+        try:
+            res = mgr.confirm_entity_location(
+                workspace_id=workspace_id,
+                session_id=session_id,
+                entity_id=payload.entity_id,
+                bbox_dict=payload.bbox.model_dump(),
+                notes=payload.notes,
+            )
+            return ConfirmLocationResponse(**res)
+        except KeyError as exc:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=str(exc))
+        except ValueError as exc:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
         except ValueError as exc:
             raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(exc))
 

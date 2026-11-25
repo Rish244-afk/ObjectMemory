@@ -30,6 +30,9 @@ export const EntityHistoryView: React.FC<EntityHistoryViewProps> = ({ workspace 
 
   const [filterState, setFilterState] = useState<string>('ALL');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [editingLabel, setEditingLabel] = useState<boolean>(false);
+  const [labelDraft, setLabelDraft] = useState<string>('');
+  const [savingLabel, setSavingLabel] = useState<boolean>(false);
 
   const fetchEntities = async () => {
     setLoading(true);
@@ -218,14 +221,129 @@ export const EntityHistoryView: React.FC<EntityHistoryViewProps> = ({ workspace 
               <div className="bg-[#11141D] border border-[#232A3B] rounded-xl p-6 shadow-sm">
                 <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-[#232A3B] gap-3">
                   <div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex flex-wrap items-center gap-3">
                       <h2 className="text-xl font-bold text-[#F8FAFC]">{detail.entity.label}</h2>
                       <StatusBadge status={detail.entity.current_state} />
+                      {detail.entity.confirmed_label ? (
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-700/50">
+                          User-confirmed identity
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-400 border border-neutral-700">
+                          Model-derived label
+                        </span>
+                      )}
+                      {detail.entity.class_uncertain && (
+                        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-700/50">
+                          Class uncertain
+                        </span>
+                      )}
                     </div>
-                    <span className="font-mono text-xs text-[#94A3B8] mt-1 block">
-                      Entity ID: <span className="text-[#22D3EE] font-bold">{detail.entity.entity_id}</span> •
-                      First observed: {new Date(detail.entity.created_at).toLocaleString()}
-                    </span>
+                    <div className="font-mono text-xs text-[#94A3B8] mt-1.5 space-y-1">
+                      <div>
+                        Entity ID: <span className="text-[#22D3EE] font-bold">{detail.entity.entity_id}</span> •
+                        First observed: {new Date(detail.entity.created_at).toLocaleString()}
+                      </div>
+                      <div className="flex flex-wrap items-center gap-3 text-[11px]">
+                        <span>
+                          Model prediction:{' '}
+                          <strong className="text-[#F8FAFC]">{detail.entity.raw_label || detail.entity.label}</strong>
+                          {detail.entity.raw_confidence != null && (
+                            <span className="text-[#64748B]"> ({(detail.entity.raw_confidence * 100).toFixed(1)}%)</span>
+                          )}
+                        </span>
+                        {detail.entity.confirmed_label && (
+                          <span>
+                            • User-confirmed identity:{' '}
+                            <strong className="text-cyan-300">{detail.entity.confirmed_label}</strong>
+                          </span>
+                        )}
+                        {detail.entity.observed_labels && detail.entity.observed_labels.length > 1 && (
+                          <span className="text-amber-300">
+                            • Observed raw classes: {detail.entity.observed_labels.join(', ')}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Confirm / Revise / Clear Label Controls */}
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      {editingLabel ? (
+                        <form
+                          onSubmit={async (e) => {
+                            e.preventDefault();
+                            if (!labelDraft.trim()) return;
+                            setSavingLabel(true);
+                            try {
+                              await api.confirmEntityLabel(workspace.workspace_id, detail.entity.entity_id, labelDraft.trim());
+                              setEditingLabel(false);
+                              await fetchEntities();
+                              const updated = await api.getEntityDetail(workspace.workspace_id, detail.entity.entity_id);
+                              setDetail(updated);
+                            } finally {
+                              setSavingLabel(false);
+                            }
+                          }}
+                          className="flex items-center gap-1.5"
+                        >
+                          <input
+                            type="text"
+                            value={labelDraft}
+                            onChange={(e) => setLabelDraft(e.target.value)}
+                            placeholder="Confirm semantic label..."
+                            className="bg-[#090B10] border border-[#06B6D4]/50 rounded px-2.5 py-1 text-xs text-[#F8FAFC] font-mono"
+                            autoFocus
+                          />
+                          <button
+                            type="submit"
+                            disabled={savingLabel}
+                            className="px-2.5 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-xs font-mono text-white cursor-pointer disabled:opacity-50"
+                          >
+                            {savingLabel ? 'Saving...' : 'Save'}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setEditingLabel(false)}
+                            className="px-2 py-1 rounded bg-[#090B10] border border-[#232A3B] text-xs font-mono text-[#94A3B8] cursor-pointer"
+                          >
+                            Cancel
+                          </button>
+                        </form>
+                      ) : (
+                        <>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setLabelDraft(detail.entity.confirmed_label || detail.entity.label);
+                              setEditingLabel(true);
+                            }}
+                            className="px-2.5 py-1 rounded bg-[#090B10] hover:bg-[#181D29] border border-[#232A3B] text-[11px] font-mono text-[#22D3EE] cursor-pointer"
+                          >
+                            {detail.entity.confirmed_label ? 'Revise Confirmed Label' : 'Confirm Semantic Label'}
+                          </button>
+                          {detail.entity.confirmed_label && (
+                            <button
+                              type="button"
+                              disabled={savingLabel}
+                              onClick={async () => {
+                                setSavingLabel(true);
+                                try {
+                                  await api.clearEntityLabel(workspace.workspace_id, detail.entity.entity_id);
+                                  await fetchEntities();
+                                  const updated = await api.getEntityDetail(workspace.workspace_id, detail.entity.entity_id);
+                                  setDetail(updated);
+                                } finally {
+                                  setSavingLabel(false);
+                                }
+                              }}
+                              className="px-2.5 py-1 rounded bg-[#090B10] hover:bg-rose-950/40 border border-[#232A3B] text-[11px] font-mono text-rose-300 cursor-pointer"
+                            >
+                              Clear Confirmation
+                            </button>
+                          )}
+                        </>
+                      )}
+                    </div>
                   </div>
 
                   <div className="text-xs font-mono bg-[#090B10] px-3 py-2 rounded-lg border border-[#232A3B] text-[#94A3B8]">

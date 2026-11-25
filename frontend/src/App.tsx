@@ -12,6 +12,7 @@ import { TimelineView } from './views/TimelineView';
 import { DiagnosticsView } from './views/DiagnosticsView';
 import { SpatialMemoryExplorerView } from './views/SpatialMemoryExplorerView';
 import { EvaluationLabView } from './views/EvaluationLabView';
+import { EthRegistrationView } from './views/EthRegistrationView';
 
 const LOCAL_STORAGE_WS_KEY = 'objectmemory_active_workspace_id';
 
@@ -112,6 +113,7 @@ export const App: React.FC = () => {
             {activeTab === 'timeline' && <TimelineView workspace={currentWorkspace} />}
             {activeTab === 'diagnostics' && <DiagnosticsView workspace={currentWorkspace} />}
             {activeTab === 'evaluation' && <EvaluationLabView workspace={currentWorkspace} />}
+            {activeTab === 'eth' && <EthRegistrationView />}
           </>
         )}
       </main>

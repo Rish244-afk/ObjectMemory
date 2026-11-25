@@ -44,7 +44,11 @@ class TestRealDetectorAndPipeline(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.weights_path = Path("models/yolov8n.onnx")
-        cls.demo_img_path = Path("demo_alignment_overlay.png")
+        cls.demo_img_path = (
+            Path("demo_alignment_overlay.png")
+            if Path("demo_alignment_overlay.png").exists()
+            else Path("data/physical_pilot_v2/stationary/V01.jpeg")
+        )
 
     def test_real_yolov8_onnx_inference_on_cpu(self) -> None:
         """
