@@ -1,0 +1,18 @@
+{
+  "status": "EXECUTED",
+  "manifest_path": "research_validation\\results\\final_completion\\a5_ambiguous_distractor_dataset\\manifest_v2.json",
+  "B3": {
+    "overall_state_accuracy": 0.5,
+    "identity_consistency": 0.5,
+    "id_switches": 0,
+    "false_removal_rate": 0.0,
+    "spurious_system_tracks": 0
+  },
+  "A5": {
+    "overall_state_accuracy": 0.5,
+    "identity_consistency": 0.75,
+    "id_switches": 1,
+    "false_removal_rate": 0.0,
+    "spurious_system_tracks": 0
+  }
+}

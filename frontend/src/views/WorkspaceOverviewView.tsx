@@ -62,7 +62,7 @@ export const WorkspaceOverviewView: React.FC<WorkspaceOverviewViewProps> = ({
   const [notes, setNotes] = useState('');
   const [confidenceThreshold, setConfidenceThreshold] = useState<number>(0.25);
   const [detectors, setDetectors] = useState<DetectorInfo[]>([]);
-  const [selectedDetector, setSelectedDetector] = useState<string>('yolov8n');
+  const [selectedDetector, setSelectedDetector] = useState<string>('yolov8m');
   const [customPrompts, setCustomPrompts] = useState<string>(
     'notebook, book, bottle, cup, scissors, drawing compass, pliers'
   );

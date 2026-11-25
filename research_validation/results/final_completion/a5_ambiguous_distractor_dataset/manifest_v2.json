@@ -1,0 +1,103 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "a5_ambiguous_distractor_probe",
+  "provenance": "SYNTHETIC_GENERATED",
+  "sequences": [
+    {
+      "sequence_id": "A5_ambiguous_cup_pair",
+      "environment_id": "synthetic_ambiguity_probe",
+      "dataset_name": "a5_ambiguous_distractor_probe",
+      "observations": [
+        {
+          "observation_id": "visit_01",
+          "timestamp": "2026-11-25T12:00:10Z",
+          "image_path": "images/visit_01.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": [
+                180.0,
+                260.0,
+                389.0,
+                481.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-25T12:00:10Z"
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": [
+                420.0,
+                260.0,
+                629.0,
+                481.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-25T12:00:10Z"
+            }
+          ]
+        },
+        {
+          "observation_id": "visit_02",
+          "timestamp": "2026-11-25T12:00:20Z",
+          "image_path": "images/visit_02.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": null,
+              "visibility_status": "ABSENT",
+              "object_state": "PENDING_REMOVAL",
+              "timestamp": "2026-11-25T12:00:20Z"
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": [
+                300.0,
+                260.0,
+                509.0,
+                481.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_MOVED",
+              "timestamp": "2026-11-25T12:00:20Z"
+            }
+          ]
+        },
+        {
+          "observation_id": "visit_03",
+          "timestamp": "2026-11-25T12:00:30Z",
+          "image_path": "images/visit_03.png",
+          "objects": [
+            {
+              "object_id": "cup_01",
+              "class_name": "cup",
+              "bounding_box": null,
+              "visibility_status": "ABSENT",
+              "object_state": "CONFIRMED_REMOVED",
+              "timestamp": "2026-11-25T12:00:30Z"
+            },
+            {
+              "object_id": "cup_02",
+              "class_name": "cup",
+              "bounding_box": [
+                300.0,
+                260.0,
+                509.0,
+                481.0
+              ],
+              "visibility_status": "CLEARLY_VISIBLE",
+              "object_state": "CONFIRMED_PRESENT",
+              "timestamp": "2026-11-25T12:00:30Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

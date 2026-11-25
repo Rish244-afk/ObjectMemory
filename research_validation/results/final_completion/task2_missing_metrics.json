@@ -1,0 +1,164 @@
+{
+  "synthetic_workbench_v2": {
+    "dataset": "synthetic_workbench_v2",
+    "movement_metrics": {
+      "visit_level_tp": 2,
+      "visit_level_fp": 4,
+      "visit_level_fn": 0,
+      "movement_precision_visits": 0.3333333333333333,
+      "movement_recall_visits": 1.0,
+      "movement_f1_visits": 0.5,
+      "event_level_tp": 2,
+      "event_level_gt": 2,
+      "movement_recall_events": 1.0
+    },
+    "physical_removal_latency": {
+      "events": [
+        {
+          "sequence_id": "S03_removal_confirmation",
+          "object_id": "bottle_01",
+          "physical_disappearance_visit": 2,
+          "system_confirmed_visit": 3,
+          "inclusive_visits_to_confirm": 2,
+          "additional_visits_after_disappearance": 1
+        },
+        {
+          "sequence_id": "S03_removal_confirmation",
+          "object_id": "scissors_01",
+          "physical_disappearance_visit": 4,
+          "system_confirmed_visit": 5,
+          "inclusive_visits_to_confirm": 2,
+          "additional_visits_after_disappearance": 1
+        }
+      ],
+      "mean_inclusive_visits_from_disappearance": 2.0,
+      "mean_additional_visits_after_disappearance": 1.0
+    },
+    "historical_retrieval_verification": {
+      "events": [
+        {
+          "sequence_id": "S02_relocation_return",
+          "visit_idx": 5,
+          "object_id": "cup_01",
+          "expected_sys_id": "ent_S02_relocation_return_visit_01_2",
+          "matched_sys_id": null,
+          "reassociated": false,
+          "predicted_state": "CONFIRMED_MOVED",
+          "gt_state": "CONFIRMED_PRESENT"
+        }
+      ],
+      "hra_numerator": 0,
+      "hra_denominator": 1,
+      "hra_accuracy": 0.0
+    }
+  },
+  "desk_pilot_01": {
+    "dataset": "desk_pilot_01",
+    "movement_metrics": {
+      "visit_level_tp": 1,
+      "visit_level_fp": 0,
+      "visit_level_fn": 1,
+      "movement_precision_visits": 1.0,
+      "movement_recall_visits": 0.5,
+      "movement_f1_visits": 0.6666666666666666,
+      "event_level_tp": 1,
+      "event_level_gt": 2,
+      "movement_recall_events": 0.5
+    },
+    "physical_removal_latency": {
+      "events": [
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "object_id": "cup_02",
+          "physical_disappearance_visit": 2,
+          "system_confirmed_visit": null,
+          "inclusive_visits_to_confirm": null,
+          "additional_visits_after_disappearance": null
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "object_id": "scissors_01",
+          "physical_disappearance_visit": 4,
+          "system_confirmed_visit": null,
+          "inclusive_visits_to_confirm": null,
+          "additional_visits_after_disappearance": null
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "object_id": "bottle_01",
+          "physical_disappearance_visit": 5,
+          "system_confirmed_visit": null,
+          "inclusive_visits_to_confirm": null,
+          "additional_visits_after_disappearance": null
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "object_id": "notebook_01",
+          "physical_disappearance_visit": 5,
+          "system_confirmed_visit": null,
+          "inclusive_visits_to_confirm": null,
+          "additional_visits_after_disappearance": null
+        }
+      ],
+      "mean_inclusive_visits_from_disappearance": null,
+      "mean_additional_visits_after_disappearance": null
+    },
+    "historical_retrieval_verification": {
+      "events": [
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "visit_idx": 4,
+          "object_id": "cup_01",
+          "expected_sys_id": "ent_visit_01_2",
+          "matched_sys_id": "ent_visit_01_2",
+          "reassociated": true,
+          "predicted_state": "CONFIRMED_PRESENT",
+          "gt_state": "CONFIRMED_PRESENT"
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "visit_idx": 5,
+          "object_id": "cup_01",
+          "expected_sys_id": "ent_visit_01_2",
+          "matched_sys_id": "ent_visit_01_2",
+          "reassociated": true,
+          "predicted_state": "CONFIRMED_PRESENT",
+          "gt_state": "CONFIRMED_PRESENT"
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "visit_idx": 6,
+          "object_id": "cup_01",
+          "expected_sys_id": "ent_visit_01_2",
+          "matched_sys_id": "ent_visit_01_2",
+          "reassociated": true,
+          "predicted_state": "CONFIRMED_PRESENT",
+          "gt_state": "CONFIRMED_PRESENT"
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "visit_idx": 7,
+          "object_id": "cup_01",
+          "expected_sys_id": "ent_visit_01_2",
+          "matched_sys_id": "ent_visit_01_2",
+          "reassociated": true,
+          "predicted_state": "CONFIRMED_PRESENT",
+          "gt_state": "CONFIRMED_PRESENT"
+        },
+        {
+          "sequence_id": "desk_pilot_seq_01",
+          "visit_idx": 7,
+          "object_id": "bottle_01",
+          "expected_sys_id": "ent_visit_01_1",
+          "matched_sys_id": "ent_visit_01_1",
+          "reassociated": true,
+          "predicted_state": "CONFIRMED_PRESENT",
+          "gt_state": "CONFIRMED_PRESENT"
+        }
+      ],
+      "hra_numerator": 5,
+      "hra_denominator": 5,
+      "hra_accuracy": 1.0
+    }
+  }
+}

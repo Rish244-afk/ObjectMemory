@@ -90,18 +90,28 @@ class TestDetectorRegistry(unittest.TestCase):
 
     def test_builtin_detectors_registered(self) -> None:
         names = DetectorRegistry.list_names()
+        self.assertIn("yolov8m", names)
         self.assertIn("yolov8n", names)
         self.assertIn("yolov8", names)
         self.assertIn("mock", names)
-        self.assertEqual(DetectorRegistry.get_default_name(), "yolov8n")
+        self.assertEqual(DetectorRegistry.get_default_name(), "yolov8m")
 
-    def test_get_default_returns_yolov8n_instance(self) -> None:
+    def test_get_default_returns_yolov8m_instance(self) -> None:
         detector = DetectorRegistry.get()
         self.assertIsInstance(detector, OpenCVDNNDetector)
+        self.assertIn("yolov8m.onnx", str(detector.weights_path))
 
     def test_get_by_name(self) -> None:
         mock_det = DetectorRegistry.get("mock")
         self.assertIsInstance(mock_det, MockObjectDetector)
+
+        yolov8n_det = DetectorRegistry.get("yolov8n")
+        self.assertIsInstance(yolov8n_det, OpenCVDNNDetector)
+        self.assertIn("yolov8n.onnx", str(yolov8n_det.weights_path))
+
+        yolov8m_det = DetectorRegistry.get("yolov8m")
+        self.assertIsInstance(yolov8m_det, OpenCVDNNDetector)
+        self.assertIn("yolov8m.onnx", str(yolov8m_det.weights_path))
 
     def test_get_unregistered_raises_keyerror(self) -> None:
         with self.assertRaises(KeyError) as ctx:
@@ -138,10 +148,14 @@ class TestDetectorRegistry(unittest.TestCase):
         self.assertTrue(by_name["mock"]["is_synthetic"])
         self.assertFalse(by_name["mock"]["is_open_vocabulary"])
 
-        # yolov8n status matches whether models/yolov8n.onnx is on disk
-        weights_exist = Path("models/yolov8n.onnx").exists()
-        self.assertEqual(by_name["yolov8n"]["is_available"], weights_exist)
-        self.assertTrue(by_name["yolov8n"]["is_default"])
+        # yolov8m is default, yolov8n is registered but not default
+        weights_m_exist = Path("models/yolov8m.onnx").exists()
+        self.assertEqual(by_name["yolov8m"]["is_available"], weights_m_exist)
+        self.assertTrue(by_name["yolov8m"]["is_default"])
+
+        weights_n_exist = Path("models/yolov8n.onnx").exists()
+        self.assertEqual(by_name["yolov8n"]["is_available"], weights_n_exist)
+        self.assertFalse(by_name["yolov8n"]["is_default"])
 
 
 class TestDetectorOutputNormalizationAndSafeguards(unittest.TestCase):

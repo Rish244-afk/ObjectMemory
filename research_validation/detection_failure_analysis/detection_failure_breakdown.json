@@ -1,0 +1,3724 @@
+{
+  "yolov8n": {
+    "summary": {
+      "potted plant": {
+        "gt_visible": 30,
+        "tp_prod": 9,
+        "filtered_by_conf": 21,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.257,
+        "prod_conf_max": 0.5123,
+        "low_conf_max": 0.5123
+      },
+      "book": {
+        "gt_visible": 28,
+        "tp_prod": 0,
+        "filtered_by_conf": 20,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 8,
+        "mismatch_labels": {},
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.1946
+      },
+      "bottle": {
+        "gt_visible": 26,
+        "tp_prod": 0,
+        "filtered_by_conf": 7,
+        "class_mismatch_iou50": 1,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 18,
+        "mismatch_labels": {
+          "scissors": 1
+        },
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.1901
+      },
+      "scissors": {
+        "gt_visible": 30,
+        "tp_prod": 30,
+        "filtered_by_conf": 0,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.7654,
+        "prod_conf_max": 0.9805,
+        "low_conf_max": 0.9805
+      },
+      "cell phone": {
+        "gt_visible": 30,
+        "tp_prod": 1,
+        "filtered_by_conf": 26,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 3,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.2689,
+        "prod_conf_max": 0.2689,
+        "low_conf_max": 0.2689
+      },
+      "cup": {
+        "gt_visible": 30,
+        "tp_prod": 5,
+        "filtered_by_conf": 16,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 1,
+        "genuinely_missed": 8,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.2629,
+        "prod_conf_max": 0.4122,
+        "low_conf_max": 0.4122
+      },
+      "banana": {
+        "gt_visible": 3,
+        "tp_prod": 3,
+        "filtered_by_conf": 0,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.8422,
+        "prod_conf_max": 0.8551,
+        "low_conf_max": 0.8551
+      }
+    },
+    "records": [
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.169,
+        "best_low_iou": 0.8287,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0213,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.953,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0717,
+        "best_low_iou": 0.9288,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.953,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1502,
+        "best_low_iou": 0.8216,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.012,
+        "best_low_iou": 0.8716,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9381,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "cell phone",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9381,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0976,
+        "best_low_iou": 0.8287,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0147,
+        "best_low_iou": 0.862,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9405,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0362,
+        "best_low_iou": 0.912,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9405,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0891,
+        "best_low_iou": 0.8064,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0136,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9592,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "cell phone",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9592,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1365,
+        "best_low_iou": 0.8195,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0143,
+        "best_low_iou": 0.8757,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9538,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0103,
+        "best_low_iou": 0.9202,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1844,
+        "best_low_iou": 0.7762,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.043,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.7654,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "cell phone",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.7654,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1328,
+        "best_low_iou": 0.8136,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0574,
+        "best_low_iou": 0.8808,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9641,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0831,
+        "best_low_iou": 0.8298,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9641,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2635,
+        "best_low_iou": 0.8894,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.2635,
+        "best_any_iou": 0.8894
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0473,
+        "best_low_iou": 0.8659,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9774,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0359,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9774,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9774,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9774,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1815,
+        "best_low_iou": 0.8343,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9774,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0532,
+        "best_low_iou": 0.5502,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9774,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2185,
+        "best_low_iou": 0.8588,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0739,
+        "best_low_iou": 0.8752,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0399,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9724,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1419,
+        "best_low_iou": 0.8324,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9724,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2085,
+        "best_low_iou": 0.8675,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0301,
+        "best_low_iou": 0.8733,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0375,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9759,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1475,
+        "best_low_iou": 0.8226,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0462,
+        "best_low_iou": 0.5789,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9759,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.257,
+        "best_low_iou": 0.9322,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.257,
+        "best_any_iou": 0.9322
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0194,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9432,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1405,
+        "best_low_iou": 0.9389,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0587,
+        "best_low_iou": 0.7519,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1149,
+        "best_low_iou": 0.9086,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9476,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9476,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9476,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9476,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0204,
+        "best_low_iou": 0.8383,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9476,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0453,
+        "best_low_iou": 0.8327,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9476,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0962,
+        "best_low_iou": 0.8341,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9601,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0133,
+        "best_low_iou": 0.9163,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9601,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9601,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9601,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0885,
+        "best_low_iou": 0.9172,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9601,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1015,
+        "best_low_iou": 0.7861,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9601,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1042,
+        "best_low_iou": 0.8722,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9593,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0474,
+        "best_low_iou": 0.9304,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9593,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9593,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9593,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0391,
+        "best_low_iou": 0.9015,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9593,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0784,
+        "best_low_iou": 0.816,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9593,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1718,
+        "best_low_iou": 0.8554,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9566,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0374,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9566,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9566,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9566,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0264,
+        "best_low_iou": 0.9039,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9566,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1243,
+        "best_low_iou": 0.8537,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9566,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3025,
+        "best_low_iou": 1.0,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.3025,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0203,
+        "best_low_iou": 0.8864,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0673,
+        "best_low_iou": 0.8357,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9805,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1535,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2005,
+        "best_low_iou": 0.8933,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.257,
+        "best_low_iou": 0.9322,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.257,
+        "best_any_iou": 0.9322
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0194,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9432,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1405,
+        "best_low_iou": 0.9389,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0587,
+        "best_low_iou": 0.7519,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.037,
+        "best_low_iou": 0.8702,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9564,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1564,
+        "best_low_iou": 0.9558,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9564,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1264,
+        "best_low_iou": 0.8979,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9564,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9564,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9564,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1237,
+        "best_low_iou": 0.9625,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9564,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "cup",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3052,
+        "best_low_iou": 0.8749,
+        "best_any_label": "cup",
+        "best_any_conf": 0.3052,
+        "best_any_iou": 0.8749
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "banana",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.8504,
+        "best_low_iou": 0.9276,
+        "best_any_label": "banana",
+        "best_any_conf": 0.8504,
+        "best_any_iou": 0.9276
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0948,
+        "best_low_iou": 0.9342,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9615,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1848,
+        "best_low_iou": 0.9348,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9615,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9615,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9615,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9615,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0599,
+        "best_low_iou": 0.934,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9615,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "cup",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4122,
+        "best_low_iou": 0.8853,
+        "best_any_label": "cup",
+        "best_any_conf": 0.4122,
+        "best_any_iou": 0.8853
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "banana",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.8551,
+        "best_low_iou": 0.9851,
+        "best_any_label": "banana",
+        "best_any_conf": 0.8551,
+        "best_any_iou": 0.9851
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0606,
+        "best_low_iou": 0.9227,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1946,
+        "best_low_iou": 0.9506,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9559,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0681,
+        "best_low_iou": 0.9311,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2332,
+        "best_low_iou": 0.9013,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9559,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "banana",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.8422,
+        "best_low_iou": 0.939,
+        "best_any_label": "banana",
+        "best_any_conf": 0.8422,
+        "best_any_iou": 0.939
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3025,
+        "best_low_iou": 1.0,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.3025,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0203,
+        "best_low_iou": 0.8864,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0673,
+        "best_low_iou": 0.8357,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9805,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1535,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2005,
+        "best_low_iou": 0.8933,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2703,
+        "best_low_iou": 0.8829,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.2703,
+        "best_any_iou": 0.8829
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1901,
+        "best_low_iou": 0.832,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9591,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9591,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9591,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2689,
+        "best_low_iou": 0.9529,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2689,
+        "best_any_iou": 0.9529
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "cup",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2629,
+        "best_low_iou": 0.7686,
+        "best_any_label": "cup",
+        "best_any_conf": 0.2629,
+        "best_any_iou": 0.7686
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1637,
+        "best_low_iou": 0.8995,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9418,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1083,
+        "best_low_iou": 0.8273,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9418,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9418,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9418,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1724,
+        "best_low_iou": 0.9411,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9418,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "cup",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.0382,
+        "best_low_iou": 0.6477,
+        "best_any_label": "cup",
+        "best_any_conf": 0.392,
+        "best_any_iou": 0.5079
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.257,
+        "best_low_iou": 0.9322,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.257,
+        "best_any_iou": 0.9322
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0194,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9432,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1405,
+        "best_low_iou": 0.9389,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0587,
+        "best_low_iou": 0.7519,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9432,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3025,
+        "best_low_iou": 1.0,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.3025,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0203,
+        "best_low_iou": 0.8864,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0673,
+        "best_low_iou": 0.8357,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9805,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1535,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2005,
+        "best_low_iou": 0.8933,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9805,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2453,
+        "best_low_iou": 0.8497,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0606,
+        "best_low_iou": 0.8564,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0857,
+        "best_low_iou": 0.772,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9706,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2384,
+        "best_low_iou": 0.9551,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "cup",
+        "outcome": "LOW_IOU_SAME_CLASS",
+        "best_low_conf": 0.0861,
+        "best_low_iou": 0.4463,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9706,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.5123,
+        "best_low_iou": 0.8694,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.5123,
+        "best_any_iou": 0.8694
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.06,
+        "best_low_iou": 0.811,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9541,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "bottle",
+        "outcome": "CLASS_MISMATCH",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.9687
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9541,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9541,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.015,
+        "best_low_iou": 0.9783,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9541,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "cup",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2638,
+        "best_low_iou": 0.7669,
+        "best_any_label": "cup",
+        "best_any_conf": 0.2638,
+        "best_any_iou": 0.7669
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1847,
+        "best_low_iou": 0.8829,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.062,
+        "best_low_iou": 0.8275,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 0.0715
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9487,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0103,
+        "best_low_iou": 0.9568,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0203,
+        "best_low_iou": 0.619,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9487,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2202,
+        "best_low_iou": 0.9013,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0323,
+        "best_low_iou": 0.8004,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9447,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0375,
+        "best_low_iou": 0.9666,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1577,
+        "best_low_iou": 0.8047,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9447,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.2266,
+        "best_low_iou": 0.866,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0549,
+        "best_low_iou": 0.7789,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "bottle",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "scissors",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.9756,
+        "best_low_iou": 1.0,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.049,
+        "best_low_iou": 0.9608,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0967,
+        "best_low_iou": 0.8089,
+        "best_any_label": "scissors",
+        "best_any_conf": 0.9756,
+        "best_any_iou": 0.0
+      }
+    ]
+  },
+  "yolo_world": {
+    "summary": {
+      "potted plant": {
+        "gt_visible": 30,
+        "tp_prod": 3,
+        "filtered_by_conf": 27,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.1555,
+        "prod_conf_max": 0.22,
+        "low_conf_max": 0.22
+      },
+      "book": {
+        "gt_visible": 28,
+        "tp_prod": 0,
+        "filtered_by_conf": 24,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 4,
+        "mismatch_labels": {},
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.0739
+      },
+      "bottle": {
+        "gt_visible": 26,
+        "tp_prod": 22,
+        "filtered_by_conf": 4,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.1664,
+        "prod_conf_max": 0.4718,
+        "low_conf_max": 0.4718
+      },
+      "scissors": {
+        "gt_visible": 30,
+        "tp_prod": 0,
+        "filtered_by_conf": 29,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 1,
+        "mismatch_labels": {},
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.0401
+      },
+      "cell phone": {
+        "gt_visible": 30,
+        "tp_prod": 29,
+        "filtered_by_conf": 1,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": 0.1869,
+        "prod_conf_max": 0.4344,
+        "low_conf_max": 0.4344
+      },
+      "cup": {
+        "gt_visible": 30,
+        "tp_prod": 0,
+        "filtered_by_conf": 16,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 1,
+        "genuinely_missed": 13,
+        "mismatch_labels": {},
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.0477
+      },
+      "banana": {
+        "gt_visible": 3,
+        "tp_prod": 0,
+        "filtered_by_conf": 3,
+        "class_mismatch_iou50": 0,
+        "low_iou_same_class": 0,
+        "genuinely_missed": 0,
+        "mismatch_labels": {},
+        "prod_conf_min": null,
+        "prod_conf_max": null,
+        "low_conf_max": 0.1378
+      }
+    },
+    "records": [
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1015,
+        "best_low_iou": 0.8029,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2204,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0139,
+        "best_low_iou": 0.8963,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2204,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.168,
+        "best_low_iou": 0.782,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.168,
+        "best_any_iou": 0.782
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0151,
+        "best_low_iou": 0.9665,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2204,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2204,
+        "best_low_iou": 0.9396,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2204,
+        "best_any_iou": 0.9396
+      },
+      {
+        "obs_id": "stationary_V01",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2204,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1167,
+        "best_low_iou": 0.7993,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.1779,
+        "best_low_iou": 0.7239,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.7239
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0173,
+        "best_low_iou": 0.9672,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "cell phone",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0853,
+        "best_low_iou": 0.9043,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1779,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.086,
+        "best_low_iou": 0.7991,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2493,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2493,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2269,
+        "best_low_iou": 0.7303,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2269,
+        "best_any_iou": 0.7303
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0113,
+        "best_low_iou": 0.9706,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2493,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2493,
+        "best_low_iou": 0.9059,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2493,
+        "best_any_iou": 0.9059
+      },
+      {
+        "obs_id": "stationary_V03",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2493,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1255,
+        "best_low_iou": 0.8052,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2098,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2098,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2098,
+        "best_low_iou": 0.7327,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2098,
+        "best_any_iou": 0.7327
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0194,
+        "best_low_iou": 0.974,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2098,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.1869,
+        "best_low_iou": 0.8878,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.1869,
+        "best_any_iou": 0.8878
+      },
+      {
+        "obs_id": "stationary_V04",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2098,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0911,
+        "best_low_iou": 0.803,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2025,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0135,
+        "best_low_iou": 0.8752,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2025,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.1664,
+        "best_low_iou": 0.7642,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.1664,
+        "best_any_iou": 0.7642
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0228,
+        "best_low_iou": 0.9664,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2025,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2025,
+        "best_low_iou": 0.9171,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2025,
+        "best_any_iou": 0.9171
+      },
+      {
+        "obs_id": "stationary_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0139,
+        "best_low_iou": 0.5037,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2025,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0854,
+        "best_low_iou": 0.7743,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2665,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0128,
+        "best_low_iou": 0.8796,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2665,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2009,
+        "best_low_iou": 0.5157,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2009,
+        "best_any_iou": 0.5157
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0401,
+        "best_low_iou": 0.9704,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2665,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2665,
+        "best_low_iou": 0.9228,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2665,
+        "best_any_iou": 0.9228
+      },
+      {
+        "obs_id": "movement_V01",
+        "gt_class": "cup",
+        "outcome": "LOW_IOU_SAME_CLASS",
+        "best_low_conf": 0.0199,
+        "best_low_iou": 0.4968,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2665,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1088,
+        "best_low_iou": 0.7974,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0114,
+        "best_low_iou": 0.8717,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0794,
+        "best_low_iou": 0.7895,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0174,
+        "best_low_iou": 0.9804,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3231,
+        "best_low_iou": 0.8412,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.8412
+      },
+      {
+        "obs_id": "movement_V02",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0201,
+        "best_low_iou": 0.603,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3231,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0856,
+        "best_low_iou": 0.8212,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0208,
+        "best_low_iou": 0.8597,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.117,
+        "best_low_iou": 0.7916,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0109,
+        "best_low_iou": 0.9726,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.407,
+        "best_low_iou": 0.8458,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.8458
+      },
+      {
+        "obs_id": "movement_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0213,
+        "best_low_iou": 0.5949,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.407,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0855,
+        "best_low_iou": 0.8221,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0136,
+        "best_low_iou": 0.8713,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.094,
+        "best_low_iou": 0.8061,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.018,
+        "best_low_iou": 0.9688,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4344,
+        "best_low_iou": 0.8511,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.8511
+      },
+      {
+        "obs_id": "movement_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0256,
+        "best_low_iou": 0.5985,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4344,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0938,
+        "best_low_iou": 0.811,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "book",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "bottle",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0548,
+        "best_low_iou": 0.7983,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.011,
+        "best_low_iou": 0.9768,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4171,
+        "best_low_iou": 0.8359,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.8359
+      },
+      {
+        "obs_id": "movement_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0223,
+        "best_low_iou": 0.6158,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.4171,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0733,
+        "best_low_iou": 0.8033,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0628,
+        "best_low_iou": 0.8982,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3738,
+        "best_low_iou": 0.7824,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.7824
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.013,
+        "best_low_iou": 0.9807,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2788,
+        "best_low_iou": 0.9437,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2788,
+        "best_any_iou": 0.9437
+      },
+      {
+        "obs_id": "removal_V01",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.1555,
+        "best_low_iou": 0.7779,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.1555,
+        "best_any_iou": 0.7779
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.017,
+        "best_low_iou": 0.9456,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2882,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0174,
+        "best_low_iou": 0.9624,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2882,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2882,
+        "best_low_iou": 0.8483,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2882,
+        "best_any_iou": 0.8483
+      },
+      {
+        "obs_id": "removal_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2882,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1493,
+        "best_low_iou": 0.8111,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2913,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0155,
+        "best_low_iou": 0.9257,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2913,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0113,
+        "best_low_iou": 0.9675,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2913,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2913,
+        "best_low_iou": 0.9092,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2913,
+        "best_any_iou": 0.9092
+      },
+      {
+        "obs_id": "removal_V03",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2913,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.187,
+        "best_low_iou": 0.8196,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.187,
+        "best_any_iou": 0.8196
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0171,
+        "best_low_iou": 0.9151,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2958,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0137,
+        "best_low_iou": 0.9637,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2958,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2958,
+        "best_low_iou": 0.8933,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2958,
+        "best_any_iou": 0.8933
+      },
+      {
+        "obs_id": "removal_V04",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2958,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "potted plant",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.22,
+        "best_low_iou": 0.8175,
+        "best_any_label": "potted plant",
+        "best_any_conf": 0.22,
+        "best_any_iou": 0.8175
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0141,
+        "best_low_iou": 0.9231,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2781,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0137,
+        "best_low_iou": 0.9894,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2781,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2781,
+        "best_low_iou": 0.8938,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2781,
+        "best_any_iou": 0.8938
+      },
+      {
+        "obs_id": "removal_V05",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2781,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1385,
+        "best_low_iou": 0.8583,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0365,
+        "best_low_iou": 0.9086,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4538,
+        "best_low_iou": 0.8382,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.8382
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0158,
+        "best_low_iou": 0.9771,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3529,
+        "best_low_iou": 0.9794,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3529,
+        "best_any_iou": 0.9794
+      },
+      {
+        "obs_id": "addition_V01",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0396,
+        "best_low_iou": 0.8652,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0733,
+        "best_low_iou": 0.8033,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0628,
+        "best_low_iou": 0.8982,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3738,
+        "best_low_iou": 0.7824,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.7824
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.013,
+        "best_low_iou": 0.9807,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2788,
+        "best_low_iou": 0.9437,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2788,
+        "best_any_iou": 0.9437
+      },
+      {
+        "obs_id": "addition_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1483,
+        "best_low_iou": 0.8323,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0717,
+        "best_low_iou": 0.9188,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3066,
+        "best_low_iou": 0.8949,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3066,
+        "best_any_iou": 0.8949
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0199,
+        "best_low_iou": 0.9817,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3771,
+        "best_low_iou": 0.9423,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.9423
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0477,
+        "best_low_iou": 0.8706,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V03",
+        "gt_class": "banana",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1296,
+        "best_low_iou": 0.9202,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3771,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.113,
+        "best_low_iou": 0.8312,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0529,
+        "best_low_iou": 0.9307,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4718,
+        "best_low_iou": 0.8896,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.8896
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0189,
+        "best_low_iou": 0.9591,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3256,
+        "best_low_iou": 0.9346,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3256,
+        "best_any_iou": 0.9346
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0358,
+        "best_low_iou": 0.8694,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V04",
+        "gt_class": "banana",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1374,
+        "best_low_iou": 0.9811,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4718,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1141,
+        "best_low_iou": 0.8071,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0739,
+        "best_low_iou": 0.9391,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4063,
+        "best_low_iou": 0.8892,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.8892
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0173,
+        "best_low_iou": 0.9777,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3061,
+        "best_low_iou": 0.9074,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3061,
+        "best_any_iou": 0.9074
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0316,
+        "best_low_iou": 0.8256,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "addition_V05",
+        "gt_class": "banana",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1378,
+        "best_low_iou": 0.9491,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4063,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1385,
+        "best_low_iou": 0.8583,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0365,
+        "best_low_iou": 0.9086,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4538,
+        "best_low_iou": 0.8382,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.8382
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0158,
+        "best_low_iou": 0.9771,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3529,
+        "best_low_iou": 0.9794,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3529,
+        "best_any_iou": 0.9794
+      },
+      {
+        "obs_id": "occlusion_V01",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0396,
+        "best_low_iou": 0.8652,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1145,
+        "best_low_iou": 0.8267,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3836,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3836,
+        "best_low_iou": 0.826,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3836,
+        "best_any_iou": 0.826
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0143,
+        "best_low_iou": 0.9887,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3836,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2891,
+        "best_low_iou": 0.967,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2891,
+        "best_any_iou": 0.967
+      },
+      {
+        "obs_id": "occlusion_V02",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0476,
+        "best_low_iou": 0.8156,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3836,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.09,
+        "best_low_iou": 0.7861,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4144,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4144,
+        "best_low_iou": 0.8431,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4144,
+        "best_any_iou": 0.8431
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0177,
+        "best_low_iou": 0.9698,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4144,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3905,
+        "best_low_iou": 0.9492,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3905,
+        "best_any_iou": 0.9492
+      },
+      {
+        "obs_id": "occlusion_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0456,
+        "best_low_iou": 0.8046,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4144,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0733,
+        "best_low_iou": 0.8033,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0628,
+        "best_low_iou": 0.8982,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3738,
+        "best_low_iou": 0.7824,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.7824
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.013,
+        "best_low_iou": 0.9807,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2788,
+        "best_low_iou": 0.9437,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2788,
+        "best_any_iou": 0.9437
+      },
+      {
+        "obs_id": "occlusion_V04",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3738,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1385,
+        "best_low_iou": 0.8583,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0365,
+        "best_low_iou": 0.9086,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.4538,
+        "best_low_iou": 0.8382,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.8382
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0158,
+        "best_low_iou": 0.9771,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3529,
+        "best_low_iou": 0.9794,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3529,
+        "best_any_iou": 0.9794
+      },
+      {
+        "obs_id": "occlusion_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0396,
+        "best_low_iou": 0.8652,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.4538,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1154,
+        "best_low_iou": 0.8123,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2858,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.034,
+        "best_low_iou": 0.8608,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2858,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2725,
+        "best_low_iou": 0.7721,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2725,
+        "best_any_iou": 0.7721
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0126,
+        "best_low_iou": 0.9661,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2858,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2858,
+        "best_low_iou": 0.9667,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2858,
+        "best_any_iou": 0.9667
+      },
+      {
+        "obs_id": "return_to_baseline_V01",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2858,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1242,
+        "best_low_iou": 0.8308,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2998,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0324,
+        "best_low_iou": 0.8019,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2998,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.221,
+        "best_low_iou": 1.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.221,
+        "best_any_iou": 1.0
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "scissors",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.221,
+        "best_any_iou": 0.0801
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2998,
+        "best_low_iou": 0.9586,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2998,
+        "best_any_iou": 0.9586
+      },
+      {
+        "obs_id": "return_to_baseline_V02",
+        "gt_class": "cup",
+        "outcome": "GENUINELY_MISSED",
+        "best_low_conf": 0.0,
+        "best_low_iou": 0.0,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2998,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.104,
+        "best_low_iou": 0.7967,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2701,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0408,
+        "best_low_iou": 0.8174,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2701,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2701,
+        "best_low_iou": 0.8992,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2701,
+        "best_any_iou": 0.8992
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0138,
+        "best_low_iou": 0.9556,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2701,
+        "best_any_iou": 0.0694
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.2145,
+        "best_low_iou": 0.9211,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.2145,
+        "best_any_iou": 0.9211
+      },
+      {
+        "obs_id": "return_to_baseline_V03",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0325,
+        "best_low_iou": 0.7417,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.2701,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.1186,
+        "best_low_iou": 0.8059,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.403,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0326,
+        "best_low_iou": 0.7987,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.403,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.403,
+        "best_low_iou": 0.7679,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.403,
+        "best_any_iou": 0.7679
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.02,
+        "best_low_iou": 0.9599,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.403,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3326,
+        "best_low_iou": 0.9586,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3326,
+        "best_any_iou": 0.9586
+      },
+      {
+        "obs_id": "return_to_baseline_V04",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0232,
+        "best_low_iou": 0.8288,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.403,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "potted plant",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0565,
+        "best_low_iou": 0.8507,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3894,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "book",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0328,
+        "best_low_iou": 0.7875,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3894,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "bottle",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3894,
+        "best_low_iou": 0.7364,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3894,
+        "best_any_iou": 0.7364
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "scissors",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0226,
+        "best_low_iou": 0.973,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3894,
+        "best_any_iou": 0.0
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "cell phone",
+        "outcome": "TP_PROD",
+        "best_low_conf": 0.3251,
+        "best_low_iou": 0.955,
+        "best_any_label": "cell phone",
+        "best_any_conf": 0.3251,
+        "best_any_iou": 0.955
+      },
+      {
+        "obs_id": "return_to_baseline_V05",
+        "gt_class": "cup",
+        "outcome": "FILTERED_BY_CONF",
+        "best_low_conf": 0.0208,
+        "best_low_iou": 0.7703,
+        "best_any_label": "bottle",
+        "best_any_conf": 0.3894,
+        "best_any_iou": 0.0
+      }
+    ]
+  }
+}

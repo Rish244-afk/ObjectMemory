@@ -113,7 +113,7 @@ export const DiagnosticsView: React.FC<DiagnosticsViewProps> = ({ workspace }) =
 
                 <div className="bg-neutral-950 p-3 rounded-lg border border-neutral-800">
                   <span className="text-neutral-500 block text-[10px] mb-1">Weights Path</span>
-                  <span className="text-neutral-300 break-all">{detector.weights_path || 'models/yolov8n.onnx'}</span>
+                  <span className="text-neutral-300 break-all">{detector.weights_path || 'models/yolov8m.onnx'}</span>
                 </div>
 
                 {detector.limitations && Array.isArray(detector.limitations) && (

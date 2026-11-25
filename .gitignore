@@ -83,9 +83,16 @@ data/workspaces/
 research_validation/data/raw/
 research_validation/logs/
 
-# Heavy Non-Core Experimental Model Weights (> 40MB)
+# Heavy Non-Core & Large Model Weights (> 40MB, see models/README.md for reproducible export)
 models/clip_text_quantized.onnx
 models/yolov8s-worldv2.onnx
+models/yolov8m.onnx
+research_validation/larger_detector_experiment/models/
+*.pt
+
+# Third-Party Large Datasets (ETH ASL Lounge ~19.6GB & generated contact sheets)
+data/eth_asl_lounge/
+eth_asl_contact_sheets/
 
 # Temporary Scripts, Runtime Dumps & Archives
 scratch/

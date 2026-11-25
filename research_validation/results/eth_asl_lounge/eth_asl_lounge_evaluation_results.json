@@ -1,0 +1,841 @@
+{
+  "dataset": "ETH_ASL_Change_Detection_Lounge",
+  "smoke_test": {
+    "sequence_name": "smoke_test",
+    "frames_evaluated": 2,
+    "transitions_attempted": 1,
+    "transitions_succeeded": 1,
+    "registration_success_rate": 1.0,
+    "registration_status_counts": {
+      "SUCCESS": 2
+    },
+    "mean_inlier_ratio_when_success": 0.9329268292682926,
+    "mean_reproj_error_px_when_success": 0.30279411834635817,
+    "total_detections": 10,
+    "detected_class_counts": {
+      "couch": 9,
+      "chair": 1
+    },
+    "unavailable_metrics": [
+      "false_removal_rate",
+      "false_discovery_proportion",
+      "removal_recall",
+      "movement_precision",
+      "movement_recall",
+      "identity_consistency",
+      "overall_state_accuracy"
+    ],
+    "unavailable_reason": "ETH ASL Lounge provides 3D meshes and poses only; no 2D bounding boxes, persistent object IDs, or lifecycle labels.",
+    "per_visit": [
+      {
+        "observation_id": "smoke_00",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 986,
+        "inlier_ratio": 1.0,
+        "reproj_mean_px": 0.0,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "couch"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "smoke_01",
+        "image_path": "frame_00001.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 355,
+        "inlier_ratio": 0.8659,
+        "reproj_mean_px": 0.606,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "couch",
+          "couch"
+        ],
+        "active_entities_total": 6,
+        "entity_state_counts": {
+          "AMBIGUOUS_IDENTITY": 4,
+          "CONFIRMED_PRESENT": 2
+        },
+        "state_transitions_count": 4
+      }
+    ]
+  },
+  "intra_observation_01": {
+    "sequence_name": "intra_observation_01",
+    "frames_evaluated": 10,
+    "transitions_attempted": 9,
+    "transitions_succeeded": 0,
+    "registration_success_rate": 0.0,
+    "registration_status_counts": {
+      "SUCCESS": 1,
+      "INSUFFICIENT_MATCHES": 3,
+      "SINGULAR_HOMOGRAPHY": 4,
+      "HOMOGRAPHY_ESTIMATION_FAILED": 1,
+      "INSUFFICIENT_INLIERS": 1
+    },
+    "mean_inlier_ratio_when_success": 1.0,
+    "mean_reproj_error_px_when_success": 3.6422483426382114e-14,
+    "total_detections": 25,
+    "detected_class_counts": {
+      "couch": 7,
+      "chair": 8,
+      "umbrella": 1,
+      "sports ball": 1,
+      "toilet": 1,
+      "bed": 3,
+      "person": 2,
+      "clock": 1,
+      "potted plant": 1
+    },
+    "unavailable_metrics": [
+      "false_removal_rate",
+      "false_discovery_proportion",
+      "removal_recall",
+      "movement_precision",
+      "movement_recall",
+      "identity_consistency",
+      "overall_state_accuracy"
+    ],
+    "unavailable_reason": "ETH ASL Lounge provides 3D meshes and poses only; no 2D bounding boxes, persistent object IDs, or lifecycle labels.",
+    "per_visit": [
+      {
+        "observation_id": "obs01_f00000",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 986,
+        "inlier_ratio": 1.0,
+        "reproj_mean_px": 0.0,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "couch"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f00150",
+        "image_path": "frame_00150.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "umbrella"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f00300",
+        "image_path": "frame_00300.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 9,
+        "inlier_ratio": 0.6429,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "sports ball"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f00450",
+        "image_path": "frame_00450.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "couch"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f00600",
+        "image_path": "frame_00600.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 4,
+        "inlier_ratio": 0.3333,
+        "reproj_mean_px": null,
+        "detections_count": 2,
+        "detected_classes": [
+          "couch",
+          "toilet"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 1
+      },
+      {
+        "observation_id": "obs01_f00750",
+        "image_path": "frame_00750.png",
+        "reg_success": false,
+        "reg_status": "HOMOGRAPHY_ESTIMATION_FAILED",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "bed"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f00900",
+        "image_path": "frame_00900.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "bed"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f01050",
+        "image_path": "frame_01050.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 10,
+        "inlier_ratio": 0.3571,
+        "reproj_mean_px": null,
+        "detections_count": 13,
+        "detected_classes": [
+          "chair",
+          "chair",
+          "person",
+          "clock",
+          "chair",
+          "bed",
+          "chair",
+          "chair",
+          "potted plant",
+          "couch",
+          "person",
+          "chair",
+          "chair"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f01200",
+        "image_path": "frame_01200.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 7,
+        "inlier_ratio": 0.3182,
+        "reproj_mean_px": null,
+        "detections_count": 0,
+        "detected_classes": [],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "obs01_f01350",
+        "image_path": "frame_01350.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 29,
+        "inlier_ratio": 0.3816,
+        "reproj_mean_px": null,
+        "detections_count": 0,
+        "detected_classes": [],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 4,
+          "AMBIGUOUS_IDENTITY": 1
+        },
+        "state_transitions_count": 0
+      }
+    ]
+  },
+  "cross_observation_first_frames": {
+    "sequence_name": "cross_obs_first_frames",
+    "frames_evaluated": 10,
+    "transitions_attempted": 9,
+    "transitions_succeeded": 2,
+    "registration_success_rate": 0.2222222222222222,
+    "registration_status_counts": {
+      "SUCCESS": 3,
+      "INSUFFICIENT_INLIERS": 5,
+      "SINGULAR_HOMOGRAPHY": 2
+    },
+    "mean_inlier_ratio_when_success": 0.5174699961285327,
+    "mean_reproj_error_px_when_success": 0.9740323460946071,
+    "total_detections": 63,
+    "detected_class_counts": {
+      "couch": 13,
+      "chair": 32,
+      "book": 9,
+      "suitcase": 1,
+      "potted plant": 3,
+      "dining table": 1,
+      "laptop": 1,
+      "vase": 1,
+      "cup": 1,
+      "refrigerator": 1
+    },
+    "unavailable_metrics": [
+      "false_removal_rate",
+      "false_discovery_proportion",
+      "removal_recall",
+      "movement_precision",
+      "movement_recall",
+      "identity_consistency",
+      "overall_state_accuracy"
+    ],
+    "unavailable_reason": "ETH ASL Lounge provides 3D meshes and poses only; no 2D bounding boxes, persistent object IDs, or lifecycle labels.",
+    "per_visit": [
+      {
+        "observation_id": "observation_01",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 986,
+        "inlier_ratio": 1.0,
+        "reproj_mean_px": 0.0,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "couch"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_02",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 35,
+        "inlier_ratio": 0.2846,
+        "reproj_mean_px": 1.305,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "book",
+          "chair"
+        ],
+        "active_entities_total": 6,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 2,
+          "AMBIGUOUS_IDENTITY": 3,
+          "CONFIRMED_MOVED": 1
+        },
+        "state_transitions_count": 4
+      },
+      {
+        "observation_id": "observation_03",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 10,
+        "inlier_ratio": 0.3571,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "suitcase"
+        ],
+        "active_entities_total": 6,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 2,
+          "AMBIGUOUS_IDENTITY": 3,
+          "CONFIRMED_MOVED": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_04",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 9,
+        "inlier_ratio": 0.1731,
+        "reproj_mean_px": null,
+        "detections_count": 11,
+        "detected_classes": [
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "potted plant",
+          "chair",
+          "dining table",
+          "chair",
+          "laptop",
+          "vase",
+          "couch"
+        ],
+        "active_entities_total": 6,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 2,
+          "AMBIGUOUS_IDENTITY": 3,
+          "CONFIRMED_MOVED": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_05",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 7,
+        "inlier_ratio": 0.1207,
+        "reproj_mean_px": null,
+        "detections_count": 8,
+        "detected_classes": [
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "potted plant",
+          "chair"
+        ],
+        "active_entities_total": 6,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 2,
+          "AMBIGUOUS_IDENTITY": 3,
+          "CONFIRMED_MOVED": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_06",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 30,
+        "inlier_ratio": 0.2679,
+        "reproj_mean_px": 1.617,
+        "detections_count": 2,
+        "detected_classes": [
+          "couch",
+          "book"
+        ],
+        "active_entities_total": 8,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 3,
+          "AMBIGUOUS_IDENTITY": 3,
+          "CONFIRMED_MOVED": 1,
+          "PENDING_REMOVAL": 1
+        },
+        "state_transitions_count": 1
+      },
+      {
+        "observation_id": "observation_07",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 5,
+        "inlier_ratio": 0.1923,
+        "reproj_mean_px": null,
+        "detections_count": 8,
+        "detected_classes": [
+          "chair",
+          "book",
+          "book",
+          "book",
+          "book",
+          "book",
+          "book",
+          "book"
+        ],
+        "active_entities_total": 8,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 2,
+          "AMBIGUOUS_IDENTITY": 4,
+          "CONFIRMED_MOVED": 1,
+          "PENDING_REMOVAL": 1
+        },
+        "state_transitions_count": 1
+      },
+      {
+        "observation_id": "observation_08",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 8,
+        "inlier_ratio": 0.129,
+        "reproj_mean_px": null,
+        "detections_count": 11,
+        "detected_classes": [
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "chair",
+          "chair",
+          "chair"
+        ],
+        "active_entities_total": 8,
+        "entity_state_counts": {
+          "AMBIGUOUS_IDENTITY": 5,
+          "CONFIRMED_MOVED": 1,
+          "PENDING_REMOVAL": 1,
+          "CONFIRMED_PRESENT": 1
+        },
+        "state_transitions_count": 1
+      },
+      {
+        "observation_id": "observation_09",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 7,
+        "inlier_ratio": 0.1892,
+        "reproj_mean_px": null,
+        "detections_count": 9,
+        "detected_classes": [
+          "couch",
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "chair",
+          "potted plant",
+          "chair"
+        ],
+        "active_entities_total": 8,
+        "entity_state_counts": {
+          "AMBIGUOUS_IDENTITY": 5,
+          "CONFIRMED_MOVED": 1,
+          "PENDING_REMOVAL": 1,
+          "CONFIRMED_PRESENT": 1
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_10",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 6,
+        "inlier_ratio": 0.3333,
+        "reproj_mean_px": null,
+        "detections_count": 3,
+        "detected_classes": [
+          "cup",
+          "refrigerator",
+          "chair"
+        ],
+        "active_entities_total": 8,
+        "entity_state_counts": {
+          "AMBIGUOUS_IDENTITY": 5,
+          "CONFIRMED_MOVED": 1,
+          "PENDING_REMOVAL": 1,
+          "CONFIRMED_PRESENT": 1
+        },
+        "state_transitions_count": 0
+      }
+    ]
+  },
+  "cross_observation_pose_matched": {
+    "sequence_name": "cross_obs_pose_matched",
+    "frames_evaluated": 10,
+    "transitions_attempted": 9,
+    "transitions_succeeded": 0,
+    "registration_success_rate": 0.0,
+    "registration_status_counts": {
+      "SUCCESS": 1,
+      "INSUFFICIENT_INLIERS": 4,
+      "SINGULAR_HOMOGRAPHY": 1,
+      "INSUFFICIENT_MATCHES": 4
+    },
+    "mean_inlier_ratio_when_success": 1.0,
+    "mean_reproj_error_px_when_success": 3.6422483426382114e-14,
+    "total_detections": 25,
+    "detected_class_counts": {
+      "couch": 9,
+      "chair": 11,
+      "suitcase": 1,
+      "refrigerator": 1,
+      "car": 1,
+      "umbrella": 1,
+      "cup": 1
+    },
+    "unavailable_metrics": [
+      "false_removal_rate",
+      "false_discovery_proportion",
+      "removal_recall",
+      "movement_precision",
+      "movement_recall",
+      "identity_consistency",
+      "overall_state_accuracy"
+    ],
+    "unavailable_reason": "ETH ASL Lounge provides 3D meshes and poses only; no 2D bounding boxes, persistent object IDs, or lifecycle labels.",
+    "per_visit": [
+      {
+        "observation_id": "observation_01",
+        "image_path": "frame_00000.png",
+        "reg_success": true,
+        "reg_status": "SUCCESS",
+        "num_inliers": 986,
+        "inlier_ratio": 1.0,
+        "reproj_mean_px": 0.0,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "couch"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_02",
+        "image_path": "frame_00108.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 4,
+        "inlier_ratio": 0.3333,
+        "reproj_mean_px": null,
+        "detections_count": 0,
+        "detected_classes": [],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_03",
+        "image_path": "frame_00000.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 10,
+        "inlier_ratio": 0.3571,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "suitcase"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_04",
+        "image_path": "frame_00099.png",
+        "reg_success": false,
+        "reg_status": "SINGULAR_HOMOGRAPHY",
+        "num_inliers": 5,
+        "inlier_ratio": 0.3333,
+        "reproj_mean_px": null,
+        "detections_count": 4,
+        "detected_classes": [
+          "chair",
+          "chair",
+          "couch",
+          "chair"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_05",
+        "image_path": "frame_01137.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "chair"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_06",
+        "image_path": "frame_00051.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 0,
+        "detected_classes": [],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_07",
+        "image_path": "frame_01807.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 2,
+        "detected_classes": [
+          "refrigerator",
+          "car"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_08",
+        "image_path": "frame_00068.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 5,
+        "inlier_ratio": 0.3846,
+        "reproj_mean_px": null,
+        "detections_count": 5,
+        "detected_classes": [
+          "couch",
+          "couch",
+          "couch",
+          "chair",
+          "chair"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_09",
+        "image_path": "frame_00065.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_INLIERS",
+        "num_inliers": 5,
+        "inlier_ratio": 0.3125,
+        "reproj_mean_px": null,
+        "detections_count": 1,
+        "detected_classes": [
+          "umbrella"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      },
+      {
+        "observation_id": "observation_10",
+        "image_path": "frame_00280.png",
+        "reg_success": false,
+        "reg_status": "INSUFFICIENT_MATCHES",
+        "num_inliers": 0,
+        "inlier_ratio": 0.0,
+        "reproj_mean_px": null,
+        "detections_count": 6,
+        "detected_classes": [
+          "chair",
+          "cup",
+          "chair",
+          "couch",
+          "chair",
+          "chair"
+        ],
+        "active_entities_total": 5,
+        "entity_state_counts": {
+          "CONFIRMED_PRESENT": 5
+        },
+        "state_transitions_count": 0
+      }
+    ]
+  }
+}

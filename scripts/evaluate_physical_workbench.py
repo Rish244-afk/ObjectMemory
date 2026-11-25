@@ -392,8 +392,19 @@ def evaluate_sequence_entity_level(
                                 explanation = f"Carried from visit {k}: {prev_updates[sys_id].explanation}"
                                 break
                     if observed is None:
-                        observed = EpistemicState.INSUFFICIENT_EVIDENCE
-                        explanation = "Historical state record missing for visit"
+                        ent = store.get_entity(sys_id)
+                        if ent is not None and v.visit_index == 1:
+                            observed = EpistemicState.CONFIRMED_PRESENT
+                            explanation = f"Initial baseline entity instantiated in memory store ({ent.entity_id})"
+                        elif ent is not None and (
+                            ent.metadata.get("created_in_session") == f"{seq.sequence_id}_{v.visit_id}"
+                            or ent.metadata.get("created_in_session") == v.visit_id
+                        ):
+                            observed = EpistemicState.CONFIRMED_PRESENT
+                            explanation = f"Entity newly instantiated in memory store for visit {v.visit_id} ({ent.entity_id})"
+                        else:
+                            observed = EpistemicState.INSUFFICIENT_EVIDENCE
+                            explanation = "Historical state record missing for visit"
 
             # Check match (including return to baseline)
             is_ret = ("return" in (ann.notes or "").lower() or ann.expected_event == "return_to_baseline")

@@ -35,7 +35,7 @@ class DetectorRegistry:
     _lock: threading.Lock = threading.Lock()
     _factories: Dict[str, Tuple[DetectorFactory, Dict[str, Any]]] = {}
     _instance_cache: Dict[str, ObjectDetector] = {}
-    _default_name: str = "yolov8n"
+    _default_name: str = "yolov8m"
 
     @classmethod
     def register(
@@ -68,7 +68,7 @@ class DetectorRegistry:
             if key in cls._factories:
                 del cls._factories[key]
                 if cls._default_name == key:
-                    cls._default_name = "yolov8n" if "yolov8n" in cls._factories else ""
+                    cls._default_name = "yolov8m" if "yolov8m" in cls._factories else ("yolov8n" if "yolov8n" in cls._factories else "")
 
     @classmethod
     def get(cls, name: Optional[str] = None, **kwargs: Any) -> ObjectDetector:
@@ -77,7 +77,7 @@ class DetectorRegistry:
         If name is None or 'default', instantiates the default registered detector.
         Caches default instances so weights are not re-read from disk on every invocation.
         """
-        target_name = (name or cls._default_name or "yolov8n").strip().lower()
+        target_name = (name or cls._default_name or "yolov8m").strip().lower()
         if target_name == "default":
             target_name = cls._default_name
 
@@ -113,6 +113,11 @@ class DetectorRegistry:
         """Returns the current default detector name."""
         with cls._lock:
             return cls._default_name
+
+    @classmethod
+    def get_default(cls, **kwargs: Any) -> ObjectDetector:
+        """Returns the default registered detector instance."""
+        return cls.get(name=None, **kwargs)
 
     @classmethod
     def list_names(cls) -> List[str]:
@@ -168,9 +173,35 @@ class DetectorRegistry:
         with cls._lock:
             cls._factories.clear()
             cls._instance_cache.clear()
-            cls._default_name = "yolov8n"
+            cls._default_name = "yolov8m"
 
-        # 1. Register YOLOv8n baseline
+        # 1. Register YOLOv8m production default
+        def yolov8m_factory(
+            weights_path: Optional[str | Path] = None,
+            framework: str = "onnx",
+            architecture: str = "yolov8",
+            **kwargs: Any,
+        ) -> ObjectDetector:
+            path = Path(weights_path) if weights_path else Path("models/yolov8m.onnx")
+            return OpenCVDNNDetector(
+                weights_path=str(path),
+                framework=framework,
+                architecture=architecture,
+                **kwargs,
+            )
+
+        cls.register(
+            "yolov8m",
+            yolov8m_factory,
+            metadata={
+                "description": "Pretrained YOLOv8 Medium running via OpenCV DNN on CPU (80 COCO classes, high accuracy).",
+                "is_open_vocabulary": False,
+                "is_synthetic": False,
+            },
+            is_default=True,
+        )
+
+        # 2. Register YOLOv8n baseline
         def yolov8n_factory(
             weights_path: Optional[str | Path] = None,
             framework: str = "onnx",
@@ -189,19 +220,19 @@ class DetectorRegistry:
             "yolov8n",
             yolov8n_factory,
             metadata={
-                "description": "Pretrained YOLOv8 Nano running via OpenCV DNN on CPU (80 COCO classes).",
+                "description": "Pretrained YOLOv8 Nano running via OpenCV DNN on CPU (80 COCO classes, lightweight).",
                 "is_open_vocabulary": False,
                 "is_synthetic": False,
             },
-            is_default=True,
+            is_default=False,
         )
 
-        # 2. Alias yolov8 -> yolov8n
+        # 3. Alias yolov8 -> yolov8m
         cls.register(
             "yolov8",
-            yolov8n_factory,
+            yolov8m_factory,
             metadata={
-                "description": "Alias for yolov8n baseline detector.",
+                "description": "Alias for yolov8m production default detector.",
                 "is_open_vocabulary": False,
                 "is_synthetic": False,
             },

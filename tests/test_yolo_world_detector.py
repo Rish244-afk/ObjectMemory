@@ -26,14 +26,15 @@ class TestYOLOWorldDetector(unittest.TestCase):
     """Test suite for YOLO-World detector integration and capabilities."""
 
     def test_yolo_world_registration_and_defaults(self) -> None:
-        """Verifies that YOLO-World is registered without displacing YOLOv8n as the default."""
+        """Verifies that YOLO-World is registered without displacing the production default."""
         names = DetectorRegistry.list_names()
         self.assertIn("yolo-world", names)
         self.assertIn("yolov8-world", names)
+        self.assertIn("yolov8m", names)
         self.assertIn("yolov8n", names)
 
         default_name = DetectorRegistry.get_default_name()
-        self.assertEqual(default_name, "yolov8n", "YOLOv8n must remain the default detector.")
+        self.assertEqual(default_name, "yolov8m", "YOLOv8m must remain the default detector.")
 
         available = {item["name"]: item for item in DetectorRegistry.list_available()}
         self.assertTrue(available["yolo-world"]["is_open_vocabulary"])

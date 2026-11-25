@@ -85,7 +85,10 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ workspace }) => {
       movementThresholdPx: (sup.movement_threshold as number | undefined) ?? (sup.adaptive_movement_threshold as number | undefined),
       patchSimilarity: (sup.patch_similarity as number | undefined) ?? (sup.vacancy_similarity as number | undefined),
       vacancyThreshold: (sup.vacancy_threshold as number | undefined),
-      unobservedStreak: (sup.consecutive_vacant_visits as number | undefined) ?? (sup.unobserved_streak as number | undefined),
+      unobservedStreak:
+        sup.unobserved_streak != null && Number(sup.unobserved_streak) > 0
+          ? Number(sup.unobserved_streak)
+          : (sup.consecutive_vacant_visits as number | undefined) ?? (sup.unobserved_streak as number | undefined),
       registrationSuccess: sup.registration_success as boolean | undefined,
       inlierRatio: sup.inlier_ratio as number | undefined,
       reprojectionError: sup.mean_reprojection_error as number | undefined,
@@ -122,7 +125,7 @@ export const TimelineView: React.FC<TimelineViewProps> = ({ workspace }) => {
                   onChange={(e) => setSelectedEntityFilter(e.target.value)}
                   className="bg-transparent text-xs text-[#F8FAFC] font-mono focus:outline-hidden cursor-pointer"
                 >
-                  <option value="ALL" className="bg-[#11141D]">All Entities ({events.length})</option>
+                  <option value="ALL" className="bg-[#11141D]">All Entities ({uniqueEntities.length})</option>
                   {uniqueEntities.map((eid) => (
                     <option key={eid} value={eid} className="bg-[#11141D]">
                       {eid}

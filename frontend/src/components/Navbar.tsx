@@ -173,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Navigation Tabs (visible when a workspace is active) */}
           {currentWorkspace && (
-            <nav className="hidden md:flex items-center gap-1 bg-[#11141D] p-1 rounded-lg border border-[#232A3B]">
+            <nav className="hidden md:flex items-center gap-1 bg-[#11141D] p-1 rounded-lg border border-[#232A3B] overflow-x-auto max-w-full min-w-0">
               {navItems.map((item) => {
                 const isActive = activeTab === item.tab;
                 return (
@@ -181,7 +181,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     key={item.tab}
                     type="button"
                     onClick={() => onTabChange(item.tab)}
-                    className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition cursor-pointer ${
+                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-medium transition cursor-pointer shrink-0 whitespace-nowrap ${
                       isActive
                         ? 'bg-[#181D29] text-[#22D3EE] border border-[#06B6D4]/40 shadow-xs'
                         : 'text-[#94A3B8] hover:text-[#F8FAFC] hover:bg-[#181D29]/60'

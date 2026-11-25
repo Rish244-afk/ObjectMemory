@@ -1,0 +1,150 @@
+{
+  "manifest_version": "2.0",
+  "dataset_name": "physical_pilot_v2",
+  "provenance": "GENUINE_PHYSICAL",
+  "metadata": {
+    "status": "TEMPLATE_AWAITING_PHYSICAL_DATA",
+    "description": "10-visit single-resolution physical tabletop evaluation template covering stationary, lighting stress, camera misalignment, object movement, return-to-baseline, temporary occlusion, and 2-visit removal confirmation.",
+    "coordinate_convention": "PIXEL_XMIN_YMIN_XMAX_YMAX",
+    "note": "Replace placeholder [0.0, 0.0, 100.0, 100.0] bounding boxes with actual pixel coordinates after capturing visits/visit_01.png through visits/visit_10.png."
+  },
+  "sequences": [
+    {
+      "sequence_id": "physical_pilot_v2_seq_01",
+      "environment_id": "physical_workbench",
+      "dataset_name": "physical_pilot_v2",
+      "observations": [
+        {
+          "observation_id": "visit_01",
+          "timestamp": "2026-11-25T10:00:00Z",
+          "image_path": "visits/visit_01.png",
+          "metadata": {"purpose": "Baseline establishment"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:00:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:00:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:00:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:00:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:00:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_02",
+          "timestamp": "2026-11-25T10:01:00Z",
+          "image_path": "visits/visit_02.png",
+          "metadata": {"purpose": "Stationary control"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:01:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:01:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:01:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:01:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:01:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_03",
+          "timestamp": "2026-11-25T10:02:00Z",
+          "image_path": "visits/visit_03.png",
+          "metadata": {"purpose": "Lighting stress (~50% dim or oblique shadow)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:02:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:02:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:02:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:02:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:02:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_04",
+          "timestamp": "2026-11-25T10:03:00Z",
+          "image_path": "visits/visit_04.png",
+          "metadata": {"purpose": "Camera misalignment (~5 deg tilt / ~5 cm shift)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:03:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:03:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:03:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:03:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:03:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_05",
+          "timestamp": "2026-11-25T10:04:00Z",
+          "image_path": "visits/visit_05.png",
+          "metadata": {"purpose": "Object movement (cup_01 relocated >100px)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_MOVED", "timestamp": "2026-11-25T10:04:00Z", "event_id": "RELOCATED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:04:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:04:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:04:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:04:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_06",
+          "timestamp": "2026-11-25T10:05:00Z",
+          "image_path": "visits/visit_06.png",
+          "metadata": {"purpose": "Return to baseline (cup_01 returned to V01 position)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:05:00Z", "event_id": "return_to_baseline"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:05:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:05:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:05:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:05:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_07",
+          "timestamp": "2026-11-25T10:06:00Z",
+          "image_path": "visits/visit_07.png",
+          "metadata": {"purpose": "Temporary occlusion (scissors_01 covered)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:06:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:06:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "HEAVILY_OCCLUDED", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:06:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:06:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:06:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_08",
+          "timestamp": "2026-11-25T10:07:00Z",
+          "image_path": "visits/visit_08.png",
+          "metadata": {"purpose": "Occlusion recovery"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:07:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:07:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:07:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:07:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:07:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_09",
+          "timestamp": "2026-11-25T10:08:00Z",
+          "image_path": "visits/visit_09.png",
+          "metadata": {"purpose": "Removal onset (bottle_01 removed, streak 1)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:08:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": null, "visibility_status": "UNOBSERVED", "object_state": "PENDING_REMOVAL", "timestamp": "2026-11-25T10:08:00Z", "event_id": "ABSENT"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:08:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:08:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:08:00Z", "event_id": "UNCHANGED"}
+          ]
+        },
+        {
+          "observation_id": "visit_10",
+          "timestamp": "2026-11-25T10:09:00Z",
+          "image_path": "visits/visit_10.png",
+          "metadata": {"purpose": "Removal confirmation (bottle_01 absent, streak 2)"},
+          "objects": [
+            {"object_id": "cup_01", "class_name": "cup", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:09:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "bottle_01", "class_name": "bottle", "bounding_box": null, "visibility_status": "UNOBSERVED", "object_state": "CONFIRMED_REMOVED", "timestamp": "2026-11-25T10:09:00Z", "event_id": "ABSENT"},
+            {"object_id": "scissors_01", "class_name": "scissors", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:09:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "book_01", "class_name": "book", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:09:00Z", "event_id": "UNCHANGED"},
+            {"object_id": "plant_01", "class_name": "potted plant", "bounding_box": [0.0, 0.0, 100.0, 100.0], "visibility_status": "CLEARLY_VISIBLE", "object_state": "CONFIRMED_PRESENT", "timestamp": "2026-11-25T10:09:00Z", "event_id": "UNCHANGED"}
+          ]
+        }
+      ]
+    }
+  ]
+}

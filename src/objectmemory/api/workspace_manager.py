@@ -54,11 +54,11 @@ class WorkspaceManager:
         self,
         base_dir: Path,
         detector: Optional[ObjectDetector] = None,
-        weights_path: Path = Path("models/yolov8n.onnx"),
+        weights_path: Optional[Path] = None,
     ) -> None:
         self.base_dir = Path(base_dir).resolve()
         self.base_dir.mkdir(parents=True, exist_ok=True)
-        self.weights_path = Path(weights_path)
+        self.weights_path = Path(weights_path) if weights_path else Path("models/yolov8m.onnx")
         self._detector = detector
         self._detector_instances: Dict[str, ObjectDetector] = {}
         self._global_lock = threading.Lock()
@@ -74,10 +74,11 @@ class WorkspaceManager:
     def _get_detector(self, detector_name: Optional[str] = None) -> ObjectDetector:
         if self._detector is not None:
             return self._detector
-        key = (detector_name or "yolov8n").strip().lower()
+        default_name = DetectorRegistry.get_default_name() or "yolov8m"
+        key = (detector_name or default_name).strip().lower()
         with self._global_lock:
             if key not in self._detector_instances:
-                if key in ("yolov8n", "yolov8"):
+                if key in ("yolov8m", "yolov8") and self.weights_path.exists():
                     self._detector_instances[key] = DetectorRegistry.get(key, weights_path=str(self.weights_path))
                 else:
                     self._detector_instances[key] = DetectorRegistry.get(key)
@@ -767,7 +768,8 @@ class WorkspaceManager:
         if not summary:
             raise KeyError(f"Workspace '{slug}' not found.")
 
-        detector = self._get_detector()
+        active_runner = self._active_runners.get(slug)
+        detector = active_runner.detector if active_runner is not None else self._get_detector()
         model_info = detector.model_info()
 
         # Registration health from latest session observations
@@ -825,6 +827,17 @@ class WorkspaceManager:
             query_obs = {o.entity_id: o for o in store.list_observations_for_session(query_id) if o.entity_id}
             query_events = {e.entity_id: e for e in store.list_change_events_for_session(query_id)}
 
+            # Compute each entity's state as of query_id (instead of latest workspace state)
+            session_order = {s.session_id: i for i, s in enumerate(sessions)}
+            q_order = session_order.get(query_id, len(sessions) - 1)
+            state_at_query: Dict[str, str] = {}
+            cur_ev = store.conn.execute(
+                "SELECT entity_id, to_session_id, new_state FROM change_events ORDER BY timestamp ASC, event_id ASC;"
+            )
+            for row in cur_ev.fetchall():
+                if session_order.get(row["to_session_id"], -1) <= q_order:
+                    state_at_query[row["entity_id"]] = row["new_state"]
+
             all_entity_ids = sorted(list(set(ref_obs.keys()).union(query_obs.keys())))
             items = []
             for eid in all_entity_ids:
@@ -833,6 +846,7 @@ class WorkspaceManager:
                 r_o = ref_obs.get(eid)
                 q_o = query_obs.get(eid)
                 ev = query_events.get(eid)
+                fallback_state = state_at_query.get(eid) or (ent.current_state.value if ent else "CONFIRMED_PRESENT")
 
                 r_box = (
                     {"x_min": r_o.canonical_bbox.x_min, "y_min": r_o.canonical_bbox.y_min, "x_max": r_o.canonical_bbox.x_max, "y_max": r_o.canonical_bbox.y_max}
@@ -846,12 +860,12 @@ class WorkspaceManager:
                 if eid not in ref_obs and eid in query_obs:
                     status_change = "ADDED"
                     prior_st = "NONE"
-                    new_st = ent.current_state.value if ent else "CONFIRMED_PRESENT"
+                    new_st = fallback_state
                     expl = "Entity first observed in query session."
                 elif eid in ref_obs and eid not in query_obs:
                     status_change = "MISSING_IN_QUERY"
                     prior_st = "CONFIRMED_PRESENT"
-                    new_st = ent.current_state.value if ent else "PENDING_REMOVAL"
+                    new_st = fallback_state
                     expl = "Entity not detected in query session."
                 elif ev:
                     status_change = ev.new_state.value
@@ -860,7 +874,7 @@ class WorkspaceManager:
                     expl = ev.explanation
                 else:
                     status_change = "UNCHANGED"
-                    prior_st = ent.current_state.value if ent else "CONFIRMED_PRESENT"
+                    prior_st = fallback_state
                     new_st = prior_st
                     expl = "No state transition triggered."
 
@@ -954,10 +968,12 @@ class WorkspaceManager:
         Each image is processed through the common temporal memory pipeline.
         """
         slug = _sanitize_slug(workspace_id)
+        existing_sessions = self.list_sessions(slug)
+        start_idx = len(existing_sessions) + 1
         # Naturally sort by filename
         sorted_files = sorted(files, key=lambda x: x[0])
         results = []
-        for idx, (fname, contents) in enumerate(sorted_files, start=1):
+        for idx, (fname, contents) in enumerate(sorted_files, start=start_idx):
             visit_stem = Path(fname).stem
             session_name = f"Visit {idx:02d} ({visit_stem})"
             res = self.process_image_observation(

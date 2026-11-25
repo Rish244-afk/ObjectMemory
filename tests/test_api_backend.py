@@ -398,14 +398,19 @@ class TestFastAPIBackend(unittest.TestCase):
         data = resp.json()
 
         self.assertIn("default_detector", data)
+        self.assertEqual(data["default_detector"], "yolov8m")
         self.assertIn("detectors", data)
         self.assertIsInstance(data["detectors"], list)
 
         detector_map = {d["name"]: d for d in data["detectors"]}
+        self.assertIn("yolov8m", detector_map)
         self.assertIn("yolov8n", detector_map)
         self.assertIn("mock", detector_map)
         self.assertIn("yolo-world", detector_map)
+        self.assertTrue(detector_map["yolov8m"]["is_default"])
+        self.assertFalse(detector_map["yolov8n"]["is_default"])
         self.assertTrue(detector_map["yolo-world"]["is_open_vocabulary"])
+        self.assertFalse(detector_map["yolov8m"]["is_open_vocabulary"])
         self.assertFalse(detector_map["yolov8n"]["is_open_vocabulary"])
 
     def test_observation_submission_with_yolo_world_and_prompts(self) -> None:
