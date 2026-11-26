@@ -41,10 +41,10 @@
 - **Occlusion Handling**: If the coordinate is occluded by another object or out-of-frame, removal progression is frozen under `INSUFFICIENT_EVIDENCE`.
 
 ## Slide 6: Experimental Methodology & Benchmark Suite
-- **Three Evidence Tiers**:
-  1. *Synthetic Workbench v2* (25 observations, 5 scenarios): Photorealistic composite cutouts on textured wood with contact shadows and ArUco fiducials.
-  2. *Genuine Desk Pilot* (7 observations): Real smartphone photographs of an office desk.
-  3. *OpenLORIS-Scene* (10 observations): Public indoor robotic trajectory used strictly to evaluate planar registration breakdown under 3D depth parallax (8/9 transitions collapsed; lacks object lifecycle ground truth).
+- **Core Dataset Configurations**:
+  1. *Physical Pilot v2* (Primary, 30 photographs, 6 scenarios): 183 annotations across 7 COCO classes evaluating stationary, movement, removal, addition, occlusion, and return-to-baseline.
+  2. *Synthetic Workbench v2* (Supplementary, 25 observations, 5 scenarios): Photorealistic composite cutouts on textured wood with contact shadows and ArUco fiducials for vacancy (A2*) and ambiguity (A5) ablations.
+  3. *ETH ASL Lounge* (Supplementary Registration, 10 sessions): Evaluated strictly for planar registration under multi-session viewpoint changes and 3D parallax.
 - **Standardized Configurations**: B0 (Memoryless Baseline), B3 (ObjectMemory), A5 (No Ambiguity), A2\* (No Vacancy Verification), A3\* (No FOV Safeguards).
 
 ## Slide 7: Experimental Results & Findings
@@ -74,7 +74,7 @@
 
 ## Slide 10: Technical Limitations & Future Horizons
 - **Limitations**:
-  - Requires dominant planar surface (fails under unconstrained 3D multi-room translation, as shown on OpenLORIS).
+  - Requires dominant planar surface (degrades under unconstrained 3D multi-room translation, as shown on ETH ASL Lounge).
   - Upper bound set by detector recall streak limits.
   - Handcrafted descriptors sensitive to extreme colored lighting shifts.
 - **Future Directions**:

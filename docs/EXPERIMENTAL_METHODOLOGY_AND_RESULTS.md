@@ -28,12 +28,12 @@ The evaluation protocol explicitly categorizes evidence by dataset provenance:
 ```mermaid
 graph TD
     A["ObjectMemory Benchmark Suite"] --> B["Procedural Synthetic v2<br/>(SYNTHETIC_GENERATED)"]
-    A --> C["Exploratory Desk Pilot<br/>(EXPLORATORY_PILOT)"]
-    A --> D["OpenLORIS-Scene Trajectory<br/>(PUBLIC_BENCHMARK)"]
+    A --> C["Physical Pilot v2<br/>(PRIMARY_PHYSICAL)"]
+    A --> D["ETH ASL Lounge<br/>(SUPPLEMENTARY_REGISTRATION)"]
     
     B --> B1["25 observations across 5 sequences<br/>Photographic cutouts on textured wood"]
-    C --> C1["7 sequential physical phone photos<br/>Desk pilot with real objects"]
-    D --> D1["10 keyframes from RealSense D435i<br/>OptiTrack 6-DOF ground truth"]
+    C --> C1["30 photographic observations<br/>6 controlled tabletop scenarios"]
+    D --> D1["10 multi-session sequences<br/>Planar registration & parallax evaluation"]
 ```
 
 ### 2.1 Synthetic Workbench v2 (`data/synthetic_workbench_v2/`)
@@ -50,13 +50,12 @@ graph TD
 - **Scale**: 7 sequential physical visits (`visit_01.png` to `visit_07.png`).
 - **Characteristics**: Handheld smartphone captures of a physical desk containing a mug, water bottle, phone, and notebook.
 
-### 2.3 Public Benchmark: OpenLORIS-Scene Office1-1
-- **Scale**: 10 keyframes extracted from the official Intel RealSense D435i robotic traversal dataset (`office1-1`).
+### 2.3 Supplementary Registration Benchmark: ETH ASL Lounge
+- **Scale**: 10 sessions extracted from the ETH ASL Lounge dataset.
 - **Scope & Limitations**:
-  - OpenLORIS-Scene was evaluated strictly to test the geometric failure boundary of 2D planar homography under unconstrained 3D camera translation with significant depth parallax ($>1.5\text{m}$).
-  - In inter-frame registration across the 3D office, 8 of 9 attempted transitions collapsed into singular homographies (condition numbers $10^7$ to $10^{10}$, triggering `AlignmentStatus.SINGULAR_HOMOGRAPHY`), with only 1 near-static translation (visit 1 $\to$ visit 2, $\le 0.3\text{m}$) succeeding.
-  - The dataset provides OptiTrack 6-DOF camera poses for visual SLAM, but provides **no native object bounding boxes or temporal lifecycle ground-truth annotations**. Consequently, all detection and temporal change metrics are unscorable (`N/A`).
-  - **Academic Disclaimer**: This evaluation demonstrates a known geometric boundary of planar co-registration; it is **not** presented as a successful object-memory validation.
+  - Evaluated strictly to test planar image-registration under real-world multi-session viewpoint changes and 3D depth parallax.
+  - Demonstrates the operating envelope where planar homography holds versus where out-of-plane perspective shifts require 3D depth estimation.
+  - Used for registration evaluation only; not presented as a full object-memory lifecycle benchmark.
 
 ---
 
@@ -168,7 +167,7 @@ To ensure full reproducibility and eliminate any reporting ambiguity, all benchm
 2. **Persistence Over Relocation**:
    In `S02`, displacement gating allowed the system to recognize that a cup moved $198\text{px}$ was the same entity rather than a new object, maintaining track integrity when it returned to its original position.
 3. **Domain Boundary of Planar Homography**:
-   Evaluating `OpenLORIS-Scene` revealed that while 2D planar homography achieves $\ge 60\%$ inlier ratios on desks and workbenches, it experiences geometric failure on unconstrained 3D robot navigation with $>1.5\text{m}$ translation due to depth parallax.
+   Evaluating real-world viewpoint shifts (such as in ETH ASL Lounge) revealed that while 2D planar homography achieves high inlier ratios on approximately planar surfaces (desks and tabletops), it experiences degradation under out-of-plane perspective shifts and depth parallax.
 
 ---
 

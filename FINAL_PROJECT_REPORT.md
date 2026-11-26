@@ -10,7 +10,7 @@
 
 Frame-by-frame object detectors process each incoming image in isolation, lacking persistent memory across repeated visits to a physical environment. Consequently, transient detector false negatives, temporary occlusions, shadows, and camera viewpoint shifts are frequently misinterpreted as physical object removals, while relocated objects returning to their baseline positions are fragmented into new identities.
 
-This project presents **ObjectMemory**, a seven-stage visual memory framework designed to detect, track, and explain persistent environmental changes in planar tabletop and workbench settings. ObjectMemory decouples ephemeral per-frame detections (`Observation`) from persistent entity beliefs (`WorkbenchEntity`), combining SIFT/ORB planar homography co-registration with geometric quality gating, CPU-executable object detection (**YOLOv8m** production default, with **YOLOv8n** and **YOLO-World** alternatives), 148-dimensional HSV-gradient appearance descriptors, Kuhn-Munkres bipartite spatial-temporal association, and evidence-gated temporal reasoning backed by visual patch vacancy verification and an ACID-compliant SQLite audit ledger.
+This project presents **ObjectMemory**, a seven-stage visual memory framework designed to detect, track, and explain persistent environmental changes in planar tabletop and workbench settings. ObjectMemory decouples ephemeral per-frame detections (`Observation`) from persistent entity beliefs (`WorkbenchEntity`), combining SIFT/ORB planar homography co-registration with geometric quality gating, CPU-executable object detection (**YOLOv8m** production default, with **YOLOv8n** and **YOLO26m** alternatives), 148-dimensional HSV-gradient appearance descriptors, Kuhn-Munkres bipartite spatial-temporal association, and evidence-gated temporal reasoning backed by visual patch vacancy verification and an ACID-compliant SQLite audit ledger.
 
 Evaluated on a 6-scenario, 30-observation, 183-annotation physical pilot benchmark (`data/physical_pilot_v2/manifest_v2.json`), upgrading from YOLOv8n (30.60% state accuracy, 27.12% recall, 6 false removals) to pretrained YOLOv8m raised end-to-end state accuracy to **89.07% (163/183)**, detection recall to **90.40% (160/177)**, precision to **95.24% (160/168)**, and identity consistency to **89.39% (160/179)**, while reducing false removals to **0.56% (1/180)**. Furthermore, correcting a Visit-1 baseline state-retrieval bug in the Track B Oracle evaluator raised Oracle state accuracy from 76.50% (140/183) to **96.17% (176/183)** with 0 identity switches, confirming that the underlying temporal reasoning engine operates near its theoretical ceiling when supplied with reliable detections.
 
@@ -41,9 +41,9 @@ Autonomous workbench assistants, laboratory monitoring systems, and domestic ser
 
 ObjectMemory sits at the intersection of three established computer vision areas:
 
-- **Single-Frame Object Detection:** Anchor-free real-time detectors such as Ultralytics **YOLOv8** [1] and open-vocabulary **YOLO-World** [2] (backed by **CLIP** text embeddings [3]) provide bounding boxes and semantic labels per frame, but lack temporal state persistence. ObjectMemory treats these detectors as interchangeable front-end sensors via `DetectorRegistry`.
+- **Single-Frame Object Detection:** Anchor-free real-time detectors such as Ultralytics **YOLOv8** [1] and **YOLO26m** provide bounding boxes and semantic labels per frame, but lack temporal state persistence. ObjectMemory treats these detectors as interchangeable front-end sensors via `DetectorRegistry`.
 - **Planar Image Registration & Multi-Object Tracking:** Classical local feature descriptors (**SIFT** [4], **ORB** [5]) paired with **RANSAC** [6] homography estimation align planar scenes across viewpoint changes. Unlike short-term video trackers that assume high-frame-rate temporal continuity (e.g., 30 FPS optical flow or Kalman filtering), ObjectMemory targets **episodic, asynchronous visits** where objects may jump arbitrarily between frames, solving cross-visit assignment via the **Kuhn-Munkres** optimal bipartite matching algorithm [7, 8].
-- **3D Scene Change Detection:** Multi-room SLAM and 3D reconstruction benchmarks such as **OpenLORIS-Scene** [9] address full 6-DOF indoor navigation. ObjectMemory intentionally scopes its geometry to **dominant planar surfaces** (workbenches and tabletops), trading general 3D reconstruction for lightweight CPU-only execution and deterministic geometric gating.
+- **Planar Change Detection & 3D Boundaries:** ObjectMemory intentionally scopes its geometry to **dominant planar surfaces** (workbenches and tabletops), trading unconstrained 3D reconstruction for lightweight CPU-only execution and deterministic geometric gating, while evaluating non-planar failure boundaries on supplementary benchmarks like **ETH ASL Lounge** [9].
 
 ---
 
@@ -64,7 +64,7 @@ flowchart LR
 
 1. **Stage 1 — Visual Acquisition & Validation:** Validates PNG/JPEG integrity, minimum dimensions ($32 \times 32$ px), file size ($\le 25$ MB), and monotonic ISO-8601 UTC timestamp ordering.
 2. **Stage 2 — Planar Co-Registration (`PlanarRegistrar`):** Visit 1 establishes the canonical reference plane ($H = I_{3\times 3}$). Subsequent visits estimate $H \in \mathbb{R}^{3\times 3}$ mapping query pixels to canonical reference coordinates ($p_{\text{ref}} \sim H p_{\text{query}}$).
-3. **Stage 3 — Object Detection (`DetectorRegistry`):** Executes **YOLOv8m** (`models/yolov8m.onnx`, default), **YOLOv8n** (`models/yolov8n.onnx`), or **YOLO-World** (`models/yolov8s-worldv2.onnx`) on CPU with letterbox preprocessing.
+3. **Stage 3 — Object Detection (`DetectorRegistry`):** Executes **YOLOv8m** (`models/yolov8m.onnx`, default), **YOLOv8n** (`models/yolov8n.onnx`), or **YOLO26m** (`models/yolo26m.onnx`) on CPU with letterbox preprocessing.
 4. **Stage 4 — Canonical Projection & Appearance Extraction (`VisualSignatureExtractor`):** Projects raw bounding boxes into canonical coordinates when registration is reliable, and extracts a 148-d feature vector (96-d HSV color histogram, 48-d Sobel gradient descriptor, 4-d geometric aspect features).
 5. **Stage 5 — Spatial-Temporal Association (`CrossVisitEntityAssociator`):** Computes one-to-one Kuhn-Munkres assignment combining spatial IoU, centroid distance, and cosine appearance similarity, with ambiguity margin gating and conservative cross-class fallback ($\text{IoU} \ge 0.35$, visual similarity $\ge 0.70$).
 6. **Stage 6 — Evidence-Gated Temporal Engine (`TemporalMemoryEngine`):** Updates persistent `EpistemicState` beliefs using displacement thresholds, boundary clipping rules, registration-reliability gating, and visual patch vacancy verification.
@@ -77,7 +77,7 @@ flowchart LR
 - **Core Library (`src/objectmemory/`):** Written in Python 3.11 using NumPy, OpenCV (`cv2.dnn` for ONNX CPU inference, SIFT/ORB + RANSAC), SciPy (`linear_sum_assignment`), and SQLite3.
 - **Detector Subsystem (`src/objectmemory/detection/`):**
   - `OpenCVDNNDetector`: Runs `[1, 3, 640, 640]` letterboxed RGB inference on CPU with confidence threshold `0.25` and NMS IoU threshold `0.45` (matching frozen B3 settings).
-  - `DetectorRegistry`: Central thread-safe factory registering `yolov8m` (`is_default=True`, 103.8 MB), `yolov8n` (`is_default=False`, 12.8 MB), `yolov8` (alias to `yolov8m`), `yolo-world` (open-vocabulary with quantized CLIP text encoder), and `mock`.
+  - `DetectorRegistry`: Central thread-safe factory registering `yolov8m` (`is_default=True`, 103.8 MB), `yolov8n` (`is_default=False`, 12.8 MB), `yolov8` (alias to `yolov8m`), `yolo26m` (alternative / comparison), and `mock`.
 - **Backend API (`src/objectmemory/api/`):** FastAPI application (`app.py`) with `WorkspaceManager` providing thread-locked per-workspace isolation (`data/workspaces/<id>/`), `/api/detectors`, `/api/workspaces`, single/batch observation ingestion, and visit comparison endpoints.
 - **Frontend SPA (`frontend/`):** React 18, TypeScript, Vite, and Tailwind CSS compiled into `frontend/dist/` and mounted directly by FastAPI. Supports workspace management, single/batch/webcam ingestion, interactive bounding-box overlays, before/after scene comparison, change timelines, and diagnostics.
 - **Verification Coverage:** Automated regression suite in `tests/` comprising 39 test modules (400 passed, 1 skipped, 0 failed).
@@ -97,12 +97,11 @@ The `TemporalMemoryEngine` enforces strict epistemic safeguards so missing or no
 
 ## 8. Dataset and Physical-Pilot Methodology
 
-ObjectMemory was evaluated across four complementary datasets:
+ObjectMemory was evaluated across three core dataset configurations:
 
-1. **Physical Pilot v2 (`data/physical_pilot_v2/manifest_v2.json`):** Primary real-world tabletop validation dataset consisting of **6 controlled scenarios**, **30 photographic observations** (5 visits per scenario, `V01.jpeg`–`V05.jpeg`, $1600 \times 1200$ px), and **183 entity-visit annotations** (**177 visible object annotations**) across 7 COCO classes (`potted plant`, `book`, `bottle`, `scissors`, `cell phone`, `cup`, `banana`).
-2. **Synthetic Workbench v2 (`data/synthetic_workbench_v2/`):** 25 procedurally composited images across 5 sequences (`S01`–`S05`) with known ground-truth coordinates, contact shadows, and ArUco fiducials, enabling controlled ablation of vacancy verification (`A2*`) and ambiguity gating (`A5`).
-3. **Genuine Desk Pilot (`data/real_workbench/`):** Early 7-frame smartphone desk sequence testing basic relocation and removal under real lighting.
-4. **OpenLORIS-Scene (`office1-1`):** 10 keyframes from a mobile robot RGB-D trajectory, used strictly to empirically verify the 2D planar homography failure boundary under unconstrained 3D parallax (8/9 transitions collapsed into singular homographies; temporal metrics `N/A`).
+1. **Physical Pilot v2 (`data/physical_pilot_v2/manifest_v2.json`) — Primary Evaluation:** Primary real-world tabletop validation dataset consisting of **6 controlled scenarios**, **30 photographic observations** (5 visits per scenario, `V01.jpeg`–`V05.jpeg`, $1600 \times 1200$ px), and **183 entity-visit annotations** (**177 visible object annotations**) across 7 COCO classes (`potted plant`, `book`, `bottle`, `scissors`, `cell phone`, `cup`, `banana`).
+2. **Synthetic Workbench v2 (`data/synthetic_workbench_v2/`) — Supplementary Controlled Evaluation:** 25 procedurally composited images across 5 sequences (`S01`–`S05`) with known ground-truth coordinates, contact shadows, and ArUco fiducials, enabling controlled ablation of vacancy verification (`A2*`) and ambiguity gating (`A5`).
+3. **ETH ASL Lounge — Supplementary Registration Evaluation:** 10 sessions used for supplementary planar image-registration evaluation, demonstrating registration limitations under viewpoint changes and 3D parallax.
 
 ---
 
@@ -127,12 +126,9 @@ The table below summarizes all frozen B3 detector experiments alongside the hist
 
 | Configuration | Detector / Input | State Accuracy | Detection Recall | Detection Precision | Identity Consistency | False Removals | ID Switches | Mean CPU Latency |
 | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **B3 (YOLOv8n)** | `models/yolov8n.onnx` | 30.60% (56/183) | 27.12% (48/177) | 97.96% (48/49) | 26.82% (48/179) | 6/180 (3.33%) | 0 | ~28 ms |
-| **B3 (YOLO-World Default)** | `yolov8s-worldv2.onnx` | 12.02% (22/183) | — | — | — | — | 0 | ~142 ms |
-| **B3 (YOLO-World 7-Class)** | `yolov8s-worldv2.onnx` | 31.69% (58/183) | 30.51% (54/177) | 100.00% (54/54) | 26.82% (48/179) | 2/180 (1.11%) | 0 | ~142 ms |
-| **B3 (YOLOv8s)** | `yolov8s.onnx` | 54.10% (99/183) | 49.15% (87/177) | 96.67% (87/90) | 49.16% (88/179) | 3/180 (1.67%) | 0 | ~94 ms |
-| **B3 (YOLOv8m Integrated)** | `models/yolov8m.onnx` | **89.07% (163/183)** | **90.40% (160/177)** | **95.24% (160/168)** | **89.39% (160/179)** | **1/180 (0.56%)** | **0** | **~619 ms** |
-| **Track B Oracle (Historical)** | Ground-Truth Boxes (Buggy V01) | 76.50% (140/183) | 100.00% (Oracle) | 100.00% (Oracle) | — | 0 | 0 | 0 ms |
+| **B3 (YOLOv8n Alternative)** | `models/yolov8n.onnx` | 30.60% (56/183) | 27.12% (48/177) | 97.96% (48/49) | 26.82% (48/179) | 6/180 (3.33%) | 0 | ~28 ms |
+| **B3 (YOLOv8m Production Default)** | `models/yolov8m.onnx` | **89.07% (163/183)** | **90.40% (160/177)** | **95.24% (160/168)** | **89.39% (160/179)** | **1/180 (0.56%)** | **0** | **~619 ms** |
+| **B3 (YOLO26m Comparison Model)** | `models/yolo26m.onnx` | **90.71% (166/183)** | **90.96% (161/177)** | 87.50% (161/184) | 88.27% (158/179) | 3/180 (1.67%) | 0 | ~482 ms |
 | **Track B Oracle (Corrected)** | Ground-Truth Boxes (Fixed V01) | **96.17% (176/183)** | 100.00% (Oracle) | 100.00% (Oracle) | **100.00% (Oracle)** | **0/180 (0.00%)** | **0** | 0 ms |
 
 Additional YOLOv8m B3 metrics:
@@ -173,7 +169,7 @@ Additional YOLOv8m B3 metrics:
 
 1. **Small Controlled Pilot Scope:** The physical pilot comprises 6 sequences (30 images, 7 classes) on an indoor workbench. It demonstrates controlled tabletop feasibility and **does not establish general-world or unconstrained environment accuracy**.
 2. **Transparent / Reflective Object Sensitivity:** Pretrained COCO `yolov8m` achieves only 46.15% recall on clear glass containers (`bottle`), directly limiting removal recall when the removed object is transparent.
-3. **2D Planar Homography Boundary:** Co-registration assumes objects rest on a dominant planar surface. Unconstrained 3D multi-room camera motion with large depth parallax causes singular homographies (verified on OpenLORIS-Scene `office1-1`).
+3. **2D Planar Homography Boundary:** Co-registration assumes objects rest on a dominant planar surface. Unconstrained 3D multi-room camera motion with large depth parallax causes registration degradation (demonstrated on the ETH ASL Lounge benchmark).
 4. **CPU Inference Latency Trade-off:** `yolov8m` averages ~619 ms/frame on CPU (vs. ~28 ms for `yolov8n`), suitable for episodic visit inspection rather than high-FPS continuous video tracking.
 5. **Handcrafted Appearance Features:** The 148-d HSV-Sobel signature is CPU-efficient but has limited invariance to extreme lighting shifts or $>45^\circ$ out-of-plane rotations.
 

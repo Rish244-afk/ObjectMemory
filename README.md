@@ -18,14 +18,14 @@ Standard deep detectors operate frame-by-frame: a temporary occlusion or shadow 
 
 1. **Epistemic State Tracking**: Decouples transient visual detections (`Observation`) from long-term persistent state (`WorkbenchEntity`), maintaining explicit belief states: `CONFIRMED_PRESENT`, `CONFIRMED_MOVED`, `PENDING_REMOVAL`, `CONFIRMED_REMOVED`, `INSUFFICIENT_EVIDENCE`, and `AMBIGUOUS_IDENTITY`.
 2. **Planar Homography Co-Registration**: Normalizes camera viewpoint variations using SIFT/ORB features and RANSAC homography estimation ($p_{\text{ref}} \sim H p_{\text{query}}$) with strict geometric distortion gating.
-3. **CPU-Friendly Object Detection**: Uses pretrained Ultralytics **YOLOv8 Medium ONNX** (`models/yolov8m.onnx`, ~99.0 MB) as the production default detector strictly on CPU via OpenCV DNN, with **YOLOv8 Nano** (`models/yolov8n.onnx`, ~12.2 MB), **YOLO26 Medium** (`models/yolo26m.onnx`, ~78.1 MB via ONNX Runtime), and **YOLO-World v2 Small** (`models/yolov8s-worldv2.onnx`, open-vocabulary) retained as selectable alternatives.
+3. **CPU-Friendly Object Detection**: Uses pretrained Ultralytics **YOLOv8 Medium ONNX** (`models/yolov8m.onnx`, ~99.0 MB) as the production default detector strictly on CPU via OpenCV DNN, with **YOLOv8 Nano** (`models/yolov8n.onnx`, ~12.2 MB) and **YOLO26 Medium** (`models/yolo26m.onnx`, ~78.1 MB via ONNX Runtime) supported as selectable alternatives.
 4. **Spatial-Temporal Association**: Employs Kuhn-Munkres optimal bipartite matching with displacement gating, appearance similarity, and ambiguity margins to prevent false identity swaps.
 5. **Multi-Visit Vacancy Verification**: Enforces a multi-visit absence streak ($\ge 2$ consecutive visits) combined with visual patch vacancy verification to suppress false removal alarms.
 6. **Auditable Change Ledger**: Commits all transitions to an ACID-compliant SQLite store with explainable natural-language rationales and historical coordinates.
 
 ### Implemented vs. Experimentally Validated Scope
-- **Implemented System Capabilities**: Full 7-stage backend pipeline, `DetectorRegistry` (`yolov8m` default, `yolov8n`, `yolo-world`, `mock`), isolated per-workspace SQLite persistence, FastAPI REST backend, React 18 SPA supporting single/batch/webcam ingest, visit comparison, timeline/entity inspection, and a supplementary **ETH Registration** tab (`/api/eth-lounge/*`) for 2D planar registration testing on ETH ASL Lounge frames.
-- **Experimentally Validated Scope**: Evaluated on controlled tabletop benchmarks (Synthetic Workbench v2, 7-frame Desk Pilot, and 6-scenario / 30-observation Physical Pilot v2) and a non-planar failure-boundary check (OpenLORIS-Scene `office1-1`). Results from the small physical pilot reflect controlled tabletop conditions and do not establish general-world or unconstrained 3D environment accuracy.
+- **Implemented System Capabilities**: Full 7-stage backend pipeline, `DetectorRegistry` (`yolov8m` default, `yolov8n`, `yolo26m`, `mock`), isolated per-workspace SQLite persistence, FastAPI REST backend, React 18 SPA supporting single/batch/webcam ingest, visit comparison, timeline/entity inspection, and a supplementary **ETH Registration** tab (`/api/eth-lounge/*`) for 2D planar registration testing on ETH ASL Lounge frames.
+- **Experimentally Validated Scope**: Evaluated on controlled tabletop benchmarks (Synthetic Workbench v2 and 6-scenario / 30-observation Physical Pilot v2) with supplementary planar registration evaluation on ETH ASL Lounge (10 sessions). Results from the small physical pilot reflect controlled tabletop conditions and do not establish general-world or unconstrained 3D environment accuracy.
 
 ---
 
@@ -44,7 +44,7 @@ flowchart TD
     end
 
     subgraph Detection["3-4. Inference & Appearance"]
-        DNN["OpenCV DNN YOLOv8m Default (CPU)\n(Alternatives: YOLOv8n, YOLO-World)"]
+        DNN["OpenCV DNN YOLOv8m Default (CPU)\n(Alternatives: YOLOv8n, YOLO26m)"]
         DETS["Detected Bounding Boxes"]
         SIG["148-d Color & Texture Extractor"]
         DNN --> DETS
@@ -83,21 +83,19 @@ flowchart TD
 
 ## 3. Experimental Evaluation & Results
 
-ObjectMemory was evaluated across four dataset tiers using the standardized **Benchmark Evaluation Harness**:
+ObjectMemory was evaluated across three core dataset configurations using the standardized **Benchmark Evaluation Harness**:
 
-1. **Physical Pilot v2 (`data/physical_pilot_v2/manifest_v2.json`)**: 6 physical tabletop scenarios (`stationary`, `movement`, `removal`, `addition`, `occlusion`, `return_to_baseline`), 30 observations, 183 ground-truth entity-visit annotations (177 visible object annotations).
-2. **Synthetic Workbench v2 (`data/synthetic_workbench_v2/`)**: 25 observations across 5 controlled sequences (`S01`–`S05`) generated with segmented cutouts on procedural wood grain.
-3. **Genuine Physical Desk Pilot (`data/real_workbench/`)**: 7 sequential real smartphone images of an office desk.
-4. **OpenLORIS-Scene (`office1-1`)**: 10 keyframes from an Intel RealSense D435i camera on an AGV. Evaluated strictly to test the geometric failure boundary of 2D planar homography under 3D depth parallax (8/9 transitions collapsed into singular homographies; temporal metrics `N/A`).
+1. **Physical Pilot v2 (`data/physical_pilot_v2/manifest_v2.json`) — Primary Evaluation**: 30 photographs across 6 controlled tabletop scenarios (`stationary`, `movement`, `removal`, `addition`, `occlusion`, `return_to_baseline`), 183 entity-visit annotations (177 visible ground-truth instances) across 7 object classes.
+2. **Synthetic Workbench v2 (`data/synthetic_workbench_v2/`) — Supplementary Controlled Evaluation**: 25 procedurally generated images across 5 controlled sequences (`S01`–`S05`), used for controlled vacancy (A2*) and association ambiguity (A5) experiments.
+3. **ETH ASL Lounge — Supplementary Registration Evaluation**: 10 sessions used for supplementary planar image-registration evaluation, demonstrating registration limitations under viewpoint changes and 3D parallax.
 
 ### 3.1 Physical Pilot v2 Results (6 Scenarios, 30 Observations, 183 Evaluations)
 
 | Configuration | Detector / Input | State Accuracy | Detection Recall | Identity Consistency | False Removal Rate |
 | :--- | :--- | :---: | :---: | :---: | :---: |
 | **B3 (YOLOv8n)** | `yolov8n.onnx` | 30.60% (56/183) | 27.12% (48/177) | 26.82% (48/179) | 3.33% (6/180) |
-| **B3 (YOLO-World 7-class)** | `yolov8s-worldv2.onnx` | 31.69% (58/183) | 30.51% (54/177) | 26.82% (48/179) | 1.11% (2/180) |
-| **B3 (YOLOv8s)** | `yolov8s.onnx` | 54.10% (99/183) | 49.15% (87/177) | 49.16% (88/179) | 1.67% (3/180) |
-| **B3 (YOLOv8m — Production)** | `yolov8m.onnx` | **89.07% (163/183)** | **90.40% (160/177)** | **89.39% (160/179)** | **0.56% (1/180)** |
+| **B3 (YOLOv8m — Production Default)** | `yolov8m.onnx` | **89.07% (163/183)** | **90.40% (160/177)** | **89.39% (160/179)** | **0.56% (1/180)** |
+| **B3 (YOLO26m — Comparison Model)** | `yolo26m.onnx` | **90.71% (166/183)** | **90.96% (161/177)** | **88.27% (158/179)** | **1.67% (3/180)** |
 | **Track B Oracle (Corrected)** | Ground-Truth Boxes | **96.17% (176/183)** | 100.00% (Oracle) | 100.00% (Oracle) | 0.00% (0/180) |
 
 - **Oracle Evaluation Correction**: The historical Track B Oracle run reported 76.50% (140/183) because `evaluate_sequence_entity_level` in `scripts/evaluate_physical_workbench.py` checked only `visit_reports[1].entity_updates` for Visit 1 states, scoring all 36 baseline entities (instantiated directly in `SQLiteMemoryStore` as `CONFIRMED_PRESENT` without transition updates) as `INSUFFICIENT_EVIDENCE`. Retrieving Visit 1 baseline states directly from the store yields **96.17% (176/183)** without changing the temporal engine.
@@ -184,18 +182,17 @@ objectmemory/
 ├── models/
 │   ├── yolov8m.onnx               # Pretrained YOLOv8 medium ONNX (99.0 MB, default)
 │   ├── yolov8n.onnx               # Pretrained YOLOv8 nano ONNX (12.2 MB, alternative)
-│   ├── yolov8s-worldv2.onnx       # YOLO-World v2 Small open-vocab ONNX (48.8 MB)
-│   ├── clip_text_quantized.onnx   # Quantized CLIP text encoder for YOLO-World
-│   └── clip_tokenizer.json        # CLIP BPE tokenizer
+│   └── yolo26m.onnx               # YOLO26 medium ONNX (78.1 MB, alternative / comparison)
 ├── research_validation/
 │   ├── larger_detector_experiment/
 │   │   └── YOLOV8M_INTEGRATION_REPORT.md
+│   ├── poster/                    # Academic poster deliverables (A0 PPTX, PDF, Preview PNG)
 │   └── ...                        # Benchmark result JSONs and audit reports
 ├── scripts/                       # Evaluation, dataset, and demo scripts
 ├── src/objectmemory/
 │   ├── api/                       # FastAPI router, schemas, WorkspaceManager
 │   ├── benchmarks/                # ManifestLoader, ConfigFactory, BenchmarkRunner
-│   ├── detection/                 # DetectorRegistry, OpenCVDNNDetector, YOLOWorldDetector
+│   ├── detection/                 # DetectorRegistry, OpenCVDNNDetector
 │   ├── persistence/               # SQLiteMemoryStore, models, schema migrations
 │   ├── registration/              # PlanarRegistrar (SIFT/ORB) & quality gating
 │   └── temporal/                  # Associator, TemporalMemoryEngine, epistemic states
@@ -206,7 +203,7 @@ objectmemory/
 
 ## 6. Technical Limitations & Scope
 
-- **Dominant Plane Assumption**: Relies on 2D planar homography ($H \in \mathbb{R}^{3 \times 3}$). Designed for tabletops and workbenches; unconstrained 3D multi-room camera translations with large depth parallax (demonstrated in OpenLORIS-Scene) cause registration failure.
+- **Dominant Plane Assumption**: Relies on 2D planar homography ($H \in \mathbb{R}^{3 \times 3}$). Designed for tabletops and workbenches; unconstrained 3D multi-room camera translations with large depth parallax (demonstrated on ETH ASL Lounge) cause registration degradation.
 - **Transparent & Specular Object Recall**: On `physical_pilot_v2`, pretrained COCO `yolov8m` achieved 90.40% overall recall, but only 46.15% (12/26) on the clear glass tumbler (`bottle`), preventing instantiation in 3 of 6 sequences and yielding 0/3 visit removal recall in B3.
 - **Small Pilot Sample Size**: The 6-sequence, 30-observation physical pilot demonstrates tabletop feasibility under controlled indoor conditions and does not establish general-world accuracy.
 - **CPU Inference Latency**: `yolov8m` averages ~619 ms/frame on CPU vs ~28 ms/frame for `yolov8n`, suited for episodic visit monitoring rather than 30 FPS video streaming.
@@ -218,6 +215,7 @@ objectmemory/
 
 For full technical and academic documentation, refer to:
 - Final Project Report: [FINAL_PROJECT_REPORT.md](FINAL_PROJECT_REPORT.md)
+- Academic Research Poster: [research_validation/poster/ObjectMemory_Poster.pptx](research_validation/poster/ObjectMemory_Poster.pptx) | [PDF](research_validation/poster/ObjectMemory_Poster.pdf) | [Preview](research_validation/poster/ObjectMemory_Poster_Preview.png)
 - Final Project Stabilization Report: [research_validation/FINAL_PROJECT_STABILIZATION_REPORT.md](research_validation/FINAL_PROJECT_STABILIZATION_REPORT.md)
 - YOLOv8m Integration & Oracle Audit: [research_validation/larger_detector_experiment/YOLOV8M_INTEGRATION_REPORT.md](research_validation/larger_detector_experiment/YOLOV8M_INTEGRATION_REPORT.md)
 - YOLO26m Implementation & Live Evaluation: [research_validation/YOLO26M_IMPLEMENTATION_AND_LIVE_EVALUATION_REPORT.md](research_validation/YOLO26M_IMPLEMENTATION_AND_LIVE_EVALUATION_REPORT.md)
